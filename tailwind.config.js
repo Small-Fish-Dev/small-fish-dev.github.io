@@ -4,7 +4,8 @@ export default {
 	theme: {
 		colors: {
 			white: '#FFFFFF',
-			blue: '#2446f7'
+			blue: '#2446f7',
+			black: '#000000'
 		},
 		extend: {
 			fontFamily: {
