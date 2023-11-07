@@ -1,11 +1,25 @@
 <script lang="ts">
+	import Icon from '@iconify/svelte';
+
+	// You can use icons from https://icones.js.org/
 	interface Location {
-		label: String;
-		icon: String;
-		href: String;
+		label: string;
+		icon: string;
+		href: string;
 	}
 
-	const locations: Location[] = [{ label: 'Hey', icon: 'Hey', href: 'Hey' }];
+	const locations: Location[] = [
+		{
+			label: 'our team',
+			icon: 'ic:sharp-sailing',
+			href: '/'
+		},
+		{
+			label: 'devblogs',
+			icon: 'ic:sharp-newspaper',
+			href: '/'
+		}
+	];
 </script>
 
 <div>
@@ -14,7 +28,14 @@
 	>
 		<div class="relative z-30 max-w-3xl">
 			<img src="home/header-logo.png" alt="Small Fish Logo" />
-			<div></div>
+			<div class="flex gap-4 p-4">
+				{#each locations as location}
+					<a href={location.href} class="flex text-5xl text-white">
+						<Icon icon={location.icon} />
+						{location.label}
+					</a>
+				{/each}
+			</div>
 		</div>
 
 		<div class="color-overlay absolute z-20 w-auto w-full h-full max-w-none" />
