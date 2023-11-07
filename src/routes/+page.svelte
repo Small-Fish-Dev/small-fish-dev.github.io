@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
+	import NavButton from '$lib/Nav-Button.svelte';
 
 	// You can use icons from https://icones.js.org/
 	interface Location {
@@ -12,12 +12,12 @@
 		{
 			label: 'our team',
 			icon: 'ic:sharp-sailing',
-			href: '/'
+			href: '/team'
 		},
 		{
 			label: 'devblogs',
 			icon: 'ic:sharp-newspaper',
-			href: '/'
+			href: '/dev-blogs'
 		}
 	];
 </script>
@@ -28,12 +28,9 @@
 	>
 		<div class="relative z-30 max-w-3xl">
 			<img src="home/header-logo.png" alt="Small Fish Logo" />
-			<div class="flex gap-4 p-4">
+			<div class="flex justify-center flex-wrap gap-2 p-8">
 				{#each locations as location}
-					<a href={location.href} class="flex text-5xl text-white">
-						<Icon icon={location.icon} />
-						{location.label}
-					</a>
+					<NavButton href={location.href} icon={location.icon} label={location.label} />
 				{/each}
 			</div>
 		</div>
@@ -48,7 +45,7 @@
 
 <style>
 	.color-overlay {
-		background: url(/home/dumb-css-hack.png);
+		background: url(/home/pixel-overlay.png);
 		background-size: 7px;
 		mix-blend-mode: multiply;
 		opacity: 1;
