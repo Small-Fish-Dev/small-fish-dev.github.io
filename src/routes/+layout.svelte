@@ -23,11 +23,11 @@
 		background-size: 800px 100%;
 	}
 	.static-background {
-		background-image: url('footer/fbg_static.png');
+		background-image: url('/footer/fbg_static.png');
 	}
 
 	.moving-background {
-		background-image: url('footer/fbg_moving.png');
+		background-image: url('/footer/fbg_moving.png');
 		animation-name: swim;
 		animation-duration: 4s;
 		animation-iteration-count: infinite;
