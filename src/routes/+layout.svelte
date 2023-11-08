@@ -6,9 +6,12 @@
 
 <footer>
 	<div class="bg-gradient-to-b from-white to-darkblue h-6" />
-	<div class="overlay static-background" />
+	<div class="bg-darkblue overlay static-background" />
 	<div class="overlay moving-background" />
-	<div class="bg-darkblue overflow-hidden h-48" />
+	<div class="absolute font-poppins text-white p-4">
+		<p class="text-3xl font-bold">small fish</p>
+		<p><span class="font-bold">2021 - 2023</span> All rights are VERY reserved</p>
+	</div>
 </footer>
 
 <style>
@@ -28,19 +31,21 @@
 		animation-name: swim;
 		animation-duration: 4s;
 		animation-iteration-count: infinite;
-		transform: translateY(0px);
+		transform: translateX(0px) translateY(0px);
 		overflow: hidden;
+		height: 170px;
+		width: 100%;
 	}
 
 	@keyframes swim {
 		0% {
-			transform: translateY(0px);
+			transform: translateX(0px) translateY(0px);
 		}
 		50% {
-			transform: translateY(10px);
+			transform: translateX(-5px) translateY(10px);
 		}
 		100% {
-			transform: translateY(0px);
+			transform: translateX(0px) translateY(0px);
 		}
 	}
 </style>
