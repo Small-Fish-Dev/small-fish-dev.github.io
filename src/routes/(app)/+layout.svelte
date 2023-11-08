@@ -17,5 +17,7 @@
 	{/each}
 </nav>
 
+<slot />
+
 <style>
 </style>

@@ -12,13 +12,13 @@ export const Locations: Location[] = [
 		href: '/team'
 	},
 	{
-		label: 'devblogs',
+		label: 'blogs',
 		icon: 'ic:sharp-newspaper',
-		href: '/dev-blogs'
+		href: '/blogs'
 	},
 	{
 		label: 'projects',
-		icon: 'ic:sharp-newspaper',
+		icon: 'material-symbols:videogame-asset',
 		href: '/projects'
 	}
 ];
