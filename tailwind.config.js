@@ -5,7 +5,8 @@ export default {
 		colors: {
 			white: '#FFFFFF',
 			blue: '#2446f7',
-			black: '#000000'
+			black: '#000000',
+			darkblue: '#181c4c'
 		},
 		extend: {
 			fontFamily: {
