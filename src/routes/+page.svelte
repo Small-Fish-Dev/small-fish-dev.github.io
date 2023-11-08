@@ -1,26 +1,7 @@
 <script lang="ts">
-	import NavButton from '$lib/Nav-Button.svelte';
-	import Card from '$lib/Card.svelte';
-
-	// You can use icons from https://icones.js.org/
-	interface Location {
-		label: string;
-		icon: string;
-		href: string;
-	}
-
-	const locations: Location[] = [
-		{
-			label: 'our team',
-			icon: 'ic:sharp-sailing',
-			href: '/team'
-		},
-		{
-			label: 'devblogs',
-			icon: 'ic:sharp-newspaper',
-			href: '/dev-blogs'
-		}
-	];
+	import { Locations } from '$lib/types/Location';
+	import NavButton from '$lib/components/Nav-Button.svelte';
+	import Card from '$lib/components/Card.svelte';
 </script>
 
 <div>
@@ -30,8 +11,13 @@
 		<div class="relative z-30 max-w-3xl">
 			<img src="home/header-logo.png" alt="Small Fish Logo" />
 			<div class="flex justify-center flex-wrap gap-2 p-8">
-				{#each locations as location}
-					<NavButton href={location.href} icon={location.icon} label={location.label} />
+				{#each Locations as location}
+					<NavButton
+						href={location.href}
+						icon={location.icon}
+						label={location.label}
+						disabled={false}
+					/>
 				{/each}
 			</div>
 		</div>

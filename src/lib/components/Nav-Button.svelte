@@ -4,6 +4,7 @@
 	export let href: string;
 	export let icon: string;
 	export let label: string;
+	export let disabled: boolean;
 </script>
 
 <a
@@ -12,7 +13,8 @@
            hover:text-blue
            hover:bg-white
            hover:scale-105
-           transition-all"
+           transition-all
+		   {disabled ? 'opacity-50 pointer-events-none' : ''}"
 >
 	<Icon {icon} class="text-4xl mr-2" />
 	<p>{label}</p>
