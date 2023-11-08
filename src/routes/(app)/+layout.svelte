@@ -5,7 +5,7 @@
 	import NavButton from '$lib/components/Nav-Button.svelte';
 </script>
 
-<nav class="bg-blue flex flex-row p-2 justify-center">
+<nav class="bg-blue flex flex-col p-2 justify-center md:flex-row">
 	<NavButton href={'/'} icon={'dashicons:admin-home'} label={'home'} disabled={false} />
 	{#each Locations as location}
 		<NavButton

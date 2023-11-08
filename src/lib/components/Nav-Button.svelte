@@ -14,6 +14,7 @@
            hover:bg-white
            hover:scale-105
            transition-all
+		   whitespace-nowrap
 		   {disabled ? 'opacity-50 pointer-events-none' : ''}"
 >
 	<Icon {icon} class="text-4xl mr-2" />
