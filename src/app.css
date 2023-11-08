@@ -6,26 +6,26 @@
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/fonts/poppins-regular-webfont.woff2');
+	src: url('/fonts/Poppins-Regular.ttf');
 }
 
 @font-face {
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 300;
-	src: url('/fonts/poppins-light-webfont.woff2');
+	src: url('/fonts/Poppins-Light.ttf');
 }
 
 @font-face {
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 700;
-	src: url('/fonts/poppins-bold-webfont.woff2');
+	src: url('/fonts/Poppins-Bold.ttf');
 }
 
 @font-face {
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 500;
-	src: url('/fonts/poppins-medium-webfont.woff2');
+	src: url('/fonts/Poppins-Medium.ttf');
 }
