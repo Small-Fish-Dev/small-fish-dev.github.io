@@ -1,24 +1,14 @@
 <script lang="ts">
-	// TODO @ceitine: we should probably hook this up with the team page for contributors??!
-	interface Project {
-		title: string;
-		description: string;
-		contributors: string[];
-	}
-
-	const projects: Project[] = [
-		{
-			title: 'Deathcard',
-			description: 'Bla bla bla bla',
-			contributors: ['ceitine', 'shlakoblock']
-		}
-	];
+	import { Projects } from '$lib/types/Project';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
 </script>
 
-<p>Projects</p>
-<div>
-	{#each projects as project}
-		<p>{project.title}</p>
+<div class="p-5 flex justify-end flex-col">
+	{#each Projects as project}
+		<ProjectCard
+			{project}
+			class="w-fit even:self-end even:items-end even:text-end mb-20 last:mb-5 first:mt-5"
+		/>
 	{/each}
 </div>
 
