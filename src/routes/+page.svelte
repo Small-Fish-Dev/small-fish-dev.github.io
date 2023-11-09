@@ -1,7 +1,26 @@
 <script lang="ts">
-	import { Locations } from '$lib/types/Location';
+	import type { Route } from '$lib/types/Routes';
 	import NavButton from '$lib/components/Nav-Button.svelte';
 	import Card from '$lib/components/Card.svelte';
+
+	// You can use icons from https://icones.js.org/
+	const routes: Route[] = [
+		{
+			label: 'our team',
+			icon: 'ic:sharp-sailing',
+			href: '/team'
+		},
+		{
+			label: 'blogs',
+			icon: 'ic:sharp-newspaper',
+			href: '/blogs'
+		},
+		{
+			label: 'projects',
+			icon: 'material-symbols:videogame-asset',
+			href: '/projects'
+		}
+	];
 </script>
 
 <div>
@@ -11,13 +30,8 @@
 		<div class="relative z-30 max-w-3xl">
 			<img src="home/header-logo.png" alt="Small Fish Logo" />
 			<div class="flex justify-center flex-wrap gap-2 p-8">
-				{#each Locations as location}
-					<NavButton
-						href={location.href}
-						icon={location.icon}
-						label={location.label}
-						disabled={false}
-					/>
+				{#each routes as route}
+					<NavButton href={route.href} icon={route.icon} label={route.label} disabled={false} />
 				{/each}
 			</div>
 		</div>

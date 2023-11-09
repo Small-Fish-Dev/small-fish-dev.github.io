@@ -1,20 +1,41 @@
 <script lang="ts">
+	import type { Route } from '$lib/types/Routes';
 	import { page } from '$app/stores';
-	import '../../app.css';
-	import { Locations } from '$lib/types/Location';
 	import NavButton from '$lib/components/Nav-Button.svelte';
+
+	const routes: Route[] = [
+		{
+			label: 'home',
+			icon: 'dashicons:admin-home',
+			href: '/'
+		},
+		{
+			label: 'our team',
+			icon: 'ic:sharp-sailing',
+			href: '/team'
+		},
+		{
+			label: 'blogs',
+			icon: 'ic:sharp-newspaper',
+			href: '/blogs'
+		},
+		{
+			label: 'projects',
+			icon: 'material-symbols:videogame-asset',
+			href: '/projects'
+		}
+	];
 </script>
 
 <nav
 	class="sticky top-0 width w-screen bg-blue flex flex-col p-2 justify-center md:flex-row shadow-[0_4px_20px_0px_#181c4c]"
 >
-	<NavButton href="/" icon="dashicons:admin-home" label="home" disabled={false} />
-	{#each Locations as location}
+	{#each routes as route}
 		<NavButton
-			href={location.href}
-			icon={location.icon}
-			label={location.label}
-			disabled={$page.url.pathname == location.href}
+			href={route.href}
+			icon={route.icon}
+			label={route.label}
+			disabled={$page.url.pathname == route.href}
 		/>
 	{/each}
 </nav>
