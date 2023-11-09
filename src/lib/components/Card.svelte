@@ -13,7 +13,7 @@
 		<div
 			class="flex lg:flex-grow md:w-1/2 flex flex-col md:items-start md:text-left md:mb-0 items-center text-center"
 		>
-			<h1 class="box-shadow font-medium text-white bg-blue p-4 sm:text-4xl text-3xl mb-4">
+			<h1 class="shadow-md font-medium text-white bg-blue p-4 sm:text-4xl text-3xl mb-4">
 				{title}
 			</h1>
 			<p class="text-xl mb-8 leading-relaxed">{description}</p>
@@ -28,10 +28,6 @@
 </section>
 
 <style>
-	.box-shadow {
-		box-shadow: 8px 8px black;
-	}
-
 	img {
 		transform: rotate3d(0, 1, 0, 15deg);
 	}

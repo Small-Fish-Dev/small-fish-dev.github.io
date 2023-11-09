@@ -11,6 +11,10 @@ export default {
 		extend: {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif']
+			},
+			boxShadow: {
+				sm: '4px 4px black',
+				md: '8px 8px black'
 			}
 		}
 	},
