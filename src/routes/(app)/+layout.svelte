@@ -1,9 +1,8 @@
 <script lang="ts">
-	import type { Route } from '$lib/types/Routes';
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
 
-	const routes: Route[] = [
+	const routes: App.Route[] = [
 		{
 			label: 'home',
 			icon: 'dashicons:admin-home',

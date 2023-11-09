@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { Route } from '$lib/types/Routes';
 	import NavButton from '$lib/components/Nav-Button.svelte';
 	import Card from '$lib/components/Card.svelte';
 
 	// You can use icons from https://icones.js.org/
-	const routes: Route[] = [
+	const routes: App.Route[] = [
 		{
 			label: 'our team',
 			icon: 'ic:sharp-sailing',
