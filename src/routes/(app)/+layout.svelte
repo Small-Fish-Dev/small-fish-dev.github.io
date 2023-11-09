@@ -18,3 +18,6 @@
 </nav>
 
 <slot />
+
+<style>
+</style>
