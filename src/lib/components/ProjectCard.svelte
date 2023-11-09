@@ -16,9 +16,7 @@
 	<p class="mt-5 text-xl w-3/4">Contributors</p>
 	<div class="flex-row">
 		{#each project.contributors as contributor}
-			<a href="javascript:;" class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0"
-				>{contributor}</a
-			>
+			<a href="/" class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0">{contributor}</a>
 		{/each}
 	</div>
 </div>
