@@ -23,10 +23,7 @@ declare global {
 		interface BlogPost {
 			slug: string;
 			title: string;
-			author: string;
-			description: string;
 			date: string;
-			published: boolean;
 		}
 	}
 }

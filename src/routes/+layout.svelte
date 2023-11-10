@@ -2,9 +2,11 @@
 	import '../app.css';
 </script>
 
-<slot />
+<div class="flex flex-col min-h-screen">
+	<slot />
+</div>
 
-<footer>
+<footer class="mt-auto">
 	<div class="bg-gradient-to-b from-white to-darkblue h-6" />
 	<div class="bg-darkblue overlay static-background" />
 	<div class="overlay moving-background" />

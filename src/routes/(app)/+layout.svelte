@@ -16,7 +16,7 @@
 		{
 			label: 'blogs',
 			icon: 'ic:sharp-newspaper',
-			href: '/blogs'
+			href: '/blog'
 		},
 		{
 			label: 'projects',

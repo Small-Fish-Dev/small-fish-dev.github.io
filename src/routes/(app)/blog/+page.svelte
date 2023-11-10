@@ -1,13 +1,22 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 </script>
 
-{#each data.posts as { slug, title, author, description, date }}
-	<div class="mb-20">
-		<p>{slug} {title}</p>
-		<p>{author} {date}</p>
-		<p>{description} {slug}</p>
-	</div>
-{/each}
+<div class="flex flex-col gap-10 mx-auto px-4 py-20">
+	{#each data.posts as { slug, title, date }}
+		<a href="/blog/{slug}" class="transition-all hover:scale-110 font-poppins">
+			<p class="text-4xl font-medium underline">{title}</p>
+			<div class="flex items-center text-xl">
+				<Icon icon="ic:baseline-calendar-today" class="mr-1" />
+				{new Date(date).toLocaleString('en-us', {
+					month: 'short',
+					day: 'numeric',
+					year: 'numeric'
+				})}
+			</div>
+		</a>
+	{/each}
+</div>

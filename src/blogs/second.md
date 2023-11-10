@@ -1,9 +1,6 @@
 ---
-title: 'Second blog post'
-description: 'This is the desc'
-author: 'Author'
-date: '2021-05-03'
-published: true
+title: 'Second Post'
+date: '2023-05-03'
 ---
 
 Hey this is some text
