@@ -14,5 +14,8 @@ export const load: PageServerLoad = async ({ url }) => {
 		)
 	);
 
-	return { posts: await Promise.all(postPromises) };
+	const posts = await Promise.all(postPromises);
+	posts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
+
+	return { posts: posts };
 };
