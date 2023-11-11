@@ -1,5 +1,8 @@
 import type { EntryGenerator } from './$types';
-import { SlugFromPath } from '$lib/slugFromPath';
+
+function slugFromPath(path: string) {
+	return path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null;
+}
 
 export const entries: EntryGenerator = async () => {
 	const modules = import.meta.glob(`/src/blogs/*.{md,svx,svelte.md}`);
@@ -7,7 +10,7 @@ export const entries: EntryGenerator = async () => {
 		resolver().then(
 			(post) =>
 				({
-					slug: SlugFromPath(path),
+					slug: slugFromPath(path),
 					...(post as unknown as App.MdsvexFile).metadata
 				}) as App.BlogPost
 		)
