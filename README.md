@@ -11,7 +11,6 @@ The SmallFish website is created using [SvelteKit](https://kit.svelte.dev/) and 
 ```
 npm install
 npm run dev
-// The site should be running and hosted on a local port
 ```
 
 ## Adding Blog Posts
