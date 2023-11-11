@@ -37,5 +37,15 @@ You can use `<Video src="path" />` to embed locally stored videos.
 
 #### YouTube
 
-You can `<Youtube id="<video_id>" />` to embed YouTube videos.
+You can use `<Youtube id="<video_id>" />` to embed YouTube videos.
 <Youtube id="3-TrbOxmK08" />
+
+## Twitter
+
+You can `<Twitter id="<name/status/id>" />` to embed Tweets.
+<Twitter id="naven0m/status/1705531799277801668" />
+
+## Spotify
+
+You can `<Spotify src="<track_link>" />` to embed songs.
+<Spotify src="track/4F4TGsDYacEbw4PLAIyJ2e?si=ce064389dbbd4fb7"/>
