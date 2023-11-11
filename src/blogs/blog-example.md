@@ -39,5 +39,3 @@ You can use `<Video src="path" />` to embed locally stored videos.
 
 You can `<Youtube id="<video_id>" />` to embed YouTube videos.
 <Youtube id="3-TrbOxmK08" />
-
-### X

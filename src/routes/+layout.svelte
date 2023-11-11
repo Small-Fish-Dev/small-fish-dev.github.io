@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import '../syntax-highlight.css'; // https://github.com/PrismJS/prism-themes
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
 
