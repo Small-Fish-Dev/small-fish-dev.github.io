@@ -1,7 +1,7 @@
 ---
 title: 'Example Blog'
 date: '2021-11-10'
-published: false
+published: true
 ---
 
 This blog post serves as an example of how to create a blog post for this website.
