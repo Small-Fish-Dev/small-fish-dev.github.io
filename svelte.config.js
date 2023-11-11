@@ -20,7 +20,8 @@ const config = {
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
 				throw new Error(message);
-			}
+			},
+			entries: []
 		}
 	},
 	extensions: ['.svelte', '.md'],
