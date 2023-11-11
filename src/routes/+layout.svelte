@@ -34,7 +34,7 @@
 			href={route.href}
 			icon={route.icon}
 			label={route.label}
-			invertColors={false}
+			invertColors={$page.url.pathname != '/'}
 			disabled={$page.url.pathname == route.href}
 		/>
 	{/each}

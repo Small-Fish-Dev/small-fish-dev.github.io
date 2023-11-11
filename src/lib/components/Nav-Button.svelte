@@ -17,7 +17,7 @@
 		   {invertColors ? 'text-blue' : 'text-white'}
 		   {invertColors ? 'hover:text-white' : 'hover:text-blue'}
 		   {invertColors ? 'hover:bg-blue' : 'hover:bg-white'}
-		   {disabled ? 'opacity-50 pointer-events-none' : ''}"
+		   {disabled ? 'opacity-75 pointer-events-none' : ''}"
 >
 	<Icon {icon} class="text-4xl mr-2" />
 	<p>{label}</p>
