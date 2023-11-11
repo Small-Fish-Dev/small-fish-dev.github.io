@@ -1,25 +1,5 @@
 <script lang="ts">
-	import NavButton from '$lib/components/Nav-Button.svelte';
 	import Card from '$lib/components/Card.svelte';
-
-	// You can use icons from https://icones.js.org/
-	const routes: App.Route[] = [
-		{
-			label: 'our team',
-			icon: 'ic:sharp-sailing',
-			href: '/team'
-		},
-		{
-			label: 'blogs',
-			icon: 'ic:sharp-newspaper',
-			href: '/blog'
-		},
-		{
-			label: 'projects',
-			icon: 'material-symbols:videogame-asset',
-			href: '/projects'
-		}
-	];
 </script>
 
 <div>
@@ -29,9 +9,9 @@
 		<div class="relative z-30 max-w-3xl">
 			<img src="home/header-logo.png" alt="Small Fish Logo" />
 			<div class="flex justify-center flex-wrap gap-2 p-8">
-				{#each routes as route}
-					<NavButton href={route.href} icon={route.icon} label={route.label} disabled={false} />
-				{/each}
+				<p class="font-poppins text-2xl text-center text-white font-medium">
+					We make great games or something
+				</p>
 			</div>
 		</div>
 

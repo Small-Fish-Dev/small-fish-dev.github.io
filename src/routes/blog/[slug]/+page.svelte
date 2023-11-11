@@ -8,9 +8,7 @@
 	$: component = data.component as unknown as C;
 </script>
 
-<article
-	class="font-poppins prose prose-stone prose-h1:m-0 lg:prose-xl container mx-auto px-4 py-8"
->
+<article class="font-poppins prose prose-h1:m-0 lg:prose-xl container mx-auto px-4 py-40">
 	<h1>{data.frontmatter.title}</h1>
 	<div class="flex items-center text-xl">
 		<Icon icon="ic:baseline-calendar-today" class="mr-1" />
