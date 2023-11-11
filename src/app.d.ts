@@ -24,6 +24,7 @@ declare global {
 			slug: string;
 			title: string;
 			date: string;
+			published: boolean;
 		}
 	}
 }

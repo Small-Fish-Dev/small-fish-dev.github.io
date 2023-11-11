@@ -1,12 +1,13 @@
 ---
 title: 'Example Blog'
 date: '2021-11-10'
+published: false
 ---
 
 This blog post serves as an example of how to create a blog post for this website.
 
 1. Create a new `.md` file inside of this directory `src/blogs/`
-2. Make sure at the top you have included a title and date similar to lines 1-4 of this post
+2. Make sure at the top of your new `.md` file you have included a title, date, and enabled published similar to lines 1-5 of this post
 3. From there you can simply write normal [markdown](https://www.markdownguide.org/cheat-sheet/)
 
 ## Code
