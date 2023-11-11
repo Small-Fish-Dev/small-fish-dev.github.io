@@ -1,4 +1,5 @@
 import type { PageServerLoad } from './$types';
+import { slugFromPath } from '$lib/utils/SlugFromPath';
 
 export const load: PageServerLoad = async ({ url }) => {
 	const modules = import.meta.glob(`/src/blogs/*.{md,svx,svelte.md}`);
@@ -7,7 +8,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		resolver().then(
 			(post) =>
 				({
-					slug: path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null,
+					slug: slugFromPath(path),
 					...(post as unknown as App.MdsvexFile).metadata
 				}) as App.BlogPost
 		)
