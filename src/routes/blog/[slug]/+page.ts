@@ -1,5 +1,4 @@
 import type { PageLoad } from './$types';
-import { SlugFromPath } from '$lib/slugFromPath';
 import { error } from '@sveltejs/kit';
 
 export const load: PageLoad = async ({ params }) => {
@@ -7,7 +6,7 @@ export const load: PageLoad = async ({ params }) => {
 
 	let match: { path?: string; resolver?: App.MdsvexResolver } = {};
 	for (const [path, resolver] of Object.entries(modules)) {
-		if (SlugFromPath(path) === params.slug) {
+		if ((path.match(/([\w-]+)\.(svelte\.md|md|svx)/i)?.[1] ?? null) === params.slug) {
 			match = { path, resolver: resolver as unknown as App.MdsvexResolver };
 			break;
 		}
