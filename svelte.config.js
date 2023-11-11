@@ -19,10 +19,6 @@ const config = {
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
-				if (path === '/not-found') {
-					return;
-				}
-
 				throw new Error(message);
 			}
 		}
