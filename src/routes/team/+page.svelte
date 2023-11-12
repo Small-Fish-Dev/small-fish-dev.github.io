@@ -1,28 +1,44 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { panzoom, type Options, type Point } from 'svelte-pan-zoom';
 
-	const promise = new Promise<Options>((resolve) => {
-		const image = new Image();
+	let canvas: any;
+	let mapImage: any;
+	let pin: any;
 
-		image.onload = () =>
+	const promise = new Promise<Options>((resolve) => {
+		mapImage = new Image();
+		mapImage.src = 'team/pxmap.png';
+
+		pin = new Image();
+		pin.src = 'team/pin.png';
+
+		mapImage.onload = () =>
 			resolve({
-				width: image.width,
-				height: image.height,
+				width: mapImage.width,
+				height: mapImage.height,
 				render,
 				friction: 0.95
 			});
-		image.src = 'team/pxmap.png';
 
-		function render(ctx: CanvasRenderingContext2D, _t: number, _focus: Point) {
-			ctx.imageSmoothingEnabled = false;
-			ctx.drawImage(image, 0, 0);
+		function render(context: CanvasRenderingContext2D, _t: number, _focus: Point) {
+			context.imageSmoothingEnabled = false;
+			context.drawImage(mapImage, 0, 0);
+			context.drawImage(pin, 75, 75);
 		}
 	});
+
+	function onPointerClick(event: PointerEvent) {}
 </script>
 
 <div class="h-screen w-full">
 	{#await promise then options}
-		<canvas use:panzoom={options} class="bg-[url('/team/pxgrid.png')] h-full w-full" />
+		<canvas
+			bind:this={canvas}
+			on:pointerdown={onPointerClick}
+			use:panzoom={options}
+			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
+		/>
 	{/await}
 </div>
 

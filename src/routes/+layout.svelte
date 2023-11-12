@@ -28,13 +28,14 @@
 	];
 </script>
 
+<!-- TODO: Handle invert of colours -->
 <nav class="absolute flex w-full justify-end items-end flex-col md:flex-row z-50 md:pt-10 md:pr-20">
 	{#each routes as route}
 		<NavButton
 			href={route.href}
 			icon={route.icon}
 			label={route.label}
-			invertColors={$page.url.pathname != '/'}
+			invertColors={$page.url.pathname != '/' && $page.url.pathname != '/team'}
 			disabled={$page.url.pathname == route.href}
 		/>
 	{/each}
