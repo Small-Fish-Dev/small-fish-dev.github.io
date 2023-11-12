@@ -9,6 +9,7 @@
 	let small = 10;
 	let clicked = 20;
 	let isClicked = false;
+	let lastClicked: any;
 
 	const images = [
 		{
@@ -67,6 +68,7 @@
 		if (!ctx) return;
 
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		lastClicked = cursorPosition;
 
 		if (
 			cursorPosition.x > 50 &&
@@ -80,6 +82,9 @@
 </script>
 
 <div class="h-screen w-full">
+	<div class="absolute">
+		<p class="text-4xl text-white">{lastClicked?.x}, {lastClicked?.y}</p>
+	</div>
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
