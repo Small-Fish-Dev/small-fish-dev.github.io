@@ -21,13 +21,12 @@
 
 <div class="h-screen w-full">
 	{#await promise then options}
-		<canvas use:panzoom={options} class="h-full w-full" />
+		<canvas use:panzoom={options} class="bg-[url('/team/pxgrid.png')] h-full w-full" />
 	{/await}
 </div>
 
 <style>
 	canvas {
-		background-image: url('team/pxgrid.png');
 		box-sizing: border-box;
 		user-select: none;
 		touch-action: none;
