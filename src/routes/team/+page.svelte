@@ -83,7 +83,8 @@
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
-			on:click={onPointerClick}
+			on:pointerdown={onPointerClick}
+			on:touchstart={onPointerClick}
 			use:panzoom={options}
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
 		/>
