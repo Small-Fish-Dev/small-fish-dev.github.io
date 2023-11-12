@@ -67,7 +67,7 @@
 	function onPointerClick(event: any) {
 		if (!ctx) return;
 
-		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		const cursorPosition = getTransformedPoint(event.clientX, event.clientY);
 		lastClicked = cursorPosition;
 
 		if (
@@ -89,7 +89,6 @@
 		<canvas
 			bind:this={canvas}
 			on:pointerdown={onPointerClick}
-			on:touchstart={onPointerClick}
 			use:panzoom={options}
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
 		/>
