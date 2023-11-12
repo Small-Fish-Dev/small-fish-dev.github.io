@@ -8,13 +8,14 @@
 			resolve({
 				width: image.width,
 				height: image.height,
-				render
+				render,
+				friction: 0.95
 			});
 		image.src = 'team/pxmap.png';
 
 		function render(ctx: CanvasRenderingContext2D, _t: number, _focus: Point) {
-			ctx.drawImage(image, 0, 0);
 			ctx.imageSmoothingEnabled = false;
+			ctx.drawImage(image, 0, 0);
 		}
 	});
 </script>
