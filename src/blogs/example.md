@@ -29,11 +29,11 @@ I've written up a few components that allow you to embed media into your blog po
 
 ### Images
 
-You can use `<Image src=""ex.png"" />` to embed locally stored images.
-<Image src="ex.png" />
+You can use `<Img src=""ex.png"" />` to embed locally stored images.
+<Img src="ex.png" />
 
 You can also use the same component to embed images from the web.
-<Image src="https://upload.wikimedia.org/wikipedia/en/3/31/Dota_2_Steam_artwork.jpg" />
+<Img src="https://upload.wikimedia.org/wikipedia/en/3/31/Dota_2_Steam_artwork.jpg" />
 
 ### Video
 

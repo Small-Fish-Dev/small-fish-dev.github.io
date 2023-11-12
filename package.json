@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"mdsvex-relative-images": "^1.0.3"
+		"mdsvex-relative-images": "^1.0.3",
+		"svelte-pan-zoom": "^0.0.11"
 	}
 }
