@@ -1,10 +1,34 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { panzoom, type Options, type Point } from 'svelte-pan-zoom';
+	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 
 	let canvas: any;
 	let mapImage: any;
 	let pin: any;
+	let ctx: any;
+
+	let small = 10;
+	let clicked = 20;
+	let isClicked = false;
+
+	const images = [
+		{
+			source: 'team/pxmap.png',
+			x: 0,
+			y: 0,
+			width: 25,
+			height: 25,
+			type: 'map'
+		},
+		{
+			source: 'team/pin.png',
+			x: 0,
+			y: 0,
+			width: 25,
+			height: 25,
+			type: 'pin'
+		}
+		// Add more images as needed
+	];
 
 	const promise = new Promise<Options>((resolve) => {
 		mapImage = new Image();
@@ -12,6 +36,8 @@
 
 		pin = new Image();
 		pin.src = 'team/pin.png';
+		pin.style.opacity = '0.2';
+		pin.style.class = 'hello';
 
 		mapImage.onload = () =>
 			resolve({
@@ -22,13 +48,33 @@
 			});
 
 		function render(context: CanvasRenderingContext2D, _t: number, _focus: Point) {
+			ctx = context;
 			context.imageSmoothingEnabled = false;
 			context.drawImage(mapImage, 0, 0);
-			context.drawImage(pin, 75, 75);
+
+			if (!isClicked) context.drawImage(pin, 50, 50, 10, 10);
 		}
 	});
 
-	function onPointerClick(event: PointerEvent) {}
+	function getTransformedPoint(x: any, y: any) {
+		const originalPoint = new DOMPoint(x, y);
+		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
+	}
+
+	function onPointerClick(event: PointerEvent) {
+		if (!ctx) return;
+
+		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+
+		if (
+			cursorPosition.x > 50 &&
+			cursorPosition.x <= 60 &&
+			cursorPosition.y > 50 &&
+			cursorPosition.y <= 60
+		) {
+			isClicked = !isClicked;
+		}
+	}
 </script>
 
 <div class="h-screen w-full">
@@ -45,10 +91,5 @@
 <style>
 	canvas {
 		box-sizing: border-box;
-		user-select: none;
-		touch-action: none;
-		overscroll-behavior: none;
-		-webkit-user-select: none;
-		-webkit-touch-callout: none;
 	}
 </style>
