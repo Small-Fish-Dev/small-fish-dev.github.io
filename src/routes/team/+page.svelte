@@ -31,6 +31,8 @@
 	];
 
 	const promise = new Promise<Options>((resolve) => {
+		canvas;
+
 		mapImage = new Image();
 		mapImage.src = 'team/pxmap.png';
 
@@ -61,7 +63,7 @@
 		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
-	function onPointerClick(event: PointerEvent) {
+	function onPointerClick(event: any) {
 		if (!ctx) return;
 
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
@@ -81,7 +83,7 @@
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
-			on:pointerdown={onPointerClick}
+			on:click={onPointerClick}
 			use:panzoom={options}
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
 		/>
