@@ -11,10 +11,10 @@
 				render
 			});
 		image.src = 'team/pxmap.png';
-		image.style.imageRendering = 'pixelated';
 
 		function render(ctx: CanvasRenderingContext2D, _t: number, _focus: Point) {
 			ctx.drawImage(image, 0, 0);
+			ctx.imageSmoothingEnabled = false;
 		}
 	});
 </script>
