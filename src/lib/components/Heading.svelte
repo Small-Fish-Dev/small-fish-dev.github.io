@@ -5,7 +5,9 @@
 </script>
 
 <div>
-	<svelte:element this={h} class:caption>{title}</svelte:element>
+	<a href={`#${title}`}>
+		<svelte:element this={h} id={title} class:caption>{title}</svelte:element></a
+	>
 	{#if caption}
 		<p>{caption}</p>
 	{/if}
@@ -14,5 +16,9 @@
 <style>
 	.caption {
 		margin-bottom: 0px;
+	}
+
+	p {
+		margin-top: 0px;
 	}
 </style>
