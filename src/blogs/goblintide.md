@@ -13,12 +13,13 @@ Gio!
 
 This time around the theme was alot more creative!
 
-"Gangs" 
+"Gangs"
 
 With this it mentioned groups of induviduals, and so on, so even more freedom than just a gang.
 So we decided to go wild with the way we will use that theme...
 
-## Wait... Goblins?
+<Heading title="Wait... Goblins?" />
+
 Goblins. Its genius, who would expect goblins!
 
 The idea here is you are a goblin king, you raid vilalgers to get resources to expand your goblin army, and keep raiding more and more, getting more and more resoureces to become to greatest goblin king!
@@ -28,15 +29,17 @@ but this seemed to have confused people greatley, and people thought they had to
 
 woops....
 
-## Clothes and Props - Luke
+<Heading title="Clothes and Props" caption="By Luke" />
+
 The npcs i wanted to actually look like villagers, so i actually made some clothes and some variations of them to make our lovely npcs fit into their little villages!
 
 <Img src="clothing.png" />
 
-Also i threw together all the destructable props and weapons within the game! 
+Also i threw together all the destructable props and weapons within the game!
 These models are alot more detailed compared to the previous jams, so i am proud of how they look!
 
-## Particles - Luke
+<Heading title="Particles" caption="By Luke" />
+
 I threw together some nice particles for breaking props, and setting things on fire.
 also a magic wand particle!
 
@@ -44,7 +47,8 @@ also a magic wand particle!
 
 these are pretty simple but every game needs particles!!!
 
-## Voicelines - Luke
+<Heading title="Voicelines" caption="By Luke" />
+
 Those annoying screaming villagers... They are me... They are all british men making random gibberish noises...
 
 I also did some quick tutorial narration voice lines, since i didnt want the game to be too confusing!

@@ -8,8 +8,8 @@
 	$: component = data.component as unknown as C;
 </script>
 
-<article class="font-poppins prose prose-h1:m-0 lg:prose-xl container mx-auto px-4 py-40">
-	<h1>{data.frontmatter.title}</h1>
+<article class="font-poppins prose lg:prose-xl container mx-auto px-4 py-40">
+	<h1 style="margin-bottom: 5px;">{data.frontmatter.title}</h1>
 	<div class="flex items-center text-xl">
 		<Icon icon="ic:baseline-calendar-today" class="mr-1" />
 		{new Date(data.frontmatter.date).toLocaleString('en-us', {

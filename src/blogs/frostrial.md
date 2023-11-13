@@ -4,8 +4,6 @@ date: '2022-1-1'
 published: true
 ---
 
-## Fist ever Gamejam
-
 We finished our first ever game jam while also become a team of devs!
 
 The theme was "Winter" which for a winter based jam was... idk kinda too easy and too bland, but we came up with a creative idea!
@@ -17,15 +15,17 @@ We also managed to reel in a extra bonus ceitine right at the end!
 
 +3 developers!
 
-## The Game?
+<Heading title="The Game?" />
 
 The premise is you are trapped in a frozen wasteland (Finland) on the edge of a frozen lake, wanting to escape you risk your life.
 drilling holes in the ice and fishing to sell fish for money, hoping to buy a plane ticket to escape.
 You can buy upgrades along the way to help you survive!
 
-## PostProcessing - Luke
+<Heading title="PostProcessing" caption="By Luke" />
+
 I threw together a dynamic freezing shader.
 with a few layered effects.
+
 - Edge of screen ice buildup
 - colours fading away to grey
 - bluring
@@ -36,7 +36,8 @@ these 3 effects will slowly creep in when you set a freezing value on the shader
 
 This is a really nice visual indicator of how cold you are and how much more cold you can withstand before you lose.
 
-## Props and Clothing - Luke
+<Heading title="Props and Clothing" caption="By Luke" />
+
 I really wanted custom clothing.
 
 No game up to this point has done custom clothing, so i threw together some basic clothes that could be recoloured.
@@ -47,9 +48,11 @@ I also dealt with a any props and hard surface models, be that the fishing rods,
 these were all quick and easy pushed out models.
 <Img src="props.png" />
 
-## Particles - Luke / Ubre
+<Heading title="Particles" caption="By Luke and Ubre" />
+
 Every good games needs some particles.
-So I (Luke) quickly threw together some 
+So I (Luke) quickly threw together some
+
 - water particles
 - nice stinky and flies particles ( this will help you to find tiny fish you might not be able to notice! )
 
