@@ -44,14 +44,11 @@
 	function onPointerClick(event: PointerEvent) {
 		if (!ctx) return;
 
-		const cursorPosition = getTransformedPoint(event.clientX, event.clientY);
+		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		const x = cursorPosition.x;
+		const y = cursorPosition.y;
 
-		if (
-			cursorPosition.x > 50 &&
-			cursorPosition.x <= 60 &&
-			cursorPosition.y > 50 &&
-			cursorPosition.y <= 60
-		) {
+		if (x > 50 && x <= 60 && y > 50 && y <= 60) {
 			isClicked = !isClicked;
 		}
 	}
