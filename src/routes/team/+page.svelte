@@ -6,15 +6,7 @@
 	let pin: any;
 	let ctx: any;
 
-	let small = 10;
-	let clicked = 20;
 	let isClicked = false;
-	let lastClicked: any;
-
-	let v1: any;
-	let v2: any;
-	let v3: any;
-	let v4: any;
 
 	const promise = new Promise<Options>((resolve) => {
 		canvas;
@@ -46,21 +38,13 @@
 
 	function getTransformedPoint(x: any, y: any) {
 		const originalPoint = new DOMPoint(x, y);
-
-		v1 = ctx.getTransform();
-
-		v2 = v1.invertSelf();
-
-		v3 = v2.transformPoint(originalPoint);
-
-		return v3;
+		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
-	function onPointerClick(event: any) {
+	function onPointerClick(event: PointerEvent) {
 		if (!ctx) return;
 
 		const cursorPosition = getTransformedPoint(event.clientX, event.clientY);
-		lastClicked = cursorPosition;
 
 		if (
 			cursorPosition.x > 50 &&
@@ -74,11 +58,6 @@
 </script>
 
 <div class="h-screen w-full">
-	<div class="absolute">
-		<p class="text-xl text-white">{v1}</p>
-		<p class="text-xl text-white">{v2}</p>
-		<p class="text-xl text-white">{v3?.x} {v3?.y}</p>
-	</div>
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
