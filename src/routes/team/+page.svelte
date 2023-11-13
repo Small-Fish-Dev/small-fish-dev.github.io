@@ -37,7 +37,8 @@
 	});
 
 	function getTransformedPoint(x: any, y: any) {
-		const originalPoint = new DOMPoint(x, y);
+		const devicePixelRatio = window.devicePixelRatio || 1;
+		const originalPoint = new DOMPoint(x * devicePixelRatio, y * devicePixelRatio);
 		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
