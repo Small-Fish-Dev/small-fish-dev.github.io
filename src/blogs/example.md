@@ -25,7 +25,7 @@ public partial class Lord : BaseCharacter
 
 <Heading title="Headings" caption="By matek" />
 
-THere is a custom header element you should be using instead of `## My Header`. Here are a few examples of usage...
+There is a custom header element you should be using instead of `## My Header`. Here are a few examples of usage...
 
 - `<Heading title="Media" />`
 - `<Heading title="Media" caption="By Luke" />`
@@ -33,7 +33,7 @@ THere is a custom header element you should be using instead of `## My Header`. 
 
 You can add a caption to a heading by simply following the example above.
 
-The `h="h3"` parameter allows you to change the size of the heading. By default it will use `h="h2"` because the main title of the blog uses `h="h1"`.
+The `h="h3"` parameter allows you to change the size of the heading. By default it will use `h="h2"` because the main title of the blog uses `h="h1"`. h1 -> h4 in terms of text size.
 
 <Heading title="Media" />
 
