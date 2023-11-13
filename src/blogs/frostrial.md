@@ -8,6 +8,8 @@ published: true
 
 We finished our first ever game jam while also become a team of devs!
 
+The theme was "Winter" which for a winter based jam was... idk kinda too easy and too bland, but we came up with a creative idea!
+
 Although smallfish was just Ubre and Grobert, during this gamejam hosted by - PERSON,
 
 Luke(NotGaylien) and rndtrash joined and with a extra artist and programmer, we managed to smash out a full unique game!
