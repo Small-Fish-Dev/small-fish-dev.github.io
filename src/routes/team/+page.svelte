@@ -11,25 +11,10 @@
 	let isClicked = false;
 	let lastClicked: any;
 
-	const images = [
-		{
-			source: 'team/pxmap.png',
-			x: 0,
-			y: 0,
-			width: 25,
-			height: 25,
-			type: 'map'
-		},
-		{
-			source: 'team/pin.png',
-			x: 0,
-			y: 0,
-			width: 25,
-			height: 25,
-			type: 'pin'
-		}
-		// Add more images as needed
-	];
+	let v1: any;
+	let v2: any;
+	let v3: any;
+	let v4: any;
 
 	const promise = new Promise<Options>((resolve) => {
 		canvas;
@@ -61,7 +46,14 @@
 
 	function getTransformedPoint(x: any, y: any) {
 		const originalPoint = new DOMPoint(x, y);
-		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
+
+		v1 = ctx.getTransform();
+
+		v2 = v1.invertSelf();
+
+		v3 = v2.transformPoint(originalPoint);
+
+		return v3;
 	}
 
 	function onPointerClick(event: any) {
@@ -83,7 +75,9 @@
 
 <div class="h-screen w-full">
 	<div class="absolute">
-		<p class="text-4xl text-white">{lastClicked?.x}, {lastClicked?.y}</p>
+		<p class="text-xl text-white">{v1}</p>
+		<p class="text-xl text-white">{v2}</p>
+		<p class="text-xl text-white">{v3?.x} {v3?.y}</p>
 	</div>
 	{#await promise then options}
 		<canvas
