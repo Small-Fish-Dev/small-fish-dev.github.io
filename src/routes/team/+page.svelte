@@ -55,8 +55,8 @@
 
 			pins.forEach((pin) => {
 				pin.size = !pin.isHovered
-					? lerp(pin.size, defaultPinSize, 0.25)
-					: lerp(pin.size, defaultPinSize * 1.25, 0.25);
+					? lerp(pin.size, defaultPinSize, 0.3)
+					: lerp(pin.size, defaultPinSize * 1.25, 0.3);
 
 				if (pin.isHovered) {
 					context.drawImage(
@@ -105,8 +105,13 @@
 	function onPointerClick(event: PointerEvent) {
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
 		checkActive(cursorPosition);
-		if (activePin) tryOpenCard(activePin.member.name);
-		else tryOpenCard();
+		if (activePin) {
+			tryOpenCard(activePin.member.name);
+			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
+			activePin.size *= 0.75;
+		} else {
+			tryOpenCard();
+		}
 	}
 
 	function onPointerMove(event: PointerEvent) {
