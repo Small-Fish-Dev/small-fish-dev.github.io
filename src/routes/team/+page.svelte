@@ -119,7 +119,21 @@
 </div>
 
 <style>
+	@keyframes scroll {
+		0% {
+			background-position-x: 0%;
+			background-position-y: 0%;
+		}
+		100% {
+			background-position-x: 100%;
+			background-position-y: 100%;
+		}
+	}
+
 	canvas {
 		box-sizing: border-box;
+		animation: scroll;
+		animation-duration: 60s;
+		animation-iteration-count: infinite;
 	}
 </style>

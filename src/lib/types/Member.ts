@@ -56,14 +56,14 @@ export const Members: Member[] = [
 	// rndtrash
 	{
 		name: 'rndtrash',
-		pin: { x: 412, y: 55 },
+		pin: { x: 389, y: 81 },
 		country: Countries.Russia
 	},
 
 	// wheatleymf
 	{
 		name: 'wheatleymf',
-		pin: { x: 382, y: 50 },
+		pin: { x: 365, y: 45 },
 		country: Countries.Russia
 	},
 
