@@ -21,7 +21,12 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		})
+		}),
+		prerender: {
+			handleMissingId: ({ event, resolve }) => {
+				return;
+			}
+		}
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)]
