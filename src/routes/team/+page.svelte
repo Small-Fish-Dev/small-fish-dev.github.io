@@ -105,6 +105,9 @@
 	}
 
 	function onPointerClick(event: PointerEvent) {
+		// If not left click, or not using a touch screen bail out.
+		if (event.button !== 0 && event.pointerType !== 'touch') return;
+
 		activePin = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
 
 		if (activePin) {

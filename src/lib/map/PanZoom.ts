@@ -172,6 +172,9 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	}
 
 	function onpointerdown(event: PointerEvent) {
+		// If not left click, or not using a touch screen bail out.
+		if (event.button !== 0 && event.pointerType !== 'touch') return;
+
 		event.stopPropagation();
 		canvas.setPointerCapture(event.pointerId);
 
