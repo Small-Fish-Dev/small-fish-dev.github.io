@@ -9,12 +9,13 @@
 
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
-	const pinSize = [10, 10];
+	const defaultPinSize = 10;
 
 	interface Pin {
 		image: HTMLImageElement;
 		member: Member;
 		isHovered: boolean;
+		size: number;
 	}
 
 	const promise = new Promise<Options>((resolve) => {
@@ -32,7 +33,8 @@
 			pins[count] = {
 				image: image,
 				member: member,
-				isHovered: false
+				isHovered: false,
+				size: defaultPinSize
 			};
 
 			count++;
@@ -52,24 +54,25 @@
 			context.drawImage(mapImage, 0, 0);
 
 			pins.forEach((pin) => {
+				pin.size = !pin.isHovered
+					? lerp(pin.size, defaultPinSize, 0.25)
+					: lerp(pin.size, defaultPinSize * 1.25, 0.25);
+
 				if (pin.isHovered) {
 					context.drawImage(
 						pin.image,
-						pin.member.point.x - (pinSize[0] * 0.25) / 2,
-						pin.member.point.y - (pinSize[0] * 0.25) / 2,
-						pinSize[0] * 1.25,
-						pinSize[1] * 1.25
+						pin.member.point.x - (defaultPinSize * 0.25) / 2,
+						pin.member.point.y - (defaultPinSize * 0.25) / 2,
+						pin.size,
+						pin.size
 					);
 				} else {
-					context.drawImage(
-						pin.image,
-						pin.member.point.x,
-						pin.member.point.y,
-						pinSize[0],
-						pinSize[1]
-					);
+					context.drawImage(pin.image, pin.member.point.x, pin.member.point.y, pin.size, pin.size);
 				}
 			});
+
+			// Force a render on each frame.
+			return true;
 		}
 
 		var hash = window.location.hash;
@@ -113,23 +116,31 @@
 	}
 
 	function checkActive(cursorPosition: Point) {
+		let foundActivePin = false;
+
 		for (let pin of pins) {
 			pin.isHovered = isHoveringPin(cursorPosition, pin);
 			if (pin.isHovered) {
 				activePin = pin;
-				break; // We can leave early once we found a pin.
+				foundActivePin = true;
 			}
-			activePin = null;
 		}
+
+		if (!foundActivePin) activePin = null;
 	}
 
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
 		return (
 			cursorPosition.x > pin.member.point.x &&
-			cursorPosition.x <= pin.member.point.x + pinSize[0] &&
+			cursorPosition.x <= pin.member.point.x + defaultPinSize &&
 			cursorPosition.y > pin.member.point.y &&
-			cursorPosition.y <= pin.member.point.y + pinSize[1]
+			cursorPosition.y <= pin.member.point.y + defaultPinSize
 		);
+	}
+
+	function lerp(start: number, end: number, t: number): number {
+		t = Math.max(0, Math.min(1, t));
+		return start + t * (end - start);
 	}
 </script>
 
