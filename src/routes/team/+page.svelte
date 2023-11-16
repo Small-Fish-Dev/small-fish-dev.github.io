@@ -58,17 +58,10 @@
 					? lerp(pin.size, defaultPinSize, 0.3)
 					: lerp(pin.size, defaultPinSize * 1.25, 0.3);
 
-				if (pin.isHovered) {
-					context.drawImage(
-						pin.image,
-						pin.member.point.x - (defaultPinSize * 0.25) / 2,
-						pin.member.point.y - (defaultPinSize * 0.25) / 2,
-						pin.size,
-						pin.size
-					);
-				} else {
-					context.drawImage(pin.image, pin.member.point.x, pin.member.point.y, pin.size, pin.size);
-				}
+				let x = pin.member.point.x + defaultPinSize / 2 - pin.size / 2;
+				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
+
+				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
 
 			// Force a render on each frame.
