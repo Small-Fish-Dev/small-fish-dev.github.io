@@ -14,7 +14,6 @@
 	interface Pin {
 		image: any;
 		point: Point;
-		isActive: boolean;
 		isHovered: boolean;
 	}
 
@@ -33,7 +32,6 @@
 			pins[count] = {
 				image: image,
 				point: member.pin,
-				isActive: false,
 				isHovered: false
 			};
 
@@ -57,8 +55,8 @@
 				if (pin.isHovered) {
 					context.drawImage(
 						pin.image,
-						pin.point.x,
-						pin.point.y,
+						pin.point.x - (pinSize[0] * 0.25) / 2,
+						pin.point.y - (pinSize[0] * 0.25) / 2,
 						pinSize[0] * 1.25,
 						pinSize[1] * 1.25
 					);
@@ -76,13 +74,18 @@
 	}
 
 	function onPointerClick(event: PointerEvent) {
+		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		checkActive(cursorPosition);
 		if (activePin) console.log('We clicked', activePin);
 	}
 
 	function onPointerMove(event: PointerEvent) {
 		if (!ctx) return;
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		checkActive(cursorPosition);
+	}
 
+	function checkActive(cursorPosition: Point) {
 		for (let pin of pins) {
 			pin.isHovered = isHoveringPin(cursorPosition, pin);
 			if (pin.isHovered) {
