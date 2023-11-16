@@ -94,11 +94,12 @@
 		if (name == null) {
 			window.location.hash = '';
 			member = null;
+			activePin = null;
 
 			return;
 		}
 
-		var target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
+		let target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
 		if (target == null) return;
 
 		window.location.hash = `#${target.name}`;
@@ -115,8 +116,6 @@
 			tryOpenCard(activePin.member.name);
 			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
 			activePin.size *= 0.75;
-		} else {
-			tryOpenCard();
 		}
 	}
 
