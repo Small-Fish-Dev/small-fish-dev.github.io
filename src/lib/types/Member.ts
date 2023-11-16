@@ -1,9 +1,10 @@
 import { Languages, Software, Countries } from './MemberInfo';
+import type { Point } from '$lib/map/PanZoom';
 
 export interface Member {
 	name: string;
 	country: string;
-	pin: [number, number];
+	pin: Point;
 	description?: string;
 	skills?: string[];
 	socials?: string[];
@@ -13,7 +14,7 @@ export const Members: Member[] = [
 	// ceitine
 	{
 		name: 'ceitine',
-		pin: [352, 38],
+		pin: { x: 352, y: 38 },
 		country: Countries.Finland,
 		skills: [
 			Languages.CSharp,

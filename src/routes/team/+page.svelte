@@ -3,15 +3,20 @@
 	import { Countries } from '$lib/types/MemberInfo';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 
-	const flagSize = [10, 10];
-
 	let canvas: any;
 	let mapImage: any;
 	let pin: any;
 	let ctx: any;
-	let flags: any;
 
-	let isClicked = false;
+	let pins: Pin[] = [];
+	const pinSize = [10, 10];
+
+	interface Pin {
+		image: any;
+		point: Point;
+		isActive: boolean;
+		isHovered: boolean;
+	}
 
 	const promise = new Promise<Options>((resolve) => {
 		canvas;
@@ -19,13 +24,21 @@
 		mapImage = new Image();
 		mapImage.src = 'team/pxmap.png';
 
-		flags = [];
-		for (const key in Countries) {
-			const value = Countries[key];
+		// Create pins.
+		let count = 0;
+		Members.forEach((member) => {
 			let image = new Image();
-			image.src = value;
-			flags[value] = image;
-		}
+			image.src = member.country;
+
+			pins[count] = {
+				image: image,
+				point: member.pin,
+				isActive: false,
+				isHovered: false
+			};
+
+			count++;
+		});
 
 		mapImage.onload = () =>
 			resolve({
@@ -40,47 +53,44 @@
 			context.imageSmoothingEnabled = false;
 			context.drawImage(mapImage, 0, 0);
 
-			Members.forEach((member) => {
-				context.drawImage(
-					flags[member.country],
-					member.pin[0],
-					member.pin[1],
-					flagSize[0],
-					flagSize[1]
-				);
+			pins.forEach((pin) => {
+				if (pin.isHovered) {
+					context.drawImage(
+						pin.image,
+						pin.point.x,
+						pin.point.y,
+						pinSize[0] * 1.25,
+						pinSize[1] * 1.25
+					);
+				} else {
+					context.drawImage(pin.image, pin.point.x, pin.point.y, pinSize[0], pinSize[1]);
+				}
 			});
 		}
 	});
 
-	function getTransformedPoint(x: any, y: any) {
+	function getTransformedPoint(x: any, y: any): Point {
 		const devicePixelRatio = window.devicePixelRatio || 1;
 		const originalPoint = new DOMPoint(x * devicePixelRatio, y * devicePixelRatio);
 		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
-	function onPointerClick(event: PointerEvent) {
+	function onPointerMove(event: PointerEvent) {
 		if (!ctx) return;
-
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
-		const x = cursorPosition.x;
-		const y = cursorPosition.y;
 
-		let hit = false;
-		Members.forEach((member) => {
-			if (
-				x < member.pin[0] ||
-				y < member.pin[1] ||
-				x > member.pin[0] + flagSize[0] ||
-				y > member.pin[1] + flagSize[1]
-			)
-				return;
-
-			console.log(`Clicked on ${member.name}!`);
-			hit = true;
+		pins.forEach((pin) => {
+			pin.isHovered = isHoveringPin(cursorPosition, pin);
 		});
+	}
 
-		// We didn't click on anyone!!
-		if (!hit) console.log(`Didn't click on anyone!`);
+	function isHoveringPin(cursorPosition: Point, pin: Pin) {
+		return (
+			cursorPosition.x > pin.point.x &&
+			cursorPosition.x <= pin.point.x + pinSize[0] &&
+			cursorPosition.y > pin.point.y &&
+			cursorPosition.y <= pin.point.y + pinSize[1]
+		);
 	}
 </script>
 
@@ -88,7 +98,7 @@
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
-			on:pointerdown={onPointerClick}
+			on:pointermove={onPointerMove}
 			use:panzoom={options}
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
 		/>
