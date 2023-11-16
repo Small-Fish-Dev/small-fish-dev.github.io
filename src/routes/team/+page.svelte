@@ -7,6 +7,7 @@
 	let ctx: CanvasRenderingContext2D;
 	let member: Member | null;
 
+	let pinHover: HTMLImageElement;
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
 	const defaultPinSize = 10;
@@ -23,6 +24,9 @@
 
 		mapImage = new Image();
 		mapImage.src = '/team/pxmap.png';
+
+		pinHover = new Image();
+		pinHover.src = '/team/flags/pin_hover.png';
 
 		// Create pins.
 		let count = 0;
@@ -60,6 +64,16 @@
 
 				let x = pin.member.point.x + defaultPinSize / 2 - pin.size / 2;
 				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
+
+				// Show a little gold outline around the pin if hovered.
+				if (pin.isHovered)
+					context.drawImage(
+						pinHover,
+						x - (pin.size * 0.1) / 2,
+						y - (pin.size * 0.1) / 2,
+						pin.size * 1.1,
+						pin.size * 1.1
+					);
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
