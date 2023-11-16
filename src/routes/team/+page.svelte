@@ -104,15 +104,8 @@
 		member = target;
 	}
 
-	function getTransformedPoint(x: any, y: any): Point {
-		const devicePixelRatio = window.devicePixelRatio || 1;
-		const originalPoint = new DOMPoint(x * devicePixelRatio, y * devicePixelRatio);
-		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
-	}
-
-	function onPointerClick(_: PointerEvent) {
-		activePin = null;
-		for (let pin of pins) if (pin.isHovered) activePin = pin;
+	function onPointerClick(event: PointerEvent) {
+		activePin = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
 
 		if (activePin) {
 			tryOpenCard(activePin.member.name);
@@ -124,12 +117,18 @@
 	}
 
 	function onPointerMove(event: PointerEvent) {
-		if (!ctx) return;
-		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
+		getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
+	}
+
+	function getHoveringPin(point: Point) {
+		let hoveredPin = null;
 
 		for (let pin of pins) {
-			pin.isHovered = isHoveringPin(cursorPosition, pin);
+			pin.isHovered = isHoveringPin(point, pin);
+			if (pin.isHovered) hoveredPin = pin;
 		}
+
+		return hoveredPin;
 	}
 
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
@@ -139,6 +138,13 @@
 			cursorPosition.y > pin.member.point.y &&
 			cursorPosition.y <= pin.member.point.y + defaultPinSize
 		);
+	}
+
+	function getTransformedPoint(x: any, y: any): Point {
+		if (!ctx) return { x: 0, y: 0 };
+		const devicePixelRatio = window.devicePixelRatio || 1;
+		const originalPoint = new DOMPoint(x * devicePixelRatio, y * devicePixelRatio);
+		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
 	function lerp(start: number, end: number, t: number): number {
