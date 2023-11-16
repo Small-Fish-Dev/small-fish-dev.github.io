@@ -64,8 +64,8 @@
 				let x = pin.member.point.x + defaultPinSize / 2 - pin.size / 2;
 				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
 
-				// Show a little gold outline around the pin if hovered.
-				if (pin.isHovered)
+				// Show a little gold outline around the pin if selected.
+				if (pin == activePin)
 					context.drawImage(
 						pinGlow,
 						x - (pin.size * 0.1) / 2,
@@ -108,9 +108,10 @@
 		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
-	function onPointerClick(event: PointerEvent) {
-		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
-		checkActive(cursorPosition);
+	function onPointerClick(_: PointerEvent) {
+		activePin = null;
+		for (let pin of pins) if (pin.isHovered) activePin = pin;
+
 		if (activePin) {
 			tryOpenCard(activePin.member.name);
 			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
@@ -123,21 +124,10 @@
 	function onPointerMove(event: PointerEvent) {
 		if (!ctx) return;
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
-		checkActive(cursorPosition);
-	}
-
-	function checkActive(cursorPosition: Point) {
-		let foundActivePin = false;
 
 		for (let pin of pins) {
 			pin.isHovered = isHoveringPin(cursorPosition, pin);
-			if (pin.isHovered) {
-				activePin = pin;
-				foundActivePin = true;
-			}
 		}
-
-		if (!foundActivePin) activePin = null;
 	}
 
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
