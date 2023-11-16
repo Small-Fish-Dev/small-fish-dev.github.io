@@ -58,9 +58,8 @@
 			context.drawImage(mapImage, 0, 0);
 
 			pins.forEach((pin) => {
-				pin.size = !pin.isHovered
-					? lerp(pin.size, defaultPinSize, 0.3)
-					: lerp(pin.size, defaultPinSize * 1.25, 0.3);
+				let target = pin.isHovered ? 1.25 : 1;
+				pin.size = lerp(pin.size, defaultPinSize * target, 0.3);
 
 				let x = pin.member.point.x + defaultPinSize / 2 - pin.size / 2;
 				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
