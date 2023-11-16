@@ -217,6 +217,8 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	function onpointermove(event: PointerEvent) {
 		event.stopPropagation();
 
+		scheduleRender();
+
 		// ignore if pointer not pressed
 		if (!pointers.has(event.pointerId)) return;
 
@@ -234,7 +236,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 				focus = curr;
 
 				moveBy(diff);
-				scheduleRender();
 
 				pointers.set(event.pointerId, point);
 
