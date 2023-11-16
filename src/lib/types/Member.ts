@@ -4,6 +4,7 @@ import type { Point } from '$lib/map/PanZoom';
 export interface Member {
 	name: string;
 	country: string;
+	avatar?: string;
 	point: Point;
 	description?: string;
 	skills?: string[];
@@ -14,6 +15,9 @@ export const Members: Member[] = [
 	// ceitine
 	{
 		name: 'ceitine',
+		description:
+			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅',
+		avatar: 'https://i.imgur.com/fTkU0Nv.png',
 		point: { x: 352, y: 38 },
 		country: Countries.Finland,
 		skills: [
@@ -28,7 +32,8 @@ export const Members: Member[] = [
 		socials: [
 			'https://twitter.com/ceitine',
 			'https://steamcommunity.com/id/ceitine/',
-			'https://github.com/ceitine'
+			'https://github.com/ceitine',
+			'https://ceitine.itch.io/'
 		]
 	},
 

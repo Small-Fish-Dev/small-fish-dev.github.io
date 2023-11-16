@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 
@@ -167,9 +168,72 @@
 		/>
 	{/await}
 
+	<!-- This is a bit shit, feel free to improve! -->
 	{#if member}
-		<div class="absolute w-full h-full pointer-events-none right-[0px] top-[0px]">
-			<h1>{member.name}</h1>
+		<div
+			class="absolute z-50 top-[70px] right-[25px] w-[375px] h-full p-[25px] pr-[0px] pb-[95px] font-poppins"
+		>
+			<div class="bg-white w-full h-full box overflow-y-scroll">
+				<!-- Close Button -->
+				<div class="absolute z-20 m-[10px]">
+					<button
+						class="w-[24px] aspect-square hover:invert hover:scale-110"
+						on:click={() => tryOpenCard()}
+					>
+						<img class="bg-cover w-full pixelate" src="/team/close_button.png" alt="close" />
+					</button>
+				</div>
+
+				<!-- Avatar -->
+				<div class="relative flex flex-col justify-between w-full aspect-square">
+					<img class="bg-cover absolute w-full aspect-square" src={member.avatar} alt="avatar" />
+
+					<!-- Name -->
+					<div class="flex top-[0px] w-full justify-center">
+						<h1 class="bg-black w-fit p-[5px] text-white font-medium text-3xl z-10">
+							{member.name}
+						</h1>
+					</div>
+
+					<!-- Socials -->
+					{#if member.socials}
+						<div class="w-full flex p-[10px] flex-row gap-2 justify-center flex-wrap-reverse">
+							{#each member.socials as social}
+								<SocialButton
+									href={social}
+									class="w-[48px] aspect-square opacity-60 hover:opacity-80"
+								/>
+							{/each}
+						</div>
+					{/if}
+				</div>
+
+				<!-- About -->
+				{#if member.description}
+					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">ABOUT</h1>
+					<div class="p-[10px] text-sm">
+						<p>{member.description}</p>
+					</div>
+				{/if}
+
+				<!-- Skills -->
+				{#if member.skills}
+					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">SKILLS</h1>
+					<div class="p-[10px] flex flex-row justify-center gap-2">
+						{#each member.skills as skill}
+							<img src={skill} class="w-[32px] aspect-square pixelate" alt="skill" />
+						{/each}
+					</div>
+				{/if}
+
+				<!-- Scientific Classification -->
+				<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">
+					SCIENTIFIC CLASSIFICATION
+				</h1>
+				<div class="p-[10px]">
+					<p>WIP</p>
+				</div>
+			</div>
 		</div>
 	{/if}
 </div>
@@ -191,5 +255,27 @@
 		animation: scroll;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
+	}
+
+	.box {
+		box-shadow:
+			0px 0px 8px black,
+			8px 8px 0px black;
+	}
+
+	.pixelate {
+		image-rendering: pixelated;
+	}
+
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: white;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #2446f7;
 	}
 </style>

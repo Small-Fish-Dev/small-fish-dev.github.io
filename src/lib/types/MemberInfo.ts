@@ -1,7 +1,7 @@
 export const Languages: Record<string, string> = {
 	CSharp: '/team/languages/csharp.png',
 	CPP: '/team/languages/cpp.png',
-	JS: '/team/languages/js.png',
+	JS: '/team/languages/javascript.png',
 	Python: '/team/languages/python.png',
 	HLSL: '/team/languages/hlsl.png',
 	Java: '/team/languages/java.png',
