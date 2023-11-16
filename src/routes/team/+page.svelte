@@ -12,7 +12,7 @@
 	const pinSize = [10, 10];
 
 	interface Pin {
-		image: any;
+		image: HTMLImageElement;
 		point: Point;
 		isHovered: boolean;
 	}
