@@ -84,6 +84,9 @@
 		var hash = window.location.hash;
 		hash = hash.substring(1, hash.length);
 		tryOpenCard(hash);
+
+		let target = pins.find((x) => x.member?.name == hash);
+		if (target) activePin = target;
 	});
 
 	function tryOpenCard(name?: string) {
@@ -97,7 +100,6 @@
 		var target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
 		if (target == null) return;
 
-		console.log(`should open ${target.name}'s card!'`);
 		window.location.hash = `#${target.name}`;
 		member = target;
 	}
