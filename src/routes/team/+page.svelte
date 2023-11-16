@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Members, type Member } from '$lib/types/Member';
-	import { Countries } from '$lib/types/MemberInfo';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
 	let ctx: CanvasRenderingContext2D;
+	let member: Member | null;
 
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
@@ -13,7 +13,7 @@
 
 	interface Pin {
 		image: HTMLImageElement;
-		point: Point;
+		member: Member;
 		isHovered: boolean;
 	}
 
@@ -21,7 +21,7 @@
 		canvas;
 
 		mapImage = new Image();
-		mapImage.src = 'team/pxmap.png';
+		mapImage.src = '/team/pxmap.png';
 
 		// Create pins.
 		let count = 0;
@@ -31,7 +31,7 @@
 
 			pins[count] = {
 				image: image,
-				point: member.pin,
+				member: member,
 				isHovered: false
 			};
 
@@ -55,17 +55,43 @@
 				if (pin.isHovered) {
 					context.drawImage(
 						pin.image,
-						pin.point.x - (pinSize[0] * 0.25) / 2,
-						pin.point.y - (pinSize[0] * 0.25) / 2,
+						pin.member.point.x - (pinSize[0] * 0.25) / 2,
+						pin.member.point.y - (pinSize[0] * 0.25) / 2,
 						pinSize[0] * 1.25,
 						pinSize[1] * 1.25
 					);
 				} else {
-					context.drawImage(pin.image, pin.point.x, pin.point.y, pinSize[0], pinSize[1]);
+					context.drawImage(
+						pin.image,
+						pin.member.point.x,
+						pin.member.point.y,
+						pinSize[0],
+						pinSize[1]
+					);
 				}
 			});
 		}
+
+		var hash = window.location.hash;
+		hash = hash.substring(1, hash.length);
+		tryOpenCard(hash);
 	});
+
+	function tryOpenCard(name?: string) {
+		if (name == null) {
+			window.location.hash = '';
+			member = null;
+
+			return;
+		}
+
+		var target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
+		if (target == null) return;
+
+		console.log(`should open ${target.name}'s card!'`);
+		window.location.hash = `#${target.name}`;
+		member = target;
+	}
 
 	function getTransformedPoint(x: any, y: any): Point {
 		const devicePixelRatio = window.devicePixelRatio || 1;
@@ -76,7 +102,8 @@
 	function onPointerClick(event: PointerEvent) {
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
 		checkActive(cursorPosition);
-		if (activePin) console.log('We clicked', activePin);
+		if (activePin) tryOpenCard(activePin.member.name);
+		else tryOpenCard();
 	}
 
 	function onPointerMove(event: PointerEvent) {
@@ -98,10 +125,10 @@
 
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
 		return (
-			cursorPosition.x > pin.point.x &&
-			cursorPosition.x <= pin.point.x + pinSize[0] &&
-			cursorPosition.y > pin.point.y &&
-			cursorPosition.y <= pin.point.y + pinSize[1]
+			cursorPosition.x > pin.member.point.x &&
+			cursorPosition.x <= pin.member.point.x + pinSize[0] &&
+			cursorPosition.y > pin.member.point.y &&
+			cursorPosition.y <= pin.member.point.y + pinSize[1]
 		);
 	}
 </script>
@@ -116,6 +143,12 @@
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
 		/>
 	{/await}
+
+	{#if member}
+		<div class="absolute w-full h-full pointer-events-none right-[0px] top-[0px]">
+			<h1>{member.name}</h1>
+		</div>
+	{/if}
 </div>
 
 <style>
