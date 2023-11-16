@@ -1,10 +1,15 @@
 <script lang="ts">
+	import { Members, type Member } from '$lib/types/Member';
+	import { Countries } from '$lib/types/MemberInfo';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
+
+	const flagSize = [10, 10];
 
 	let canvas: any;
 	let mapImage: any;
 	let pin: any;
 	let ctx: any;
+	let flags: any;
 
 	let isClicked = false;
 
@@ -14,10 +19,13 @@
 		mapImage = new Image();
 		mapImage.src = 'team/pxmap.png';
 
-		pin = new Image();
-		pin.src = 'team/pin.png';
-		pin.style.opacity = '0.2';
-		pin.style.class = 'hello';
+		flags = [];
+		for (const key in Countries) {
+			const value = Countries[key];
+			let image = new Image();
+			image.src = value;
+			flags[value] = image;
+		}
 
 		mapImage.onload = () =>
 			resolve({
@@ -32,7 +40,15 @@
 			context.imageSmoothingEnabled = false;
 			context.drawImage(mapImage, 0, 0);
 
-			if (!isClicked) context.drawImage(pin, 50, 50, 10, 10);
+			Members.forEach((member) => {
+				context.drawImage(
+					flags[member.country],
+					member.pin[0],
+					member.pin[1],
+					flagSize[0],
+					flagSize[1]
+				);
+			});
 		}
 	});
 
@@ -49,9 +65,22 @@
 		const x = cursorPosition.x;
 		const y = cursorPosition.y;
 
-		if (x > 50 && x <= 60 && y > 50 && y <= 60) {
-			isClicked = !isClicked;
-		}
+		let hit = false;
+		Members.forEach((member) => {
+			if (
+				x < member.pin[0] ||
+				y < member.pin[1] ||
+				x > member.pin[0] + flagSize[0] ||
+				y > member.pin[1] + flagSize[1]
+			)
+				return;
+
+			console.log(`Clicked on ${member.name}!`);
+			hit = true;
+		});
+
+		// We didn't click on anyone!!
+		if (!hit) console.log(`Didn't click on anyone!`);
 	}
 </script>
 
