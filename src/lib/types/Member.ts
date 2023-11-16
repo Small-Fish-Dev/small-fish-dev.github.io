@@ -30,5 +30,68 @@ export const Members: Member[] = [
 			'https://steamcommunity.com/id/ceitine/',
 			'https://github.com/ceitine'
 		]
+	},
+
+	// Luke
+	{
+		name: 'Luke',
+		pin: { x: 303, y: 64 },
+		country: Countries.UK
+	},
+
+	// ubre
+	{
+		name: 'ubre',
+		pin: { x: 338, y: 94 },
+		country: Countries.Italy
+	},
+
+	// Grodbert
+	{
+		name: 'Grodbert',
+		pin: { x: 328, y: 85 },
+		country: Countries.Italy
+	},
+
+	// rndtrash
+	{
+		name: 'rndtrash',
+		pin: { x: 412, y: 55 },
+		country: Countries.Russia
+	},
+
+	// wheatleymf
+	{
+		name: 'wheatleymf',
+		pin: { x: 382, y: 50 },
+		country: Countries.Russia
+	},
+
+	// Mungus
+	{
+		name: 'Mungus',
+		pin: { x: 325, y: 55 },
+		country: Countries.Denmark
+	},
+
+	// matek
+	{
+		name: 'matek',
+		pin: { x: 145, y: 82 },
+		country: Countries.Poland
+	},
+
+	// CyberAgent
+	{
+		name: 'CyberAgent',
+		pin: { x: 146, y: 94 },
+		country: Countries.US
+	},
+
+	// gio
+	{
+		name: 'gio',
+		pin: { x: 561, y: 280 },
+		country: Countries.Australia
 	}
 ];
