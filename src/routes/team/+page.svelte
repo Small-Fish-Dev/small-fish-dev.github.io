@@ -3,9 +3,9 @@
 
 	let canvas: any;
 	let mapImage: any;
-	let pin: any;
 	let ctx: any;
 
+	let activePin: Pin | null;
 	let pins: Pin[] = [];
 	const pinWidth = 10;
 	const pinHeight = 10;
@@ -24,10 +24,10 @@
 		mapImage.src = 'team/pxmap.png';
 
 		for (let i = 0; i < 10; ++i) {
-			pin = new Image();
-			pin.src = 'team/pin.png';
+			let newPin = new Image();
+			newPin.src = 'team/pin.png';
 			pins.push({
-				image: pin,
+				image: newPin,
 				point: { x: i * 15, y: i * 15 },
 				isActive: false,
 				isHovered: false
@@ -63,13 +63,22 @@
 		return ctx.getTransform().invertSelf().transformPoint(originalPoint);
 	}
 
+	function onPointerClick(event: PointerEvent) {
+		if (activePin) console.log('We clicked', activePin);
+	}
+
 	function onPointerMove(event: PointerEvent) {
 		if (!ctx) return;
 		const cursorPosition = getTransformedPoint(event.offsetX, event.offsetY);
 
-		pins.forEach((pin) => {
+		for (let pin of pins) {
 			pin.isHovered = isHoveringPin(cursorPosition, pin);
-		});
+			if (pin.isHovered) {
+				activePin = pin;
+				break; // We can leave early once we found a pin.
+			}
+			activePin = null;
+		}
 	}
 
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
@@ -86,6 +95,7 @@
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
+			on:pointerdown={onPointerClick}
 			on:pointermove={onPointerMove}
 			use:panzoom={options}
 			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
