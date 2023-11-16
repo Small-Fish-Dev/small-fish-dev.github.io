@@ -3,9 +3,9 @@
 	import { Countries } from '$lib/types/MemberInfo';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 
-	let canvas: any;
-	let mapImage: any;
-	let ctx: any;
+	let canvas: HTMLCanvasElement;
+	let mapImage: HTMLImageElement;
+	let ctx: CanvasRenderingContext2D;
 
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
