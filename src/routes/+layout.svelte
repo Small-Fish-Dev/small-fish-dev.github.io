@@ -29,7 +29,9 @@
 </script>
 
 <!-- TODO: Handle invert of colours -->
-<nav class="absolute flex w-full justify-end items-end flex-col md:flex-row z-50 md:pt-10 md:pr-20">
+<nav
+	class="absolute flex w-full justify-end items-end flex-col md:flex-row z-50 md:pt-5 md:pb-5 md:pr-5 gradient"
+>
 	{#each routes as route}
 		<NavButton
 			href={route.href}
@@ -55,6 +57,10 @@
 </footer>
 
 <style>
+	.gradient {
+		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+	}
+
 	.overlay {
 		position: absolute;
 		height: 180px;
