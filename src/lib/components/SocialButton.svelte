@@ -4,7 +4,7 @@
 	export { className as class };
 
 	const icons: Record<string, string> = {
-		none: '',
+		none: '/socials/none.png',
 		'steamcommunity.com': '/socials/steam.png',
 		'twitter.com': '/socials/twitter.png',
 		'x.com': '/socials/twitter.png',
