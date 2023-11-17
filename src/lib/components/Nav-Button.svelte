@@ -14,6 +14,7 @@
            hover:scale-105
            transition-all
 		   whitespace-nowrap
+		   pointer-events-auto
 		   {invertColors ? 'text-blue' : 'text-white'}
 		   {invertColors ? 'hover:text-white' : 'hover:text-blue'}
 		   {invertColors ? 'hover:bg-blue' : 'hover:bg-white'}
@@ -22,6 +23,3 @@
 	<Icon {icon} class="text-4xl mr-2" />
 	<p>{label}</p>
 </a>
-
-<style>
-</style>
