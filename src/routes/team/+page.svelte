@@ -2,7 +2,8 @@
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
-	import { scale } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
+	import { quadInOut } from 'svelte/easing';
 
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
@@ -161,7 +162,7 @@
 	}
 </script>
 
-<div class="h-screen w-full">
+<div class="h-screen w-full overflow-hidden">
 	{#await promise then options}
 		<canvas
 			bind:this={canvas}
@@ -175,8 +176,8 @@
 	<!-- This is a bit shit, feel free to improve! -->
 	{#if member}
 		<div
-			in:scale
-			out:scale
+			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
+			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
 			class="absolute z-50 top-[70px] right-[25px] w-[375px] h-full p-[25px] pr-[0px] pb-[95px] font-poppins"
 		>
 			<div class="bg-white w-full h-full box overflow-y-scroll">
@@ -205,12 +206,11 @@
 
 					<!-- Socials -->
 					{#if member.socials}
-						<div class="w-full flex p-[10px] flex-row gap-2 justify-center flex-wrap-reverse">
+						<div
+							class="w-full flex p-[10px] flex-row gap-2 justify-center flex-wrap-reverse opacity-60 hover:opacity-90"
+						>
 							{#each member.socials as social}
-								<SocialButton
-									href={social}
-									class="w-[48px] aspect-square opacity-60 hover:opacity-80"
-								/>
+								<SocialButton href={social} class="w-[48px] aspect-square" />
 							{/each}
 						</div>
 					{/if}
@@ -256,6 +256,10 @@
 			background-position-x: 100%;
 			background-position-y: 100%;
 		}
+	}
+
+	:global(html, body) {
+		overflow-x: hidden;
 	}
 
 	canvas {
