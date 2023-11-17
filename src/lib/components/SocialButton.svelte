@@ -16,7 +16,8 @@
 		github: '/socials/github.png',
 		youtube: '/socials/youtube.png',
 		artstation: '/socials/artstation.png',
-		paypal: '/socials/paypal.png'
+		paypal: '/socials/paypal.png',
+		itch: '/socials/itch.png'
 	};
 
 	function getHost(url: URL) {
@@ -42,7 +43,7 @@
 
 <a {href} class="{className} transition-all hover:scale-110 social" target="_blank">
 	<div class="uppercase poppins text-sm" host={getHost(url)}>
-		<img class="image w-full bg-cover" src={tryGetIcon(href)} />
+		<img class="image w-full bg-cover" src={tryGetIcon(href)} alt="social" />
 	</div>
 </a>
 
