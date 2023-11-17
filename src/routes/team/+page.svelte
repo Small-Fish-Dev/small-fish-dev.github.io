@@ -110,9 +110,13 @@
 		// If not left click, or not using a touch screen bail out.
 		if (event.button !== 0 && event.pointerType !== 'touch') return;
 
-		activePin = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
+		let hovered = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
+		activePin =
+			!hovered && activePin
+				? activePin
+				: getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
 
-		if (activePin) {
+		if (activePin && hovered) {
 			tryOpenCard(activePin.member.name);
 			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
 			activePin.size *= 0.75;
@@ -185,7 +189,9 @@
 
 				<!-- Avatar -->
 				<div class="relative flex flex-col justify-between w-full aspect-square">
-					<img class="bg-cover absolute w-full aspect-square" src={member.avatar} alt="avatar" />
+					{#if member.avatar}
+						<img class="bg-cover absolute w-full aspect-square" src={member.avatar} alt="avatar" />
+					{/if}
 
 					<!-- Name -->
 					<div class="flex top-[0px] w-full justify-center">
