@@ -14,7 +14,14 @@ export const Languages: Record<string, string> = {
 
 export const Software: Record<string, string> = {
 	Blender: '/team/software/blender.png',
-	Photoshop: '/team/software/photoshop.png'
+	Photoshop: '/team/software/photoshop.png',
+	Designer: '/team/software/designer.png',
+	Painter: '/team/software/painter.png',
+	Marmoset: '/team/software/Marmoset.png',
+	Audacity: '/team/software/audacity.png',
+	Audition: '/team/software/audition.png',
+	Topogun: '/team/software/topogun.png',
+	ZBrush: '/team/software/zbrush.png'
 };
 
 export const Countries: Record<string, string> = {

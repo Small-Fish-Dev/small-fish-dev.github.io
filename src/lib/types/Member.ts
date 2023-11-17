@@ -32,7 +32,7 @@ export const Members: Member[] = [
 				Languages.CPP,
 				Languages.GDScript
 			],
-			'Voice Actor': []
+			'Voice Actor': [Software.Audacity]
 		},
 		socials: [
 			'https://twitter.com/ceitine',
