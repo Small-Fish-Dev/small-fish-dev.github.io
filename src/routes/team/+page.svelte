@@ -2,6 +2,7 @@
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
+	import { scale } from 'svelte/transition';
 
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
@@ -174,6 +175,8 @@
 	<!-- This is a bit shit, feel free to improve! -->
 	{#if member}
 		<div
+			in:scale
+			out:scale
 			class="absolute z-50 top-[70px] right-[25px] w-[375px] h-full p-[25px] pr-[0px] pb-[95px] font-poppins"
 		>
 			<div class="bg-white w-full h-full box overflow-y-scroll">
