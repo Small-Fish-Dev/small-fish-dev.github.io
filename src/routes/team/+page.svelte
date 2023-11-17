@@ -199,7 +199,9 @@
 
 					<!-- Name -->
 					<div class="flex top-[0px] w-full justify-center">
-						<h1 class="bg-black w-fit p-[5px] text-white font-medium text-3xl z-10">
+						<h1
+							class="bg-black w-fit p-[5px] pr-[10px] pl-[10px] text-white font-medium text-3xl z-10"
+						>
 							{member.name}
 						</h1>
 					</div>
@@ -226,10 +228,14 @@
 
 				<!-- Skills -->
 				{#if member.skills}
-					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">SKILLS</h1>
+					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">SUBFAMILIES</h1>
 					<div class="p-[10px] flex flex-row justify-center gap-2">
 						{#each member.skills as skill}
-							<img src={skill} class="w-[32px] aspect-square pixelate" alt="skill" />
+							<img
+								src={skill}
+								class="transition-all w-[32px] aspect-square pixelate drop-shadow"
+								alt="skill"
+							/>
 						{/each}
 					</div>
 				{/if}
@@ -267,6 +273,11 @@
 		animation: scroll;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
+	}
+
+	.drop-shadow:hover {
+		filter: drop-shadow(0px 2px rgba(0, 0, 0, 0.75));
+		transform: translate(0, -2px);
 	}
 
 	.box {
