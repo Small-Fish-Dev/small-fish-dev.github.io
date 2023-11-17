@@ -82,6 +82,7 @@ export const Members: Member[] = [
 	// matek
 	{
 		name: 'matek',
+		avatar: '/team/profiles/matek.jpg',
 		point: { x: 145, y: 82 },
 		country: Countries.Poland
 	},
