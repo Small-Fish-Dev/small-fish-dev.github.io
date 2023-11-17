@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Member } from '$lib/types/Member';
+	import { Projects } from '$lib/types/Project';
 	import SocialButton from './SocialButton.svelte';
 
 	export let member: Member;
@@ -90,9 +91,14 @@
 		{/if}
 
 		<!-- Spotted in -->
+		<!-- todo @ceitine: filter by contributors!! -->
 		<h1 class="w-full p-[10px] font-medium bg-blue text-white">SPOTTED IN</h1>
 		<div class="p-[10px]">
-			<p>WIP</p>
+			<ul class="list-disc">
+				{#each Projects as project}
+					<li><b>*</b> {project.title}</li>
+				{/each}
+			</ul>
 		</div>
 	</div>
 </div>

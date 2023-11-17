@@ -1,5 +1,4 @@
 <script lang="ts">
-	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 	import { fly } from 'svelte/transition';

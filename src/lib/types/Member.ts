@@ -12,6 +12,7 @@ export interface Member {
 	classification?: Record<string, string[]>;
 }
 
+// todo @ceitine: we probably want to have these in some folder separately.
 export const Members: Member[] = [
 	// ceitine
 	{
