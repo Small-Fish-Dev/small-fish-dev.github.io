@@ -4,6 +4,7 @@
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
 	import { fly } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
+	import MemberCard from '$lib/components/MemberCard.svelte';
 
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
@@ -178,76 +179,9 @@
 		<div
 			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
-			class="absolute z-50 top-[70px] right-[25px] w-[375px] h-full p-[25px] pr-[0px] pb-[95px] font-poppins"
+			class="absolute z-50 top-[70px] right-[25px] w-[375px] h-full p-[25px] pr-[0px] pb-[95px]"
 		>
-			<div class="bg-white w-full h-full box overflow-y-scroll">
-				<!-- Close Button -->
-				<div class="absolute z-20 m-[10px]">
-					<button
-						class="w-[24px] aspect-square hover:invert hover:scale-110"
-						on:click={() => tryOpenCard()}
-					>
-						<img class="bg-cover w-full pixelate" src="/team/close_button.png" alt="close" />
-					</button>
-				</div>
-
-				<!-- Avatar -->
-				<div class="relative flex flex-col justify-between w-full aspect-square">
-					{#if member.avatar}
-						<img class="bg-cover absolute w-full aspect-square" src={member.avatar} alt="avatar" />
-					{/if}
-
-					<!-- Name -->
-					<div class="flex top-[0px] w-full justify-center">
-						<h1
-							class="bg-black w-fit p-[5px] pr-[10px] pl-[10px] text-white font-medium text-3xl z-10"
-						>
-							{member.name}
-						</h1>
-					</div>
-
-					<!-- Socials -->
-					{#if member.socials}
-						<div
-							class="w-full flex p-[10px] flex-row gap-2 justify-center flex-wrap-reverse opacity-60 hover:opacity-90"
-						>
-							{#each member.socials as social}
-								<SocialButton href={social} class="w-[48px] aspect-square" />
-							{/each}
-						</div>
-					{/if}
-				</div>
-
-				<!-- About -->
-				{#if member.description}
-					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">ABOUT</h1>
-					<div class="p-[10px] text-sm">
-						<p>{member.description}</p>
-					</div>
-				{/if}
-
-				<!-- Skills -->
-				{#if member.skills}
-					<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">SUBFAMILIES</h1>
-					<div class="p-[10px] flex flex-row justify-center gap-2">
-						{#each member.skills as skill}
-							<img
-								src={skill}
-								class="transition-all w-[32px] aspect-square pixelate drop-shadow"
-								alt="skill"
-							/>
-						{/each}
-					</div>
-				{/if}
-
-				<!-- Scientific Classification -->
-				<h1 class="w-full p-[10px] text-sm font-medium bg-blue text-white">
-					SCIENTIFIC CLASSIFICATION
-				</h1>
-				<div class="p-[10px]">
-					<p>WIP</p>
-				</div>
-			</div>
+			<MemberCard class="w-full h-full" {member} onClose={() => tryOpenCard()} />
 		</div>
 	{/if}
 </div>
@@ -273,32 +207,5 @@
 		animation: scroll;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
-	}
-
-	.drop-shadow:hover {
-		filter: drop-shadow(0px 2px rgba(0, 0, 0, 0.75));
-		transform: translate(0, -2px);
-	}
-
-	.box {
-		box-shadow:
-			0px 0px 8px black,
-			8px 8px 0px black;
-	}
-
-	.pixelate {
-		image-rendering: pixelated;
-	}
-
-	::-webkit-scrollbar {
-		width: 10px;
-	}
-
-	::-webkit-scrollbar-track {
-		background: white;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background-color: #2446f7;
 	}
 </style>

@@ -7,8 +7,9 @@ export interface Member {
 	avatar?: string;
 	point: Point;
 	description?: string;
-	skills?: string[];
+	roles?: Record<string, string[]>;
 	socials?: string[];
+	classification?: Record<string, string[]>;
 }
 
 export const Members: Member[] = [
@@ -20,21 +21,32 @@ export const Members: Member[] = [
 		avatar: 'https://i.imgur.com/fTkU0Nv.png',
 		point: { x: 352, y: 38 },
 		country: Countries.Finland,
-		skills: [
-			Languages.CSharp,
-			Languages.LUA,
-			Languages.JS,
-			Languages.HLSL,
-			Languages.CSS,
-			Languages.CPP,
-			Languages.GDScript
-		],
+		roles: {
+			Programmer: [
+				Languages.CSharp,
+				Languages.LUA,
+				Languages.JS,
+				Languages.HLSL,
+				Languages.CSS,
+				Languages.CPP,
+				Languages.GDScript
+			],
+			'Voice Actor': []
+		},
 		socials: [
 			'https://twitter.com/ceitine',
 			'https://steamcommunity.com/id/ceitine/',
 			'https://github.com/ceitine',
 			'https://ceitine.itch.io/'
-		]
+		],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Carnivora', 'https://en.wikipedia.org/wiki/Carnivora'],
+			family: ['Felidae', 'https://en.wikipedia.org/wiki/Felidae'],
+			species: ['F. catus', 'https://en.wikipedia.org/wiki/Cat']
+		}
 	},
 
 	// Luke
