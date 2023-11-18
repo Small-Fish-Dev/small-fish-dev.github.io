@@ -2,6 +2,7 @@
 	import HoverIcon from './HoverIcon.svelte';
 
 	export let href: string;
+	export let showHoverTop: boolean = true;
 	let className: string = '';
 	export { className as class };
 
@@ -43,7 +44,12 @@
 </script>
 
 <a {href} class="{className} transition-all hover:scale-110" target="_blank">
-	<HoverIcon src={tryGetIcon(href)} class="transition-all uppercase poppins text-sm" text={host} />
+	<HoverIcon
+		src={tryGetIcon(href)}
+		showTop={showHoverTop}
+		class="transition-all uppercase poppins text-sm"
+		text={host}
+	/>
 </a>
 
 <style>

@@ -22,14 +22,14 @@
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
-				<div class="flex justify-center flex-wrap gap-2 pt-4 pb-8">
+				<div class="flex justify-center flex-wrap gap-2 p-4">
 					<p class="font-poppins text-2xl text-center text-white font-medium">
 						We make waves, not just games!
 					</p>
 				</div>
 				<div class="flex justify-center gap-4">
 					{#each socials as social}
-						<SocialButton href={social} class="w-12" />
+						<SocialButton href={social} showHoverTop={false} class="w-12" />
 					{/each}
 				</div>
 			</div>
