@@ -3,7 +3,7 @@
 	import '../syntax-highlight.css'; // https://github.com/PrismJS/prism-themes
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
-	import { fly } from 'svelte/transition';
+	import { fly, fade } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import { swipeable } from '@react2svelte/swipeable';
 	import type { SwipeEventData } from '@react2svelte/swipeable';
@@ -27,7 +27,7 @@
 		}
 	];
 
-	let isMenuOpen = false;
+	let isMenuOpen = true;
 
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
 		if (event.detail.dir === 'Right') isMenuOpen = false;
@@ -64,13 +64,20 @@
 
 <!-- Hamburger menu. -->
 {#if isMenuOpen}
-	<div class="relative z-50">
+	<div class="relative z-50 w-full">
+		<div
+			on:click={() => {
+				isMenuOpen = false;
+			}}
+			class="fixed w-screen h-screen z-0 bg-black bg-opacity-50"
+			out:fade={{ duration: 200, easing: quadInOut }}
+		/>
 		<nav
 			use:swipeable
 			on:swiped={swipeHandler}
 			in:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
 			out:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
-			class="fixed right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
+			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
 			<div class="flex flex-col gap-4">
 				{#each routes as route}
@@ -92,12 +99,7 @@
 	</div>
 {/if}
 
-<div
-	on:click={() => {
-		isMenuOpen = false;
-	}}
-	class="flex flex-col min-h-screen"
->
+<div class="flex flex-col min-h-screen">
 	<slot />
 </div>
 
