@@ -14,12 +14,17 @@
            hover:scale-105
            transition-all
 		   whitespace-nowrap
-		   pointer-events-auto
 		   {invertColors ? 'text-blue' : 'text-white'}
 		   {invertColors ? 'hover:text-white' : 'hover:text-blue'}
 		   {invertColors ? 'hover:bg-blue' : 'hover:bg-white'}
-		   {disabled ? 'opacity-75 pointer-events-none' : ''}"
+		   {disabled ? 'opacity-75 pointer-events-none' : 'pointer-events-auto'}"
 >
-	<Icon {icon} class="text-4xl mr-2" />
+	<Icon {icon} class="text-4xl mr-2" style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))" />
 	<p>{label}</p>
 </a>
+
+<style>
+	p {
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+</style>

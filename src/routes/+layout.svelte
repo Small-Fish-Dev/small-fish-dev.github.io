@@ -34,26 +34,36 @@
 </script>
 
 <!-- TODO: Handle invert of colours -->
-<nav
-	class="absolute w-full justify-end hidden md:flex md:flex-row z-50 md:pt-5 md:pb-5 md:pr-5 gradient"
->
-	{#each routes as route}
-		<NavButton
-			href={route.href}
-			icon={route.icon}
-			label={route.label}
-			disabled={$page.url.pathname == route.href}
-		/>
-	{/each}
+<nav class="absolute w-full justify-end hidden md:flex z-50 gradient p-4">
+	<a href="/" class="absolute md:max-lg:hidden visible left-4 top-4 pointer-events-auto">
+		<img class="image w-[64px] h-[64px]" src="/footer/logo.png" alt="logo" />
+	</a>
+	<div class="flex flex-row mt-1">
+		{#each routes as route}
+			<NavButton
+				href={route.href}
+				icon={route.icon}
+				label={route.label}
+				disabled={$page.url.pathname == route.href}
+			/>
+		{/each}
+	</div>
 </nav>
 
 <!-- Hamburger for anything under medium breakpoint. -->
-<div class="absolute w-full justify-end flex md:hidden gradient z-50 pt-5 pb-5 pr-5 text-white">
+<div class="absolute w-full justify-end flex md:hidden gradient z-50 p-4 text-white">
+	<a href="/" class="absolute left-4 top-4 pointer-events-auto">
+		<img class="image w-[64px] h-[64px]" src="/footer/logo.png" alt="logo" />
+	</a>
 	<button
 		class="transition-all pointer-events-auto scale-100 hover:scale-110"
 		on:click={() => (collapsed = !collapsed)}
 	>
-		<Icon icon="mdi:hamburger-menu" class="text-6xl mr-2" />
+		<Icon
+			icon="mdi:hamburger-menu"
+			class="text-6xl"
+			style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))"
+		/>
 	</button>
 </div>
 
@@ -62,7 +72,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="absolute h-screen w-screen z-40 bg-black opacity-50"
+		class="absolute h-screen w-screen z-40 bg-black opacity-50 md:hidden visible"
 		in:fade={{ duration: 300, easing: quadInOut }}
 		out:fade={{ duration: 300, easing: quadInOut }}
 		on:click={() => (collapsed = false)}
@@ -71,7 +81,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-1 shadow"
+		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-2 shadow"
 		in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
 		out:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
 		on:click={() => (collapsed = false)}
@@ -102,12 +112,21 @@
 
 <style>
 	.gradient {
-		background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.7) 0%,
+			rgba(0, 0, 0, 0.1) 80%,
+			rgba(0, 0, 0, 0) 100%
+		);
 		pointer-events: none;
 	}
 
 	.shadow {
 		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.5);
+	}
+
+	.image {
+		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 	}
 
 	.overlay {
