@@ -16,7 +16,7 @@
 </script>
 
 <div class="text-sm font-poppins {className}">
-	<div class="bg-white w-full h-full box overflow-y-scroll overflow-x-hidden">
+	<div class="bg-white max-h-full box overflow-y-scroll overflow-x-hidden">
 		<!-- Close Button -->
 		<div class="absolute z-20 m-2">
 			<button
