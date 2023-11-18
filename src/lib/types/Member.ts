@@ -120,10 +120,10 @@ export const Members: Member[] = [
 	{
 		name: 'Grodbert',
 		description:
-			"I love bugs so much it's unreal anros.",
+			"I love bugs so much it's unreal /an/ros.",
 		avatar: 'team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
-		country: Countries.Italy
+		country: Countries.Italy,
 		roles: {
 			'3D Artist': [Software.Blender, Software.Painter, Software.Designer],
 			Multimedia: [
@@ -142,10 +142,11 @@ export const Members: Member[] = [
 			phylum: ['Arthropoda', 'https://en.wikipedia.org/wiki/Arthropoda'],
 			class: ['Insecta', 'https://en.wikipedia.org/wiki/Insecta'],
 			order: ['Diptera', 'https://en.wikipedia.org/wiki/Diptera'],
-			family: ['Bombyliidae', 'https://en.wikipedia.org/wiki/Bombyliidae']
-			subfamily: ['Bombyliinae', 'https://en.wikipedia.org/wiki/Bombyliinae']
-			tribe: [['Bombyliini', 'https://en.wikipedia.org/wiki/Bombyliini']
-			genus: [['Anastoechus', 'https://en.wikipedia.org/wiki/Anastoechus']
+			family: ['Bombyliidae', 'https://en.wikipedia.org/wiki/Bombyliidae'],
+			subfamily: ['Bombyliinae', 'https://en.wikipedia.org/wiki/Bombyliinae'],
+			tribe: ['Bombyliini', 'https://en.wikipedia.org/wiki/Bombyliini'],
+			genus: ['Anastoechus', 'https://en.wikipedia.org/wiki/Anastoechus']
+		}
 	},
 
 	// rndtrash
