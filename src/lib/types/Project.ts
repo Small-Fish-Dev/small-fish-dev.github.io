@@ -8,6 +8,12 @@ export interface Project {
 
 export const Projects: Project[] = [
 	{
+		title: 'In This House',
+		description:
+			'Spooky Robathon with 3 levels and 3 monsters trying to kick you out. 1st Place winner of the Mighty Brick Game Jam.',
+		contributors: ['ubre', 'Grodbert', 'ceitine', 'gio', 'rndtrash', 'Luke', 'CyberAgent']
+	},
+	{
 		title: 'Death Card',
 		description: 'A dungeon crawler where the levels are procedurally generated voxel worlds!',
 		contributors: ['ceitine', 'rndtrash', 'Grodbert'],
@@ -23,6 +29,11 @@ export const Projects: Project[] = [
 		description:
 			'Clone of the infamous Little Big Planet gamemode where you had to survive from bombs.',
 		contributors: ['ubre', 'Grodbert', 'ceitine'],
-		tags: [['s&box'], ['Highlighted']]
+		tags: [['s&box'], ['Highlighted']],
+	},
+	{
+		title: 'Hamsteria',
+		description:
+			'Restaurant simulator inspired by Citizen Burger Disorder where you micromanage and automate every crazy part of your business.'
 	}
 ];

@@ -38,5 +38,6 @@ export const Countries: Record<string, string> = {
 	Russia: '/team/flags/flag_ru.png',
 	UK: '/team/flags/flag_uk.png',
 	US: '/team/flags/flag_us.png',
-	Poland: '/team/flags/flag_pl.png'
+	Poland: '/team/flags/flag_pl.png',
+	Pirate: '/team/flags/flag_pirate.png',
 };

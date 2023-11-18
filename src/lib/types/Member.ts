@@ -221,5 +221,22 @@ export const Members: Member[] = [
 		name: 'gio',
 		point: { x: 561, y: 273 },
 		country: Countries.Australia
-	}
+	},
+
+	// Cool looking jellyfish
+	{
+		name: 'Cool Looking Jellyfish',
+		avatar: '/team/profiles/cool_jellyfish.jpg',
+		description: 'A cool looking jellyfish wearing sunglasses',
+		point: { x: -38, y: 157 },
+		country: Countries.Pirate,
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Cnidaria', 'https://en.wikipedia.org/wiki/Cnidaria'],
+			class: ['Hydrozoa', 'https://en.wikipedia.org/wiki/Hydrozoa'],
+			order: ['Siphonophorae', 'https://en.wikipedia.org/wiki/Siphonophorae'],
+			family: ['Physaliidae', 'https://en.wikipedia.org/wiki/Physalia'],
+			species: ['P. physalis', 'https://en.wikipedia.org/wiki/Portuguese_man_o%27_war']
+		}
+	},
 ];
