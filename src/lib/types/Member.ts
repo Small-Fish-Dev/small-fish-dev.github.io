@@ -144,8 +144,23 @@ export const Members: Member[] = [
 	// CyberAgent
 	{
 		name: 'CyberAgent',
+		avatar: '/team/profiles/cyber.jpg',
+		description: 'She make me cyber till I agent.',
 		point: { x: 146, y: 86 },
-		country: Countries.US
+		country: Countries.US,
+		roles: {
+			'3D Artist': [Software.Blender, Software.Painter],
+			'Level Design': [Software.Hammer]
+		},
+		socials: ['https://twitter.com/cyberagentz', 'https://github.com/CyberAgentz'],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
+			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
+			species: ['R. rattus', 'https://en.wikipedia.org/wiki/Black_Cat']
+		}
 	},
 
 	// gio
