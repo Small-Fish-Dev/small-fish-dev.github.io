@@ -52,9 +52,7 @@
 
 			<!-- Name -->
 			<div class="flex mt-4 w-full justify-end">
-				<h1
-					class="name w-fit p-[5px] pr-[10px] pl-[10px] text-white bg-blue font-medium text-3xl z-10"
-				>
+				<h1 class="name p-[5px] pr-[10px] pl-[10px] text-white bg-blue font-medium text-2xl z-10">
 					{member.name}
 				</h1>
 			</div>
