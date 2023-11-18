@@ -119,8 +119,33 @@ export const Members: Member[] = [
 	// Grodbert
 	{
 		name: 'Grodbert',
+		description:
+			"I love bugs so much it's unreal /an/ros.",
+		avatar: 'team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
 		country: Countries.Italy
+		roles: {
+			'3D Artist': [Software.Blender, Software.Painter, Software.Designer],
+			Multimedia: [
+				Software.Photoshop,
+				Software.Premiere,
+			],
+		},
+		socials: [
+			'https://grodbert.artstation.com/',
+			'https://twitter.com/Grodbort',
+			'https://steamcommunity.com/id/Grodbert/',
+			'https://github.com/Grodbert'
+		],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Arthropoda', 'https://en.wikipedia.org/wiki/Arthropoda'],
+			class: ['Insecta', 'https://en.wikipedia.org/wiki/Insecta'],
+			order: ['Diptera', 'https://en.wikipedia.org/wiki/Diptera'],
+			family: ['Bombyliidae', 'https://en.wikipedia.org/wiki/Bombyliidae']
+			subfamily: ['Bombyliinae', 'https://en.wikipedia.org/wiki/Bombyliinae']
+			tribe: [['Bombyliini', 'https://en.wikipedia.org/wiki/Bombyliini']
+			genus: [['Anastoechus', 'https://en.wikipedia.org/wiki/Anastoechus']
 	},
 
 	// rndtrash
