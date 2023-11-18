@@ -4,59 +4,47 @@ date: '2022-1-1'
 published: true
 ---
 
-We finished our first ever game jam while also become a team of devs!
+We successfully completed our first-ever game jam and officially formed a team of developers!
 
-The theme was "Winter" which for a winter based jam was... idk kinda too easy and too bland, but we came up with a creative idea!
+The theme was "Winter," which, for a winter-based jam, seemed somewhat easy and generic. However, we came up with a creative idea!
 
-Although smallfish was just Ubre and Grobert, during this gamejam hosted by - PERSON,
-
-Luke(NotGaylien) and rndtrash joined and with a extra artist and programmer, we managed to smash out a full unique game!
-We also managed to reel in a extra bonus ceitine right at the end!
-
-+3 developers!
+Originally consisting of just Ubre and Grobert, Smallfish expanded during this game jam (hosted by Eagle One), as Luke (NotGaylien) and rndtrash joined. With an additional artist and programmer, we successfully developed a unique and complete game. We also welcomed a bonus member, Ceitine, right at the end, adding three more developers to our team.
 
 <Heading title="The Game?" />
 
-The premise is you are trapped in a frozen wasteland (Finland) on the edge of a frozen lake, wanting to escape you risk your life.
-drilling holes in the ice and fishing to sell fish for money, hoping to buy a plane ticket to escape.
-You can buy upgrades along the way to help you survive!
+The game's premise involves being trapped in a frozen wasteland (This being Finland) along the edge of a frozen lake. Desiring to escape, you risk your life, avoiding freezing to death, while drilling holes in the ice, fishing to sell fish for money, and aiming to buy a plane ticket. You can acquire upgrades along the way to enhance your chances of survival.
 
 <Heading title="PostProcessing" caption="By Luke" />
 
-I threw together a dynamic freezing shader.
-with a few layered effects.
+I created a dynamic screen freezing shader incorporating several layered effects:
 
-- Edge of screen ice buildup
-- colours fading away to grey
-- bluring
+- Edge-of-screen ice buildup
+- Colors fading away to grey
+- Blurring
 
-these 3 effects will slowly creep in when you set a freezing value on the shader, allowing an effect of your "eyes" slowly freezing over, or rapidly "melting" away the ice.
+These effects gradually set in as you adjust the freezing value on the shader, simulating your "eyes" slowly freezing over or rapidly "melting" away the ice. This visual indicator effectively represents how cold you are and how much more cold you can endure before losing.
 
 <Video src="frosty_pp.mp4" />
 
-This is a really nice visual indicator of how cold you are and how much more cold you can withstand before you lose.
-
 <Heading title="Props and Clothing" caption="By Luke" />
 
-I really wanted custom clothing.
+For added immersion, I designed custom clothing, No game in s&box up till now has had custom clothing. 
 
-No game up to this point has done custom clothing, so i threw together some basic clothes that could be recoloured.
-There isnt much detail, but you will never be close enough to see any detail anyway.
+While lacking intricate details, these basic clothes can be recolored. Considering the gameplay perspective, the lack of close-up visibility, there wouldnt be a need for details anyway.
 <Img src="clothes.png" />
 
-I also dealt with a any props and hard surface models, be that the fishing rods, tools, cabin, bench and so on.
-these were all quick and easy pushed out models.
+I also handled various props and hard surface models, including fishing rods, tools, the cabin, bench, etc. These models were quickly and efficiently created.
 <Img src="props.png" />
 
 <Heading title="Particles" caption="By Luke and Ubre" />
 
 Every good games needs some particles.
-So I (Luke) quickly threw together some
+So I (Luke) quickly threw some together:
 
 - water particles
 - nice stinky and flies particles ( this will help you to find tiny fish you might not be able to notice! )
 
 <Video src="stinky_flies.mp4" />
 
-Ubre
-HEHEHE HAHAHA WORMS!!!! ARGHHH FIRE FIRE FIRE!!!!
+Lastly, Ubre humorously exclaimed, "HEHEHE HAHAHA WORMS!!!! ARGHHH FIRE FIRE FIRE!!!!"
+as he added some worm and fire particles.

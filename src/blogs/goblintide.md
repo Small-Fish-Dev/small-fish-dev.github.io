@@ -4,53 +4,44 @@ date: '2023-04-10'
 published: true
 ---
 
-Another Gamejam! yep its that time!
+Another Gamejam
 
-All the devs from before.
-Ubre, Grodbert, rndtrash, ceitine, NotGaylien, wheatleymf.
-And we seemed to have aquired a wonderful Australian UI programmer!!!
-Gio!
+All the devs from before are on board: Ubre, Grodbert, rndtrash, ceitine, NotGaylien, and wheatleymf. We've also welcomed a wonderful Australian UI programmer, Gio!
 
-This time around the theme was alot more creative!
+This time, the theme was a lot more creative: "Gangs." 
 
-"Gangs"
-
-With this it mentioned groups of induviduals, and so on, so even more freedom than just a gang.
-So we decided to go wild with the way we will use that theme...
+It also allowed for more freedom, going beyond just traditional gangs. So, we decided to get creative with how we'd interpret that theme.
 
 <Heading title="Wait... Goblins?" />
 
-Goblins. Its genius, who would expect goblins!
+Enter goblins. 
 
-The idea here is you are a goblin king, you raid vilalgers to get resources to expand your goblin army, and keep raiding more and more, getting more and more resoureces to become to greatest goblin king!
+It's genius— who would expect goblins! 
 
-We tried to go more for a clash of clans style gameplay, where you come back every few hours or every day, to get more energy to raid another village,
-but this seemed to have confused people greatley, and people thought they had to abuse commands left in to get more energy....
+The concept revolves around being a goblin king, raiding villages for resources to expand your goblin army. The goal is to raid more villages, amass more resources, and become the greatest goblin king.
 
-woops....
+We aimed for a Clash of Clans-style gameplay, where players return every few hours or each day to gather energy between sessions for raiding. Unfortunately, this seemed to confuse people greatly, as they thought they had to abuse certain commands left in to get more energy. Whoops...
 
 <Heading title="Clothes and Props" caption="By Luke" />
 
-The npcs i wanted to actually look like villagers, so i actually made some clothes and some variations of them to make our lovely npcs fit into their little villages!
+For the NPCs, I wanted them to genuinely resemble villagers. So, I made some clothes with variations to integrate our lovely NPCs seamlessly into their villages.
 
 <Img src="clothing.png" />
 
-Also i threw together all the destructable props and weapons within the game!
-These models are alot more detailed compared to the previous jams, so i am proud of how they look!
+I also made all the destructible props and weapons in the game. These models are more detailed compared to previous jams, and I'm proud of how they turned out.
 
 <Heading title="Particles" caption="By Luke" />
 
-I threw together some nice particles for breaking props, and setting things on fire.
-also a magic wand particle!
+I created particles for breaking props and setting things on fire, also a magic wand particle. They're simple, but every game needs particles!
 
 <Video src="wood_particle.mp4" />
 
-these are pretty simple but every game needs particles!!!
-
 <Heading title="Voicelines" caption="By Luke" />
 
-Those annoying screaming villagers... They are me... They are all british men making random gibberish noises...
+Those annoying screaming villagers... They're me. 
 
-I also did some quick tutorial narration voice lines, since i didnt want the game to be too confusing!
+They're all a British man making random gibberish noises. 
 
-I am not cut out to be a voice actor...
+I also recorded some quick tutorial narration voice lines to prevent the game from being too confusing. 
+
+Admittedly, I'm not cut out to be a voice actor.

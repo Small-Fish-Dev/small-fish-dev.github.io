@@ -23,7 +23,7 @@ export const Members: Member[] = [
 	{
 		name: 'ceitine',
 		description:
-			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅',
+			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅, You got to be ceitine me!!!',
 		avatar: 'team/profiles/ceitine.jpg',
 		point: { x: 352, y: 31 },
 		country: Countries.Finland,
@@ -58,8 +58,29 @@ export const Members: Member[] = [
 	// Luke
 	{
 		name: 'Luke',
+		description:
+			'A man of many talents... A master of none... Professionally useless...',
+		avatar: 'team/profiles/luke.jpg',
 		point: { x: 303, y: 57 },
-		country: Countries.UK
+		country: Countries.UK,
+		roles: {
+			Programmer: [Languages.CSharp, Languages.HLSL, Languages.JS, Languages.Python],
+			'3D Art': [Software.Blender, Software.Marmoset, Software.Painter, Software.Designer, Software.Hammer ],
+			Multimedia: [Software.Audacity]
+		},
+		socials: [
+			'https://www.artstation.com/notgaylien',
+			'https://github.com/NotGaylien',
+			'https://steamcommunity.com/id/NotGaylien/'
+		],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Primates', 'https://en.wikipedia.org/wiki/Primate'],
+			family: ['Cercopithecidae', 'https://en.wikipedia.org/wiki/Old_World_monkey'],
+			species: ['N. larvatus', 'https://en.wikipedia.org/wiki/Proboscis_monkey']
+		}
 	},
 
 	// ubre
@@ -98,8 +119,34 @@ export const Members: Member[] = [
 	// Grodbert
 	{
 		name: 'Grodbert',
+		description:
+			"I love bugs so much it's unreal /an/ros.",
+		avatar: 'team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
-		country: Countries.Italy
+		country: Countries.Italy,
+		roles: {
+			'3D Artist': [Software.Blender, Software.Painter, Software.Designer],
+			Multimedia: [
+				Software.Photoshop,
+				Software.Premiere,
+			],
+		},
+		socials: [
+			'https://grodbert.artstation.com/',
+			'https://twitter.com/Grodbort',
+			'https://steamcommunity.com/id/Grodbert/',
+			'https://github.com/Grodbert'
+		],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Arthropoda', 'https://en.wikipedia.org/wiki/Arthropoda'],
+			class: ['Insecta', 'https://en.wikipedia.org/wiki/Insecta'],
+			order: ['Diptera', 'https://en.wikipedia.org/wiki/Diptera'],
+			family: ['Bombyliidae', 'https://en.wikipedia.org/wiki/Bombyliidae'],
+			subfamily: ['Bombyliinae', 'https://en.wikipedia.org/wiki/Bombyliinae'],
+			tribe: ['Bombyliini', 'https://en.wikipedia.org/wiki/Bombyliini'],
+			genus: ['Anastoechus', 'https://en.wikipedia.org/wiki/Anastoechus']
+		}
 	},
 
 	// rndtrash
