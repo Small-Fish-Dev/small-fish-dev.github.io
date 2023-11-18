@@ -46,7 +46,9 @@
 
 			<!-- Name -->
 			<div class="flex top-[0px] w-full justify-center">
-				<h1 class="name w-fit p-[5px] pr-[10px] pl-[10px] text-white font-medium text-3xl z-10">
+				<h1
+					class="name w-fit p-[5px] pr-[10px] pl-[10px] text-white bg-blue font-medium text-3xl z-10"
+				>
 					{member.name}
 				</h1>
 			</div>

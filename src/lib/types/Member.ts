@@ -22,8 +22,7 @@ export const Members: Member[] = [
 	// ceitine
 	{
 		name: 'ceitine',
-		description:
-			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅, You got to be ceitine me!!!',
+		description: "you've gyatt to be ceitine me,,,",
 		avatar: 'team/profiles/ceitine.jpg',
 		point: { x: 352, y: 31 },
 		country: Countries.Finland,
@@ -58,14 +57,19 @@ export const Members: Member[] = [
 	// Luke
 	{
 		name: 'Luke',
-		description:
-			'A man of many talents... A master of none... Professionally useless...',
+		description: 'A man of many talents... A master of none... Professionally useless...',
 		avatar: 'team/profiles/luke.jpg',
 		point: { x: 303, y: 57 },
 		country: Countries.UK,
 		roles: {
 			Programmer: [Languages.CSharp, Languages.HLSL, Languages.JS, Languages.Python],
-			'3D Art': [Software.Blender, Software.Marmoset, Software.Painter, Software.Designer, Software.Hammer ],
+			'3D Art': [
+				Software.Blender,
+				Software.Marmoset,
+				Software.Painter,
+				Software.Designer,
+				Software.Hammer
+			],
 			Multimedia: [Software.Audacity]
 		},
 		socials: [
@@ -119,17 +123,13 @@ export const Members: Member[] = [
 	// Grodbert
 	{
 		name: 'Grodbert',
-		description:
-			"I love bugs so much it's unreal /an/ros.",
+		description: "I love bugs so much it's unreal /an/ros.",
 		avatar: 'team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
 		country: Countries.Italy,
 		roles: {
 			'3D Artist': [Software.Blender, Software.Painter, Software.Designer],
-			Multimedia: [
-				Software.Photoshop,
-				Software.Premiere,
-			],
+			Multimedia: [Software.Photoshop, Software.Premiere]
 		},
 		socials: [
 			'https://grodbert.artstation.com/',
