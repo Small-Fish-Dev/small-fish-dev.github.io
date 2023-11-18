@@ -3,7 +3,7 @@
 	import '../syntax-highlight.css'; // https://github.com/PrismJS/prism-themes
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import { swipeable } from '@react2svelte/swipeable';
 	import type { SwipeEventData } from '@react2svelte/swipeable';
@@ -64,44 +64,41 @@
 
 <!-- Hamburger menu. -->
 {#if isMenuOpen}
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div
-		class="absolute h-full w-screen z-40 bg-black opacity-50 md:hidden visible"
-		in:fade={{ duration: 100, easing: quadInOut }}
-		out:fade={{ duration: 100, easing: quadInOut }}
-		on:pointerdown={() => {
-			isMenuOpen = !isMenuOpen;
-		}}
-	/>
-
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div
-		use:swipeable
-		on:swiped={swipeHandler}
-		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-2 shadow"
-		in:fly={{ duration: 100, x: '100%', opacity: 0.5, easing: quadInOut }}
-		out:fly={{ duration: 100, x: '100%', opacity: 0.5, easing: quadInOut }}
-	>
-		{#each routes as route}
-			<div
-				on:click={() => {
-					isMenuOpen = false;
-				}}
-			>
-				<NavButton
-					href={route.href}
-					icon={route.icon}
-					label={route.label}
-					disabled={$page.url.pathname == route.href}
-				/>
+	<div class="relative z-50">
+		<nav
+			use:swipeable
+			on:swiped={swipeHandler}
+			in:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
+			out:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
+			class="fixed right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
+		>
+			{#each routes as route}
+				<div
+					on:click={() => {
+						isMenuOpen = false;
+					}}
+				>
+					<NavButton
+						href={route.href}
+						icon={route.icon}
+						label={route.label}
+						disabled={$page.url.pathname == route.href}
+					/>
+				</div>
+			{/each}
+			<div class="mt-auto">
+				<p></p>
 			</div>
-		{/each}
+		</nav>
 	</div>
 {/if}
 
-<div class="flex flex-col min-h-screen">
+<div
+	on:click={() => {
+		isMenuOpen = false;
+	}}
+	class="flex flex-col min-h-screen"
+>
 	<slot />
 </div>
 
