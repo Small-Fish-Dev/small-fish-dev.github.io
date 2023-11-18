@@ -19,7 +19,7 @@ export const Members: Member[] = [
 		name: 'ceitine',
 		description:
 			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅',
-		avatar: 'https://i.imgur.com/fTkU0Nv.png',
+		avatar: 'team/profiles/ceitine.jpg',
 		point: { x: 352, y: 31 },
 		country: Countries.Finland,
 		roles: {
