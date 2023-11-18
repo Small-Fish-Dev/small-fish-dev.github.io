@@ -27,7 +27,7 @@
 		}
 	];
 
-	let isMenuOpen = true;
+	let isMenuOpen = false;
 
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
 		if (event.detail.dir === 'Right') isMenuOpen = false;

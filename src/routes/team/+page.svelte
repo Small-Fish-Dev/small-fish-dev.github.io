@@ -38,10 +38,9 @@
 	let ctx: CanvasRenderingContext2D;
 	let member: Member | null;
 
-	let pinGlow: HTMLImageElement;
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
-	const defaultPinSize = 10;
+	const defaultPinSize = 11;
 
 	interface Pin {
 		image: HTMLImageElement;

@@ -175,7 +175,7 @@ export const Members: Member[] = [
 		name: 'matek',
 		avatar: '/team/profiles/matek.jpg',
 		description: 'I wrote my own fucking compiler',
-		point: { x: 145, y: 75 },
+		point: { x: 145, y: 74 },
 		country: Countries.Poland,
 		roles: {
 			Programmer: [Languages.CPP, Languages.CSharp, Languages.JS, Languages.Java, Languages.Python],
@@ -238,5 +238,5 @@ export const Members: Member[] = [
 			family: ['Physaliidae', 'https://en.wikipedia.org/wiki/Physalia'],
 			species: ['P. physalis', 'https://en.wikipedia.org/wiki/Portuguese_man_o%27_war']
 		}
-	},
+	}
 ];
