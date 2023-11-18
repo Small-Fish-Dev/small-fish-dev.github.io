@@ -27,10 +27,10 @@
 		timer = setInterval(() => {
 			currentIndex = (currentIndex + 1) % images.length;
 		}, 60);
+	});
 
-		onDestroy(() => {
-			clearInterval(timer);
-		});
+	onDestroy(() => {
+		clearInterval(timer);
 	});
 
 	let canvas: HTMLCanvasElement;
