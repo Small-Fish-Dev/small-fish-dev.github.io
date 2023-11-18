@@ -12,7 +12,11 @@
 		: 'bottom'} uppercase font-poppins text-sm transition-all hover:scale-110 icon"
 	{text}
 >
-	<img class="image w-full bg-cover" {src} alt={text} />
+	{#if src}
+		<img class="image w-full bg-cover" {src} alt={text} />
+	{:else}
+		{text}
+	{/if}
 </div>
 
 <style>
