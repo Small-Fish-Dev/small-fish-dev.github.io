@@ -78,7 +78,8 @@ export const Members: Member[] = [
 				Software.AfterEffects,
 				Software.Premiere,
 				Software.Audition
-			]
+			],
+			'Level Design': [Software.Hammer]
 		},
 		socials: [
 			'https://twitter.com/yuberee',
