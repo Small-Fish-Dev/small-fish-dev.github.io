@@ -23,13 +23,19 @@
 
 <div class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}">
 	<!-- Current image-->
-	<p class="absolute font-bold text-white m-2 p-1 bottom-0 right-0 opacity-20 z-20 bg-black">
+	<p
+		class="absolute font-bold text-white m-2 p-1 bottom-10 right-0 opacity-20 z-20 bg-black break-all max-w-1/2"
+	>
 		{current}: {images[current]}
 	</p>
 
 	<!-- Image -->
 	<img class="absolute image-bg overflow-hidden h-full w-full" src={images[current]} alt="" />
-	<img class="h-full image z-10" src={images[current]} alt={`image ${current}`} />
+	<img
+		class="h-full image z-10 aspect object-contain"
+		src={images[current]}
+		alt={`image ${current}`}
+	/>
 
 	<!-- Buttons -->
 	<div
@@ -44,7 +50,7 @@
 	</div>
 
 	<!-- Image dots -->
-	<div class="absolute bottom-0 z-10 left-0 w-full pb-4 flex justify-center items-center gap-3">
+	<div class="absolute bottom-0 z-20 left-0 w-full pb-4 flex justify-center items-center gap-3">
 		{#each images as image, i}
 			<button
 				class="transition-all rounded-full bg-white {i == current

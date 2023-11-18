@@ -4,6 +4,34 @@
 	import { fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
+	import { onDestroy, onMount } from 'svelte';
+
+	let paths = [
+		'/team/flags/pin_hover0.png',
+		'/team/flags/pin_hover1.png',
+		'/team/flags/pin_hover2.png',
+		'/team/flags/pin_hover3.png',
+		'/team/flags/pin_hover4.png'
+	];
+	let images: HTMLImageElement[] = [];
+	let currentIndex = 0;
+	let timer = 0;
+
+	onMount(() => {
+		paths.forEach((path) => {
+			let img = new Image();
+			img.src = path;
+			images[images.length] = img;
+		});
+
+		timer = setInterval(() => {
+			currentIndex = (currentIndex + 1) % images.length;
+		}, 60);
+
+		onDestroy(() => {
+			clearInterval(timer);
+		});
+	});
 
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
@@ -27,9 +55,6 @@
 
 		mapImage = new Image();
 		mapImage.src = '/team/pxmap.png';
-
-		pinGlow = new Image();
-		pinGlow.src = '/team/flags/pin_hover.png';
 
 		// Create pins.
 		let count = 0;
@@ -68,7 +93,15 @@
 				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
 
 				// Show a little gold outline around the pin if selected.
-				if (pin == activePin) context.drawImage(pinGlow, x, y, pin.size, pin.size);
+				if (pin == activePin) {
+					context.drawImage(
+						images[currentIndex],
+						x - (pin.size * 0.25) / 2,
+						y - (pin.size * 0.25) / 2,
+						pin.size * 1.25,
+						pin.size * 1.25
+					);
+				}
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});

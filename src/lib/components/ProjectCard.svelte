@@ -1,17 +1,21 @@
 <script lang="ts">
 	import type { Project } from '$lib/types/Project';
-	export let project: Project;
+	import ImageCollage from './ImageCollage.svelte';
 
 	let className: string = '';
 	export { className as class };
+	export let project: Project;
 </script>
 
 <div class="font-poppins bg-red flex flex-col {className}">
+	<!-- Title -->
 	<div class="w-fit">
 		<h1 class="shadow-sm font-medium text-white bg-blue p-4 sm:text-4xl text-3xl mb-4">
 			{project.title}
 		</h1>
 	</div>
+
+	<!-- Tags -->
 	{#if project.tags}
 		<div class="flex flex-wrap flex-row gap-2 flex-wrap mb-1">
 			{#each project.tags as tag}
@@ -24,9 +28,21 @@
 			{/each}
 		</div>
 	{/if}
+
+	<!-- Description -->
 	<p class="text-xl w-3/4">{project.description}</p>
+
+	<!-- Image collage -->
+	{#if project.images}
+		<ImageCollage
+			class="w-[300px] md:w-[500px] aspect-[16/9] m-2 shadow-sm border-solid border-[2px]"
+			images={project.images}
+		/>
+	{/if}
+
+	<!-- Contributors -->
 	<p class="mt-5 text-xl w-3/4">Contributors</p>
-	<div class="flex-row">
+	<div class="flex flex-row flex-wrap">
 		{#if project.contributors}
 			{#each project.contributors as contributor}
 				<a

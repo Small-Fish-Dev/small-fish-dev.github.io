@@ -3,6 +3,7 @@ export interface Project {
 	title: string;
 	description: string;
 	contributors?: string[];
+	images?: string[];
 	tags?: [string, string?][];
 }
 
@@ -11,6 +12,7 @@ export const Projects: Project[] = [
 		title: 'In This House',
 		description:
 			'Spooky Robathon with 3 levels and 3 monsters trying to kick you out. 1st Place winner of the Mighty Brick Game Jam.',
+		images: ['/blogs/example/ex.png', '/blogs/frostrial/clothes.png'],
 		contributors: ['ubre', 'Grodbert', 'ceitine', 'gio', 'rndtrash', 'Luke', 'CyberAgent']
 	},
 	{
@@ -29,7 +31,7 @@ export const Projects: Project[] = [
 		description:
 			'Clone of the infamous Little Big Planet gamemode where you had to survive from bombs.',
 		contributors: ['ubre', 'Grodbert', 'ceitine'],
-		tags: [['s&box'], ['Highlighted']],
+		tags: [['s&box'], ['Highlighted']]
 	},
 	{
 		title: 'Hamsteria',
