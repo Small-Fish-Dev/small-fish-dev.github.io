@@ -50,7 +50,7 @@
 	</div>
 	<button
 		class="md:hidden text-white transition-all pointer-events-auto scale-100 hover:scale-110"
-		on:pointerdown={() => {
+		on:click={() => {
 			isMenuOpen = !isMenuOpen;
 		}}
 	>
@@ -72,25 +72,21 @@
 			out:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
 			class="fixed right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
-			{#each routes as route}
-				<div
-					on:click={() => {
-						isMenuOpen = false;
-					}}
-				>
-					<NavButton
-						href={route.href}
-						icon={route.icon}
-						label={route.label}
-						disabled={$page.url.pathname == route.href}
-					/>
-				</div>
-			{/each}
-			<div class="mt-auto font-poppins text-white text-center">
-				<p>Small Fish</p>
-				<p class="text-xs">
-					<span> 2021 - 2024 © All rights are VERY reserved </span>
-				</p>
+			<div class="flex flex-col gap-4">
+				{#each routes as route}
+					<div
+						on:click={() => {
+							isMenuOpen = false;
+						}}
+					>
+						<NavButton
+							href={route.href}
+							icon={route.icon}
+							label={route.label}
+							disabled={$page.url.pathname == route.href}
+						/>
+					</div>
+				{/each}
 			</div>
 		</nav>
 	</div>
@@ -111,7 +107,7 @@
 	<footer class="mt-auto">
 		<div class="bg-darkblue overlay static-background">
 			<img
-				class="absolute bottom-0 right-0 h-full bg-cover z-50 p-[20px]"
+				class="absolute bottom-0 right-0 h-full bg-cover z-10 p-[20px]"
 				src="/footer/concretefree.png"
 				alt="concretefree"
 			/>
