@@ -1,19 +1,26 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 	import Card from '$lib/components/Card.svelte';
+
+	let ready = false;
+	onMount(() => (ready = true));
 </script>
 
 <div>
 	<header
 		class="relative flex h-[90vh] shrink-0 flex-col items-center justify-center gap-8 p-4 font-display md:gap-12"
 	>
-		<div class="relative z-30 max-w-3xl">
-			<img src="home/header-logo.png" alt="Small Fish Logo" />
-			<div class="flex justify-center flex-wrap gap-2 p-8">
-				<p class="font-poppins text-2xl text-center text-white font-medium">
-					We make great games or something
-				</p>
+		{#if ready}
+			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
+				<img src="home/header-logo.png" alt="Small Fish Logo" />
+				<div class="flex justify-center flex-wrap gap-2 p-8">
+					<p class="font-poppins text-2xl text-center text-white font-medium">
+						We make great games or something
+					</p>
+				</div>
 			</div>
-		</div>
+		{/if}
 
 		<div class="color-overlay absolute z-20 w-auto w-full h-full max-w-none" />
 		<div class="background-fade absolute z-10 w-auto w-full h-full max-w-none" />
