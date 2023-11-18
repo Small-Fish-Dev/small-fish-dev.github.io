@@ -47,7 +47,7 @@
 
 			<!-- Name -->
 			<div class="flex top-[0px] w-full justify-center">
-				<h1 class="bg-black w-fit p-[5px] pr-[10px] pl-[10px] text-white font-medium text-3xl z-10">
+				<h1 class="name w-fit p-[5px] pr-[10px] pl-[10px] text-white font-medium text-3xl z-10">
 					{member.name}
 				</h1>
 			</div>
@@ -122,6 +122,10 @@
 </div>
 
 <style>
+	.name {
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+	}
+
 	.drop-shadow:hover {
 		filter: drop-shadow(0px 2px rgba(0, 0, 0, 0.75));
 		transform: translate(0, -2px);
