@@ -38,14 +38,16 @@
 	<a href="/" class="logo left-4 top-4 pointer-events-auto">
 		<img class="image h-20 md:h-28 aspect-square" src="/logo.png" alt="logo" />
 	</a>
-	<div class="hidden md:flex flex-row mt-1">
+	<div class="hidden md:flex flex-row items-center mt-1">
 		{#each routes as route}
-			<NavButton
-				href={route.href}
-				icon={route.icon}
-				label={route.label}
-				disabled={$page.url.pathname == route.href}
-			/>
+			<div>
+				<NavButton
+					href={route.href}
+					icon={route.icon}
+					label={route.label}
+					disabled={$page.url.pathname == route.href}
+				/>
+			</div>
 		{/each}
 	</div>
 	<button
