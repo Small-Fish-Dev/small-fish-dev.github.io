@@ -27,7 +27,7 @@
 		}
 	];
 
-	let isMenuOpen = false;
+	let isMenuOpen = true;
 
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
 		if (event.detail.dir === 'Right') isMenuOpen = false;
@@ -81,7 +81,9 @@
 			out:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
 			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
-			<div class="flex flex-col gap-4">
+			<img src="home/header-logo.png" alt="poop fish logo" />
+			<div class="bg-white bg-opacity-75 h-[2px] mt-4" />
+			<div class="flex flex-col gap-4 pt-2">
 				{#each routes as route}
 					<div
 						on:click={() => {
