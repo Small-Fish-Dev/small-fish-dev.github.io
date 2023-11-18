@@ -15,11 +15,16 @@
 	<p class="text-xl w-3/4">{project.description}</p>
 	<p class="mt-5 text-xl w-3/4">Contributors</p>
 	<div class="flex-row">
-		{#each project.contributors as contributor}
-			<a href="/team#{contributor}" class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0"
-				>{contributor}</a
-			>
-		{/each}
+		{#if project.contributors}
+			{#each project.contributors as contributor}
+				<a
+					href="/team#{contributor}"
+					class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0">{contributor}</a
+				>
+			{/each}
+		{:else}
+			<a href="/team">everyone @ small fish</a>
+		{/if}
 	</div>
 </div>
 

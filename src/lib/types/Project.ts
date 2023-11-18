@@ -2,19 +2,18 @@
 export interface Project {
 	title: string;
 	description: string;
-	contributors: string[];
+	contributors?: string[];
 }
 
 export const Projects: Project[] = [
 	{
 		title: 'Death Card',
 		description: 'A dungeon crawler where the levels are procedurally generated voxel worlds!',
-		contributors: ['ceitine', 'shlakoblock', 'Grodbert']
+		contributors: ['ceitine', 'rndtrash', 'Grodbert']
 	},
 	{
 		title: 'Sauna',
-		description: 'A social simulator game where you play as the average Finnish man!',
-		contributors: ['everyone @ Small Fish']
+		description: 'A social simulator game where you play as the average Finnish man!'
 	},
 	{
 		title: 'Bomb Survival',

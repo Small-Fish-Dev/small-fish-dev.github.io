@@ -3,6 +3,7 @@
 	import { Projects } from '$lib/types/Project';
 	import type { EventHandler } from 'svelte/elements';
 	import SocialButton from './SocialButton.svelte';
+	import HoverIcon from './HoverIcon.svelte';
 
 	export let member: Member;
 	export let onClose: any | null;
@@ -16,7 +17,7 @@
 </script>
 
 <div class="text-sm font-poppins {className}">
-	<div class="bg-white w-full h-full box overflow-y-scroll">
+	<div class="bg-white w-full h-full box overflow-y-scroll overflow-x-hidden">
 		<!-- Close Button -->
 		<div class="absolute z-20 m-[10px]">
 			<button
@@ -56,7 +57,7 @@
 				<div
 					class="w-full flex p-[10px] flex-row gap-2 justify-center flex-wrap-reverse opacity-60 hover:opacity-90"
 				>
-					{#each member.socials as social}
+					{#each member.socials.sort() as social}
 						<SocialButton href={social} class="w-[48px] aspect-square" />
 					{/each}
 				</div>
@@ -94,11 +95,11 @@
 					<div class="flex flex-row">
 						<p class="mr-[50px] whitespace-nowrap">{role}</p>
 						<div class="flex flex-row gap-1 flex-wrap-reverse justify-center flex-grow">
-							{#each member.roles[role] as skill}
-								<img
+							{#each member.roles[role].sort() as skill}
+								<HoverIcon
 									src={skill}
 									class="transition-all w-[32px] aspect-square pixelate drop-shadow"
-									alt="skill"
+									text={skill}
 								/>
 							{/each}
 						</div>
@@ -112,7 +113,7 @@
 		<h1 class="w-full p-[10px] font-medium bg-blue text-white">SPOTTED IN</h1>
 		<div class="p-[10px]">
 			<ul class="list-disc">
-				{#each Projects as project}
+				{#each Projects.sort() as project}
 					<li><b>*</b> {project.title}</li>
 				{/each}
 			</ul>

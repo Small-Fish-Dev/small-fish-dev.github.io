@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
+	import HoverIcon from './HoverIcon.svelte';
 
 	export let href: string;
 	let className: string = '';
 	export { className as class };
 
 	let url: URL;
+	let host: string;
 
 	const icons: Record<string, string> = {
 		none: '/socials/none.png',
@@ -28,6 +28,7 @@
 	function tryGetIcon(link: string) {
 		try {
 			url = new URL(link);
+			host = getHost(url);
 		} catch {
 			console.log('Invalid link on SocialButton icon.');
 			return icons['none'];
@@ -41,40 +42,9 @@
 	}
 </script>
 
-<a {href} class="{className} transition-all hover:scale-110 social" target="_blank">
-	<div class="uppercase poppins text-sm" host={getHost(url)}>
-		<img class="image w-full bg-cover" src={tryGetIcon(href)} alt="social" />
-	</div>
+<a {href} class="{className} transition-all hover:scale-110" target="_blank">
+	<HoverIcon src={tryGetIcon(href)} class="transition-all uppercase poppins text-sm" text={host} />
 </a>
 
 <style>
-	.image {
-		image-rendering: pixelated;
-		background-size: 100%;
-		z-index: 5;
-	}
-
-	.social img:hover {
-		filter: drop-shadow(0px 2px rgba(0, 0, 0, 0.5));
-		transform: translate(0, -2px);
-	}
-
-	.social div:hover::before {
-		transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-		opacity: 1;
-	}
-
-	.social div::before {
-		transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
-		position: absolute;
-		opacity: 0;
-		left: 50%;
-		bottom: 100%;
-		margin-bottom: 5px;
-		transform: translateX(-50%);
-		color: white;
-		background: black;
-		padding: 0px 4px;
-		content: attr(host);
-	}
 </style>
