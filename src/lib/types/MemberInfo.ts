@@ -4,6 +4,7 @@ export const Languages: Record<string, string> = {
 	JS: '/team/languages/javascript.png',
 	Python: '/team/languages/python.png',
 	HLSL: '/team/languages/hlsl.png',
+	HTML: '/team/languages/html.png',
 	Java: '/team/languages/java.png',
 	C: '/team/languages/c.png',
 	GDScript: '/team/languages/go.png',
@@ -15,13 +16,17 @@ export const Languages: Record<string, string> = {
 export const Software: Record<string, string> = {
 	Blender: '/team/software/blender.png',
 	Photoshop: '/team/software/photoshop.png',
+	AfterEffects: '/team/software/aftereffects.png',
+	Premiere: '/team/software/premiere.png',
+	Illustrator: '/team/software/illustrator.png',
 	Designer: '/team/software/designer.png',
 	Painter: '/team/software/painter.png',
 	Marmoset: '/team/software/Marmoset.png',
 	Audacity: '/team/software/audacity.png',
 	Audition: '/team/software/audition.png',
 	Topogun: '/team/software/topogun.png',
-	ZBrush: '/team/software/zbrush.png'
+	ZBrush: '/team/software/zbrush.png',
+	Hammer: '/team/software/hammer.png'
 };
 
 export const Countries: Record<string, string> = {
