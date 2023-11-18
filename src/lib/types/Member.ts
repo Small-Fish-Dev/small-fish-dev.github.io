@@ -60,8 +60,38 @@ export const Members: Member[] = [
 	// ubre
 	{
 		name: 'ubre',
+		description:
+			"I have obesity, I have depression, I have hypertension, I beat my ex-wife, I got no work history, and I'm a felon in the state of Arkansas...",
+		avatar: 'https://avatars.githubusercontent.com/u/59583743?v=4',
 		point: { x: 338, y: 94 },
-		country: Countries.Italy
+		country: Countries.Italy,
+		roles: {
+			Programmer: [
+				Languages.CSharp,
+				Languages.LUA,
+				Languages.CSS,
+				Languages.HTML
+			],
+			'Multimedia': [
+				Software.Photoshop,
+				Software.Illustrator,
+				Software.AfterEffects,
+				Software.Premiere,
+				Software.Audition
+			]
+		},
+		socials: [
+			'https://twitter.com/yuberee',
+			'https://steamcommunity.com/id/theubre',
+			'https://github.com/yuberee',
+		],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Hemichordata', 'https://en.wikipedia.org/wiki/Hemichordate'],
+			class: ['Enteropneusta', 'https://en.wikipedia.org/wiki/Acorn_worm'],
+			order: ['Enteropneusta', 'https://en.wikipedia.org/wiki/Acorn_worm'],
+			family: ['Ptychoderidae', 'https://en.wikipedia.org/wiki/Ptychoderidae']
+		}
 	},
 
 	// Grodbert
