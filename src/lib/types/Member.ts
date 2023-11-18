@@ -122,8 +122,23 @@ export const Members: Member[] = [
 	{
 		name: 'matek',
 		avatar: '/team/profiles/matek.jpg',
+		description: 'I wrote my own fucking compiler',
 		point: { x: 145, y: 82 },
-		country: Countries.Poland
+		country: Countries.Poland,
+		roles: {
+			Programmer: [Languages.CPP, Languages.CSharp, Languages.JS, Languages.Java, Languages.Python],
+			'Web Developer': [Languages.HTML, Languages.CSS],
+			Multimedia: [Software.Photoshop, Software.Audacity]
+		},
+		socials: ['https://twitter.com/matekdev', 'https://github.com/matekdev', 'https://matek.dev/'],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Carnivora', 'https://en.wikipedia.org/wiki/Carnivora'],
+			family: ['Ursidae', 'https://en.wikipedia.org/wiki/Brown_bear'],
+			species: ['U. a. syriacus', 'https://en.wikipedia.org/wiki/Syrian_brown_bear']
+		}
 	},
 
 	// CyberAgent
