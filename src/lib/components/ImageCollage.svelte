@@ -13,7 +13,7 @@
 		if (current < 0) current = images.length + current;
 
 		// timer
-		if (timer) clearInterval(timer);
+		if (timer) clearTimeout(timer);
 		timer = setTimeout(move, delay * 1000);
 	};
 
@@ -21,9 +21,7 @@
 	let timer: number | null = setTimeout(move, delay * 1000);
 </script>
 
-<div
-	class="relative flex justify-center bg-blue font-poppins text-sm max-h-full overflow-hidden {className}"
->
+<div class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}">
 	<!-- Current image-->
 	<p class="absolute font-bold text-white m-2 p-1 bottom-0 right-0 opacity-20 z-20 bg-black">
 		{current}: {images[current]}

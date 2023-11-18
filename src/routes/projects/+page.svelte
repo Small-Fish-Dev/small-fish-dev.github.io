@@ -6,6 +6,7 @@
 
 <div class="shadow h-[60vh]">
 	<ImageCollage
+		class="h-full"
 		images={[
 			'/blogs/frostrial/clothes.png',
 			'/blogs/frostrial/props.png',
