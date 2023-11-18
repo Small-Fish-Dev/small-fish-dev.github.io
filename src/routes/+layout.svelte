@@ -68,8 +68,8 @@
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
 		class="absolute h-full w-screen z-40 bg-black opacity-50 md:hidden visible"
-		in:fade={{ duration: 225, easing: quadInOut }}
-		out:fade={{ duration: 225, easing: quadInOut }}
+		in:fade={{ duration: 100, easing: quadInOut }}
+		out:fade={{ duration: 100, easing: quadInOut }}
 		on:pointerdown={() => {
 			isMenuOpen = !isMenuOpen;
 		}}
@@ -81,8 +81,8 @@
 		use:swipeable
 		on:swiped={swipeHandler}
 		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-2 shadow"
-		in:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
-		out:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
+		in:fly={{ duration: 100, x: '100%', opacity: 0.5, easing: quadInOut }}
+		out:fly={{ duration: 100, x: '100%', opacity: 0.5, easing: quadInOut }}
 	>
 		{#each routes as route}
 			<div
