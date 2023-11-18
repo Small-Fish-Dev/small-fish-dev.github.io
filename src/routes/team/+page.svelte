@@ -137,6 +137,9 @@
 			if (pin.isHovered) hoveredPin = pin;
 		}
 
+		if (hoveredPin) canvas.classList.add('pointer');
+		else canvas.classList.remove('pointer');
+
 		return hoveredPin;
 	}
 
@@ -202,6 +205,10 @@
 
 	:global(html, body) {
 		overflow-x: hidden;
+	}
+
+	:global(.pointer) {
+		cursor: pointer !important;
 	}
 
 	canvas {
