@@ -110,12 +110,11 @@
 		{/if}
 
 		<!-- Spotted in -->
-		<!-- todo @ceitine: filter by contributors!! -->
 		<h1 class="w-full p-[10px] font-medium bg-blue text-white">SPOTTED IN</h1>
 		<div class="p-[10px]">
-			<ul class="list-disc">
-				{#each Projects.sort() as project}
-					<li><b>*</b> {project.title}</li>
+			<ul class="list-disc ml-5 flex flex-col justify-center">
+				{#each Projects.filter((proj) => proj.contributors == null || proj.contributors?.find((m) => m.toLowerCase() == member.name.toLocaleLowerCase())).sort() as project}
+					<li>{project.title}</li>
 				{/each}
 			</ul>
 		</div>
