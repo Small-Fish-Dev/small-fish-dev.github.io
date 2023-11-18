@@ -29,7 +29,7 @@
 </script>
 
 <nav class="absolute w-full justify-end hidden md:flex z-50 gradient p-4">
-	<a href="/" class="absolute left-4 top-4 pointer-events-auto">
+	<a href="/" class="logo absolute left-4 top-4 pointer-events-auto">
 		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
 	</a>
 	<div class="flex flex-row mt-1">
@@ -46,7 +46,7 @@
 
 <!-- Hamburger for anything under medium breakpoint. -->
 <div class="absolute w-full justify-end flex md:hidden gradient z-50 p-4 text-white">
-	<a href="/" class="absolute left-4 top-4 pointer-events-auto">
+	<a href="/" class="logo absolute left-4 top-4 pointer-events-auto">
 		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
 	</a>
 	<button
@@ -165,6 +165,32 @@
 		}
 		100% {
 			transform: translateX(0px) translateY(0px);
+		}
+	}
+
+	.logo:hover {
+		animation-name: wiggle;
+		animation-duration: 1500ms;
+		animation-iteration-count: infinite;
+		transform: rotate(0deg);
+		transition-timing-function: ease-in-out;
+	}
+
+	@keyframes wiggle {
+		20% {
+			transform: rotate(5deg);
+		}
+		40% {
+			transform: rotate(-5deg);
+		}
+		60% {
+			transform: rotate(5deg);
+		}
+		80% {
+			transform: rotate(-5deg);
+		}
+		100% {
+			transform: rotate(0deg);
 		}
 	}
 </style>
