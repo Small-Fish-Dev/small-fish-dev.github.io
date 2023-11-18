@@ -28,11 +28,11 @@
 	let collapsed = true;
 </script>
 
-<nav class="absolute w-full justify-end hidden md:flex z-50 gradient p-4">
+<nav class="absolute w-full flex justify-end z-50 gradient p-4">
 	<a href="/" class="logo absolute left-4 top-4 pointer-events-auto">
 		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
 	</a>
-	<div class="flex flex-row mt-1">
+	<div class="invisible md:visible flex flex-row mt-1">
 		{#each routes as route}
 			<NavButton
 				href={route.href}
@@ -42,15 +42,8 @@
 			/>
 		{/each}
 	</div>
-</nav>
-
-<!-- Hamburger for anything under medium breakpoint. -->
-<div class="absolute w-full justify-end flex md:hidden gradient z-50 p-4 text-white">
-	<a href="/" class="logo absolute left-4 top-4 pointer-events-auto">
-		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
-	</a>
 	<button
-		class="transition-all pointer-events-auto scale-100 hover:scale-110"
+		class="md:hidden text-white transition-all pointer-events-auto scale-100 hover:scale-110"
 		on:pointerdown={() => {
 			collapsed = !collapsed;
 		}}
@@ -61,7 +54,7 @@
 			style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))"
 		/>
 	</button>
-</div>
+</nav>
 
 <!-- Hamburger menu. -->
 {#if !collapsed}
