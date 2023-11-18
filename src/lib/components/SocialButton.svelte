@@ -11,19 +11,25 @@
 
 	const icons: Record<string, string> = {
 		none: '/socials/none.png',
-		steamcommunity: '/socials/steam.png',
-		twitter: '/socials/twitter.png',
-		x: '/socials/twitter.png',
-		github: '/socials/github.png',
-		youtube: '/socials/youtube.png',
-		artstation: '/socials/artstation.png',
-		paypal: '/socials/paypal.png',
-		itch: '/socials/itch.png'
+		'steamcommunity.com': '/socials/steam.png',
+		'twitter.com': '/socials/twitter.png',
+		'x.com': '/socials/twitter.png',
+		'github.com': '/socials/github.png',
+		'youtube.com': '/socials/youtube.png',
+		'artstation.com': '/socials/artstation.png',
+		'paypal.com': '/socials/paypal.png',
+		'paypal.me': '/socials/paypal.png',
+		'itch.io': '/socials/itch.png',
+		'discord.gg': '/socials/discord.png',
+		'asset.party': '/socials/asset_party.png'
 	};
 
 	function getHost(url: URL) {
 		let split = url.hostname.split('.');
-		return split[Math.max(split.length - 2, 0)];
+		let name = split[Math.max(split.length - 2, 0)];
+		if (split.length > 1) return `${name}.${split[split.length - 1]}`;
+
+		return name;
 	}
 
 	function tryGetIcon(link: string) {
@@ -47,7 +53,7 @@
 	<HoverIcon
 		src={tryGetIcon(href)}
 		showTop={showHoverTop}
-		class="transition-all uppercase poppins text-sm"
+		class="transition-all uppercase font-poppins text-sm"
 		text={host}
 	/>
 </a>
