@@ -9,7 +9,7 @@
 <div
 	class="{className} {showTop
 		? 'top'
-		: 'bottom'} uppercase poppins text-sm transition-all hover:scale-110 icon"
+		: 'bottom'} uppercase font-poppins text-sm transition-all hover:scale-110 icon"
 	{text}
 >
 	<img class="image w-full bg-cover" {src} alt={text} />
@@ -46,10 +46,11 @@
 		margin-bottom: 5px;
 		transform: translateX(-50%);
 		color: white;
-		background: black;
+		background: #1b1b1b;
 		padding: 0px 4px;
 		content: attr(text);
 		filter: none;
+		border-radius: 4px;
 	}
 
 	.top.icon::before {
