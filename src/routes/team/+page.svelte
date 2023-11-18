@@ -4,22 +4,32 @@
 	import { fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
+	import { onDestroy, onMount } from 'svelte';
 
-	let images = ['/team/flags/pin_hover0.png', '/team/flags/pin_hover1.png', '/team/flags/pin_hover2.png', '/team/flags/pin_hover3.png', '/team/flags/pin_hover4.png'];
+	let paths = [
+		'/team/flags/pin_hover0.png',
+		'/team/flags/pin_hover1.png',
+		'/team/flags/pin_hover2.png',
+		'/team/flags/pin_hover3.png',
+		'/team/flags/pin_hover4.png'
+	];
+	let images: HTMLImageElement[] = [];
 	let currentIndex = 0;
-
-	const switchImage = () => {
-		currentIndex = (currentIndex + 1) % images.length;
-	};
-
-	let interval;
+	let timer = 0;
 
 	onMount(() => {
-		interval = setInterval(switchImage, 60);
+		paths.forEach((path) => {
+			let img = new Image();
+			img.src = path;
+			images[images.length] = img;
+		});
 
-		// Optional: If you want to stop the interval when the component is destroyed
+		timer = setInterval(() => {
+			currentIndex = (currentIndex + 1) % images.length;
+		}, 60);
+
 		onDestroy(() => {
-		clearInterval(interval);
+			clearInterval(timer);
 		});
 	});
 
@@ -45,9 +55,6 @@
 
 		mapImage = new Image();
 		mapImage.src = '/team/pxmap.png';
-
-		pinGlow = new Image();
-		pinGlow.src = images[currentIndex];
 
 		// Create pins.
 		let count = 0;
@@ -86,12 +93,9 @@
 				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
 
 				// Show a little gold outline around the pin if selected.
-				if (pin == activePin)
-				{
-					pinGlow.src = images[currentIndex];
-
+				if (pin == activePin) {
 					context.drawImage(
-						pinGlow,
+						images[currentIndex],
 						x - (pin.size * 0.25) / 2,
 						y - (pin.size * 0.25) / 2,
 						pin.size * 1.25,
