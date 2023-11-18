@@ -123,6 +123,10 @@
 		width: 10px;
 	}
 
+	::-webkit-scrollbar:disabled {
+		width: 0px;
+	}
+
 	::-webkit-scrollbar-track {
 		background: white;
 	}

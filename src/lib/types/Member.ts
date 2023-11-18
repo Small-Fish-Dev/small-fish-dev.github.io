@@ -28,10 +28,10 @@ export const Members: Member[] = [
 				Languages.LUA,
 				Languages.JS,
 				Languages.HLSL,
-				Languages.CSS,
 				Languages.CPP,
 				Languages.GDScript
 			],
+			'Web Developer': [Languages.HTML, Languages.CSS],
 			'Voice Actor': [Software.Audacity]
 		},
 		socials: [
@@ -66,13 +66,8 @@ export const Members: Member[] = [
 		point: { x: 338, y: 94 },
 		country: Countries.Italy,
 		roles: {
-			Programmer: [
-				Languages.CSharp,
-				Languages.LUA,
-				Languages.CSS,
-				Languages.HTML
-			],
-			'Multimedia': [
+			Programmer: [Languages.CSharp, Languages.LUA, Languages.CSS, Languages.HTML],
+			Multimedia: [
 				Software.Photoshop,
 				Software.Illustrator,
 				Software.AfterEffects,
@@ -84,7 +79,7 @@ export const Members: Member[] = [
 		socials: [
 			'https://twitter.com/yuberee',
 			'https://steamcommunity.com/id/theubre',
-			'https://github.com/yuberee',
+			'https://github.com/yuberee'
 		],
 		classification: {
 			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
