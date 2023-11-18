@@ -120,7 +120,7 @@ export const Members: Member[] = [
 	{
 		name: 'Grodbert',
 		description:
-			"I love bugs so much it's unreal /an/ros.",
+			"I love bugs so much it's unreal anros.",
 		avatar: 'team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
 		country: Countries.Italy
