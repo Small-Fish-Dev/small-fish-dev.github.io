@@ -24,7 +24,7 @@
 <div class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}">
 	<!-- Current image-->
 	<p
-		class="absolute font-bold text-white m-2 p-1 bottom-10 right-0 opacity-20 z-20 bg-black break-all"
+		class="absolute font-bold text-white m-2 p-1 bottom-10 right-0 opacity-20 z-20 bg-black break-all max-w-1/2"
 	>
 		{current}: {images[current]}
 	</p>
