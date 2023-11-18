@@ -20,7 +20,7 @@ export const Members: Member[] = [
 		description:
 			'Hello! This is a test for the about section on the team page! I hope it works nicely!! 😅😅😅',
 		avatar: 'https://i.imgur.com/fTkU0Nv.png',
-		point: { x: 352, y: 38 },
+		point: { x: 352, y: 31 },
 		country: Countries.Finland,
 		roles: {
 			Programmer: [
@@ -53,7 +53,7 @@ export const Members: Member[] = [
 	// Luke
 	{
 		name: 'Luke',
-		point: { x: 303, y: 64 },
+		point: { x: 303, y: 57 },
 		country: Countries.UK
 	},
 
@@ -63,7 +63,7 @@ export const Members: Member[] = [
 		description:
 			"I have obesity, I have depression, I have hypertension, I beat my ex-wife, I got no work history, and I'm a felon in the state of Arkansas...",
 		avatar: 'https://avatars.githubusercontent.com/u/59583743?v=4',
-		point: { x: 338, y: 94 },
+		point: { x: 338, y: 87 },
 		country: Countries.Italy,
 		roles: {
 			Programmer: [Languages.CSharp, Languages.LUA, Languages.CSS, Languages.HTML],
@@ -93,28 +93,28 @@ export const Members: Member[] = [
 	// Grodbert
 	{
 		name: 'Grodbert',
-		point: { x: 328, y: 85 },
+		point: { x: 328, y: 78 },
 		country: Countries.Italy
 	},
 
 	// rndtrash
 	{
 		name: 'rndtrash',
-		point: { x: 389, y: 81 },
+		point: { x: 389, y: 74 },
 		country: Countries.Russia
 	},
 
 	// wheatleymf
 	{
 		name: 'wheatleymf',
-		point: { x: 365, y: 45 },
+		point: { x: 365, y: 38 },
 		country: Countries.Russia
 	},
 
 	// Mungus
 	{
 		name: 'Mungus',
-		point: { x: 325, y: 55 },
+		point: { x: 325, y: 48 },
 		country: Countries.Denmark
 	},
 
@@ -123,7 +123,7 @@ export const Members: Member[] = [
 		name: 'matek',
 		avatar: '/team/profiles/matek.jpg',
 		description: 'I wrote my own fucking compiler',
-		point: { x: 145, y: 82 },
+		point: { x: 145, y: 75 },
 		country: Countries.Poland,
 		roles: {
 			Programmer: [Languages.CPP, Languages.CSharp, Languages.JS, Languages.Java, Languages.Python],
@@ -144,14 +144,14 @@ export const Members: Member[] = [
 	// CyberAgent
 	{
 		name: 'CyberAgent',
-		point: { x: 146, y: 94 },
+		point: { x: 146, y: 86 },
 		country: Countries.US
 	},
 
 	// gio
 	{
 		name: 'gio',
-		point: { x: 561, y: 280 },
+		point: { x: 561, y: 273 },
 		country: Countries.Australia
 	}
 ];

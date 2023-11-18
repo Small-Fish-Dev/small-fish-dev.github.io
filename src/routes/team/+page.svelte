@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
-	import { fly } from 'svelte/transition';
+	import { fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 
@@ -163,15 +163,18 @@
 </script>
 
 <div class="h-screen w-full overflow-hidden">
-	{#await promise then options}
-		<canvas
-			bind:this={canvas}
-			on:pointerdown={onPointerClick}
-			on:pointermove={onPointerMove}
-			use:panzoom={options}
-			class="bg-[url('/team/pxgrid.png')] h-full w-full z-50"
-		/>
-	{/await}
+	<div class="bg-[url('/team/pxgrid.png')] h-full w-full scroll">
+		{#await promise then options}
+			<canvas
+				bind:this={canvas}
+				on:pointerdown={onPointerClick}
+				on:pointermove={onPointerMove}
+				in:scale={{ duration: 1500, easing: quadInOut, opacity: 0.5 }}
+				use:panzoom={options}
+				class="h-full w-full z-50"
+			/>
+		{/await}
+	</div>
 
 	<!-- This is a bit shit, feel free to improve! -->
 	{#if member}
@@ -203,6 +206,9 @@
 
 	canvas {
 		box-sizing: border-box;
+	}
+
+	.scroll {
 		animation: scroll;
 		animation-duration: 60s;
 		animation-iteration-count: infinite;
