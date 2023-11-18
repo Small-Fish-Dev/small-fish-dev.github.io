@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { Project } from '$lib/types/Project';
-	import HoverIcon from './HoverIcon.svelte';
 	export let project: Project;
 
-	let className: string;
+	let className: string = '';
 	export { className as class };
 </script>
 
