@@ -18,7 +18,7 @@
 <div class="text-sm font-poppins {className}">
 	<div class="bg-white w-full h-full box overflow-y-scroll overflow-x-hidden">
 		<!-- Close Button -->
-		<div class="absolute z-20 m-[10px]">
+		<div class="absolute z-20 m-2">
 			<button
 				class="w-[24px] aspect-square hover:invert hover:scale-110"
 				on:click={() => onClose()}
@@ -45,7 +45,7 @@
 			{/if}
 
 			<!-- Name -->
-			<div class="flex top-[0px] w-full justify-center">
+			<div class="flex mt-4 w-full justify-end">
 				<h1
 					class="name w-fit p-[5px] pr-[10px] pl-[10px] text-white bg-blue font-medium text-3xl z-10"
 				>
