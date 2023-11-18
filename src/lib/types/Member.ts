@@ -12,6 +12,11 @@ export interface Member {
 	classification?: Record<string, string[]>;
 }
 
+export const shrimplifyPath = (path: string) => {
+	let split = path.split('/');
+	return split[split.length - 1].split('.')[0];
+};
+
 // todo @ceitine: we probably want to have these in some folder separately.
 export const Members: Member[] = [
 	// ceitine

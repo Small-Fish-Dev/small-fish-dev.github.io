@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Member } from '$lib/types/Member';
+	import { shrimplifyPath, type Member } from '$lib/types/Member';
 	import { Projects } from '$lib/types/Project';
 	import SocialButton from './SocialButton.svelte';
 	import HoverIcon from './HoverIcon.svelte';
@@ -98,7 +98,7 @@
 								<HoverIcon
 									src={skill}
 									class="transition-all w-[32px] aspect-square pixelate drop-shadow"
-									text={skill}
+									text={shrimplifyPath(skill)}
 								/>
 							{/each}
 						</div>
