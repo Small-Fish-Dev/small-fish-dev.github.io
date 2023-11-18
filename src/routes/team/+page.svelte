@@ -71,10 +71,10 @@
 				if (pin == activePin)
 					context.drawImage(
 						pinGlow,
-						x - (pin.size * 0.1) / 2,
-						y - (pin.size * 0.1) / 2,
-						pin.size * 1.1,
-						pin.size * 1.1
+						x,
+						y,
+						pin.size,
+						pin.size
 					);
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
