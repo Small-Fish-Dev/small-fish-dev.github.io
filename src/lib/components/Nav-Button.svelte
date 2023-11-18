@@ -5,7 +5,6 @@
 	export let icon: string;
 	export let label: string;
 	export let disabled: boolean = false;
-	export let invertColors: boolean = false;
 </script>
 
 <a
@@ -14,17 +13,11 @@
            hover:scale-105
            transition-all
 		   whitespace-nowrap
-		   {invertColors ? 'text-blue' : 'text-white'}
-		   {invertColors ? 'hover:text-white' : 'hover:text-blue'}
-		   {invertColors ? 'hover:bg-blue' : 'hover:bg-white'}
+		   text-white
+		   hover:text-blue
+		   hover:bg-white
 		   {disabled ? 'opacity-75 pointer-events-none' : 'pointer-events-auto'}"
 >
-	<Icon {icon} class="text-4xl mr-2" style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))" />
+	<Icon {icon} class="text-4xl mr-2" />
 	<p>{label}</p>
 </a>
-
-<style>
-	p {
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	}
-</style>

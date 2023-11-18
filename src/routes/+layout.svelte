@@ -9,12 +9,7 @@
 
 	const routes: App.Route[] = [
 		{
-			label: 'home',
-			icon: 'dashicons:admin-home',
-			href: '/'
-		},
-		{
-			label: 'our team',
+			label: 'team',
 			icon: 'ic:sharp-sailing',
 			href: '/team'
 		},
@@ -30,10 +25,9 @@
 		}
 	];
 
-	let collapsed = false;
+	let collapsed = true;
 </script>
 
-<!-- TODO: Handle invert of colours -->
 <nav class="absolute w-full justify-end hidden md:flex z-50 gradient p-4">
 	<a href="/" class="absolute md:max-lg:hidden visible left-4 top-4 pointer-events-auto">
 		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
@@ -57,7 +51,9 @@
 	</a>
 	<button
 		class="transition-all pointer-events-auto scale-100 hover:scale-110"
-		on:click={() => (collapsed = !collapsed)}
+		on:pointerdown={() => {
+			collapsed = !collapsed;
+		}}
 	>
 		<Icon
 			icon="mdi:hamburger-menu"
@@ -68,22 +64,24 @@
 </div>
 
 <!-- Collapsed hamburger menu. -->
-{#if collapsed}
+{#if !collapsed}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
-		class="absolute h-screen w-screen z-40 bg-black opacity-50 md:hidden visible"
-		in:fade={{ duration: 300, easing: quadInOut }}
-		out:fade={{ duration: 300, easing: quadInOut }}
-		on:click={() => (collapsed = false)}
+		class="absolute h-full w-screen z-40 bg-black opacity-50 md:hidden visible"
+		in:fade={{ duration: 225, easing: quadInOut }}
+		out:fade={{ duration: 225, easing: quadInOut }}
+		on:pointerdown={() => {
+			collapsed = !collapsed;
+		}}
 	/>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
 		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-2 shadow"
-		in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
-		out:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
+		in:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
+		out:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
 		on:click={() => (collapsed = false)}
 	>
 		{#each routes as route}
