@@ -5,6 +5,24 @@
 	import { quadInOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 
+	let images = ['/team/flags/pin_hover0.png', '/team/flags/pin_hover1.png', '/team/flags/pin_hover2.png', '/team/flags/pin_hover3.png', '/team/flags/pin_hover4.png'];
+	let currentIndex = 0;
+
+	const switchImage = () => {
+		currentIndex = (currentIndex + 1) % images.length;
+	};
+
+	let interval;
+
+	onMount(() => {
+		interval = setInterval(switchImage, 60);
+
+		// Optional: If you want to stop the interval when the component is destroyed
+		onDestroy(() => {
+		clearInterval(interval);
+		});
+	});
+
 	let canvas: HTMLCanvasElement;
 	let mapImage: HTMLImageElement;
 	let ctx: CanvasRenderingContext2D;
@@ -29,7 +47,7 @@
 		mapImage.src = '/team/pxmap.png';
 
 		pinGlow = new Image();
-		pinGlow.src = '/team/flags/pin_hover.png';
+		pinGlow.src = images[currentIndex];
 
 		// Create pins.
 		let count = 0;
@@ -69,13 +87,17 @@
 
 				// Show a little gold outline around the pin if selected.
 				if (pin == activePin)
+				{
+					pinGlow.src = images[currentIndex];
+
 					context.drawImage(
 						pinGlow,
-						x,
-						y,
-						pin.size,
-						pin.size
+						x - (pin.size * 0.25) / 2,
+						y - (pin.size * 0.25) / 2,
+						pin.size * 1.25,
+						pin.size * 1.25
 					);
+				}
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
