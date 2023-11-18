@@ -1,12 +1,18 @@
 <script lang="ts">
 	import type { Member } from '$lib/types/Member';
 	import { Projects } from '$lib/types/Project';
+	import type { EventHandler } from 'svelte/elements';
 	import SocialButton from './SocialButton.svelte';
 
 	export let member: Member;
 	export let onClose: any | null;
 	let className: string = '';
 	export { className as class };
+
+	const imageFallback = (event: any) => {
+		if (!event.target) return;
+		event.target.src = '/team/profiles/none.jpg';
+	};
 </script>
 
 <div class="text-sm font-poppins {className}">
@@ -24,7 +30,18 @@
 		<!-- Avatar -->
 		<div class="relative flex flex-col justify-between w-full aspect-square">
 			{#if member.avatar}
-				<img class="bg-cover absolute w-full aspect-square" src={member.avatar} alt="avatar" />
+				<img
+					class="bg-cover absolute w-full aspect-square"
+					src={member.avatar}
+					alt="avatar"
+					on:error={imageFallback}
+				/>
+			{:else}
+				<img
+					class="bg-cover absolute w-full aspect-square"
+					src="/team/profiles/none.jpg"
+					alt="avatar"
+				/>
 			{/if}
 
 			<!-- Name -->
