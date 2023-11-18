@@ -2,9 +2,17 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import Card from '$lib/components/Card.svelte';
+	import SocialButton from '$lib/components/SocialButton.svelte';
 
 	let ready = false;
 	onMount(() => (ready = true));
+
+	const socials = [
+		'https://twitter.com/SmallFishDev',
+		'https://www.youtube.com/@SmallFishDev',
+		'https://asset.party/fish',
+		'https://discord.gg/rx2qqTqv36'
+	];
 </script>
 
 <div>
@@ -14,10 +22,15 @@
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
-				<div class="flex justify-center flex-wrap gap-2 p-8">
+				<div class="flex justify-center flex-wrap gap-2 pt-4 pb-8">
 					<p class="font-poppins text-2xl text-center text-white font-medium">
-						We make great games or something
+						We make waves, not just games!
 					</p>
+				</div>
+				<div class="flex justify-center gap-4">
+					{#each socials as social}
+						<SocialButton href={social} class="w-12" />
+					{/each}
 				</div>
 			</div>
 		{/if}
