@@ -228,7 +228,7 @@ export const Members: Member[] = [
 		name: 'Cool Looking Jellyfish',
 		avatar: '/team/profiles/cool_jellyfish.jpg',
 		description: 'A cool looking jellyfish wearing sunglasses',
-		point: { x: -38, y: 157 },
+		point: { x: 23, y: 157 },
 		country: Countries.Pirate,
 		classification: {
 			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
