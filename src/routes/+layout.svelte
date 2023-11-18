@@ -86,8 +86,11 @@
 					/>
 				</div>
 			{/each}
-			<div class="mt-auto">
-				<p></p>
+			<div class="mt-auto font-poppins text-white text-center">
+				<p>Small Fish</p>
+				<p class="text-xs">
+					<span> 2021 - 2024 © All rights are VERY reserved </span>
+				</p>
 			</div>
 		</nav>
 	</div>
