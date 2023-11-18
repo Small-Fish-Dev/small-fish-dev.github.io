@@ -5,6 +5,8 @@
 	import NavButton from '$lib/components/Nav-Button.svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
+	import { swipeable } from '@react2svelte/swipeable';
+	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import Icon from '@iconify/svelte';
 
 	const routes: App.Route[] = [
@@ -25,7 +27,11 @@
 		}
 	];
 
-	let collapsed = true;
+	let isMenuOpen = false;
+
+	function swipeHandler(event: CustomEvent<SwipeEventData>) {
+		if (event.detail.dir === 'Right') isMenuOpen = false;
+	}
 </script>
 
 <nav class="absolute w-full flex justify-end z-50 gradient p-4">
@@ -45,7 +51,7 @@
 	<button
 		class="md:hidden text-white transition-all pointer-events-auto scale-100 hover:scale-110"
 		on:pointerdown={() => {
-			collapsed = !collapsed;
+			isMenuOpen = !isMenuOpen;
 		}}
 	>
 		<Icon
@@ -57,7 +63,7 @@
 </nav>
 
 <!-- Hamburger menu. -->
-{#if !collapsed}
+{#if isMenuOpen}
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
@@ -65,25 +71,32 @@
 		in:fade={{ duration: 225, easing: quadInOut }}
 		out:fade={{ duration: 225, easing: quadInOut }}
 		on:pointerdown={() => {
-			collapsed = !collapsed;
+			isMenuOpen = !isMenuOpen;
 		}}
 	/>
 
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
+		use:swipeable
+		on:swiped={swipeHandler}
 		class="absolute pointer-events-auto flex md:hidden right-[0px] top-[0px] w-[300px] h-screen z-50 bg-blue flex-col p-[20px] gap-2 shadow"
 		in:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
 		out:fly={{ duration: 225, x: '100%', opacity: 0.5, easing: quadInOut }}
-		on:click={() => (collapsed = false)}
 	>
 		{#each routes as route}
-			<NavButton
-				href={route.href}
-				icon={route.icon}
-				label={route.label}
-				disabled={$page.url.pathname == route.href}
-			/>
+			<div
+				on:click={() => {
+					isMenuOpen = false;
+				}}
+			>
+				<NavButton
+					href={route.href}
+					icon={route.icon}
+					label={route.label}
+					disabled={$page.url.pathname == route.href}
+				/>
+			</div>
 		{/each}
 	</div>
 {/if}

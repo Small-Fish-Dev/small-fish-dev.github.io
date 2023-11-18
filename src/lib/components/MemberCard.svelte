@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { shrimplifyPath, type Member } from '$lib/types/Member';
 	import { Projects } from '$lib/types/Project';
+	import { swipeable } from '@react2svelte/swipeable';
+	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import SocialButton from './SocialButton.svelte';
 	import HoverIcon from './HoverIcon.svelte';
 
@@ -13,9 +15,13 @@
 		if (!event.target) return;
 		event.target.src = '/team/profiles/none.jpg';
 	};
+
+	function swipeHandler(event: CustomEvent<SwipeEventData>) {
+		if (event.detail.dir === 'Right') onClose();
+	}
 </script>
 
-<div class="text-sm font-poppins {className}">
+<div use:swipeable on:swiped={swipeHandler} class="text-sm font-poppins {className}">
 	<div class="bg-white max-h-full box overflow-y-scroll overflow-x-hidden">
 		<!-- Close Button -->
 		<div class="absolute z-20 m-2">
