@@ -29,7 +29,7 @@
 </script>
 
 <nav class="absolute w-full justify-end hidden md:flex z-50 gradient p-4">
-	<a href="/" class="absolute md:max-lg:hidden visible left-4 top-4 pointer-events-auto">
+	<a href="/" class="absolute left-4 top-4 pointer-events-auto">
 		<img class="image w-[64px] h-[64px]" src="/logo.png" alt="logo" />
 	</a>
 	<div class="flex flex-row mt-1">
