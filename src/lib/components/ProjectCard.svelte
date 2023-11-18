@@ -1,9 +1,8 @@
 <script lang="ts">
 	import type { Project } from '$lib/types/Project';
-	import HoverIcon from './HoverIcon.svelte';
 	export let project: Project;
 
-	let className: string;
+	let className: string = '';
 	export { className as class };
 </script>
 
@@ -17,10 +16,10 @@
 		<div class="flex flex-wrap flex-row gap-2 flex-wrap mb-1">
 			{#each project.tags as tag}
 				<div
-					class="rounded p-1 pl-2 pr-2"
+					class="rounded pl-1 pr-1 text-white font-medium tag"
 					style="background-color: {tag[1] == null ? '#42BFEC' : tag[1]}"
 				>
-					<HoverIcon text={tag[0]} class="text-white font-medium" />
+					{tag[0]}
 				</div>
 			{/each}
 		</div>
@@ -42,4 +41,7 @@
 </div>
 
 <style>
+	.tag {
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+	}
 </style>
