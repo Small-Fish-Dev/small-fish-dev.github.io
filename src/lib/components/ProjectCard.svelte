@@ -42,7 +42,7 @@
 
 	<!-- Contributors -->
 	<p class="mt-5 text-xl w-3/4">Contributors</p>
-	<div class="flex-row flex-wrap">
+	<div class="flex flex-row flex-wrap">
 		{#if project.contributors}
 			{#each project.contributors as contributor}
 				<a
