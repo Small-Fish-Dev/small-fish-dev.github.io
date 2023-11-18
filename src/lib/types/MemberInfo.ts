@@ -21,7 +21,7 @@ export const Software: Record<string, string> = {
 	Illustrator: '/team/software/illustrator.png',
 	Designer: '/team/software/designer.png',
 	Painter: '/team/software/painter.png',
-	Marmoset: '/team/software/Marmoset.png',
+	Marmoset: '/team/software/marmoset.png',
 	Audacity: '/team/software/audacity.png',
 	Audition: '/team/software/audition.png',
 	Topogun: '/team/software/topogun.png',
