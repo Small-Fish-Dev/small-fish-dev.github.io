@@ -64,7 +64,7 @@ You can use `<Youtube id="3-TrbOxmK08" />` to embed YouTube videos.
 
 <Heading title="Image Collage" />
 
-<ImageCollage images={"ex.png"} />
+<ImageCollage images={["ex.png", "ex.png"]} />
 
 <Heading title="Twitter" />
 
