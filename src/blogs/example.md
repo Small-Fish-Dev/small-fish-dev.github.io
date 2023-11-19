@@ -1,6 +1,8 @@
 ---
 title: 'Example Blog'
 date: '2021-11-10'
+description: 'This is an example description. It will be displayed at the top of a blog post.'
+publisher: 'matek'
 published: true
 ---
 
@@ -23,17 +25,17 @@ public partial class Lord : BaseCharacter
 }
 ```
 
-<Heading title="Headings" caption="By matek" />
+<Heading title="Headings" caption="by matek" />
 
 There is a custom header element you should be using instead of `## My Header`. Here are a few examples of usage...
 
 - `<Heading title="Media" />`
-- `<Heading title="Media" caption="By Luke" />`
+- `<Heading title="Media" caption="by Luke" />`
 - `<Heading h="h3" title="Media" caption="I am a smaller heading" />`
 
 You can add a caption to a heading by simply following the example above.
 
-The `h="h3"` parameter allows you to change the size of the heading. By default it will use `h="h2"` because the main title of the blog uses `h="h1"`. h1 -> h4 in terms of text size.
+The `h="h3"` parameter allows you to change the size of the heading. by default it will use `h="h2"` because the main title of the blog uses `h="h1"`. h1 -> h4 in terms of text size.
 
 <Heading title="Media" />
 
@@ -59,6 +61,10 @@ You can use `<Video src="ex.mp4" />` to embed locally stored videos.
 
 You can use `<Youtube id="3-TrbOxmK08" />` to embed YouTube videos.
 <Youtube id="3-TrbOxmK08" />
+
+<Heading title="Image Collage" />
+
+<ImageCollage images={"ex.png"} />
 
 <Heading title="Twitter" />
 

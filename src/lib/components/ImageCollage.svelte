@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { swipeable, type SwipeEventData } from '@react2svelte/swipeable';
 	import { cubicInOut } from 'svelte/easing';
@@ -23,6 +24,13 @@
 	let current: number = 0;
 	let timer: number | null = setTimeout(move, delay * 1000);
 
+	function resolvePath(src: string) {
+		if ($page.route.id != '/blog/[slug]') return src;
+		return src.startsWith('http://') || src.startsWith('https://')
+			? src
+			: `/blogs/${$page.params.slug}/${src}`;
+	}
+
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
 		if (event.detail.dir === 'Right') move(-1);
 		else if (event.detail.dir === 'Left') move(1);
@@ -32,7 +40,7 @@
 <div
 	use:swipeable
 	on:swiped={swipeHandler}
-	class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}"
+	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden {className}"
 >
 	<!-- Current image-->
 	<p
@@ -45,14 +53,14 @@
 	{#each [images[current]] as src (current)}
 		<img
 			class="absolute image-bg overflow-hidden h-full w-full"
-			src={images[current]}
+			src={resolvePath(images[current])}
 			alt=""
 			loading="lazy"
 		/>
 		<img
 			in:fly={{ duration: 100, x: `${direction * 100}%`, opacity: 0.5, easing: cubicInOut }}
 			class="h-full image z-10 aspect object-contain"
-			src={images[current]}
+			src={resolvePath(images[current])}
 			alt={`image ${current}`}
 			loading="lazy"
 		/>

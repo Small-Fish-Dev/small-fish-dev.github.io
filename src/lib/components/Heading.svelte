@@ -9,7 +9,10 @@
 		for (let i = 0; i < Members.length; ++i) {
 			const member = Members[i];
 			const regex = new RegExp(member.name, 'gi');
-			text = text.replace(regex, `<a href="/team#${member.name}">${member.name}</a>`);
+			text = text.replace(
+				regex,
+				`<a class="transition-all text-blue no-underline font-bold hover:text-lightblue" href="/team#${member.name}">${member.name}</a>`
+			);
 		}
 
 		return text;
@@ -17,7 +20,7 @@
 </script>
 
 <div>
-	<a href={`#${title}`}>
+	<a class="decoration-blue decoration-4 underline-offset-4" href={`#${title}`}>
 		<svelte:element this={h} id={title} class:caption>{title}</svelte:element></a
 	>
 	{#if caption}

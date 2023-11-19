@@ -25,7 +25,9 @@ declare global {
 			slug: string;
 			title: string;
 			date: string;
+			description: string;
 			published: boolean;
+			publisher: string;
 		}
 	}
 }

@@ -14,7 +14,7 @@ Originally consisting of just Ubre and Grobert, Smallfish expanded during this g
 
 The game's premise involves being trapped in a frozen wasteland (This being Finland) along the edge of a frozen lake. Desiring to escape, you risk your life, avoiding freezing to death, while drilling holes in the ice, fishing to sell fish for money, and aiming to buy a plane ticket. You can acquire upgrades along the way to enhance your chances of survival.
 
-<Heading title="PostProcessing" caption="By Luke" />
+<Heading title="PostProcessing" caption="by Luke" />
 
 I created a dynamic screen freezing shader incorporating several layered effects:
 
@@ -26,9 +26,9 @@ These effects gradually set in as you adjust the freezing value on the shader, s
 
 <Video src="frosty_pp.mp4" />
 
-<Heading title="Props and Clothing" caption="By Luke" />
+<Heading title="Props and Clothing" caption="by Luke" />
 
-For added immersion, I designed custom clothing, No game in s&box up till now has had custom clothing. 
+For added immersion, I designed custom clothing, No game in s&box up till now has had custom clothing.
 
 While lacking intricate details, these basic clothes can be recolored. Considering the gameplay perspective, the lack of close-up visibility, there wouldnt be a need for details anyway.
 <Img src="clothes.png" />
@@ -36,7 +36,7 @@ While lacking intricate details, these basic clothes can be recolored. Consideri
 I also handled various props and hard surface models, including fishing rods, tools, the cabin, bench, etc. These models were quickly and efficiently created.
 <Img src="props.png" />
 
-<Heading title="Particles" caption="By Luke and Ubre" />
+<Heading title="Particles" caption="by Luke and Ubre" />
 
 Every good games needs some particles.
 So I (Luke) quickly threw some together:

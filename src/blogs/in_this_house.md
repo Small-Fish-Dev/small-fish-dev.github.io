@@ -18,32 +18,32 @@ The theme this time was "Urban Legends."
 
 We dove into a retro PSX-style game to speed up the art side of things while having the flexibility to experiment with special post-processing effects. The concept was a dungeon crawler gameplay within a mansion, with multiple runs and levels, each representing a different urban legend.
 
-<Heading title="Models, Models and... MORE MODELS" caption="By Luke" />
+<Heading title="Models, Models and... MORE MODELS" caption="by Luke" />
 
 I pushed hard to produce models this time, taking advantage of the PSX style to mass-produce them—60 models in total. The goal was to fill three different maps with unique props and items.
 
 <Img src="too_many_models.png" />
 
-<Heading title="Materials" caption="By Luke" />
+<Heading title="Materials" caption="by Luke" />
 
-Given the unique art style, there weren't many materials available to fit it, so I created various custom materials with ceitine/shlakos custom shader. 
+Given the unique art style, there weren't many materials available to fit it, so I created various custom materials with ceitine/shlakos custom shader.
 
 It was my first time making many materials, but they turned out quite nice.
 
 <Img src="materials.png" />
 
-<Heading title="Shop & Bathrooms Maps" caption="By Luke" />
+<Heading title="Shop & Bathrooms Maps" caption="by Luke" />
 
-Recognizing that we might fall behind on the shop and the third level, I decided to step in and create them. 
+Recognizing that we might fall behind on the shop and the third level, I decided to step in and create them.
 
-While I had never done maps before, I approached it with the mindset that they are somewhat like models. 
+While I had never done maps before, I approached it with the mindset that they are somewhat like models.
 
 TODO: Photos of the shop and bathrooms.
 
 Additionally, I set up various map prefabs for myself and Cyber to use in the final two levels, and they turned out really nice!
 Helped making the maps SUPER quick
 
-<Heading title="Creative Design Process" caption="By Cyberagent" />
+<Heading title="Creative Design Process" caption="by Cyberagent" />
 
 For the original idea I had for the game jam, I wanted to go with a home invasion game.
 I had been watching many clips on youtube of people hearing things outside their house, people screaming, strange noises etc.
@@ -65,7 +65,7 @@ For the time being, the lore will go under a complete overhaul, also a possible 
 
 God I love lovecraft.
 
-<Heading title="Map Design" caption="By Cyberagent" />
+<Heading title="Map Design" caption="by Cyberagent" />
 
 For the actual work I did, besides being the hideo kojima brain child to the game, I worked closely with luke to design the maps and have the general layout for each level except the bathrooms, which luke and ubre soley did on their own, because during the final day I got caught up with work.
 
