@@ -26,7 +26,7 @@
 		<!-- Image collage -->
 		{#if project.images}
 			<ImageCollage
-				class="max-w-[500px] aspect-[16/9] m-2 shadow-sm border-solid border-[2px]"
+				class="max-w-full aspect-[16/9] m-2 shadow-sm border-solid border-[2px]"
 				images={project.images}
 			/>
 		{/if}
