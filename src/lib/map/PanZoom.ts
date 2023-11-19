@@ -22,6 +22,7 @@ const distance = (p1: Point, p2: Point) => Math.hypot(p1.x - p2.x, p1.y - p2.y);
 const midpoint = (p1: Point, p2: Point) => <Point>{ x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
 const subtract = (p1: Point, p2: Point) => <Point>{ x: p1.x - p2.x, y: p1.y - p2.y };
 
+export const DEFAULT_PIN_SIZE = 10;
 const MIN_VELOCITY = 0.02;
 const TRACKED_DURATION = 120;
 
@@ -250,6 +251,10 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		const tl = { x: width / 2, y: height / 2 };
 		const translatedPoint = { x: tl.x - point.x, y: tl.y - point.y };
 		ctx.translate(translatedPoint.x, translatedPoint.y);
+
+		const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE };
+		zoomOn(zoomPoint, 2);
+
 		focus = translatedPoint;
 	}
 
