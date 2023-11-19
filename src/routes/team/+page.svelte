@@ -76,7 +76,7 @@
 		const member = tryOpenCard(hash);
 		const startingPos = member ? { x: member.point.x, y: member.point.y } : undefined;
 
-		let target = pins.find((x) => x.member?.name == hash);
+		let target = pins.find((x) => x.member?.name == member?.name);
 		if (target) {
 			activePin = target;
 		}
@@ -126,7 +126,8 @@
 			return undefined;
 		}
 
-		let target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
+		const decodedName = decodeURI(name);
+		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
 		if (target == null) return undefined;
 
 		window.location.hash = `#${target.name}`;
