@@ -62,8 +62,11 @@ You can use `<Video src="ex.mp4" />` to embed locally stored videos.
 You can use `<Youtube id="3-TrbOxmK08" />` to embed YouTube videos.
 <Youtube id="3-TrbOxmK08" />
 
-<Heading title="Image Collage" />
+<Heading title="Image Collage" caption="by ceitine" />
 
+You can create a image carousel with the following:
+
+`<ImageCollage images={["ex.png", "ex.png"]} />`.
 <ImageCollage images={["ex.png", "ex.png"]} />
 
 <Heading title="Twitter" />
