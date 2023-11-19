@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Members, type Member } from '$lib/types/Member';
-	import { panzoom, type Options, type Point } from '$lib/map/PanZoom';
+	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
 	import { fly, scale } from 'svelte/transition';
 	import { quadInOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
@@ -40,7 +40,6 @@
 
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
-	const defaultPinSize = 11;
 
 	interface Pin {
 		image: HTMLImageElement;
@@ -65,18 +64,29 @@
 				image: image,
 				member: member,
 				isHovered: false,
-				size: defaultPinSize
+				size: DEFAULT_PIN_SIZE
 			};
 
 			count++;
 		});
+
+		var hash = window.location.hash;
+		hash = hash.substring(1, hash.length);
+		const member = tryOpenCard(hash);
+		const startingPos = member ? { x: member.point.x, y: member.point.y } : undefined;
+
+		let target = pins.find((x) => x.member?.name == member?.name);
+		if (target) {
+			activePin = target;
+		}
 
 		mapImage.onload = () =>
 			resolve({
 				width: mapImage.width,
 				height: mapImage.height,
 				render,
-				friction: 0.95
+				friction: 0.95,
+				startingPosition: startingPos
 			});
 
 		function render(context: CanvasRenderingContext2D, _t: number, _focus: Point) {
@@ -86,10 +96,10 @@
 
 			pins.forEach((pin) => {
 				let target = pin.isHovered ? 1.25 : 1;
-				pin.size = lerp(pin.size, defaultPinSize * target, 0.3);
+				pin.size = lerp(pin.size, DEFAULT_PIN_SIZE * target, 0.3);
 
-				let x = pin.member.point.x + defaultPinSize / 2 - pin.size / 2;
-				let y = pin.member.point.y + defaultPinSize / 2 - pin.size / 2;
+				let x = pin.member.point.x + DEFAULT_PIN_SIZE / 2 - pin.size / 2;
+				let y = pin.member.point.y + DEFAULT_PIN_SIZE / 2 - pin.size / 2;
 
 				// Show a little gold outline around the pin if selected.
 				if (pin == activePin) {
@@ -104,17 +114,7 @@
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
-
-			// Force a render on each frame.
-			return true;
 		}
-
-		var hash = window.location.hash;
-		hash = hash.substring(1, hash.length);
-		tryOpenCard(hash);
-
-		let target = pins.find((x) => x.member?.name == hash);
-		if (target) activePin = target;
 	});
 
 	function tryOpenCard(name?: string) {
@@ -122,15 +122,16 @@
 			window.location.hash = '';
 			member = null;
 			activePin = null;
-
-			return;
+			return undefined;
 		}
 
-		let target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
-		if (target == null) return;
+		const decodedName = decodeURI(name);
+		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
+		if (target == null) return undefined;
 
 		window.location.hash = `#${target.name}`;
 		member = target;
+		return member;
 	}
 
 	function onPointerClick(event: PointerEvent) {
@@ -171,9 +172,9 @@
 	function isHoveringPin(cursorPosition: Point, pin: Pin) {
 		return (
 			cursorPosition.x > pin.member.point.x &&
-			cursorPosition.x <= pin.member.point.x + defaultPinSize &&
+			cursorPosition.x <= pin.member.point.x + DEFAULT_PIN_SIZE &&
 			cursorPosition.y > pin.member.point.y &&
-			cursorPosition.y <= pin.member.point.y + defaultPinSize
+			cursorPosition.y <= pin.member.point.y + DEFAULT_PIN_SIZE
 		);
 	}
 

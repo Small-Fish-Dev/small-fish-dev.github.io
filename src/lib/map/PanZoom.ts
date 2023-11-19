@@ -1,3 +1,6 @@
+// This is a heavily modified version of the open source repo https://github.com/CaptainCodeman/svelte-pan-zoom
+// Shoutout to CaptainCodeman for his package
+// There is a bunch of spaghetti code we've added to implement the features we needed for this project.
 import { disablePreload } from 'svelte-disable-preload';
 import { resize } from 'svelte-resize-observer-action';
 
@@ -22,11 +25,10 @@ const distance = (p1: Point, p2: Point) => Math.hypot(p1.x - p2.x, p1.y - p2.y);
 const midpoint = (p1: Point, p2: Point) => <Point>{ x: (p1.x + p2.x) / 2, y: (p1.y + p2.y) / 2 };
 const subtract = (p1: Point, p2: Point) => <Point>{ x: p1.x - p2.x, y: p1.y - p2.y };
 
+export const DEFAULT_PIN_SIZE = 10;
 const MIN_VELOCITY = 0.02;
 const TRACKED_DURATION = 120;
 
-// return boolean indicates if rAF renders should be scheduled
-// (i.e. there may be some animation that has to play)
 type Render = (ctx: CanvasRenderingContext2D, t: number, focus: Point) => void | boolean;
 
 export interface Options {
@@ -36,6 +38,7 @@ export interface Options {
 	padding?: number;
 	maxZoom?: number;
 	friction?: number;
+	startingPosition?: Point;
 }
 
 export function panzoom(canvas: HTMLCanvasElement, options: Options) {
@@ -50,11 +53,18 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	let padding: number;
 	let maxZoom: number;
 	let friction: number;
+	let startingPosition: Point | undefined;
 	let view_width = (canvas.width = canvas.clientWidth * dpr);
 	let view_height = (canvas.height = canvas.clientHeight * dpr);
 	let focus: Point;
 	let frame = 0;
 	let velocity: Velocity = { vx: 0, vy: 0, ts: 0 };
+
+	const fps = 144;
+	const msPerFrame = 1000 / fps;
+	let frames = 0;
+	let msPrev = window.performance.now();
+	let forceRender = false;
 
 	// active pointer count and positions
 	const pointers = new Map<number, Point>();
@@ -63,7 +73,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	const tracked: TrackedPoint[] = [];
 
 	function initialize(options: Options) {
-		({ width, height, render, padding, maxZoom, friction } = {
+		({ width, height, render, padding, maxZoom, friction, startingPosition } = {
 			padding: 0,
 			maxZoom: 16,
 			friction: 0.97,
@@ -84,8 +94,9 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		stopMovement();
 
 		focus = toImageSpace({ x: canvas.width / 2, y: canvas.height / 2 });
+		rAF(renderFrame);
 
-		scheduleRender();
+		if (startingPosition) moveByAbsolute(startingPosition, 2);
 	}
 
 	initialize(options);
@@ -115,7 +126,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 		// if not animating, we need to repaint
 		if (!frame) {
-			renderFrame(performance.now());
+			forceRenderFrame();
 		}
 	});
 
@@ -145,36 +156,16 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		tracked.length = 0;
 	}
 
-	// constrain image to viewport and "bounce" off trailing image edges
-	function checkBounds() {
-		const tl = toImageSpace({ x: 0, y: 0 });
-		const br = toImageSpace({ x: canvas.width, y: canvas.height });
+	function limitBounds(deltaX: number, deltaY: number) {
+		const tl = toImageSpace({ x: 0 + canvas.width / 2, y: 0 + canvas.height / 2 });
 
-		if (tl.x > width) {
-			ctx.translate(tl.x - width, 0);
-			velocity.vx = -velocity.vx;
-		}
-
-		if (tl.y > height) {
-			ctx.translate(0, tl.y - height);
-			velocity.vy = -velocity.vy;
-		}
-
-		if (br.x < 0) {
-			ctx.translate(br.x, 0);
-			velocity.vx = -velocity.vx;
-		}
-
-		if (br.y < 0) {
-			ctx.translate(0, br.y);
-			velocity.vy = -velocity.vy;
-		}
+		if (tl.x < 0) ctx.translate(tl.x - deltaX, 0);
+		if (tl.y < 0) ctx.translate(0, tl.y - deltaY);
+		if (tl.x > width) ctx.translate(tl.x - width, 0);
+		if (tl.y > height) ctx.translate(0, tl.y - height);
 	}
 
 	function onpointerdown(event: PointerEvent) {
-		// If not left click, or not using a touch screen bail out.
-		if (event.button !== 0 && event.pointerType !== 'touch') return;
-
 		event.stopPropagation();
 		canvas.setPointerCapture(event.pointerId);
 
@@ -187,40 +178,11 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	function onpointerend(event: PointerEvent) {
 		event.stopPropagation();
 		canvas.releasePointerCapture(event.pointerId);
-
 		pointers.delete(event.pointerId);
-
-		// if last pointer, check for velocity
-		// if (pointers.size === 0) {
-		// 	prune(performance.now());
-
-		// 	if (tracked.length > 1) {
-		// 		// calc movement
-		// 		const oldest = tracked[0];
-		// 		const latest = tracked[tracked.length - 1];
-
-		// 		// calc velocity
-		// 		const x = latest.point.x - oldest.point.x;
-		// 		const y = latest.point.y - oldest.point.y;
-		// 		const t = latest.t - oldest.t;
-
-		// 		velocity = {
-		// 			vx: x / t,
-		// 			vy: y / t,
-		// 			ts: performance.now()
-		// 		};
-
-		// 		scheduleRender();
-		// 	}
-		// }
-
-		scheduleRender();
 	}
 
 	function onpointermove(event: PointerEvent) {
 		event.stopPropagation();
-
-		scheduleRender();
 
 		// ignore if pointer not pressed
 		if (!pointers.has(event.pointerId)) return;
@@ -238,7 +200,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 				focus = curr;
 
-				moveBy(diff);
+				moveByRelative(diff);
 
 				pointers.set(event.pointerId, point);
 
@@ -262,7 +224,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 				// move by distance that midpoint moved
 				const diff = subtract(middle, prev_middle);
-				moveBy(diff);
+				moveByRelative(diff);
 
 				// zoom by ratio of pinch sizes, on current middle
 				const zoom = dist / prev_dist;
@@ -283,9 +245,22 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		zoomOn(toImageSpace(point), z);
 	}
 
-	function moveBy(delta: Point) {
+	function moveByRelative(delta: Point) {
 		ctx.translate(delta.x, delta.y);
-		checkBounds();
+		limitBounds(delta.x, delta.y);
+	}
+
+	function moveByAbsolute(point: Point, zoom: number | undefined = undefined) {
+		const tl = { x: width / 2, y: height / 2 };
+		const translatedPoint = { x: tl.x - point.x, y: tl.y - point.y };
+		ctx.translate(translatedPoint.x, translatedPoint.y);
+
+		if (zoom) {
+			const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE };
+			zoomOn(zoomPoint, 2);
+		}
+
+		focus = translatedPoint;
 	}
 
 	function zoomOn(point: Point, zoom: number) {
@@ -310,8 +285,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		}
 
 		focus = point;
-
-		scheduleRender();
 	}
 
 	function pointFromEvent(event: PointerEvent | WheelEvent): Point {
@@ -324,19 +297,23 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		return inverse.transformPoint(point);
 	}
 
-	function scheduleRender() {
-		if (!frame) {
-			frame = rAF(renderFrame);
-		}
-	}
-
 	function renderFrame(t: number) {
+		rAF(renderFrame);
+
+		const msNow = window.performance.now();
+		const msPassed = msNow - msPrev;
+
+		if (!forceRender) {
+			if (msPassed < msPerFrame) return;
+			forceRender = false;
+		}
+
 		ctx.save();
 		ctx.resetTransform();
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.restore();
 
-		const playing = render(ctx, t, focus);
+		render(ctx, t, focus);
 
 		const transform = ctx.getTransform();
 		const distance = Math.sqrt(velocity.vx * velocity.vx + velocity.vy * velocity.vy) * transform.a;
@@ -347,18 +324,22 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 			const x = velocity.vx * ts;
 			const y = velocity.vy * ts;
 
-			moveBy({ x, y });
+			moveByRelative({ x, y });
 
 			velocity.vx *= friction;
 			velocity.vy *= friction;
 			velocity.ts = t;
 		}
 
-		if (moving || playing) {
-			frame = rAF(renderFrame);
-		} else {
-			frame = 0;
-		}
+		const excessTime = msPassed % msPerFrame;
+		msPrev = msNow - excessTime;
+		frames++;
+	}
+
+	function forceRenderFrame() {
+		forceRender = true;
+		renderFrame(performance.now());
+		forceRender = false;
 	}
 
 	const makePassive = { passive: true };
