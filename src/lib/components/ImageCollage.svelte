@@ -8,10 +8,12 @@
 	export { className as class };
 	export let images: string[] = [];
 	export let delay: number = 10;
+	export let direction: number = 1;
 
 	const move = (amount: number = 1) => {
 		current = (current + amount) % images.length;
 		if (current < 0) current = images.length + current;
+		direction = Math.min(Math.max(amount, -1), 1);
 
 		// timer
 		if (timer) clearTimeout(timer);
@@ -48,7 +50,7 @@
 			loading="lazy"
 		/>
 		<img
-			in:fly={{ duration: 300, x: '100%', easing: cubicInOut }}
+			in:fly={{ duration: 100, x: `${direction * 100}%`, opacity: 0.5, easing: cubicInOut }}
 			class="h-full image z-10 aspect object-contain"
 			src={images[current]}
 			alt={`image ${current}`}
