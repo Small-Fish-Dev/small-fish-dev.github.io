@@ -82,8 +82,7 @@
 			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
 			<img src="home/header-logo.png" alt="poop fish logo" />
-			<div class="bg-white bg-opacity-75 h-[2px] mt-8" />
-			<div class="flex flex-col gap-4 pt-4">
+			<div class="flex flex-col gap-4 pt-8">
 				{#each routes as route}
 					<div
 						on:click={() => {
