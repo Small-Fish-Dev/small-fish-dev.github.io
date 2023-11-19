@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { quadInOut } from 'svelte/easing';
-	import { fade, fly } from 'svelte/transition';
+	import { swipeable, type SwipeEventData } from '@react2svelte/swipeable';
 
 	let className: string = '';
 	export { className as class };
@@ -19,9 +18,18 @@
 
 	let current: number = 0;
 	let timer: number | null = setTimeout(move, delay * 1000);
+
+	function swipeHandler(event: CustomEvent<SwipeEventData>) {
+		if (event.detail.dir === 'Right') move(-1);
+		else if (event.detail.dir === 'Left') move(1);
+	}
 </script>
 
-<div class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}">
+<div
+	use:swipeable
+	on:swiped={swipeHandler}
+	class="relative flex justify-center bg-blue font-poppins text-sm overflow-hidden {className}"
+>
 	<!-- Current image-->
 	<p
 		class="absolute font-bold text-white m-2 p-1 bottom-10 right-0 opacity-20 z-20 bg-black break-all max-w-1/2"

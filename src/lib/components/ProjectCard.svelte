@@ -38,7 +38,7 @@
 				>
 			{/each}
 		{:else}
-			<a href="/team">everyone @ small fish</a>
+			<a class="text-blue underline" href="/team">everyone @ small fish</a>
 		{/if}
 	</div>
 
