@@ -142,7 +142,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		tracked.length = 0;
 	}
 
-	function checkBounds(deltaX: number, deltaY: number) {
+	function limitBounds(deltaX: number, deltaY: number) {
 		const tl = toImageSpace({ x: 0 + canvas.width / 2, y: 0 + canvas.height / 2 });
 
 		if (tl.x < 0) ctx.translate(tl.x - deltaX, 0);
@@ -233,7 +233,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 	function moveBy(delta: Point) {
 		ctx.translate(delta.x, delta.y);
-		checkBounds(delta.x, delta.y);
+		limitBounds(delta.x, delta.y);
 	}
 
 	function zoomOn(point: Point, zoom: number) {
