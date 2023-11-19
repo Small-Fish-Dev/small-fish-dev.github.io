@@ -21,7 +21,7 @@
 	}
 </script>
 
-<div use:swipeable on:swiped={swipeHandler} class="text-sm font-poppins {className}">
+<div use:swipeable on:swiped={swipeHandler} class="w-full text-sm font-poppins {className}">
 	<div class="pointer-events-auto bg-white max-h-full box overflow-y-scroll overflow-x-hidden">
 		<!-- Close Button -->
 		<div class="absolute z-20 m-2">
