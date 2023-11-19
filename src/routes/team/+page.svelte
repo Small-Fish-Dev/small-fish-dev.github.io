@@ -40,6 +40,7 @@
 	let mapImage: HTMLImageElement;
 	let ctx: CanvasRenderingContext2D;
 	let member: Member | null;
+	const pointers = new Map<number, PointerEvent>();
 
 	let activePin: Pin | null;
 	let pins: Pin[] = [];
@@ -137,9 +138,13 @@
 		return member;
 	}
 
-	function onPointerClick(event: PointerEvent) {
-		// If not left click, or not using a touch screen bail out.
-		if (event.button !== 0 && event.pointerType !== 'touch') return;
+	function onPointerDown(event: PointerEvent) {
+		pointers.set(event.pointerId, event);
+
+		// If not a left click, or if multi-touch on mobile.
+		if (event.button !== 0 || pointers.size >= 2) return;
+
+		console.log(pointers.size);
 
 		let hovered = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
 		activePin =
@@ -152,6 +157,10 @@
 			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
 			activePin.size *= 0.75;
 		}
+	}
+
+	function onPointerUp(event: PointerEvent) {
+		pointers.delete(event.pointerId);
 	}
 
 	function onPointerMove(event: PointerEvent) {
@@ -199,7 +208,8 @@
 		{#await promise then options}
 			<canvas
 				bind:this={canvas}
-				on:pointerdown={onPointerClick}
+				on:pointerdown={onPointerDown}
+				on:pointerup={onPointerUp}
 				on:pointermove={onPointerMove}
 				transition:fly={{ duration: 900, easing: quintOut, x: -100 }}
 				use:panzoom={options}
