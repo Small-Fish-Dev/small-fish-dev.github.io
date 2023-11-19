@@ -145,30 +145,13 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		tracked.length = 0;
 	}
 
-	// constrain image to viewport and "bounce" off trailing image edges
-	function checkBounds() {
-		const tl = toImageSpace({ x: 0, y: 0 });
-		const br = toImageSpace({ x: canvas.width, y: canvas.height });
+	function checkBounds(deltaX: number, deltaY: number) {
+		const tl = toImageSpace({ x: 0 + canvas.width / 2, y: 0 + canvas.height / 2 });
 
-		if (tl.x > width) {
-			ctx.translate(tl.x - width, 0);
-			velocity.vx = -velocity.vx;
-		}
-
-		if (tl.y > height) {
-			ctx.translate(0, tl.y - height);
-			velocity.vy = -velocity.vy;
-		}
-
-		if (br.x < 0) {
-			ctx.translate(br.x, 0);
-			velocity.vx = -velocity.vx;
-		}
-
-		if (br.y < 0) {
-			ctx.translate(0, br.y);
-			velocity.vy = -velocity.vy;
-		}
+		if (tl.x < 0) ctx.translate(tl.x - deltaX, 0);
+		if (tl.y < 0) ctx.translate(0, tl.y - deltaY);
+		if (tl.x > width) ctx.translate(tl.x - width, 0);
+		if (tl.y > height) ctx.translate(0, tl.y - height);
 	}
 
 	function onpointerdown(event: PointerEvent) {
@@ -187,45 +170,18 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	function onpointerend(event: PointerEvent) {
 		event.stopPropagation();
 		canvas.releasePointerCapture(event.pointerId);
-
 		pointers.delete(event.pointerId);
-
-		// if last pointer, check for velocity
-		// if (pointers.size === 0) {
-		// 	prune(performance.now());
-
-		// 	if (tracked.length > 1) {
-		// 		// calc movement
-		// 		const oldest = tracked[0];
-		// 		const latest = tracked[tracked.length - 1];
-
-		// 		// calc velocity
-		// 		const x = latest.point.x - oldest.point.x;
-		// 		const y = latest.point.y - oldest.point.y;
-		// 		const t = latest.t - oldest.t;
-
-		// 		velocity = {
-		// 			vx: x / t,
-		// 			vy: y / t,
-		// 			ts: performance.now()
-		// 		};
-
-		// 		scheduleRender();
-		// 	}
-		// }
-
-		scheduleRender();
 	}
 
 	function onpointermove(event: PointerEvent) {
 		event.stopPropagation();
 
-		scheduleRender();
-
 		// ignore if pointer not pressed
 		if (!pointers.has(event.pointerId)) return;
 
 		const point = pointFromEvent(event);
+
+		scheduleRender();
 
 		switch (pointers.size) {
 			// single pointer move (pan)
@@ -285,7 +241,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 	function moveBy(delta: Point) {
 		ctx.translate(delta.x, delta.y);
-		checkBounds();
+		checkBounds(delta.x, delta.y);
 	}
 
 	function zoomOn(point: Point, zoom: number) {
@@ -310,8 +266,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		}
 
 		focus = point;
-
-		scheduleRender();
 	}
 
 	function pointFromEvent(event: PointerEvent | WheelEvent): Point {
@@ -336,7 +290,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		ctx.restore();
 
-		const playing = render(ctx, t, focus);
+		render(ctx, t, focus);
 
 		const transform = ctx.getTransform();
 		const distance = Math.sqrt(velocity.vx * velocity.vx + velocity.vy * velocity.vy) * transform.a;
@@ -354,11 +308,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 			velocity.ts = t;
 		}
 
-		if (moving || playing) {
-			frame = rAF(renderFrame);
-		} else {
-			frame = 0;
-		}
+		frame = rAF(renderFrame);
 	}
 
 	const makePassive = { passive: true };
