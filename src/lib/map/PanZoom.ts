@@ -192,7 +192,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 				focus = curr;
 
-				moveBy(diff);
+				moveByRelative(diff);
 
 				pointers.set(event.pointerId, point);
 
@@ -216,7 +216,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 				// move by distance that midpoint moved
 				const diff = subtract(middle, prev_middle);
-				moveBy(diff);
+				moveByRelative(diff);
 
 				// zoom by ratio of pinch sizes, on current middle
 				const zoom = dist / prev_dist;
@@ -237,9 +237,16 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		zoomOn(toImageSpace(point), z);
 	}
 
-	function moveBy(delta: Point) {
+	function moveByRelative(delta: Point) {
 		ctx.translate(delta.x, delta.y);
 		limitBounds(delta.x, delta.y);
+	}
+
+	function moveByAbsolute(point: Point) {
+		const tl = { x: width / 2, y: height / 2 };
+		const translatedPoint = { x: tl.x - point.x, y: tl.y - point.y };
+		ctx.translate(translatedPoint.x, translatedPoint.y);
+		focus = translatedPoint;
 	}
 
 	function zoomOn(point: Point, zoom: number) {
@@ -303,7 +310,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 			const x = velocity.vx * ts;
 			const y = velocity.vy * ts;
 
-			moveBy({ x, y });
+			moveByRelative({ x, y });
 
 			velocity.vx *= friction;
 			velocity.vy *= friction;
