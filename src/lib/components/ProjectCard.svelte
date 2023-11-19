@@ -10,24 +10,10 @@
 <div class="font-poppins bg-red flex flex-col {className}">
 	<!-- Title -->
 	<div class="w-fit">
-		<h1 class="shadow-sm font-medium text-white bg-blue p-4 sm:text-4xl text-3xl mb-4">
+		<h1 class="shadow-sm font-medium text-white bg-blue p-2 sm:text-4xl text-3xl mb-4">
 			{project.title}
 		</h1>
 	</div>
-
-	<!-- Tags -->
-	{#if project.tags}
-		<div class="flex flex-wrap flex-row gap-2 flex-wrap mb-1">
-			{#each project.tags as tag}
-				<div
-					class="rounded pl-1 pr-1 text-white font-medium tag"
-					style="background-color: {tag[1] == null ? '#42BFEC' : tag[1]}"
-				>
-					{tag[0]}
-				</div>
-			{/each}
-		</div>
-	{/if}
 
 	<!-- Description -->
 	<p class="text-xl w-3/4">{project.description}</p>
@@ -42,18 +28,33 @@
 
 	<!-- Contributors -->
 	<p class="mt-5 text-xl w-3/4">Contributors</p>
-	<div class="flex flex-row flex-wrap">
+	<div class="flex flex-row flex-wrap font-medium">
 		{#if project.contributors}
-			{#each project.contributors as contributor}
+			{#each project.contributors as contributor, i}
 				<a
 					href="/team#{contributor}"
-					class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0">{contributor}</a
+					class="[&:not(:last-child)]:after:content-[','] mr-2 last:mr-0 after:text-black text-blue underline"
+					>{contributor}</a
 				>
 			{/each}
 		{:else}
 			<a href="/team">everyone @ small fish</a>
 		{/if}
 	</div>
+
+	<!-- Tags -->
+	{#if project.tags}
+		<div class="flex flex-wrap flex-row gap-2 flex-wrap mt-2">
+			{#each project.tags as tag}
+				<div
+					class="rounded pl-1 pr-1 text-white font-medium tag uppercase"
+					style="background-color: {tag[1] == null ? '#42BFEC' : tag[1]}"
+				>
+					{tag[0]}
+				</div>
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style>

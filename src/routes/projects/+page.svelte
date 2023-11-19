@@ -15,11 +15,11 @@
 	/>
 </div>
 
-<div class="p-5 flex justify-end flex-col">
+<div class="p-5 flex flex-col">
 	{#each Projects as project}
 		<ProjectCard
 			{project}
-			class="w-fit even:self-end even:items-end even:text-end mb-20 last:mb-5 first:mt-5"
+			class="max-w-[50%] even:items-end self-center even:text-end xtext-start mb-20 last:mb-5 first:mt-5"
 		/>
 	{/each}
 </div>
