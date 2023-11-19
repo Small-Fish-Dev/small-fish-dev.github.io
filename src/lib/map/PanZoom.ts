@@ -1,3 +1,6 @@
+// This is a heavily modified version of the open source repo https://github.com/CaptainCodeman/svelte-pan-zoom
+// Shoutout to CaptainCodeman for his package
+// There is a bunch of spaghetti code we've added to implement the features we needed for this project.
 import { disablePreload } from 'svelte-disable-preload';
 import { resize } from 'svelte-resize-observer-action';
 
@@ -93,7 +96,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		focus = toImageSpace({ x: canvas.width / 2, y: canvas.height / 2 });
 		rAF(renderFrame);
 
-		if (startingPosition) moveByAbsolute(startingPosition);
+		if (startingPosition) moveByAbsolute(startingPosition, 2);
 	}
 
 	initialize(options);
@@ -247,13 +250,15 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		limitBounds(delta.x, delta.y);
 	}
 
-	function moveByAbsolute(point: Point) {
+	function moveByAbsolute(point: Point, zoom: number | undefined = undefined) {
 		const tl = { x: width / 2, y: height / 2 };
 		const translatedPoint = { x: tl.x - point.x, y: tl.y - point.y };
 		ctx.translate(translatedPoint.x, translatedPoint.y);
 
-		const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE };
-		zoomOn(zoomPoint, 2);
+		if (zoom) {
+			const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE };
+			zoomOn(zoomPoint, 2);
+		}
 
 		focus = translatedPoint;
 	}
