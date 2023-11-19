@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { swipeable, type SwipeEventData } from '@react2svelte/swipeable';
+	import { cubicInOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 
 	let className: string = '';
 	export { className as class };
@@ -32,18 +34,27 @@
 >
 	<!-- Current image-->
 	<p
-		class="absolute font-bold text-white m-2 p-1 bottom-10 right-0 opacity-20 z-20 bg-black break-all max-w-1/2"
+		class="absolute pointer-events-none opacity-0 sm:opacity-20 font-bold text-white m-2 p-1 top-0 right-0 z-20 bg-black break-all"
 	>
 		{current}: {images[current]}
 	</p>
 
 	<!-- Image -->
-	<img class="absolute image-bg overflow-hidden h-full w-full" src={images[current]} alt="" />
-	<img
-		class="h-full image z-10 aspect object-contain"
-		src={images[current]}
-		alt={`image ${current}`}
-	/>
+	{#each [images[current]] as src (current)}
+		<img
+			class="absolute image-bg overflow-hidden h-full w-full"
+			src={images[current]}
+			alt=""
+			loading="lazy"
+		/>
+		<img
+			in:fly={{ duration: 300, x: '100%', easing: cubicInOut }}
+			class="h-full image z-10 aspect object-contain"
+			src={images[current]}
+			alt={`image ${current}`}
+			loading="lazy"
+		/>
+	{/each}
 
 	<!-- Buttons -->
 	<div
