@@ -2,7 +2,7 @@
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
 	import { fly } from 'svelte/transition';
-	import { quadInOut, quintOut } from 'svelte/easing';
+	import { quintOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 	import { onDestroy, onMount } from 'svelte';
 
@@ -211,7 +211,7 @@
 	<!-- This is a bit shit, feel free to improve! -->
 	{#if member && ready}
 		<div
-			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
+			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quintOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
 			class="absolute flex h-full pointer-events-none z-20 w-[320px] max-w-[450px] md:w-96 top-0 right-0 p-2 pt-28 md:pt-32 pb-4 pr-4 sm:pr-8 sm:pb-8"
 		>
