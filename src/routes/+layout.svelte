@@ -35,10 +35,10 @@
 </script>
 
 <nav class="absolute w-full flex justify-between z-50 gradient p-4">
-	<a href="/" class="logo left-4 top-4 pointer-events-auto">
-		<img class="image h-20 md:h-28 aspect-square" src="/logo.png" alt="logo" />
+	<a href="/" class="logo left-6 top-4 pointer-events-auto">
+		<img class="image h-16 md:h-24 aspect-square" src="/logo.png" alt="logo" />
 	</a>
-	<div class="hidden md:flex flex-row items-center mt-1">
+	<div class="hidden md:flex flex-row items-center mr-6">
 		{#each routes as route}
 			<div>
 				<NavButton
