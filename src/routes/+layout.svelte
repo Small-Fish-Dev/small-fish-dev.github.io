@@ -4,7 +4,7 @@
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
+	import { quintOut } from 'svelte/easing';
 	import { swipeable } from '@react2svelte/swipeable';
 	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import Icon from '@iconify/svelte';
@@ -72,13 +72,13 @@
 				isMenuOpen = false;
 			}}
 			class="fixed w-screen h-screen z-0 bg-black bg-opacity-50"
-			out:fade={{ duration: 200, easing: quadInOut }}
+			out:fade={{ duration: 100, easing: quintOut }}
 		/>
 		<nav
 			use:swipeable
 			on:swiped={swipeHandler}
-			in:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
-			out:fly={{ duration: 200, x: '100%', opacity: 0.5, easing: quadInOut }}
+			in:fly={{ duration: 200, x: '100%', easing: quintOut }}
+			out:fly={{ duration: 200, x: '100%' }}
 			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
 			<img src="home/header-logo.png" alt="poop fish logo" />
