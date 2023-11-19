@@ -58,6 +58,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	const msPerFrame = 1000 / fps;
 	let frames = 0;
 	let msPrev = window.performance.now();
+	let forceRender = false;
 
 	// active pointer count and positions
 	const pointers = new Map<number, Point>();
@@ -117,7 +118,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 		// if not animating, we need to repaint
 		if (!frame) {
-			renderFrame(performance.now());
+			forceRenderFrame();
 		}
 	});
 
@@ -281,7 +282,10 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		const msNow = window.performance.now();
 		const msPassed = msNow - msPrev;
 
-		if (msPassed < msPerFrame) return;
+		if (!forceRender) {
+			if (msPassed < msPerFrame) return;
+			forceRender = false;
+		}
 
 		ctx.save();
 		ctx.resetTransform();
@@ -309,6 +313,12 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		const excessTime = msPassed % msPerFrame;
 		msPrev = msNow - excessTime;
 		frames++;
+	}
+
+	function forceRenderFrame() {
+		forceRender = true;
+		renderFrame(performance.now());
+		forceRender = false;
 	}
 
 	const makePassive = { passive: true };
