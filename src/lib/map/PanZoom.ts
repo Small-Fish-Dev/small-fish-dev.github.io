@@ -34,6 +34,7 @@ export interface Options {
 	padding?: number;
 	maxZoom?: number;
 	friction?: number;
+	startingPosition?: Point;
 }
 
 export function panzoom(canvas: HTMLCanvasElement, options: Options) {
@@ -48,6 +49,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	let padding: number;
 	let maxZoom: number;
 	let friction: number;
+	let startingPosition: Point | undefined;
 	let view_width = (canvas.width = canvas.clientWidth * dpr);
 	let view_height = (canvas.height = canvas.clientHeight * dpr);
 	let focus: Point;
@@ -67,7 +69,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	const tracked: TrackedPoint[] = [];
 
 	function initialize(options: Options) {
-		({ width, height, render, padding, maxZoom, friction } = {
+		({ width, height, render, padding, maxZoom, friction, startingPosition } = {
 			padding: 0,
 			maxZoom: 16,
 			friction: 0.97,
@@ -89,6 +91,8 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 		focus = toImageSpace({ x: canvas.width / 2, y: canvas.height / 2 });
 		rAF(renderFrame);
+
+		if (startingPosition) moveByAbsolute(startingPosition);
 	}
 
 	initialize(options);

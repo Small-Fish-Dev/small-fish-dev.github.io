@@ -71,12 +71,23 @@
 			count++;
 		});
 
+		var hash = window.location.hash;
+		hash = hash.substring(1, hash.length);
+		const member = tryOpenCard(hash);
+		const startingPos = member ? { x: member.point.x, y: member.point.y } : undefined;
+
+		let target = pins.find((x) => x.member?.name == hash);
+		if (target) {
+			activePin = target;
+		}
+
 		mapImage.onload = () =>
 			resolve({
 				width: mapImage.width,
 				height: mapImage.height,
 				render,
-				friction: 0.95
+				friction: 0.95,
+				startingPosition: startingPos
 			});
 
 		function render(context: CanvasRenderingContext2D, _t: number, _focus: Point) {
@@ -105,13 +116,6 @@
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
 		}
-
-		var hash = window.location.hash;
-		hash = hash.substring(1, hash.length);
-		tryOpenCard(hash);
-
-		let target = pins.find((x) => x.member?.name == hash);
-		if (target) activePin = target;
 	});
 
 	function tryOpenCard(name?: string) {
@@ -119,15 +123,15 @@
 			window.location.hash = '';
 			member = null;
 			activePin = null;
-
-			return;
+			return undefined;
 		}
 
 		let target = Members.find((m) => m.name.toLowerCase() == name?.toLocaleLowerCase());
-		if (target == null) return;
+		if (target == null) return undefined;
 
 		window.location.hash = `#${target.name}`;
 		member = target;
+		return member;
 	}
 
 	function onPointerClick(event: PointerEvent) {
