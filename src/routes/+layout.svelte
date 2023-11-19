@@ -117,7 +117,7 @@
 <!-- Don't show footer for the team page. -->
 {#if $page.url.pathname !== routes[0].href}
 	<footer class="mt-auto">
-		<div class="bg-darkblue overlay static-background">
+		<div class="bg-darkblue overlay static-background shadow">
 			<img
 				class="absolute bottom-0 right-0 h-full bg-cover z-10 p-[20px]"
 				src="/footer/concretefree.png"
