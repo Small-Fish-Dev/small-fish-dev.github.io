@@ -25,8 +25,6 @@ const subtract = (p1: Point, p2: Point) => <Point>{ x: p1.x - p2.x, y: p1.y - p2
 const MIN_VELOCITY = 0.02;
 const TRACKED_DURATION = 120;
 
-// return boolean indicates if rAF renders should be scheduled
-// (i.e. there may be some animation that has to play)
 type Render = (ctx: CanvasRenderingContext2D, t: number, focus: Point) => void | boolean;
 
 export interface Options {
@@ -84,8 +82,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		stopMovement();
 
 		focus = toImageSpace({ x: canvas.width / 2, y: canvas.height / 2 });
-
-		scheduleRender();
+		rAF(renderFrame);
 	}
 
 	initialize(options);
@@ -155,9 +152,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	}
 
 	function onpointerdown(event: PointerEvent) {
-		// If not left click, or not using a touch screen bail out.
-		if (event.button !== 0 && event.pointerType !== 'touch') return;
-
 		event.stopPropagation();
 		canvas.setPointerCapture(event.pointerId);
 
@@ -180,8 +174,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		if (!pointers.has(event.pointerId)) return;
 
 		const point = pointFromEvent(event);
-
-		scheduleRender();
 
 		switch (pointers.size) {
 			// single pointer move (pan)
@@ -278,13 +270,9 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		return inverse.transformPoint(point);
 	}
 
-	function scheduleRender() {
-		if (!frame) {
-			frame = rAF(renderFrame);
-		}
-	}
-
 	function renderFrame(t: number) {
+		rAF(renderFrame);
+
 		ctx.save();
 		ctx.resetTransform();
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -307,8 +295,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 			velocity.vy *= friction;
 			velocity.ts = t;
 		}
-
-		frame = rAF(renderFrame);
 	}
 
 	const makePassive = { passive: true };

@@ -104,9 +104,6 @@
 
 				context.drawImage(pin.image, x, y, pin.size, pin.size);
 			});
-
-			// Force a render on each frame.
-			return true;
 		}
 
 		var hash = window.location.hash;
