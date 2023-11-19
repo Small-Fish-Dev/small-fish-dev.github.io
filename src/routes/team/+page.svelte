@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
-	import { fly, scale } from 'svelte/transition';
-	import { quadInOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
+	import { quadInOut, quintOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 	import { onDestroy, onMount } from 'svelte';
 
@@ -17,7 +17,10 @@
 	let currentIndex = 0;
 	let timer = 0;
 
+	let ready = false;
 	onMount(() => {
+		ready = true;
+
 		paths.forEach((path) => {
 			let img = new Image();
 			img.src = path;
@@ -198,7 +201,7 @@
 				bind:this={canvas}
 				on:pointerdown={onPointerClick}
 				on:pointermove={onPointerMove}
-				in:scale={{ duration: 1500, easing: quadInOut, opacity: 0.5 }}
+				transition:fly={{ duration: 900, easing: quintOut, x: -100 }}
 				use:panzoom={options}
 				class="h-full w-full z-50"
 			/>
@@ -206,7 +209,7 @@
 	</div>
 
 	<!-- This is a bit shit, feel free to improve! -->
-	{#if member}
+	{#if member && ready}
 		<div
 			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
