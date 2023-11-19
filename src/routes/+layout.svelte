@@ -22,7 +22,7 @@
 		},
 		{
 			label: 'projects',
-			icon: 'material-symbols:videogame-asset',
+			icon: 'material-symbols:videogame-asset-sharp',
 			href: '/projects'
 		}
 	];
