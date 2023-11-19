@@ -22,7 +22,7 @@
 		},
 		{
 			label: 'projects',
-			icon: 'material-symbols:videogame-asset',
+			icon: 'material-symbols:videogame-asset-sharp',
 			href: '/projects'
 		}
 	];
@@ -81,7 +81,7 @@
 			out:fly={{ duration: 200, x: '100%' }}
 			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
 		>
-			<img src="home/header-logo.png" alt="poop fish logo" />
+			<img src="/home/header-logo.png" alt="poop fish logo" />
 			<div class="flex flex-col gap-4 pt-8">
 				{#each routes as route}
 					<div
@@ -102,7 +102,7 @@
 			<div class="text-center font-poppins text-white">
 				<p class="text-2xl font-medium">made with ❤️</p>
 				<p>even an inconvenient rock can't stop us</p>
-				<img src="home/rock.gif" alt="rock" class="px-28" />
+				<img src="/home/rock.gif" alt="rock" class="px-28" />
 			</div>
 		</nav>
 	</div>
