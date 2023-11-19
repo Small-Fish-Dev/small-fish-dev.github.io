@@ -209,7 +209,7 @@
 		<div
 			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quadInOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
-			class="absolute flex h-full pointer-events-none z-20 w-[350px] md:w-96 top-0 right-0 pt-28 p-2 md:pb-8 md:pr-8"
+			class="absolute flex h-full pointer-events-none z-20 max-w-[350px] md:w-96 top-0 right-0 p-2 pt-28 md:pt-32 pb-4 pr-4 sm:pr-8 sm:pb-8"
 		>
 			<MemberCard {member} onClose={() => tryOpenCard()} />
 		</div>
