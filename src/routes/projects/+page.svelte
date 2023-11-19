@@ -19,7 +19,7 @@
 	{#each Projects as project}
 		<ProjectCard
 			{project}
-			class="max-w-[50%] even:items-end self-center even:text-end xtext-start mb-20 last:mb-5 first:mt-5"
+			class="max-w-[700px] even:items-end self-center even:text-end xtext-start mb-20 last:mb-5 first:mt-5"
 		/>
 	{/each}
 </div>
