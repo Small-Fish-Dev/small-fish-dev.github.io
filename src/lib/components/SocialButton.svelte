@@ -21,7 +21,8 @@
 		'paypal.me': '/socials/paypal.png',
 		'itch.io': '/socials/itch.png',
 		'discord.gg': '/socials/discord.png',
-		'asset.party': '/socials/asset_party.png'
+		'asset.party': '/socials/asset_party.png',
+		'soundcloud.com': '/socials/soundcloud.png'
 	};
 
 	function getHost(url: URL) {

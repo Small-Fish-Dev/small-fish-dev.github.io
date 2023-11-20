@@ -63,7 +63,7 @@ export const Members: Member[] = [
 		country: Countries.UK,
 		roles: {
 			Programmer: [Languages.CSharp, Languages.HLSL, Languages.JS, Languages.Python],
-			'3D Art': [
+			'3D Artist': [
 				Software.Blender,
 				Software.Marmoset,
 				Software.Painter,
@@ -82,7 +82,11 @@ export const Members: Member[] = [
 			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
 			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
 			order: ['Primates', 'https://en.wikipedia.org/wiki/Primate'],
+			suborder: ['Halplorhini', 'https://en.wikipedia.org/wiki/Haplorhini'],
+			infraorder: ['Simiiformes', 'https://en.wikipedia.org/wiki/Simiiformes'],
 			family: ['Cercopithecidae', 'https://en.wikipedia.org/wiki/Old_World_monkey'],
+			subfamily: ['Colobinae', 'https://en.wikipedia.org/wiki/Colobinae'],
+			tribe: ['Presbytini', 'https://en.wikipedia.org/wiki/Presbytini'],
 			species: ['N. larvatus', 'https://en.wikipedia.org/wiki/Proboscis_monkey']
 		}
 	},
@@ -152,22 +156,44 @@ export const Members: Member[] = [
 	// rndtrash
 	{
 		name: 'rndtrash',
+		avatar: '/team/profiles/rndtrash.jpg',
+		description: 'I like rodents they are cool.',
 		point: { x: 389, y: 74 },
-		country: Countries.Russia
+		country: Countries.Russia,
+		roles: {
+			Programmer: [Languages.CSharp, Languages.LUA, Languages.HLSL]
+		},
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
+			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
+			subfamily: ['Cricetinae', 'https://en.wikipedia.org/wiki/Hamster'],
+			genus: ['Phodopus', 'https://en.wikipedia.org/wiki/Phodopus'],
+			species: ['P. sungorus', 'https://en.wikipedia.org/wiki/Winter_white_dwarf_hamster']
+		},
+		socials: ['https://github.com/rndtrash', 'https://twitter.com/rndtrash' ]
 	},
 
 	// wheatleymf
 	{
 		name: 'wheatleymf',
+		avatar: '/team/profiles/wheatleymf.jpg',
+		description: 'I am doing lots of stuff at the cost of my sleep schedule.',
 		point: { x: 365, y: 38 },
-		country: Countries.Russia
+		country: Countries.Russia,
+		socials: ['https://wheatleymf.net', 'https://twitter.com/wheatleymf']
 	},
 
 	// Mungus
 	{
 		name: 'Mungus',
+		avatar: '/team/profiles/mungus.jpg',
+		description: '"s&box oh s&box... LETS PLAY SOME S&BOX!"',
 		point: { x: 325, y: 48 },
-		country: Countries.Denmark
+		country: Countries.Denmark,
+		socials: ['https://www.youtube.com/@MungusBox', 'https://soundcloud.com/mungussbox']
 	},
 
 	// matek
