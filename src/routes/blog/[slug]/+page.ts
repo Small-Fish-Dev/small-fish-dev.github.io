@@ -31,7 +31,8 @@ export const load: PageLoad = async ({ params }) => {
 			const posts = (await Promise.all(postPromises)).filter((p) => p.published);
 			posts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
 			const blogPostIndex = posts.findIndex((p) => p.title === blogPost?.metadata.title);
-			if (blogPostIndex !== -1 && blogPostIndex !== posts.length - 1) nextBlogPost = posts[i + 1];
+			if (blogPostIndex !== -1 && blogPostIndex !== posts.length - 1)
+				nextBlogPost = posts[blogPostIndex + 1];
 			break;
 		}
 	}
