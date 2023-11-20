@@ -1,5 +1,6 @@
 ---
 title: 'Example Blog'
+thumbnail: 'ex.png'
 date: '2021-11-10'
 description: 'This is an example description. It will be displayed at the top of a blog post.'
 publisher: 'matek'

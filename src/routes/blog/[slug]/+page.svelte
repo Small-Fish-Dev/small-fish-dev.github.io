@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
+	import HoverIcon from '$lib/components/HoverIcon.svelte';
 
 	export let data: PageData;
 	let publisher: Member | undefined;
@@ -20,26 +22,43 @@
 		if (!event.target) return;
 		event.target.src = '/team/profiles/none.jpg';
 	};
+
+	function resolvePath(src: string) {
+		return src.startsWith('http://') || src.startsWith('https://')
+			? src
+			: `/blogs/${$page.params.slug}/${src}`;
+	}
 </script>
 
-<div class="absolute w-screen h-screen max-w-none">
+<div class="absolute w-full h-screen max-w-none">
 	<!-- TODO: replace with good video or image?-->
-	<video autoplay loop muted class="absolute w-full h-full object-cover"
-		><source src="/home/bomb-survival.mp4" type="video/mp4" /></video
-	>
+	{#if data.frontmatter.thumbnail}
+		<img
+			class="absolute w-full h-full object-cover"
+			src={resolvePath(data.frontmatter.thumbnail)}
+			alt="background"
+		/>
+	{:else}
+		<video autoplay loop muted class="absolute w-full h-full object-cover"
+			><source src="/home/bomb-survival.mp4" type="video/mp4" /></video
+		>
+	{/if}
 	<div class="color-overlay w-full h-full z-10" />
 </div>
 
 <div class="w-full flex justify-center background-fade z-20">
 	<!-- Page -->
-	<div class="flex flex-col items-center container mx-auto pt-32 font-poppins">
+	<div class="flex flex-col items-center container mx-auto pt-32 pb-32 font-poppins">
 		<div>
 			<!-- Header -->
 			<div class="mb-5 text-white px-5 sm:px-0">
 				<!-- Title -->
 				<div class="flex flex-row items-end gap-4">
 					<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
-					<button class="transition-all text-gray hover:text-white scale-120 hover:scale-150">
+					<button
+						class="transition-all text-gray hover:text-white scale-120 hover:scale-150"
+						on:click={() => navigator.clipboard.writeText($page.url.href)}
+					>
 						<Icon
 							icon="ic:sharp-share"
 							style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
@@ -87,9 +106,39 @@
 			</div>
 
 			<!-- Article content -->
-			<article class="p-10 bg-white prose lg:prose-xl container rounded-lg">
+			<article class="p-10 mb-20 bg-white prose lg:prose-xl container rounded-lg">
 				<svelte:component this={component} />
 			</article>
+
+			<!-- Recommended blogpost -->
+			{#if data.nextfrontmatter}
+				<h1 class="text-5xl text-white font-medium mb-4">next blog:</h1>
+
+				<div class="relative overflow-hidden rounded-lg">
+					<a href={data.nextfrontmatter.slug}>
+						<img
+							class="absolute w-full"
+							src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
+							alt="thumbnail"
+						/>
+
+						<div
+							class="shadow text-gray p-10 background-fade-right w-full text-right rounded-lg flex flex-col gap-3"
+						>
+							<p class="text-3xl transition-all font-bold">
+								{data.nextfrontmatter.title}
+							</p>
+							<p class="text-xl font-medium text-white">
+								article by <a
+									href="/team#{data.nextfrontmatter?.publisher}"
+									class="transition-all text-gray hover:text-white font-bold"
+									>{data.nextfrontmatter?.publisher}</a
+								>
+							</p>
+						</div></a
+					>
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>
@@ -112,6 +161,15 @@
 		);
 	}
 
+	.background-fade-right {
+		background: linear-gradient(
+			to right,
+			transparent 0%,
+			rgba(26, 60, 237, 0.4) 40%,
+			rgba(26, 60, 237, 0.7) 70%
+		);
+	}
+
 	@keyframes color-overlay-scroll {
 		0% {
 			background-position: 0% 0%;
@@ -127,7 +185,9 @@
 	.background {
 	}
 
-	img {
+	img,
+	article,
+	.shadow {
 		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 	}
 

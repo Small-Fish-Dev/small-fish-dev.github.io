@@ -24,6 +24,7 @@ declare global {
 		interface BlogPost {
 			slug: string;
 			title: string;
+			thumbnail: string;
 			date: string;
 			description: string;
 			published: boolean;
