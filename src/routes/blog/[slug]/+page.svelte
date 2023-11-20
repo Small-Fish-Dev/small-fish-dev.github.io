@@ -48,7 +48,7 @@
 
 <div class="w-full flex justify-center background-fade z-20">
 	<!-- Page -->
-	<div class="flex flex-col items-center container mx-auto pt-32 pb-32 font-poppins">
+	<div class="flex flex-col items-center container mx-auto pt-32 pb-20 font-poppins">
 		<div>
 			<!-- Header -->
 			<div class="mb-5 text-white px-5 sm:px-0">
@@ -114,29 +114,39 @@
 			{#if data.nextfrontmatter}
 				<h1 class="text-5xl text-white font-medium mb-4">next blog:</h1>
 
-				<div class="relative overflow-hidden rounded-lg">
-					<a href={data.nextfrontmatter.slug}>
-						<img
-							class="absolute w-full"
-							src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
-							alt="thumbnail"
-						/>
+				<div class="relative shadow overflow-hidden rounded-lg">
+					<a rel="external" href={data.nextfrontmatter.slug}>
+						<!-- Background -->
+						{#if data.nextfrontmatter.thumbnail}
+							<img
+								class="absolute w-full bg-no-repeat"
+								src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
+								alt="thumbnail"
+							/>
+						{/if}
+						<div class="absolute color-overlay w-full h-full" />
 
+						<!-- Text -->
 						<div
-							class="shadow text-gray p-10 background-fade-right w-full text-right rounded-lg flex flex-col gap-3"
+							class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
 						>
-							<p class="text-3xl transition-all font-bold">
+							<!-- Title -->
+							<p class="text-3xl transition-all font-bold z-10">
 								{data.nextfrontmatter.title}
 							</p>
-							<p class="text-xl font-medium text-white">
-								article by <a
-									href="/team#{data.nextfrontmatter?.publisher}"
-									class="transition-all text-gray hover:text-white font-bold"
-									>{data.nextfrontmatter?.publisher}</a
-								>
-							</p>
-						</div></a
-					>
+
+							<!-- Publisher -->
+							{#if data.nextfrontmatter.publisher}
+								<p class="text-xl font-medium text-white z-10">
+									article by <a
+										href="/team#{data.nextfrontmatter.publisher}"
+										class="transition-all text-gray hover:text-white font-bold"
+										>{data.nextfrontmatter?.publisher}</a
+									>
+								</p>
+							{/if}
+						</div>
+					</a>
 				</div>
 			{/if}
 		</div>
@@ -165,8 +175,8 @@
 		background: linear-gradient(
 			to right,
 			transparent 0%,
-			rgba(26, 60, 237, 0.4) 40%,
-			rgba(26, 60, 237, 0.7) 70%
+			rgba(26, 60, 237, 0.4) 20%,
+			rgb(26, 60, 237) 90%
 		);
 	}
 
@@ -180,9 +190,6 @@
 		100% {
 			background-position: 100% 100%;
 		}
-	}
-
-	.background {
 	}
 
 	img,

@@ -255,8 +255,6 @@
 	}
 
 	.scroll {
-		animation: scroll;
-		animation-duration: 60s;
-		animation-iteration-count: infinite;
+		animation: scroll 120s infinite linear;
 	}
 </style>
