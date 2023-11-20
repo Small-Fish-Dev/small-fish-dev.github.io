@@ -22,12 +22,12 @@
 	};
 </script>
 
-<div class="absolute max-w-none">
+<div class="absolute w-screen h-screen max-w-none">
 	<!-- TODO: replace with good video or image?-->
-	<video autoplay loop muted class="absolute w-screen h-screen object-cover"
+	<video autoplay loop muted class="absolute w-full h-full object-cover"
 		><source src="/home/bomb-survival.mp4" type="video/mp4" /></video
 	>
-	<div class="color-overlay w-screen h-screen z-10" />
+	<div class="color-overlay w-full h-full z-10" />
 </div>
 
 <div class="w-full flex justify-center background-fade z-20">
