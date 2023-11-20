@@ -219,8 +219,22 @@ export const Members: Member[] = [
 	// gio
 	{
 		name: 'gio',
+		avatar: '/team/profiles/gio.jpg',
+		description: 'hello everyone',
 		point: { x: 561, y: 273 },
-		country: Countries.Australia
+		country: Countries.Australia,
+		roles: {
+			Programmer: [Languages.CPP, Languages.CSharp, Languages.C, Languages.GDScript],
+		},
+		socials: ['https://github.com/gio3k'],
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
+			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
+			species: ['R. rattus', 'https://en.wikipedia.org/wiki/Black_rat']
+		}
 	},
 
 	// Cool looking jellyfish
