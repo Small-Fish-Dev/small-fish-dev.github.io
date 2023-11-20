@@ -12,7 +12,7 @@
 
 	onMount(() => {
 		publisher = Members.find(
-			(m) => m.name.toLocaleLowerCase() == data.frontmatter.publisher.toLowerCase()
+			(m) => m.name.toLocaleLowerCase() == data.frontmatter.publisher?.toLowerCase()
 		);
 	});
 
@@ -22,13 +22,29 @@
 	};
 </script>
 
-<div class="w-full flex justify-center bg-blue">
+<div class="absolute max-w-none">
+	<!-- TODO: replace with good video or image?-->
+	<video autoplay loop muted class="absolute w-screen h-screen object-cover"
+		><source src="/home/bomb-survival.mp4" type="video/mp4" /></video
+	>
+	<div class="color-overlay w-screen h-screen z-10" />
+</div>
+
+<div class="w-full flex justify-center background-fade z-20">
 	<!-- Page -->
 	<div class="w-full sm:w-3/4 xl:w-1/2 pt-32 font-poppins">
 		<!-- Header -->
 		<div class="mb-5 text-white px-5 sm:px-0">
 			<!-- Title -->
-			<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
+			<div class="flex flex-row items-end gap-4">
+				<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
+				<button class="transition-all text-gray hover:text-white scale-120 hover:scale-150">
+					<Icon
+						icon="ic:sharp-share"
+						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+					/>
+				</button>
+			</div>
 
 			<!-- Date -->
 			<div class="flex items-center text-gray text-lg font-medium mb-4">
@@ -77,6 +93,38 @@
 </div>
 
 <style>
+	.color-overlay {
+		background: url(/home/pixel-overlay.png);
+		background-size: 7px;
+		mix-blend-mode: multiply;
+		opacity: 1;
+		animation: color-overlay-scroll 120s infinite linear;
+	}
+
+	.background-fade {
+		background: linear-gradient(
+			to bottom,
+			rgba(36, 70, 247, 0.5) 0%,
+			rgba(36, 70, 247, 0.8) 50vh,
+			rgb(36, 70, 247) 70vh
+		);
+	}
+
+	@keyframes color-overlay-scroll {
+		0% {
+			background-position: 0% 0%;
+		}
+		50% {
+			background-position: 50% 50%;
+		}
+		100% {
+			background-position: 100% 100%;
+		}
+	}
+
+	.background {
+	}
+
 	img {
 		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 	}
