@@ -32,63 +32,65 @@
 
 <div class="w-full flex justify-center background-fade z-20">
 	<!-- Page -->
-	<div class="w-full sm:w-3/4 xl:w-1/2 pt-32 font-poppins">
-		<!-- Header -->
-		<div class="mb-5 text-white px-5 sm:px-0">
-			<!-- Title -->
-			<div class="flex flex-row items-end gap-4">
-				<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
-				<button class="transition-all text-gray hover:text-white scale-120 hover:scale-150">
+	<div class="flex flex-col items-center container mx-auto pt-32 font-poppins">
+		<div>
+			<!-- Header -->
+			<div class="mb-5 text-white px-5 sm:px-0">
+				<!-- Title -->
+				<div class="flex flex-row items-end gap-4">
+					<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
+					<button class="transition-all text-gray hover:text-white scale-120 hover:scale-150">
+						<Icon
+							icon="ic:sharp-share"
+							style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+						/>
+					</button>
+				</div>
+
+				<!-- Date -->
+				<div class="flex items-center text-gray text-lg font-medium mb-4">
 					<Icon
-						icon="ic:sharp-share"
+						icon="ic:baseline-calendar-today"
+						class="mr-2"
 						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
 					/>
-				</button>
-			</div>
-
-			<!-- Date -->
-			<div class="flex items-center text-gray text-lg font-medium mb-4">
-				<Icon
-					icon="ic:baseline-calendar-today"
-					class="mr-2"
-					style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-				/>
-				<p>
-					{new Date(data.frontmatter.date).toLocaleString('en-us', {
-						month: 'short',
-						day: 'numeric',
-						year: 'numeric'
-					})}
-				</p>
-			</div>
-
-			<!-- Description -->
-			{#if data.frontmatter.description}
-				<p class="mb-4 text-gray">{data.frontmatter.description}</p>
-			{/if}
-
-			<!-- Publisher -->
-			{#if publisher}
-				<div class="flex flex-row items-center gap-3 text-gray">
-					<img
-						class="w-[42px] h-[42px] bg-cover rounded-lg"
-						src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
-						alt="publisher"
-						on:error={imageFallback}
-					/>
-					<a class="font-medium" href="/team#{publisher.name}">
-						published by <span class="font-bold transition-all text-gray hover:text-white"
-							>{publisher.name}</span
-						>
-					</a>
+					<p>
+						{new Date(data.frontmatter.date).toLocaleString('en-us', {
+							month: 'short',
+							day: 'numeric',
+							year: 'numeric'
+						})}
+					</p>
 				</div>
-			{/if}
-		</div>
 
-		<!-- Article content -->
-		<article class="p-10 bg-white prose lg:prose-xl container rounded-lg">
-			<svelte:component this={component} />
-		</article>
+				<!-- Description -->
+				{#if data.frontmatter.description}
+					<p class="mb-4 text-gray">{data.frontmatter.description}</p>
+				{/if}
+
+				<!-- Publisher -->
+				{#if publisher}
+					<div class="flex flex-row items-center gap-3 text-gray">
+						<img
+							class="w-[42px] h-[42px] bg-cover rounded-lg"
+							src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
+							alt="publisher"
+							on:error={imageFallback}
+						/>
+						<a class="font-medium" href="/team#{publisher.name}">
+							published by <span class="font-bold transition-all text-gray hover:text-white"
+								>{publisher.name}</span
+							>
+						</a>
+					</div>
+				{/if}
+			</div>
+
+			<!-- Article content -->
+			<article class="p-10 bg-white prose lg:prose-xl container rounded-lg">
+				<svelte:component this={component} />
+			</article>
+		</div>
 	</div>
 </div>
 
