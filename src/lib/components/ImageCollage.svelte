@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
 	import { swipeable, type SwipeEventData } from '@react2svelte/swipeable';
+	import { onMount } from 'svelte';
 	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
 
@@ -35,6 +36,12 @@
 		if (event.detail.dir === 'Right') move(-1);
 		else if (event.detail.dir === 'Left') move(1);
 	}
+
+	onMount(() => {
+		images.forEach((img) => {
+			new Image().src = img;
+		});
+	});
 </script>
 
 <div
