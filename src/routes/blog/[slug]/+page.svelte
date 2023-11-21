@@ -39,7 +39,7 @@
 			alt="background"
 		/>
 	{/if}
-	<div class="color-overlay w-full h-full" />
+	<div class="color-overlay mix-blend-multiply w-full h-full" />
 	<div class="absolute top-0 w-full h-screen flex justify-center background-fade" />
 </div>
 
@@ -96,7 +96,9 @@
 	</article>
 
 	{#if data.nextfrontmatter}
-		<div class="md:mb-8 shadow overflow-hidden md:rounded-lg">
+		<div
+			class="md:mb-8 shadow overflow-hidden md:rounded-lg transition-all hover:scale-105 text-white"
+		>
 			<a rel="external" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
 					<img
@@ -105,24 +107,21 @@
 						alt="thumbnail"
 					/>
 				{/if}
-				<div class="absolute color-overlay w-full h-full" />
-
-				<div
-					class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
-				>
-					<p class="text-3xl transition-all font-bold z-10">
+				<div class="absolute color-overlay mix-blend-hard-light w-full h-full" />
+				<div class="relative p-10 w-full flex flex-col">
+					<p class="text-3xl transition-all font-bold">
 						{data.nextfrontmatter.title}
 					</p>
-
 					{#if data.nextfrontmatter.publisher}
-						<p class="text-xl font-medium text-white z-10">
-							article by <a
+						<p class="text-xl font-medium pb-4 pt-1">
+							by <a
 								href="/team#{data.nextfrontmatter.publisher}"
-								class="transition-all text-gray hover:text-white font-bold"
-								>{data.nextfrontmatter?.publisher}</a
+								class="transition-all text-gray font-bold">{data.nextfrontmatter?.publisher}</a
 							>
 						</p>
 					{/if}
+
+					<p>{data.nextfrontmatter.description}</p>
 				</div>
 			</a>
 		</div>
@@ -133,7 +132,6 @@
 	.color-overlay {
 		background: url(/home/pixel-overlay.png);
 		background-size: 7px;
-		mix-blend-mode: multiply;
 		opacity: 1;
 		animation: color-overlay-scroll 120s infinite linear;
 	}
@@ -144,15 +142,6 @@
 			rgba(36, 70, 247, 0.5) 0%,
 			rgba(36, 70, 247, 0.8) 50vh,
 			rgb(36, 70, 247) 70vh
-		);
-	}
-
-	.background-fade-right {
-		background: linear-gradient(
-			to right,
-			transparent 0%,
-			rgba(26, 60, 237, 0.4) 20%,
-			rgb(26, 60, 237) 90%
 		);
 	}
 
