@@ -43,7 +43,7 @@
 	<div class="absolute top-0 w-full h-screen flex justify-center background-fade" />
 </div>
 
-<div class="container mx-auto flex flex-col md:px-18 lg:px-32 xl:px-64 pt-32 z-10">
+<div class="container mx-auto flex flex-col md:px-18 lg:px-32 xl:px-64 pt-32 z-10 font-poppins">
 	<div class="mb-5 text-white px-5 sm:px-0">
 		<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
 		<div class="flex items-center text-gray text-lg font-medium mb-4">
@@ -81,7 +81,7 @@
 					on:error={imageFallback}
 				/>
 				<p class="font-medium">
-					Published by <span class="font-bold transition-all text-gray hover:text-white"
+					by <span class="font-bold transition-all text-gray hover:text-white"
 						>{publisher.name}</span
 					>
 				</p>
@@ -121,7 +121,9 @@
 						</p>
 					{/if}
 
-					<p>{data.nextfrontmatter.description}</p>
+					{#if data.nextfrontmatter.description}
+						<p class="text-md">{data.nextfrontmatter.description}</p>
+					{/if}
 				</div>
 			</a>
 		</div>
