@@ -116,7 +116,7 @@
 <!-- Don't show footer for the team page. -->
 {#if $page.url.pathname !== routes[0].href}
 	<footer class="mt-auto">
-		<div class="bg-darkblue overlay static-background shadow">
+		<div class="bg-darkblue overlay static-background shadow z-50">
 			<div class="flex flex-row justify-between font-poppins text-white p-4 z-50">
 				<div class="z-10">
 					<p class="text-3xl font-bold">small fish</p>
@@ -141,7 +141,7 @@
 	}
 
 	.shadow {
-		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.5);
+		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.7);
 	}
 
 	.image {
