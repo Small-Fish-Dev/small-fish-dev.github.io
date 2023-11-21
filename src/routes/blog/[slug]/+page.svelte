@@ -43,7 +43,7 @@
 	<div class="absolute top-0 w-full h-screen flex justify-center background-fade" />
 </div>
 
-<div class="container mx-auto flex flex-col items-center pt-32 z-10">
+<div class="container mx-auto flex flex-col md:px-18 lg:px-32 xl:px-64 pt-32 z-10">
 	<div class="mb-5 text-white px-5 sm:px-0">
 		<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
 		<div class="flex items-center text-gray text-lg font-medium mb-4">
@@ -89,105 +89,45 @@
 		{/if}
 	</div>
 
-	<article class="p-10 mb-20 bg-white prose lg:prose-xl container mx-auto rounded-lg">
+	<article
+		class="p-5 md:mb-8 md:p-10 bg-white prose lg:prose-xl prose-code:break-words rounded-t-lg md:rounded-lg"
+	>
 		<svelte:component this={component} />
 	</article>
-</div>
 
-<!-- <div class="w-full flex justify-center background-fade z-20">
-	<div class="flex flex-col items-center container mx-auto pt-32 pb-20 font-poppins">
-		<div>
-			<div class="mb-5 text-white px-5 sm:px-0">
-				<div class="flex flex-row items-end gap-4">
-					<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
-					<button
-						class="transition-all text-gray hover:text-white scale-120 hover:scale-150"
-						on:click={() => navigator.clipboard.writeText($page.url.href)}
-					>
-						<Icon
-							icon="ic:sharp-share"
-							style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-						/>
-					</button>
-				</div>
-
-				<div class="flex items-center text-gray text-lg font-medium mb-4">
-					<Icon
-						icon="ic:baseline-calendar-today"
-						class="mr-2"
-						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+	{#if data.nextfrontmatter}
+		<div class="md:mb-8 shadow overflow-hidden md:rounded-lg">
+			<a rel="external" href={data.nextfrontmatter.slug}>
+				{#if data.nextfrontmatter.thumbnail}
+					<img
+						class="absolute w-full bg-no-repeat"
+						src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
+						alt="thumbnail"
 					/>
-					<p>
-						{new Date(data.frontmatter.date).toLocaleString('en-us', {
-							month: 'short',
-							day: 'numeric',
-							year: 'numeric'
-						})}
+				{/if}
+				<div class="absolute color-overlay w-full h-full" />
+
+				<div
+					class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
+				>
+					<p class="text-3xl transition-all font-bold z-10">
+						{data.nextfrontmatter.title}
 					</p>
-				</div>
 
-				{#if data.frontmatter.description}
-					<p class="mb-4 text-gray">{data.frontmatter.description}</p>
-				{/if}
-
-				{#if publisher}
-					<div class="flex flex-row items-center gap-3 text-gray">
-						<img
-							class="w-[42px] h-[42px] bg-cover rounded-lg"
-							src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
-							alt="publisher"
-							on:error={imageFallback}
-						/>
-						<a class="font-medium" href="/team#{publisher.name}">
-							published by <span class="font-bold transition-all text-gray hover:text-white"
-								>{publisher.name}</span
+					{#if data.nextfrontmatter.publisher}
+						<p class="text-xl font-medium text-white z-10">
+							article by <a
+								href="/team#{data.nextfrontmatter.publisher}"
+								class="transition-all text-gray hover:text-white font-bold"
+								>{data.nextfrontmatter?.publisher}</a
 							>
-						</a>
-					</div>
-				{/if}
-			</div>
-
-			<article class="p-10 mb-20 bg-white prose lg:prose-xl container rounded-lg">
-				<svelte:component this={component} />
-			</article>
-
-			{#if data.nextfrontmatter}
-				<h1 class="text-5xl text-white font-medium mb-4">next blog:</h1>
-
-				<div class="relative shadow overflow-hidden rounded-lg">
-					<a rel="external" href={data.nextfrontmatter.slug}>
-						{#if data.nextfrontmatter.thumbnail}
-							<img
-								class="absolute w-full bg-no-repeat"
-								src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
-								alt="thumbnail"
-							/>
-						{/if}
-						<div class="absolute color-overlay w-full h-full" />
-
-						<div
-							class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
-						>
-							<p class="text-3xl transition-all font-bold z-10">
-								{data.nextfrontmatter.title}
-							</p>
-
-							{#if data.nextfrontmatter.publisher}
-								<p class="text-xl font-medium text-white z-10">
-									article by <a
-										href="/team#{data.nextfrontmatter.publisher}"
-										class="transition-all text-gray hover:text-white font-bold"
-										>{data.nextfrontmatter?.publisher}</a
-									>
-								</p>
-							{/if}
-						</div>
-					</a>
+						</p>
+					{/if}
 				</div>
-			{/if}
+			</a>
 		</div>
-	</div>
-</div> -->
+	{/if}
+</div>
 
 <style>
 	.color-overlay {
