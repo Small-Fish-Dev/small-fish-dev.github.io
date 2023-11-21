@@ -116,18 +116,16 @@
 <!-- Don't show footer for the team page. -->
 {#if $page.url.pathname !== routes[0].href}
 	<footer class="mt-auto">
-		<div class="bg-darkblue overlay static-background shadow">
-			<img
-				class="absolute bottom-0 right-0 h-full bg-cover z-10 p-[20px]"
-				src="/footer/concretefree.png"
-				alt="concretefree"
-			/>
+		<div class="bg-darkblue overlay static-background shadow z-50">
+			<div class="flex flex-row justify-between font-poppins text-white p-4 z-50">
+				<div class="z-10">
+					<p class="text-3xl font-bold">small fish</p>
+					<p><span class="font-bold">2021 - 2023</span> All rights are VERY reserved</p>
+				</div>
+				<img class="h-[145px] z-10" src="/footer/concretefree.png" alt="concretefree" />
+			</div>
 		</div>
 		<div class="overlay moving-background" />
-		<div class="absolute font-poppins text-white p-4">
-			<p class="text-3xl font-bold">small fish</p>
-			<p><span class="font-bold">2021 - 2023</span> All rights are VERY reserved</p>
-		</div>
 	</footer>
 {/if}
 
@@ -143,7 +141,7 @@
 	}
 
 	.shadow {
-		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.5);
+		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.7);
 	}
 
 	.image {

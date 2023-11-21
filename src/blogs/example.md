@@ -19,10 +19,11 @@ This blog post serves as an example of how to create a blog post for this websit
 
 You just use the [markdown feature](https://www.markdownguide.org/extended-syntax/#syntax-highlighting) for embedding code.
 
-```csharp
-public partial class Lord : BaseCharacter
-{
-    // Look at this amazing code.
+```js
+function foo(bar) {
+	var a = 42,
+		b = 'Prism';
+	return a + bar(b);
 }
 ```
 

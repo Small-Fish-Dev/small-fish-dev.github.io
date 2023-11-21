@@ -44,9 +44,11 @@
 	});
 </script>
 
+<!-- The width clamping is kinda hardcoded, should probably look more into this. -->
 <div
 	use:swipeable
 	on:swiped={swipeHandler}
+	class:max-w-[600px]={$page.route.id == '/blog/[slug]'}
 	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden {className}"
 >
 	<!-- Current image-->
@@ -66,7 +68,7 @@
 		/>
 		<img
 			in:fly={{ duration: 100, x: `${direction * 100}%`, opacity: 0.5, easing: cubicInOut }}
-			class="h-full image z-10 aspect object-contain"
+			class="h-full aspect-[4/3] image z-10 object-contain"
 			src={resolvePath(images[current])}
 			alt={`image ${current}`}
 			loading="lazy"
@@ -104,7 +106,7 @@
 	}
 
 	.image {
-		box-shadow: 0px 0px 16px black;
+		filter: drop-shadow(0px 0px 16px black);
 	}
 
 	button {
