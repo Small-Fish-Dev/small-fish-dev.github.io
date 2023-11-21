@@ -182,7 +182,19 @@ export const Members: Member[] = [
 		point: { x: 389, y: 74 },
 		country: Countries.Russia,
 		roles: {
-			Programmer: [Languages.CSharp, Languages.LUA, Languages.HLSL]
+			Programmer: [
+				Languages.C,
+				Languages.CPP,
+				Languages.CSharp,
+				Languages.JS,
+				Languages.Python,
+				Languages.Java,
+				Languages.GDScript,
+				Languages.HTML,
+				Languages.CSS,
+				Languages.HLSL
+			],
+			'Sound Design': [Software.Audacity]
 		},
 		classification: {
 			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
@@ -194,7 +206,7 @@ export const Members: Member[] = [
 			genus: ['Phodopus', 'https://en.wikipedia.org/wiki/Phodopus'],
 			species: ['P. sungorus', 'https://en.wikipedia.org/wiki/Winter_white_dwarf_hamster']
 		},
-		socials: ['https://github.com/rndtrash', 'https://twitter.com/rndtrash' ]
+		socials: ['https://github.com/rndtrash', 'https://twitter.com/rndtrash', 'https://randomtrash.itch.io' ]
 	},
 
 	// wheatleymf
