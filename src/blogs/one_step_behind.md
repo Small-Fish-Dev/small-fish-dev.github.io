@@ -1,7 +1,7 @@
 ---
 title: 'Always one step behind'
-thumbnail: 'ex.png'
-date: '2023-11-20'
+thumbnail: 'stats.png'
+date: '2023-11-21'
 description: 'My personal experience with finding out you were too late at capitalizing a trend.'
 publisher: 'ubre'
 published: true
@@ -19,8 +19,6 @@ In the past 2 years of doing so I found out that perhaps I'm not as original as 
 
 In late 2021, me and Grodbert found a meme about a kitty being held with just one hand, with the "Harvest" prompt from Bioshock edited on top.
 
-[SHOW IMAGE OF ORIGINAL MEME]
-
 We were looking for a quick project to work on in S&box and we thought it would funny to try and turn the image into a game, so with the weekend coming up we challenged ourselves to have something playable by the end of it. We didn't make it in time, it took us 4 days to finish the game with me doing the code and Grodbert doing the art.
 
 I'll be the first to admit that it's not a good game, if you wanted to get all the endings you'd be playing for an hour with most of the gameplay consisting of pressing W and picking up kittens.
@@ -29,7 +27,7 @@ It was a good experience, I learned how to compromise when limited on time which
 
 A few weeks go by and we receive a notification on our [Twitter Account](https://twitter.com/SmallFishDev), it was a mention on a huge gimmick account that tweeted the thumbnail of Cat Harvest and it was gathering a lot of attention. In the following days it would spread more, but this is a story for another blog though, which I'll link here when I'm done writing.
 
-[CAROUSEL OF ALL POSTS]
+<Twitter id="AnimalsCaption/status/1567709515457634304" />
 
 Scrolling through all the comments we could find, a lot of people were interested in playing the actual game. It kinda bummed us out that all we could do is tell people the game wasn't available for the public, and knowing that S&box wouldn't release in the near future we couldn't do anything to capitalize on the minor success.
 
@@ -43,91 +41,42 @@ Seal Rehabilitation Project was a small game with big things planned, I'm not go
 
 Working on SealRP we learned that you can't just make all the assets for a game and come up with the actual game later. We probably had 5 different ideas on what the game could be, the scope went from being a wallpaper simulator to a FNAF clone with a quest system.
 
-In the end we stopped working on it because cloth physics weren't working, and they were the most important part of the entire game because the seal model Grodbert made was universally liked by everyone that saw it.
+Eventually we stopped working on it because cloth physics weren't working, and they were the most important part of the entire game because the seal model Grodbert made was universally liked by everyone that saw it.
 
-[GIF OF THE SEAL]
+<Img src="seal.gif" />
 
+Come the next Team Fortress 2 update, and they added a seal! The internet went wild and for a moment all I could see in my feed was reminders of our missed opportunity.
 
+Going back it was silly, it's not like everyone was waiting for the next big seal-based game to take over the market.
+It was just the Team Fortress 2 community enjoying what little content they get every now and then, they're just really loud about it.
 
+<Heading title="In This House" />
 
+Sometimes it feels like there's a shadow cabal of streamers that choose which game everyone is going to stream next. It happened to Among Us, it happened to Phasmophobia, and it's regularly happening with rage games like Only Up.
 
+A while after we In This House, our Mighty Brick Jam entry, the streamer game of choice happened to be Lethal Company, and for some time I couldn't help but notice how similar it was to our latest project.
+
+The core gameplay for both games is based around gathering loot in a limited amount of time by visiting different levels with hostile enemies trying to kill you.
+Now granted we worked on In This House for a little over a week while Lethal Company has been in the works for at least a year, so for everyone else but us it will look like we were inspired by it.
+
+We've actually [had a lot of fun playing Lethal Company](https://www.youtube.com/watch?v=b0pU-9Vr3hw), turns out there's also a mansion level inside of it, and it also has a ghost girl enemy just like In This House does. When we actually saw that we didn't get mad, we just laughed it off, it's obviously just a big coincidence.
+
+<Img src="lethal_company_mansion.png" caption="The mansion level from Lethal Company"/>
 
 <Heading title="What's stopping us?" />
 
-Most of the times
+Most of the times we are limited by S&box and the fact that it's in closed development, so there is no way to monetize our games. Either that or we're too late to capitalize on the mild "success" we get.
 
+As it turns out it's not that big of a deal, when we did get a lot of attention through [a streamer playing our game](https://www.youtube.com/watch?v=IHr_0Pf5ytM) we ended up getting 2-3 followers on Twitter. Either there isn't much crossover between the communities or our games weren't interesting enough.
 
+Me and Grodbert promised ourselves that if we ever saw a big meme incoming, we'd try to make a game based off of it as fast as possible and ride off of its success. Then Skibidi Toilet happened and S&box announced it was going to go through a major retooling and that it won't be functional for at least a year.
 
+Another missed opportunity? Maybe it was a blessing in disguise seeing how DaFuqBoom, the creator of Skibidi Toilet, made an official game and has been in hot waters for abusing copyright takedowns, so perhaps that strategy isn't the best route for us.
 
-This blog post serves as an example of how to create a blog post for this website.
+<Heading title="What's there to learn?" />
 
-1. Create a new `.md` file inside of this directory `src/blogs/`
-   - The name of this file will be the route the website generates, so make sure it doesn't include spaces. For example... `example.md` will be `https://smallfi.sh/blog/example`.
-   - If you want to include locally hosted media such as images or videos create a folder with the same name as the `.md` inside of `static/blogs/<blog_md_name>`.
-2. Make sure at the top of your new `.md` file you have included a title, date, and enabled published similar to lines 1-5 of this post.
-3. From there you can simply write normal [markdown](https://www.markdownguide.org/cheat-sheet/).
+This just means that we're doing something right, and that we should just keep on doing it.
 
-<Heading title="Code" />
+It's best to remain positive about these sort of things.
 
-You just use the [markdown feature](https://www.markdownguide.org/extended-syntax/#syntax-highlighting) for embedding code.
-
-```csharp
-public partial class Lord : BaseCharacter
-{
-    // Look at this amazing code.
-}
-```
-
-<Heading title="Headings" caption="by matek" />
-
-There is a custom header element you should be using instead of `## My Header`. Here are a few examples of usage...
-
-- `<Heading title="Media" />`
-- `<Heading title="Media" caption="by Luke" />`
-- `<Heading h="h3" title="Media" caption="I am a smaller heading" />`
-
-You can add a caption to a heading by simply following the example above.
-
-The `h="h3"` parameter allows you to change the size of the heading. by default it will use `h="h2"` because the main title of the blog uses `h="h1"`. h1 -> h4 in terms of text size.
-
-<Heading title="Media" />
-
-I've written up a few components that allow you to embed media into your blog post. If you want to embed any local media please make sure you create a folder with the same name as your `.md` file inside of `static/blogs/<blog_md_name>`. For example... if your blog name was `example.md` then you would store all local media inside of `static/blogs/example/`.
-
-<Heading h="h3" title="Images" />
-
-You can use `<Img src=""ex.png"" />` to embed locally stored images.
-<Img src="ex.png" />
-
-You can also use the same component to embed images from the web.
-<Img src="https://upload.wikimedia.org/wikipedia/en/3/31/Dota_2_Steam_artwork.jpg" />
-
-<Heading h="h3" title="Video" />
-
-<Heading h="h4" title="Local" />
-
-You can use `<Video src="ex.mp4" />` to embed locally stored videos.
-
-<Video src="ex.mp4" />
-
-<Heading h="h4" title="YouTube" />
-
-You can use `<Youtube id="3-TrbOxmK08" />` to embed YouTube videos.
-<Youtube id="3-TrbOxmK08" />
-
-<Heading title="Image Collage" caption="by ceitine" />
-
-You can create a image carousel with the following:
-
-`<ImageCollage images={["ex.png", "ex.png"]} />`.
-<ImageCollage images={["ex.png", "ex.png"]} />
-
-<Heading title="Twitter" />
-
-You can use `<Twitter id="naven0m/status/1705531799277801668" />` to embed Tweets.
-<Twitter id="naven0m/status/1705531799277801668" />
-
-<Heading title="Spotify" />
-
-You can use `<Spotify src="track/4F4TGsDYacEbw4PLAIyJ2e?si=ce064389dbbd4fb7" />` to embed songs.
-<Spotify src="track/4F4TGsDYacEbw4PLAIyJ2e?si=ce064389dbbd4fb7"/>
+But damn does it sting sometimes WHEN IT COULD'VE BEEN ME.
