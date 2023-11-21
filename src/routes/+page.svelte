@@ -38,7 +38,7 @@
 		<div class="color-overlay absolute z-20 w-auto w-full h-full max-w-none" />
 		<div class="background-fade absolute z-10 w-auto w-full h-full max-w-none" />
 		<video autoplay loop muted class="absolute z-5 w-full h-full object-cover"
-			><source src="home/bomb-survival.mp4" type="video/mp4" /></video
+			><source src="home/smallfishtrailer.mp4" type="video/mp4" /></video
 		>
 	</header>
 	<body>
