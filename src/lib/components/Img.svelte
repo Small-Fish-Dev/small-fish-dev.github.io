@@ -12,7 +12,7 @@
 	}
 </script>
 
-<div>
+<div class="text-center">
 	<img
 		class="mb-0 flex mx-auto justify-center"
 		class:caption-img={caption}
