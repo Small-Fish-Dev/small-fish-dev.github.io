@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { Members, type Member } from '$lib/types/Member';
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
-	import HoverIcon from '$lib/components/HoverIcon.svelte';
 
 	export let data: PageData;
 	let publisher: Member | undefined;
@@ -30,127 +31,102 @@
 	}
 </script>
 
-<div class="absolute w-full h-screen max-w-none">
-	<!-- TODO: replace with good video or image?-->
+<div class="fixed inset-0 overflow-hidden z-0">
 	{#if data.frontmatter.thumbnail}
 		<img
 			class="absolute w-full h-full object-cover"
 			src={resolvePath(data.frontmatter.thumbnail)}
 			alt="background"
 		/>
-	{:else}
-		<video autoplay loop muted class="absolute w-full h-full object-cover"
-			><source src="/home/bomb-survival.mp4" type="video/mp4" /></video
-		>
 	{/if}
-	<div class="color-overlay w-full h-full z-10" />
+	<div class="color-overlay w-full h-full" />
+	<div class="absolute top-0 w-full h-screen flex justify-center background-fade" />
 </div>
 
-<div class="w-full flex justify-center background-fade z-20">
-	<!-- Page -->
-	<div class="flex flex-col items-center container mx-auto pt-32 pb-20 font-poppins">
-		<div>
-			<!-- Header -->
-			<div class="mb-5 text-white px-5 sm:px-0">
-				<!-- Title -->
-				<div class="flex flex-row items-end gap-4">
-					<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
-					<button
-						class="transition-all text-gray hover:text-white scale-120 hover:scale-150"
-						on:click={() => navigator.clipboard.writeText($page.url.href)}
-					>
-						<Icon
-							icon="ic:sharp-share"
-							style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-						/>
-					</button>
-				</div>
-
-				<!-- Date -->
-				<div class="flex items-center text-gray text-lg font-medium mb-4">
-					<Icon
-						icon="ic:baseline-calendar-today"
-						class="mr-2"
-						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-					/>
-					<p>
-						{new Date(data.frontmatter.date).toLocaleString('en-us', {
-							month: 'short',
-							day: 'numeric',
-							year: 'numeric'
-						})}
-					</p>
-				</div>
-
-				<!-- Description -->
-				{#if data.frontmatter.description}
-					<p class="mb-4 text-gray">{data.frontmatter.description}</p>
-				{/if}
-
-				<!-- Publisher -->
-				{#if publisher}
-					<div class="flex flex-row items-center gap-3 text-gray">
-						<img
-							class="w-[42px] h-[42px] bg-cover rounded-lg"
-							src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
-							alt="publisher"
-							on:error={imageFallback}
-						/>
-						<a class="font-medium" href="/team#{publisher.name}">
-							published by <span class="font-bold transition-all text-gray hover:text-white"
-								>{publisher.name}</span
-							>
-						</a>
-					</div>
-				{/if}
-			</div>
-
-			<!-- Article content -->
-			<article class="p-10 mb-20 bg-white prose lg:prose-xl container rounded-lg">
-				<svelte:component this={component} />
-			</article>
-
-			<!-- Recommended blogpost -->
-			{#if data.nextfrontmatter}
-				<h1 class="text-5xl text-white font-medium mb-4">next blog:</h1>
-
-				<div class="relative shadow overflow-hidden rounded-lg">
-					<a rel="external" href={data.nextfrontmatter.slug}>
-						<!-- Background -->
-						{#if data.nextfrontmatter.thumbnail}
-							<img
-								class="absolute w-full bg-no-repeat"
-								src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
-								alt="thumbnail"
-							/>
-						{/if}
-						<div class="absolute color-overlay w-full h-full" />
-
-						<!-- Text -->
-						<div
-							class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
-						>
-							<!-- Title -->
-							<p class="text-3xl transition-all font-bold z-10">
-								{data.nextfrontmatter.title}
-							</p>
-
-							<!-- Publisher -->
-							{#if data.nextfrontmatter.publisher}
-								<p class="text-xl font-medium text-white z-10">
-									article by <a
-										href="/team#{data.nextfrontmatter.publisher}"
-										class="transition-all text-gray hover:text-white font-bold"
-										>{data.nextfrontmatter?.publisher}</a
-									>
-								</p>
-							{/if}
-						</div>
-					</a>
-				</div>
-			{/if}
+<div class="container mx-auto flex flex-col md:px-18 lg:px-32 xl:px-64 pt-32 z-10">
+	<div class="mb-5 text-white px-5 sm:px-0">
+		<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
+		<div class="flex items-center text-gray text-lg font-medium mb-4">
+			<Icon
+				icon="ic:baseline-calendar-today"
+				class="mr-2"
+				style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+			/>
+			<p>
+				{new Date(data.frontmatter.date).toLocaleString('en-us', {
+					month: 'short',
+					day: 'numeric',
+					year: 'numeric'
+				})}
+			</p>
 		</div>
+
+		{#if data.frontmatter.description}
+			<p class="mb-4 text-gray">{data.frontmatter.description}</p>
+		{/if}
+
+		{#if publisher}
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<!-- svelte-ignore a11y-no-static-element-interactions -->
+			<div
+				on:click={() => {
+					goto(`/team#${publisher?.name}`);
+				}}
+				class="flex flex-row items-center origin-left gap-3 text-gray transition-all hover:cursor-pointer hover:scale-110"
+			>
+				<img
+					class="w-[42px] h-[42px] bg-cover rounded-lg"
+					src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
+					alt="publisher"
+					on:error={imageFallback}
+				/>
+				<p class="font-medium">
+					Published by <span class="font-bold transition-all text-gray hover:text-white"
+						>{publisher.name}</span
+					>
+				</p>
+			</div>
+		{/if}
 	</div>
+
+	<article
+		class="p-5 md:mb-8 md:p-10 bg-white prose lg:prose-xl prose-code:break-words rounded-t-lg md:rounded-lg"
+	>
+		<svelte:component this={component} />
+	</article>
+
+	{#if data.nextfrontmatter}
+		<div class="md:mb-8 shadow overflow-hidden md:rounded-lg">
+			<a rel="external" href={data.nextfrontmatter.slug}>
+				{#if data.nextfrontmatter.thumbnail}
+					<img
+						class="absolute w-full bg-no-repeat"
+						src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
+						alt="thumbnail"
+					/>
+				{/if}
+				<div class="absolute color-overlay w-full h-full" />
+
+				<div
+					class="relative background-fade-right text-gray p-10 w-full text-right flex flex-col gap-3"
+				>
+					<p class="text-3xl transition-all font-bold z-10">
+						{data.nextfrontmatter.title}
+					</p>
+
+					{#if data.nextfrontmatter.publisher}
+						<p class="text-xl font-medium text-white z-10">
+							article by <a
+								href="/team#{data.nextfrontmatter.publisher}"
+								class="transition-all text-gray hover:text-white font-bold"
+								>{data.nextfrontmatter?.publisher}</a
+							>
+						</p>
+					{/if}
+				</div>
+			</a>
+		</div>
+	{/if}
 </div>
 
 <style>
