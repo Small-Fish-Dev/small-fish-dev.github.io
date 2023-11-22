@@ -23,7 +23,7 @@ export const Members: Member[] = [
 	{
 		name: 'ceitine',
 		description: "you've gyatt to be ceitine me,,,",
-		avatar: 'team/profiles/ceitine.jpg',
+		avatar: '/team/profiles/ceitine.jpg',
 		point: { x: 352, y: 31 },
 		country: Countries.Finland,
 		roles: {
@@ -58,7 +58,7 @@ export const Members: Member[] = [
 	{
 		name: 'Luke',
 		description: 'A man of many talents... A master of none... Professionally useless...',
-		avatar: 'team/profiles/luke.jpg',
+		avatar: '/team/profiles/luke.jpg',
 		point: { x: 303, y: 57 },
 		country: Countries.UK,
 		roles: {
@@ -128,7 +128,7 @@ export const Members: Member[] = [
 	{
 		name: 'Grodbert',
 		description: "I love bugs so much it's unreal /an/ros.",
-		avatar: 'team/profiles/grodbert.jpg',
+		avatar: '/team/profiles/grodbert.jpg',
 		point: { x: 328, y: 78 },
 		country: Countries.Italy,
 		roles: {
@@ -169,7 +169,7 @@ export const Members: Member[] = [
 			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
 			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
 			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
-			subfamily: ['Cricetinae', 'https://en.wikipedia.org/wiki/Hamster'],
+			subfamily: ['Cricetinae', 'https://en.wikipedia.org/wiki/Hamster']
 		},
 		socials: ['https://steamcommunity.com/id/dim4a_2546/']
 	},
@@ -206,7 +206,11 @@ export const Members: Member[] = [
 			genus: ['Phodopus', 'https://en.wikipedia.org/wiki/Phodopus'],
 			species: ['P. sungorus', 'https://en.wikipedia.org/wiki/Winter_white_dwarf_hamster']
 		},
-		socials: ['https://github.com/rndtrash', 'https://twitter.com/rndtrash', 'https://randomtrash.itch.io' ]
+		socials: [
+			'https://github.com/rndtrash',
+			'https://twitter.com/rndtrash',
+			'https://randomtrash.itch.io'
+		]
 	},
 
 	// wheatleymf
@@ -264,7 +268,12 @@ export const Members: Member[] = [
 			'Level Design': [Software.Hammer],
 			Multimedia: [Software.Photoshop]
 		},
-		socials: ['http://gkaf.me', 'https://gunnarkafel.artstation.com', 'https://twitter.com/GunnarKafel', 'https://www.paypal.com/paypalme/gkaf'],
+		socials: [
+			'http://gkaf.me',
+			'https://gunnarkafel.artstation.com',
+			'https://twitter.com/GunnarKafel',
+			'https://www.paypal.com/paypalme/gkaf'
+		],
 		classification: {
 			domain: ['Eukaryota', 'https://en.wikipedia.org/wiki/Eukaryote'],
 			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
@@ -308,7 +317,7 @@ export const Members: Member[] = [
 		point: { x: 561, y: 273 },
 		country: Countries.Australia,
 		roles: {
-			Programmer: [Languages.CPP, Languages.CSharp, Languages.C, Languages.GDScript],
+			Programmer: [Languages.CPP, Languages.CSharp, Languages.C, Languages.GDScript]
 		},
 		socials: ['https://github.com/gio3k'],
 		classification: {
