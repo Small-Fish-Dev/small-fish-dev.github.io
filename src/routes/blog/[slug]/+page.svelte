@@ -35,6 +35,9 @@
 	}
 </script>
 
+<!-- Hacky way to make hyperlinks automatically target blank :D -->
+<base target="_blank" />
+
 <div class="fixed inset-0 overflow-hidden z-0">
 	{#if data.frontmatter.thumbnail}
 		<img
@@ -103,7 +106,7 @@
 		<div
 			class="md:mb-8 shadow overflow-hidden md:rounded-lg transition-all hover:scale-105 text-white"
 		>
-			<a rel="external" href={data.nextfrontmatter.slug}>
+			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
 					<img
 						class="absolute w-full bg-no-repeat"
