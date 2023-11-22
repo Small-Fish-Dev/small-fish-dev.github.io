@@ -9,14 +9,18 @@
 
 	export let data: PageData;
 	let publisher: Member | undefined;
+	let nextPublisher: Member | undefined;
 
 	type C = $$Generic<typeof SvelteComponentTyped<any, any, any>>;
 	$: component = data.component as unknown as C;
 
+	const getMember = (publisher: string | undefined) => {
+		return Members.find((m) => m.name.toLocaleLowerCase() == publisher?.toLowerCase());
+	};
+
 	onMount(() => {
-		publisher = Members.find(
-			(m) => m.name.toLocaleLowerCase() == data.frontmatter.publisher?.toLowerCase()
-		);
+		publisher = getMember(data.frontmatter.publisher);
+		nextPublisher = getMember(data.nextfrontmatter?.publisher);
 	});
 
 	const imageFallback = (event: any) => {
@@ -112,11 +116,10 @@
 					<p class="text-3xl transition-all font-bold">
 						{data.nextfrontmatter.title}
 					</p>
-					{#if data.nextfrontmatter.publisher}
+					{#if nextPublisher}
 						<p class="text-xl font-medium pb-4 pt-1">
-							by <a
-								href="/team#{data.nextfrontmatter.publisher}"
-								class="transition-all text-gray font-bold">{data.nextfrontmatter?.publisher}</a
+							by <a href="/team#{nextPublisher.name}" class="transition-all text-gray font-bold"
+								>{nextPublisher.name}</a
 							>
 						</p>
 					{/if}
