@@ -4,7 +4,7 @@
 	import ImageCollage from '$lib/components/ImageCollage.svelte';
 </script>
 
-<div class="shadow h-[70vh] z-20">
+<div class="z-20 h-[70vh] shadow">
 	<ImageCollage
 		class="h-full"
 		images={[
@@ -15,13 +15,13 @@
 	/>
 </div>
 
-<div class="p-5 flex flex-col scroll bg-[url('/projects/pxgrid_orange.png')]">
+<div class="scroll flex flex-col bg-[url('/projects/pxgrid_orange.png')] p-5">
 	{#each Projects as project, i}
 		<ProjectCard
 			id={project.title}
 			right={i % 2 == 1}
 			{project}
-			class="max-w-[700px] self-center mb-10 last:mb-5 first:mt-5 {i % 2 == 1 ? 'sm:ml-24' : ''}"
+			class="mb-10 max-w-[700px] self-center first:mt-5 last:mb-5 {i % 2 == 1 ? 'sm:ml-24' : ''}"
 		/>
 	{/each}
 </div>

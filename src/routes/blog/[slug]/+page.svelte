@@ -26,22 +26,22 @@
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
 
-<div class="fixed inset-0 overflow-hidden z-0">
+<div class="fixed inset-0 z-0 overflow-hidden">
 	{#if data.frontmatter.thumbnail}
 		<img
-			class="absolute w-full h-full object-cover"
+			class="absolute h-full w-full object-cover"
 			src={resolvePath(data.frontmatter.thumbnail)}
 			alt="background"
 		/>
 	{/if}
-	<div class="color-overlay mix-blend-multiply w-full h-full" />
-	<div class="absolute top-0 w-full h-screen flex justify-center background-fade" />
+	<div class="color-overlay h-full w-full mix-blend-multiply" />
+	<div class="background-fade absolute top-0 flex h-screen w-full justify-center" />
 </div>
 
-<div class="container mx-auto flex flex-col md:px-18 lg:px-32 xl:px-64 pt-32 z-10 font-poppins">
-	<div class="mb-5 text-white px-5 sm:px-0">
-		<h1 class="text-5xl font-medium mb-2">{data.frontmatter.title}</h1>
-		<div class="flex items-center text-gray text-lg font-medium mb-4">
+<div class="md:px-18 container z-10 mx-auto flex flex-col pt-32 font-poppins lg:px-32 xl:px-64">
+	<div class="mb-5 px-5 text-white sm:px-0">
+		<h1 class="mb-2 text-5xl font-medium">{data.frontmatter.title}</h1>
+		<div class="mb-4 flex items-center text-lg font-medium text-gray">
 			<Icon
 				icon="ic:baseline-calendar-today"
 				class="mr-2"
@@ -67,16 +67,16 @@
 				on:click={() => {
 					goto(`/team#${data.publisher?.name}`);
 				}}
-				class="flex flex-row items-center origin-left gap-3 text-gray transition-all hover:cursor-pointer hover:scale-110"
+				class="flex origin-left flex-row items-center gap-3 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 			>
 				<img
-					class="w-[42px] h-[42px] bg-cover rounded-lg"
+					class="h-[42px] w-[42px] rounded-lg bg-cover"
 					src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
 					alt="publisher"
 					on:error={imageFallback}
 				/>
 				<p class="font-medium">
-					by <span class="font-bold transition-all text-gray hover:text-white"
+					by <span class="font-bold text-gray transition-all hover:text-white"
 						>{data.publisher.name}</span
 					>
 				</p>
@@ -85,18 +85,18 @@
 	</div>
 
 	<article
-		class="p-5 md:mb-8 md:p-10 bg-white
-		prose lg:prose-xl
-		prose-code:break-words
-		hover:prose-a:transition-all prose-a:text-blue hover:prose-a:text-lightblue
-		rounded-t-lg md:rounded-lg"
+		class="prose rounded-t-lg bg-white p-5
+		lg:prose-xl prose-a:text-blue
+		hover:prose-a:text-lightblue
+		hover:prose-a:transition-all prose-code:break-words md:mb-8
+		md:rounded-lg md:p-10"
 	>
 		<svelte:component this={component} />
 	</article>
 
 	{#if data.nextfrontmatter}
 		<div
-			class="md:mb-8 shadow overflow-hidden md:rounded-lg transition-all hover:scale-105 text-white"
+			class="overflow-hidden text-white shadow transition-all hover:scale-105 md:mb-8 md:rounded-lg"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
@@ -106,16 +106,16 @@
 						alt="thumbnail"
 					/>
 				{/if}
-				<div class="absolute color-overlay mix-blend-hard-light w-full h-full" />
-				<div class="relative p-10 w-full flex flex-col">
-					<p class="text-3xl transition-all font-bold">
+				<div class="color-overlay absolute h-full w-full mix-blend-hard-light" />
+				<div class="relative flex w-full flex-col p-10">
+					<p class="text-3xl font-bold transition-all">
 						{data.nextfrontmatter.title}
 					</p>
 					{#if data.nextpublisher}
-						<p class="text-xl font-medium pb-4 pt-1">
+						<p class="pb-4 pt-1 text-xl font-medium">
 							by <a
 								href="/team#{data.nextpublisher.name}"
-								class="transition-all text-gray font-bold">{data.nextpublisher.name}</a
+								class="font-bold text-gray transition-all">{data.nextpublisher.name}</a
 							>
 						</p>
 					{/if}

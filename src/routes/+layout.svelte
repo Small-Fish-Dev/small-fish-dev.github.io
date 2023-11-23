@@ -34,11 +34,11 @@
 	}
 </script>
 
-<nav class="absolute w-full flex justify-between z-50 gradient p-4">
-	<a href="/" class="logo left-6 top-4 pointer-events-auto">
-		<img class="image h-16 md:h-24 aspect-square" src="/logo.png" alt="logo" />
+<nav class="gradient absolute z-50 flex w-full justify-between p-4">
+	<a href="/" class="logo pointer-events-auto left-6 top-4">
+		<img class="image aspect-square h-16 md:h-24" src="/logo.png" alt="logo" />
 	</a>
-	<div class="hidden md:flex flex-row items-center mr-6">
+	<div class="mr-6 hidden flex-row items-center md:flex">
 		{#each routes as route}
 			<div>
 				<NavButton
@@ -51,7 +51,7 @@
 		{/each}
 	</div>
 	<button
-		class="md:hidden text-white transition-all pointer-events-auto scale-100 hover:scale-110"
+		class="pointer-events-auto scale-100 text-white transition-all hover:scale-110 md:hidden"
 		on:click={() => {
 			isMenuOpen = !isMenuOpen;
 		}}
@@ -71,7 +71,7 @@
 			on:click={() => {
 				isMenuOpen = false;
 			}}
-			class="fixed w-screen h-screen z-0 bg-black bg-opacity-50"
+			class="fixed z-0 h-screen w-screen bg-black bg-opacity-50"
 			out:fade={{ duration: 100, easing: quintOut }}
 		/>
 		<nav
@@ -79,7 +79,7 @@
 			on:swiped={swipeHandler}
 			in:fly={{ duration: 200, x: '100%', easing: quintOut }}
 			out:fly={{ duration: 200, x: '100%' }}
-			class="fixed z-50 right-0 h-full flex flex-col w-5/6 max-w-sm py-6 px-6 bg-blue shadow overflow-y-auto"
+			class="fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto bg-blue px-6 py-6 shadow"
 		>
 			<img src="/home/header-logo.png" alt="poop fish logo" />
 			<div class="flex flex-col gap-4 pt-8">
@@ -108,7 +108,7 @@
 	</div>
 {/if}
 
-<div class="flex flex-col min-h-screen">
+<div class="flex min-h-screen flex-col">
 	<slot />
 </div>
 
@@ -116,13 +116,13 @@
 <!-- Don't show footer for the team page. -->
 {#if $page.url.pathname !== routes[0].href}
 	<footer class="mt-auto">
-		<div class="bg-darkblue overlay static-background shadow z-50">
-			<div class="flex flex-row justify-between font-poppins text-white p-4 z-50">
+		<div class="overlay static-background z-50 bg-darkblue shadow">
+			<div class="z-50 flex flex-row justify-between p-4 font-poppins text-white">
 				<div class="z-10">
 					<p class="text-3xl font-bold">small fish</p>
 					<p><span class="font-bold">2021 - 2023</span> All rights are VERY reserved</p>
 				</div>
-				<img class="h-[145px] z-10" src="/footer/concretefree.png" alt="concretefree" />
+				<img class="z-10 h-[145px]" src="/footer/concretefree.png" alt="concretefree" />
 			</div>
 		</div>
 		<div class="overlay moving-background" />

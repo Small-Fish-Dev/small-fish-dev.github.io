@@ -204,7 +204,7 @@
 </script>
 
 <div class="h-screen w-full overflow-hidden">
-	<div class="bg-[url('/team/pxgrid.png')] h-full w-full scroll">
+	<div class="scroll h-full w-full bg-[url('/team/pxgrid.png')]">
 		{#await promise then options}
 			<canvas
 				bind:this={canvas}
@@ -213,7 +213,7 @@
 				on:pointermove={onPointerMove}
 				transition:fly={{ duration: 900, easing: quintOut, x: -100 }}
 				use:panzoom={options}
-				class="h-full w-full z-50"
+				class="z-50 h-full w-full"
 			/>
 		{/await}
 	</div>
@@ -223,7 +223,7 @@
 		<div
 			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quintOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
-			class="absolute flex h-full pointer-events-none z-20 w-[320px] max-w-[450px] md:w-96 top-0 right-0 p-2 pt-28 md:pt-32 pb-4 pr-4 sm:pr-8 sm:pb-8"
+			class="pointer-events-none absolute right-0 top-0 z-20 flex h-full w-[320px] max-w-[450px] p-2 pb-4 pr-4 pt-28 sm:pb-8 sm:pr-8 md:w-96 md:pt-32"
 		>
 			<MemberCard {member} onClose={() => tryOpenCard()} />
 		</div>
