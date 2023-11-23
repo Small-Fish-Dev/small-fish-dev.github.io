@@ -79,7 +79,7 @@
 			on:swiped={swipeHandler}
 			in:fly={{ duration: 200, x: '100%', easing: quintOut }}
 			out:fly={{ duration: 200, x: '100%' }}
-			class="fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto bg-blue px-6 py-6 shadow"
+			class="fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto bg-blue px-6 py-6"
 		>
 			<img src="/home/header-logo.png" alt="poop fish logo" />
 			<div class="flex flex-col gap-4 pt-8">
@@ -138,10 +138,6 @@
 			rgba(0, 0, 0, 0) 100%
 		);
 		pointer-events: none;
-	}
-
-	.shadow {
-		box-shadow: -8px 0px 12px rgba(0, 0, 0, 0.7);
 	}
 
 	.image {

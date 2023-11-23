@@ -4,7 +4,7 @@
 	import ImageCollage from '$lib/components/ImageCollage.svelte';
 </script>
 
-<div class="z-20 h-[70vh] shadow">
+<div class="z-20 h-[70vh] shadow-md">
 	<ImageCollage
 		class="h-full"
 		images={[
@@ -27,10 +27,6 @@
 </div>
 
 <style>
-	.shadow {
-		box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
-	}
-
 	@keyframes scroll {
 		0% {
 			background-position-x: 0%;
