@@ -8,20 +8,8 @@
 	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
-	let publisher: Member | undefined;
-	let nextPublisher: Member | undefined;
-
 	type C = $$Generic<typeof SvelteComponentTyped<any, any, any>>;
 	$: component = data.component as unknown as C;
-
-	const getMember = (publisher: string | undefined) => {
-		return Members.find((m) => m.name.toLocaleLowerCase() == publisher?.toLowerCase());
-	};
-
-	onMount(() => {
-		publisher = getMember(data.frontmatter.publisher);
-		nextPublisher = getMember(data.nextfrontmatter?.publisher);
-	});
 
 	const imageFallback = (event: any) => {
 		if (!event.target) return;
@@ -72,24 +60,24 @@
 			<p class="mb-4 text-gray">{data.frontmatter.description}</p>
 		{/if}
 
-		{#if publisher}
+		{#if data.publisher}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
 				on:click={() => {
-					goto(`/team#${publisher?.name}`);
+					goto(`/team#${data.publisher?.name}`);
 				}}
 				class="flex flex-row items-center origin-left gap-3 text-gray transition-all hover:cursor-pointer hover:scale-110"
 			>
 				<img
 					class="w-[42px] h-[42px] bg-cover rounded-lg"
-					src={publisher.avatar == null ? '/team/profiles/none.jpg' : publisher.avatar}
+					src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
 					alt="publisher"
 					on:error={imageFallback}
 				/>
 				<p class="font-medium">
 					by <span class="font-bold transition-all text-gray hover:text-white"
-						>{publisher.name}</span
+						>{data.publisher.name}</span
 					>
 				</p>
 			</div>
@@ -123,10 +111,11 @@
 					<p class="text-3xl transition-all font-bold">
 						{data.nextfrontmatter.title}
 					</p>
-					{#if nextPublisher}
+					{#if data.nextpublisher}
 						<p class="text-xl font-medium pb-4 pt-1">
-							by <a href="/team#{nextPublisher.name}" class="transition-all text-gray font-bold"
-								>{nextPublisher.name}</a
+							by <a
+								href="/team#{data.nextpublisher.name}"
+								class="transition-all text-gray font-bold">{data.nextpublisher.name}</a
 							>
 						</p>
 					{/if}

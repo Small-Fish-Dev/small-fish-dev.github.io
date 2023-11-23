@@ -1,12 +1,15 @@
 import type { PageLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { slugFromPath } from '$lib/utils/SlugFromPath';
+import { Members, type Member } from '$lib/types/Member';
 
 export const load: PageLoad = async ({ params }) => {
 	const modules = import.meta.glob(`/src/blogs/*.{md,svx,svelte.md}`);
 
 	let blogPost: App.MdsvexFile | undefined;
 	let nextBlogPost: App.BlogPost | undefined;
+	let blogPostPublisher: Member | undefined;
+	let nextBlogPostPublisher: Member | undefined;
 
 	const moduleEntries = Object.entries(modules);
 	for (let i = 0; i < moduleEntries.length; ++i) {
@@ -16,14 +19,16 @@ export const load: PageLoad = async ({ params }) => {
 			// We found the main blog post we are going to be rendering.
 			const match = { path, resolver: resolver as unknown as App.MdsvexResolver };
 			blogPost = await match?.resolver?.();
-
+			blogPostPublisher = Members.find(
+				(m) => m.name.toLowerCase() == blogPost?.metadata.publisher?.toLowerCase()
+			);
 			const postPromises = Object.entries(modules).map(([path, resolver]) =>
 				resolver().then(
-					(post) =>
+					(post: any) =>
 						({
 							slug: slugFromPath(path),
 							...(post as unknown as App.MdsvexFile).metadata
-						}) as App.BlogPost
+						}) as App.BlogPost & Member
 				)
 			);
 
@@ -31,8 +36,13 @@ export const load: PageLoad = async ({ params }) => {
 			const posts = (await Promise.all(postPromises)).filter((p) => p.published);
 			posts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
 			const blogPostIndex = posts.findIndex((p) => p.title === blogPost?.metadata.title);
-			if (blogPostIndex !== -1 && blogPostIndex !== posts.length - 1)
+			if (blogPostIndex !== -1 && blogPostIndex !== posts.length - 1) {
 				nextBlogPost = posts[blogPostIndex + 1];
+				nextBlogPostPublisher = Members.find(
+					(m) => m.name.toLowerCase() == nextBlogPost?.publisher?.toLowerCase()
+				);
+			}
+
 			break;
 		}
 	}
@@ -42,6 +52,8 @@ export const load: PageLoad = async ({ params }) => {
 	return {
 		component: blogPost.default,
 		frontmatter: blogPost.metadata,
-		nextfrontmatter: nextBlogPost
+		nextfrontmatter: nextBlogPost,
+		publisher: blogPostPublisher,
+		nextpublisher: nextBlogPostPublisher
 	};
 };
