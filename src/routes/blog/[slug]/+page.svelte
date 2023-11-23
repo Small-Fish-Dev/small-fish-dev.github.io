@@ -1,9 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import { Members, type Member } from '$lib/types/Member';
 	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
 
@@ -39,23 +36,8 @@
 </div>
 
 <div class="md:px-18 container z-10 mx-auto flex flex-col pt-32 font-poppins lg:px-32 xl:px-64">
-	<div class="mb-5 px-5 text-white sm:px-0">
+	<div class="text-shadow mb-5 px-5 text-white sm:px-0">
 		<h1 class="mb-2 text-5xl font-medium">{data.frontmatter.title}</h1>
-		<div class="mb-4 flex items-center text-lg font-medium text-gray">
-			<Icon
-				icon="ic:baseline-calendar-today"
-				class="mr-2"
-				style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-			/>
-			<p>
-				{new Date(data.frontmatter.date).toLocaleString('en-us', {
-					month: 'short',
-					day: 'numeric',
-					year: 'numeric'
-				})}
-			</p>
-		</div>
-
 		{#if data.frontmatter.description}
 			<p class="mb-4 text-gray">{data.frontmatter.description}</p>
 		{/if}
@@ -63,40 +45,56 @@
 		{#if data.publisher}
 			<!-- svelte-ignore a11y-click-events-have-key-events -->
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div
-				on:click={() => {
-					goto(`/team#${data.publisher?.name}`);
-				}}
-				class="flex origin-left flex-row items-center gap-3 text-gray transition-all hover:scale-110 hover:cursor-pointer"
-			>
-				<img
-					class="h-[42px] w-[42px] rounded-lg bg-cover"
-					src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
-					alt="publisher"
-					on:error={imageFallback}
-				/>
-				<p class="font-medium">
-					by <span class="font-bold text-gray transition-all hover:text-white"
-						>{data.publisher.name}</span
-					>
-				</p>
+			<div class="flex items-center justify-between">
+				<div
+					on:click={() => {
+						goto(`/team#${data.publisher?.name}`);
+					}}
+					class="flex origin-left flex-row items-center gap-2 text-gray transition-all hover:scale-110 hover:cursor-pointer"
+				>
+					<img
+						class="h-[42px] w-[42px] bg-cover shadow-sm"
+						src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
+						alt="publisher"
+						on:error={imageFallback}
+					/>
+					<p class="font-medium">
+						by <span class="font-bold text-gray transition-all hover:text-white"
+							>{data.publisher.name}</span
+						>
+					</p>
+				</div>
+				<div class="flex items-center text-lg font-medium text-gray">
+					<Icon
+						icon="ic:baseline-calendar-today"
+						class="mr-1"
+						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+					/>
+					<p>
+						{new Date(data.frontmatter.date).toLocaleString('en-us', {
+							month: 'short',
+							day: 'numeric',
+							year: 'numeric'
+						})}
+					</p>
+				</div>
 			</div>
 		{/if}
 	</div>
 
 	<article
-		class="prose rounded-t-lg bg-white p-5
-		lg:prose-xl prose-a:text-blue
-		hover:prose-a:text-lightblue
-		hover:prose-a:transition-all prose-code:break-words md:mb-8
-		md:rounded-lg md:p-10"
+		class="prose bg-white p-5
+		shadow-md lg:prose-xl
+		prose-a:text-blue
+		hover:prose-a:text-lightblue hover:prose-a:transition-all prose-code:break-words
+		md:mb-8 md:p-10"
 	>
 		<svelte:component this={component} />
 	</article>
 
 	{#if data.nextfrontmatter}
 		<div
-			class="overflow-hidden text-white shadow transition-all hover:scale-105 md:mb-8 md:rounded-lg"
+			class="text-shadow relative overflow-hidden text-white shadow-md transition-all hover:scale-105 md:mb-8"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
@@ -156,17 +154,5 @@
 		100% {
 			background-position: 100% 100%;
 		}
-	}
-
-	img,
-	article,
-	.shadow {
-		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-	}
-
-	h1,
-	p,
-	a {
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	}
 </style>

@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
@@ -14,7 +16,12 @@ export default {
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif']
 			},
+			textShadow: {
+				heavy: '2px 2px 2px rgba(0, 0, 0, 1)',
+				DEFAULT: '2px 2px 4px rgba(0, 0, 0, 0.5)'
+			},
 			boxShadow: {
+				xs: '3px 3px black',
 				sm: '4px 4px black',
 				md: '8px 8px black'
 			},
@@ -27,5 +34,17 @@ export default {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [
+		require('@tailwindcss/typography'),
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+				{
+					'text-shadow': (value) => ({
+						textShadow: value
+					})
+				},
+				{ values: theme('textShadow') }
+			);
+		})
+	]
 };
