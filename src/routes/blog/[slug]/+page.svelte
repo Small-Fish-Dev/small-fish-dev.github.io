@@ -94,7 +94,7 @@
 
 	{#if data.nextfrontmatter}
 		<div
-			class="text-shadow relative overflow-hidden text-white shadow-md transition-all hover:scale-105 md:mb-8"
+			class="text-shadow relative overflow-hidden text-white shadow-md transition-all hover:brightness-125 md:mb-8 md:hover:scale-105"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
