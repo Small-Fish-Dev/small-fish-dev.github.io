@@ -97,7 +97,11 @@
 	</div>
 
 	<article
-		class="p-5 md:mb-8 md:p-10 bg-white prose lg:prose-xl prose-code:break-words rounded-t-lg md:rounded-lg"
+		class="p-5 md:mb-8 md:p-10 bg-white
+		prose lg:prose-xl
+		prose-code:break-words
+		hover:prose-a:transition-all prose-a:text-blue hover:prose-a:text-lightblue
+		rounded-t-lg md:rounded-lg"
 	>
 		<svelte:component this={component} />
 	</article>

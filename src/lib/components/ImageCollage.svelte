@@ -48,7 +48,8 @@
 <div
 	use:swipeable
 	on:swiped={swipeHandler}
-	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden {className}"
+	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden
+		{$page.route.id == '/blog/[slug]' ? 'blog' : ''} {className}"
 >
 	<!-- Current image-->
 	<p
@@ -67,7 +68,7 @@
 		/>
 		<img
 			transition:fly={{ duration: 100, x: `${direction * 100}%`, opacity: 0.5, easing: cubicInOut }}
-			class="image z-10 object-contain"
+			class="!m-0 image z-10 object-contain w-full h-full"
 			src={resolvePath(images[current])}
 			alt={`image ${current}`}
 			loading="lazy"
@@ -115,5 +116,9 @@
 	.image-bg {
 		filter: blur(5px) brightness(0.5);
 		transform: scale(1.2);
+	}
+
+	.blog {
+		height: 50vh;
 	}
 </style>
