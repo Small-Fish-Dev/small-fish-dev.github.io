@@ -1,6 +1,8 @@
 ---
 title: 'In This House'
 thumbnail: 'thumbnail.jpg'
+publisher: 'luke'
+description: '2023 Brickjam entry'
 date: '2023-11-1'
 published: true
 ---

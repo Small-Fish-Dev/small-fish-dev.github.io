@@ -2,7 +2,7 @@
 title: 'Goblintide'
 thumbnail: 'thumbnail.jpg'
 date: '2023-04-10'
-description: '2023 Three Thieves Gangs Jam entry.'
+description: '2023 Game jam entry.'
 publisher: 'luke'
 published: true
 ---
