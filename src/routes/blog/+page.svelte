@@ -32,14 +32,17 @@
 <div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-large" />
 
 <div
-	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-8 px-2 pt-32 font-poppins sm:px-4 lg:px-32 xl:px-40"
+	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-32 font-poppins sm:px-4 lg:px-32 xl:px-40"
 >
 	{#each Object.entries(groupedPosts) as [monthYear, postsInMonthYear]}
-		<h1 class="text-3xl font-bold underline decoration-blue">{monthYear}</h1>
-		{#each postsInMonthYear as post}
+		<h1 class="text-4xl font-bold underline decoration-blue">{monthYear}</h1>
+		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="shadow-md transition-all text-shadow hover:scale-105"
+				class="shadow-md transition-all text-shadow hover:scale-105 {i ==
+				postsInMonthYear.length - 1
+					? 'mb-8'
+					: ''}"
 			>
 				<div class="flex flex-col overflow-hidden md:flex-row">
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
@@ -84,7 +87,7 @@
 							</div>
 						</div>
 
-						<h2 class="text-4xl font-medium text-white">{post.title}</h2>
+						<h2 class="text-3xl font-medium text-white">{post.title}</h2>
 
 						{#if post.description}
 							<p class="text-white">{post.description}</p>
