@@ -2,7 +2,7 @@
 title: 'Cryptid Hunt'
 thumbnail: 'cryptid_hunt.png'
 date: '2022-11-1'
-description: '2022 Gvarados Halloween Horror Super Jam entry.'
+description: '2022 Gvarados Halloween Horror Super Jam entry'
 publisher: 'luke'
 published: true
 ---
@@ -20,7 +20,7 @@ At Smallfish, we have a fondness for cryptids and even have a cryptozoology chan
 
 <Heading title="Some Models" caption="by Luke" />
 
-Due to time constraints, I only made a small handful of hard surface models. 
+Due to time constraints, I only made a small handful of hard surface models.
 
 <Img src="lukes_models.jpg"/>
 

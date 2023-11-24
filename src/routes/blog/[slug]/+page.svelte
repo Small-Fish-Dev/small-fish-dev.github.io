@@ -36,7 +36,7 @@
 </div>
 
 <div class="md:px-18 container z-10 mx-auto flex flex-col pt-32 font-poppins lg:px-32 xl:px-64">
-	<div class="text-shadow mb-5 px-5 text-white sm:px-0">
+	<div class="mb-5 px-5 text-white text-shadow sm:px-0">
 		<h1 class="mb-2 text-5xl font-medium">{data.frontmatter.title}</h1>
 		{#if data.frontmatter.description}
 			<p class="mb-4 text-gray">{data.frontmatter.description}</p>
@@ -94,7 +94,7 @@
 
 	{#if data.nextfrontmatter}
 		<div
-			class="text-shadow relative overflow-hidden text-white shadow-md transition-all hover:brightness-125 md:mb-8 md:hover:scale-105"
+			class="relative overflow-hidden text-white shadow-md transition-all text-shadow hover:brightness-125 md:mb-8 md:hover:scale-105"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
@@ -104,22 +104,18 @@
 						alt="thumbnail"
 					/>
 				{/if}
-				<div class="color-overlay absolute h-full w-full mix-blend-hard-light" />
+				<div class="bg-pixel animate-scroll absolute h-full w-full mix-blend-hard-light" />
 				<div class="relative flex w-full flex-col p-10">
 					<p class="text-3xl font-bold transition-all">
 						{data.nextfrontmatter.title}
 					</p>
-					{#if data.nextpublisher}
-						<p class="pb-4 pt-1 text-xl font-medium">
-							by <a
-								href="/team#{data.nextpublisher.name}"
-								class="font-bold text-gray transition-all">{data.nextpublisher.name}</a
-							>
-						</p>
-					{/if}
-
 					{#if data.nextfrontmatter.description}
 						<p class="text-md">{data.nextfrontmatter.description}</p>
+					{/if}
+					{#if data.nextpublisher}
+						<p class="pt-4 text-xl font-medium">
+							by <span class="font-bold text-gray">{data.nextpublisher.name}</span>
+						</p>
 					{/if}
 				</div>
 			</a>
@@ -128,13 +124,6 @@
 </div>
 
 <style>
-	.color-overlay {
-		background: url(/home/pixel-overlay.png);
-		background-size: 7px;
-		opacity: 1;
-		animation: color-overlay-scroll 120s infinite linear;
-	}
-
 	.background-fade {
 		background: linear-gradient(
 			to bottom,
@@ -142,6 +131,13 @@
 			rgba(36, 70, 247, 0.8) 50vh,
 			rgb(36, 70, 247) 70vh
 		);
+	}
+
+	.color-overlay {
+		background: url(/home/pixel-overlay.png);
+		background-size: 7px;
+		opacity: 1;
+		animation: color-overlay-scroll 120s infinite linear;
 	}
 
 	@keyframes color-overlay-scroll {

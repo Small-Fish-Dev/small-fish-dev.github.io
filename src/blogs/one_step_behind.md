@@ -2,7 +2,7 @@
 title: 'Always one step behind'
 thumbnail: 'stats.png'
 date: '2023-11-21'
-description: 'My personal experience with finding out you were too late at capitalizing a trend.'
+description: 'My personal experience with finding out you were too late at capitalizing a trend'
 publisher: 'ubre'
 published: true
 ---
@@ -13,7 +13,6 @@ Finding out that the one idea you had would've made you a millionaire, if only y
 
 Working on S&box right now forces you to focus on multiple smaller projects, meaning that if we really wanted we could pump out a game every month, or even more.
 In the past 2 years of doing so I found out that perhaps I'm not as original as I thought, or maybe we know what the people want.
-
 
 <Heading title="Cat Harvest" />
 

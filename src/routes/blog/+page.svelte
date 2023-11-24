@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
-	import MemberCard from '$lib/components/MemberCard.svelte';
-	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 
@@ -12,7 +10,7 @@
 	};
 </script>
 
-<div class="background fixed h-full w-full" />
+<div class="bg-pixel-white bg-pixel-large animate-scroll fixed h-full w-full" />
 
 <div
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-8 px-2 pt-32 font-poppins sm:px-4 lg:px-32 xl:px-40"
@@ -20,7 +18,7 @@
 	{#each data.posts as post}
 		<a
 			href="{$page.url.pathname}/{post.slug}"
-			class="text-shadow shadow-md transition-all hover:scale-105"
+			class="shadow-md transition-all text-shadow hover:scale-105"
 		>
 			<div class="flex flex-col overflow-hidden md:flex-row">
 				<div class="relative h-[150px] w-full md:h-auto md:w-1/3">
@@ -37,7 +35,7 @@
 						{#if post.member}
 							<div class="mb-4 flex origin-left flex-row items-center gap-2 text-gray">
 								<img
-									class="shadow-xs h-[42px] w-[42px] bg-cover"
+									class="h-[42px] w-[42px] bg-cover shadow-xs"
 									src={post.member.avatar == null ? '/team/profiles/none.jpg' : post.member.avatar}
 									alt="publisher"
 									on:error={imageFallback}
@@ -59,24 +57,3 @@
 		</a>
 	{/each}
 </div>
-
-<style>
-	.background {
-		background: url(/home/pixel-overlay-white.png);
-		background-size: 14px;
-		opacity: 1;
-		animation: scroll 120s infinite linear;
-	}
-
-	@keyframes scroll {
-		0% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 50% 50%;
-		}
-		100% {
-			background-position: 100% 100%;
-		}
-	}
-</style>

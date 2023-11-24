@@ -25,6 +25,30 @@ export default {
 				sm: '4px 4px black',
 				md: '8px 8px black'
 			},
+			backgroundImage: {
+				pixel: "url('/home/pixel-overlay.png')",
+				'pixel-white': "url('/home/pixel-overlay-white.png')"
+			},
+			backgroundSize: {
+				pixel: '7px',
+				'pixel-large': '14px'
+			},
+			keyframes: {
+				scrolling: {
+					'0%': {
+						backgroundPosition: '0% 0%'
+					},
+					'50%': {
+						backgroundPosition: '50% 50%'
+					},
+					'100%': {
+						backgroundPosition: '100% 100%'
+					}
+				}
+			},
+			animation: {
+				scroll: 'scrolling 120s infinite linear'
+			},
 			typography: {
 				DEFAULT: {
 					css: {

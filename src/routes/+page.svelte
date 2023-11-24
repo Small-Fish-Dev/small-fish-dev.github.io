@@ -35,7 +35,9 @@
 			</div>
 		{/if}
 
-		<div class="color-overlay absolute z-20 h-full w-auto w-full max-w-none" />
+		<div
+			class="bg-pixel animate-scroll absolute z-20 h-full w-auto w-full max-w-none mix-blend-multiply"
+		/>
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 		<video autoplay loop muted class="z-5 absolute h-full w-full object-cover"
 			><source src="home/smallfishtrailer.mp4" type="video/mp4" /></video
@@ -57,27 +59,7 @@
 </div>
 
 <style>
-	.color-overlay {
-		background: url(/home/pixel-overlay.png);
-		background-size: 7px;
-		mix-blend-mode: multiply;
-		opacity: 1;
-		animation: color-overlay-scroll 120s infinite linear;
-	}
-
 	.background-fade {
 		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
-	}
-
-	@keyframes color-overlay-scroll {
-		0% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 50% 50%;
-		}
-		100% {
-			background-position: 100% 100%;
-		}
 	}
 </style>
