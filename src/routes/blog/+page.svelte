@@ -25,13 +25,13 @@
 				<div class="relative h-48 w-full md:h-auto md:basis-1/2">
 					{#if post.thumbnail}
 						<img
-							class="absolute h-full w-full object-cover"
+							class="absolute h-full w-full border-b-2 border-darkblue object-cover md:border-b-0 md:border-r-4"
 							src={`/blogs/${post.slug}/${post.thumbnail}`}
 							alt="thumbnail"
 						/>
 					{/if}
 				</div>
-				<div class="flex w-full flex-col justify-center break-words bg-blue p-4 md:p-8">
+				<div class="gradient flex w-full flex-col justify-center break-words p-4 md:p-8">
 					<div class="flex flex-row flex-wrap justify-between gap-4 pb-4">
 						{#if post.member}
 							<div class="flex origin-left flex-row items-center gap-2 text-gray">
@@ -72,3 +72,9 @@
 		</a>
 	{/each}
 </div>
+
+<style>
+	.gradient {
+		background: linear-gradient(to left, #2446f7 40%, #152a96 100%);
+	}
+</style>
