@@ -64,7 +64,7 @@
 						>
 					</p>
 				</div>
-				<div class="flex items-center text-lg font-medium text-gray">
+				<div class="flex items-center text-lg font-medium">
 					<Icon
 						icon="ic:baseline-calendar-today"
 						class="mr-1"
@@ -104,7 +104,7 @@
 						alt="thumbnail"
 					/>
 				{/if}
-				<div class="bg-pixel animate-scroll absolute h-full w-full mix-blend-hard-light" />
+				<div class="absolute h-full w-full animate-scroll bg-pixel mix-blend-hard-light" />
 				<div class="relative flex w-full flex-col p-10">
 					<p class="text-3xl font-bold transition-all">
 						{data.nextfrontmatter.title}

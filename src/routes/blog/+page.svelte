@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
+	import Icon from '@iconify/svelte';
 
 	export let data: PageData;
 
@@ -31,9 +32,9 @@
 					{/if}
 				</div>
 				<div class="flex w-full flex-col justify-center break-words bg-blue p-4 md:p-8">
-					<div class="flex flex-row justify-between">
+					<div class="flex flex-row flex-wrap justify-between gap-4 pb-4">
 						{#if post.member}
-							<div class="mb-4 flex origin-left flex-row items-center gap-2 text-gray">
+							<div class="flex origin-left flex-row items-center gap-2 text-gray">
 								<img
 									class="h-[42px] w-[42px] bg-cover shadow-xs"
 									src={post.member.avatar == null ? '/team/profiles/none.jpg' : post.member.avatar}
@@ -45,6 +46,20 @@
 								</p>
 							</div>
 						{/if}
+						<div class="flex items-center text-lg font-medium text-white">
+							<Icon
+								icon="ic:baseline-calendar-today"
+								class="mr-1"
+								style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+							/>
+							<p>
+								{new Date(post.date).toLocaleString('en-us', {
+									month: 'short',
+									day: 'numeric',
+									year: 'numeric'
+								})}
+							</p>
+						</div>
 					</div>
 
 					<h2 class="text-4xl font-medium text-white">{post.title}</h2>
