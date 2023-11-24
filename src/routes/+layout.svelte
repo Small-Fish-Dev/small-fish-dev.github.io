@@ -19,12 +19,12 @@
 			label: 'blogs',
 			icon: 'ic:sharp-newspaper',
 			href: '/blog'
-		},
-		{
-			label: 'projects',
-			icon: 'material-symbols:videogame-asset-sharp',
-			href: '/projects'
 		}
+		// {
+		// 	label: 'projects',
+		// 	icon: 'material-symbols:videogame-asset-sharp',
+		// 	href: '/projects'
+		// }
 	];
 
 	let isMenuOpen = false;
