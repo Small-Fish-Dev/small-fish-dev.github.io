@@ -1,6 +1,6 @@
 ---
 title: 'Frostrial, our first Gamejam'
-thumbnail: 'thumbnail.jpg'
+thumbnail: 'thumbnail.png'
 date: '2022-1-1'
 description: '2021 Eagle One Jambox entry'
 publisher: 'luke'
