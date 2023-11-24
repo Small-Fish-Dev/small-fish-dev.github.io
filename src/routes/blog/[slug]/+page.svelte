@@ -31,7 +31,7 @@
 			alt="background"
 		/>
 	{/if}
-	<div class="color-overlay h-full w-full mix-blend-multiply" />
+	<div class="h-full w-full bg-pixel mix-blend-multiply" />
 	<div class="background-fade absolute top-0 flex h-screen w-full justify-center" />
 </div>
 
@@ -94,7 +94,7 @@
 
 	{#if data.nextfrontmatter}
 		<div
-			class="relative overflow-hidden text-white shadow-md transition-all text-shadow hover:brightness-125 md:mb-8 md:hover:scale-105"
+			class="relative overflow-hidden text-white shadow-md transition-all text-shadow hover:brightness-105 md:mb-8 md:hover:scale-105"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
@@ -104,7 +104,7 @@
 						alt="thumbnail"
 					/>
 				{/if}
-				<div class="absolute h-full w-full animate-scroll bg-pixel mix-blend-hard-light" />
+				<div class="absolute h-full w-full animate-scroll bg-pixel opacity-30" />
 				<div class="relative flex w-full flex-col p-10">
 					<p class="text-3xl font-bold transition-all">
 						{data.nextfrontmatter.title}
@@ -131,24 +131,5 @@
 			rgba(36, 70, 247, 0.8) 50vh,
 			rgb(36, 70, 247) 70vh
 		);
-	}
-
-	.color-overlay {
-		background: url(/home/pixel-overlay.png);
-		background-size: 7px;
-		opacity: 1;
-		animation: color-overlay-scroll 120s infinite linear;
-	}
-
-	@keyframes color-overlay-scroll {
-		0% {
-			background-position: 0% 0%;
-		}
-		50% {
-			background-position: 50% 50%;
-		}
-		100% {
-			background-position: 100% 100%;
-		}
 	}
 </style>
