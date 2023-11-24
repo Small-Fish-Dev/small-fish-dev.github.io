@@ -69,4 +69,8 @@ We store all member data in a `Member.ts` which allows for easy modification of 
 
 <Heading title="Static Site" caption="by matek" />
 
-This entire site can be considered static since we don't have any dynamic content that needs to be fetched from some database. Which allows us to host the website for free using [GitHub Pages](https://pages.github.com/). Even better we can make use of [GitHub Actions](https://github.com/Small-Fish-Dev/small-fish-dev.github.io/blob/main/.github/workflows/deploy.yml) and deploy the site automatically whenever any change is made to the website.
+This entire site can be considered static since we don't have any dynamic content that needs to be fetched or altered from some database. Which allows us to host the website for free using [GitHub Pages](https://pages.github.com/). Even better we make use of [GitHub Actions](https://github.com/Small-Fish-Dev/small-fish-dev.github.io/blob/main/.github/workflows/deploy.yml) and deploy the site automatically whenever any change is made to the website.
+
+<Heading title="Conclusion" caption="by matek" />
+
+Those were the most interesting challenges we encountered while developing our site, aside from debugging the spaghetti TypeScript code we wrote here and there.
