@@ -7,7 +7,7 @@ export const Languages: Record<string, string> = {
 	HTML: '/team/languages/html.png',
 	Java: '/team/languages/java.png',
 	C: '/team/languages/c.png',
-	GDScript: '/team/languages/go.png',
+	GDScript: '/team/languages/gdscript.png',
 	PHP: '/team/languages/php.png',
 	CSS: '/team/languages/css.png',
 	LUA: '/team/languages/lua.png'
