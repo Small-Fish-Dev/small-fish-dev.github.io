@@ -20,7 +20,7 @@
 </script>
 
 <div>
-	<a class="decoration-blue decoration-4 underline-offset-4" href={`#${title}`}>
+	<a class="decoration-blue decoration-4 underline-offset-4" href={`#${title}`} target="_self">
 		<svelte:element this={h} id={title} class:caption>{title}</svelte:element></a
 	>
 	{#if caption}
