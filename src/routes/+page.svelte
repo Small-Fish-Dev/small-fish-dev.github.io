@@ -22,11 +22,7 @@
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
-				<div class="flex flex-wrap justify-center gap-2 p-4">
-					<p class="text-center font-poppins text-2xl font-medium text-white">
-						We make waves, not just games!
-					</p>
-				</div>
+				<div class="flex flex-wrap justify-center gap-2 p-4"></div>
 				<div class="flex justify-center gap-4">
 					{#each socials as social}
 						<SocialButton href={social} showHoverTop={false} class="w-12" />
@@ -36,7 +32,7 @@
 		{/if}
 
 		<div
-			class="bg-pixel animate-scroll absolute z-20 h-full w-auto w-full max-w-none mix-blend-multiply"
+			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel mix-blend-multiply"
 		/>
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 		<video autoplay loop muted class="z-5 absolute h-full w-full object-cover"
