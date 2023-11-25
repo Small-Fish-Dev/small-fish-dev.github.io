@@ -23,7 +23,8 @@ export default {
 			boxShadow: {
 				xs: '3px 3px black',
 				sm: '4px 4px black',
-				md: '8px 8px black'
+				md: '8px 8px black',
+				lg: '10px 10px black'
 			},
 			backgroundImage: {
 				pixel: "url('/home/pixel-overlay.png')",

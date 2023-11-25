@@ -39,7 +39,7 @@
 		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="shadow-md transition-all text-shadow hover:scale-105 {i ==
+				class="shadow-sm transition-all text-shadow hover:-translate-y-1 hover:shadow-lg {i ==
 				postsInMonthYear.length - 1
 					? 'mb-8'
 					: ''}"
@@ -48,7 +48,7 @@
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
 						{#if post.thumbnail}
 							<img
-								class="absolute h-full w-full border-b-2 border-darkblue object-cover md:border-b-0 md:border-r-4"
+								class="absolute h-full w-full bg-black object-cover shadow"
 								src={`/blogs/${post.slug}/${post.thumbnail}`}
 								alt="thumbnail"
 							/>
@@ -102,5 +102,9 @@
 <style>
 	.gradient {
 		background: linear-gradient(to left, #2446f7 40%, #152a96 100%);
+	}
+
+	.shadow {
+		box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.5);
 	}
 </style>
