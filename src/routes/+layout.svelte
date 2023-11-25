@@ -112,23 +112,6 @@
 	<slot />
 </div>
 
-<!-- Footer -->
-<!-- Don't show footer for the team page. -->
-{#if $page.url.pathname !== routes[0].href}
-	<footer class="mt-auto">
-		<div class="overlay static-background z-50 bg-darkblue shadow">
-			<div class="z-50 flex flex-row justify-between p-4 font-poppins text-white">
-				<div class="z-10">
-					<p class="text-3xl font-bold">small fish</p>
-					<p><span class="font-bold">2021 - 2023</span> All rights are VERY reserved</p>
-				</div>
-				<img class="z-10 h-[145px]" src="/footer/concretefree.png" alt="concretefree" />
-			</div>
-		</div>
-		<div class="overlay moving-background" />
-	</footer>
-{/if}
-
 <style>
 	.gradient {
 		background: linear-gradient(

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import Card from '$lib/components/Card.svelte';
 	import SocialButton from '$lib/components/SocialButton.svelte';
 
 	let ready = false;
@@ -17,7 +16,7 @@
 
 <div>
 	<header
-		class="font-display relative flex h-[90vh] shrink-0 flex-col items-center justify-center gap-8 p-4 md:gap-12"
+		class="font-display relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 md:gap-12"
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
@@ -39,19 +38,6 @@
 			><source src="home/smallfishtrailer.mp4" type="video/mp4" /></video
 		>
 	</header>
-	<body>
-		<Card
-			title={'We make awesome games'}
-			description={"I can write any sort of random bullshit here and never be responsible for all the horrible jokes I could write here, because this text is just a placeholder. I am filling up some space to see if it's display correctly. Are you seriously reading this? There is no real benefit by reading this, you spend precious seconds of your life on reading this empty text."}
-			imagePath="home/fish-school.png"
-			imageLeft={true}
-		/>
-		<Card
-			title={'We teach people!'}
-			description={'Did you know that all viewers of our special project, fish school, are statistically smarter than 95% of all people on this planet? well, now you do. and now you can join us, if you are new into game development for s&box, then feel free to watch our vidjas!'}
-			imagePath="home/fish-school.png"
-		/>
-	</body>
 </div>
 
 <style>
