@@ -34,7 +34,7 @@
 	}
 </script>
 
-<nav class="gradient absolute z-50 flex w-full justify-between p-4">
+<nav class="nav-gradient absolute z-50 flex w-full justify-between p-4">
 	<a href="/" class="logo pointer-events-auto left-6 top-4">
 		<img class="image aspect-square h-16 md:h-24" src="/logo.png" alt="logo" />
 	</a>
@@ -72,14 +72,14 @@
 				isMenuOpen = false;
 			}}
 			class="fixed z-0 h-screen w-screen bg-black bg-opacity-50"
-			out:fade={{ duration: 100, easing: quintOut }}
+			out:fade={{ duration: 50, easing: quintOut }}
 		/>
 		<nav
 			use:swipeable
 			on:swiped={swipeHandler}
 			in:fly={{ duration: 200, x: '100%', easing: quintOut }}
 			out:fly={{ duration: 200, x: '100%' }}
-			class="fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto bg-blue px-6 py-6"
+			class="blue-gradient fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto border-l-2 border-black px-6 py-6"
 		>
 			<img src="/home/header-logo.png" alt="poop fish logo" />
 			<div class="flex flex-col gap-4 pt-8">
@@ -113,7 +113,7 @@
 </div>
 
 <style>
-	.gradient {
+	.nav-gradient {
 		background: linear-gradient(
 			to bottom,
 			rgba(0, 0, 0, 0.7) 0%,
@@ -127,39 +127,13 @@
 		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 	}
 
-	.overlay {
-		position: absolute;
-		height: 180px;
-		width: 100%;
-		background-repeat: repeat-x;
-		background-size: 800px 100%;
-	}
-
-	.static-background {
-		background-image: url('/footer/fbg_static.png');
-	}
-
-	.moving-background {
-		background-image: url('/footer/fbg_moving.png');
-		animation-name: swim;
-		animation-duration: 4s;
-		animation-iteration-count: infinite;
-		transform: translateX(0px) translateY(0px);
-		overflow: hidden;
-		height: 170px;
-		width: 100%;
-	}
-
-	@keyframes swim {
-		0% {
-			transform: translateX(0px) translateY(0px);
-		}
-		50% {
-			transform: translateX(-5px) translateY(10px);
-		}
-		100% {
-			transform: translateX(0px) translateY(0px);
-		}
+	.blue-gradient {
+		background: linear-gradient(
+			to bottom,
+			rgba(36, 70, 247, 1) 0%,
+			rgba(36, 70, 247, 1) 50vh,
+			rgb(21, 42, 145) 70vh
+		);
 	}
 
 	.logo:hover {

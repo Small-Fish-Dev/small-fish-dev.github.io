@@ -32,7 +32,7 @@ export default {
 			},
 			backgroundSize: {
 				pixel: '7px',
-				'pixel-large': '14px'
+				'pixel-lg': '14px'
 			},
 			keyframes: {
 				scrolling: {
