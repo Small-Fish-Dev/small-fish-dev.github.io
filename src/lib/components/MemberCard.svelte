@@ -23,7 +23,7 @@
 
 <div use:swipeable on:swiped={swipeHandler} class="w-full font-poppins text-sm {className}">
 	<div
-		class="pointer-events-auto max-h-full overflow-x-hidden overflow-y-scroll bg-white shadow-md"
+		class="pointer-events-auto max-h-full overflow-x-hidden overflow-y-scroll border-2 border-black bg-white shadow-md"
 	>
 		<!-- Close Button -->
 		<div class="absolute z-20 m-2">
@@ -55,7 +55,7 @@
 			<!-- Name -->
 			<div class="mt-4 flex w-full justify-end">
 				<h1
-					class="text-shadow-heavy z-10 bg-blue p-[5px] pl-[10px] pr-[10px] text-2xl font-medium text-white"
+					class="z-10 bg-blue p-[5px] pl-[10px] pr-[10px] text-2xl font-medium text-white text-shadow-heavy"
 				>
 					{member.name}
 				</h1>
