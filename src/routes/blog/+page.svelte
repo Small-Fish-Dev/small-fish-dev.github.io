@@ -39,7 +39,7 @@
 		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="shadow-md transition-all text-shadow hover:scale-105 {i ==
+				class="shadow-sm transition-all text-shadow hover:-translate-y-1 hover:shadow-lg {i ==
 				postsInMonthYear.length - 1
 					? 'mb-8'
 					: ''}"
