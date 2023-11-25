@@ -50,10 +50,10 @@
 					on:click={() => {
 						goto(`/team#${data.publisher?.name}`);
 					}}
-					class="flex origin-left flex-row items-center gap-2 text-gray transition-all hover:scale-110 hover:cursor-pointer"
+					class="flex origin-left flex-row items-center gap-1 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 				>
 					<img
-						class="h-[42px] w-[42px] bg-cover shadow-sm"
+						class="h-[42px] w-[42px] border-2 border-black bg-cover"
 						src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
 						alt="publisher"
 						on:error={imageFallback}
@@ -83,7 +83,8 @@
 	</div>
 
 	<article
-		class="prose bg-white p-5
+		class="prose border-2 border-black
+		bg-white p-5
 		shadow-md lg:prose-xl
 		prose-a:text-blue
 		hover:prose-a:text-lightblue hover:prose-a:transition-all prose-code:break-words
@@ -94,7 +95,7 @@
 
 	{#if data.nextfrontmatter}
 		<div
-			class="relative overflow-hidden text-white shadow-md transition-all text-shadow hover:brightness-105 md:mb-8 md:hover:scale-105"
+			class="relative overflow-hidden border-2 border-black text-white shadow-md transition-all text-shadow hover:brightness-105 md:mb-8 md:hover:scale-105"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
