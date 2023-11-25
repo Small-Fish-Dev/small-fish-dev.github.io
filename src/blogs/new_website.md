@@ -2,7 +2,7 @@
 title: 'New Website'
 thumbnail: 'map.png'
 date: '2023-11-20'
-description: 'I wrote my own fucking website'
+description: 'We wrote our own fucking website'
 publisher: 'matek'
 published: true
 ---
