@@ -48,7 +48,7 @@
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
 						{#if post.thumbnail}
 							<img
-								class="absolute h-full w-full border-b-2 border-darkblue object-cover md:border-b-0 md:border-r-4"
+								class="absolute h-full w-full border-b-2 border-darkblue bg-black object-cover md:border-b-0 md:border-r-4"
 								src={`/blogs/${post.slug}/${post.thumbnail}`}
 								alt="thumbnail"
 							/>
