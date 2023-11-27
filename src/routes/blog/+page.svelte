@@ -30,7 +30,7 @@
 	const groupedPosts = groupPostsByMonthYear(data.posts);
 </script>
 
-<div class="bg-pixel-lg fixed h-full w-full animate-scroll bg-pixel-white" />
+<div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" />
 
 <div
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-32 font-poppins sm:px-4 lg:px-32 xl:px-40"
@@ -104,6 +104,6 @@
 
 <style>
 	.gradient {
-		background: linear-gradient(to left, #2446f7 40%, #152a96 100%);
+		background: linear-gradient(to bottom, #2446f7 40%, #152a96 100%);
 	}
 </style>
