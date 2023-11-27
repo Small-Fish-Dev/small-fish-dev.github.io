@@ -26,13 +26,13 @@
 <div class="fixed inset-0 z-0 h-screen w-screen bg-fixed">
 	{#if data.frontmatter.thumbnail}
 		<img
-			class="absolute h-full w-full bg-fixed object-cover"
+			class="absolute h-screen w-screen bg-fixed object-cover"
 			src={resolvePath(data.frontmatter.thumbnail)}
 			alt="background"
 		/>
 	{/if}
-	<div class="h-full w-full bg-pixel mix-blend-multiply" />
-	<div class="background-fade absolute top-0 flex h-screen w-full justify-center" />
+	<div class="h-screen w-screen bg-pixel mix-blend-multiply" />
+	<div class="background-fade absolute top-0 flex h-screen w-screen justify-center" />
 </div>
 
 <div class="md:px-18 container z-10 mx-auto flex flex-col pt-32 font-poppins lg:px-32 xl:px-64">
