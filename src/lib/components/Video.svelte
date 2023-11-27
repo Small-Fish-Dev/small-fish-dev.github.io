@@ -5,6 +5,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<video class="flex mx-auto justify-center" controls>
+<!-- svelte-ignore a11y-media-has-caption -->
+<video class="mx-auto flex justify-center" controls>
 	<source src="/blogs/{$page.params.slug}/{src}" />
 </video>

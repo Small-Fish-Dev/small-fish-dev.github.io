@@ -25,6 +25,7 @@
 
 <div class="tweet-wrapper">
 	<blockquote class="twitter-tweet">
+		<!-- svelte-ignore a11y-missing-content -->
 		<a href={`https://twitter.com/${id}`}></a>
 	</blockquote>
 </div>

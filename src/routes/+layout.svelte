@@ -67,6 +67,8 @@
 <!-- Hamburger menu. -->
 {#if isMenuOpen}
 	<div class="relative z-50 w-full">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:click={() => {
 				isMenuOpen = false;
@@ -84,6 +86,8 @@
 			<img src="/home/header-logo.png" alt="poop fish logo" />
 			<div class="flex flex-col gap-4 pt-8">
 				{#each routes as route}
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<!-- svelte-ignore a11y-no-static-element-interactions -->
 					<div
 						on:click={() => {
 							isMenuOpen = false;
