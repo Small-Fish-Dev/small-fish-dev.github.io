@@ -150,19 +150,6 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		tracked.length = 0;
 	}
 
-	function limitBounds(deltaX: number, deltaY: number) {
-		const tl = toImageSpace({ x: 0 + canvas.width / 2, y: 0 + canvas.height / 2 });
-		let limitedBounds = { x: deltaX, y: deltaY };
-
-		if (tl.x - deltaX <= 0) limitedBounds.x = 0; // left side
-		if (tl.y - deltaY <= 0) limitedBounds.y = 0; // top side
-
-		if (tl.x - deltaX >= width) limitedBounds.x = 0; // right side
-		if (tl.y - deltaY >= height) limitedBounds.y = 0; // bottom side
-
-		return limitedBounds;
-	}
-
 	function onpointerdown(event: PointerEvent) {
 		event.stopPropagation();
 		canvas.setPointerCapture(event.pointerId);
@@ -244,8 +231,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 	}
 
 	function moveByRelative(delta: Point) {
-		const boundedCords = limitBounds(delta.x, delta.y);
-		ctx.translate(boundedCords.x, boundedCords.y);
+		ctx.translate(delta.x, delta.y);
 	}
 
 	function moveByAbsolute(point: Point, zoom: number | undefined = undefined) {
