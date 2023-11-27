@@ -23,10 +23,10 @@
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
 
-<div class="fixed inset-0 z-0 h-screen w-screen">
+<div class="fixed inset-0 z-0 h-screen w-screen bg-fixed">
 	{#if data.frontmatter.thumbnail}
 		<img
-			class="absolute h-full w-full object-cover"
+			class="absolute h-full w-full bg-fixed object-cover"
 			src={resolvePath(data.frontmatter.thumbnail)}
 			alt="background"
 		/>
