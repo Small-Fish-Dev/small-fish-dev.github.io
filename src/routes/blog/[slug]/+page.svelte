@@ -23,7 +23,7 @@
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
 
-<div class="fixed inset-0 z-0 overflow-hidden">
+<div class="fixed inset-0 z-0 h-screen w-screen">
 	{#if data.frontmatter.thumbnail}
 		<img
 			class="absolute h-full w-full object-cover"
