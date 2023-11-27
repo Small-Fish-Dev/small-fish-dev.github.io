@@ -170,9 +170,17 @@
 	function getHoveringPin(point: Point) {
 		let hoveredPin = null;
 
+		// Once we find a hovered pin, we don't want any others to be hovered.
+		let hasHoveredPin = false;
 		for (let pin of pins) {
+			if (hasHoveredPin) {
+				pin.isHovered = false;
+				continue;
+			}
+
 			pin.isHovered = isHoveringPin(point, pin);
 			if (pin.isHovered) hoveredPin = pin;
+			hasHoveredPin = pin.isHovered;
 		}
 
 		if (hoveredPin) canvas.classList.add('pointer');
