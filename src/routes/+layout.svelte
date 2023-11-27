@@ -102,12 +102,12 @@
 					</div>
 				{/each}
 			</div>
-			<div class="grow" />
+			<!-- <div class="grow" />
 			<div class="text-center font-poppins text-white">
 				<p class="text-2xl font-medium">made with ❤️</p>
 				<p>even an inconvenient rock can't stop us</p>
 				<img src="/home/rock.gif" alt="rock" class="px-28" />
-			</div>
+			</div> -->
 		</nav>
 	</div>
 {/if}
