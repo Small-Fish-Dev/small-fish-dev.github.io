@@ -74,13 +74,12 @@
 				isMenuOpen = false;
 			}}
 			class="fixed z-0 h-screen w-screen bg-black bg-opacity-50"
-			out:fade={{ duration: 50, easing: quintOut }}
 		/>
 		<nav
 			use:swipeable
 			on:swiped={swipeHandler}
-			in:fly={{ duration: 200, x: '100%', easing: quintOut }}
-			out:fly={{ duration: 200, x: '100%' }}
+			in:fly={{ duration: 100, x: '100%' }}
+			out:fly={{ duration: 100, x: '100%' }}
 			class="blue-gradient fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto border-l-2 border-black px-6 py-6"
 		>
 			<img src="/home/header-logo.png" alt="poop fish logo" />
@@ -102,12 +101,6 @@
 					</div>
 				{/each}
 			</div>
-			<!-- <div class="grow" />
-			<div class="text-center font-poppins text-white">
-				<p class="text-2xl font-medium">made with ❤️</p>
-				<p>even an inconvenient rock can't stop us</p>
-				<img src="/home/rock.gif" alt="rock" class="px-28" />
-			</div> -->
 		</nav>
 	</div>
 {/if}
