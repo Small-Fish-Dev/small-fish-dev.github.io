@@ -25,7 +25,7 @@
 		// }
 	];
 
-	let isMenuOpen = true;
+	let isMenuOpen = false;
 	$: if ($navigating) isMenuOpen = false;
 </script>
 
