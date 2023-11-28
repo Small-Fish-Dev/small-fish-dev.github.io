@@ -3,8 +3,7 @@
 	import '../syntax-highlight.css'; // https://github.com/PrismJS/prism-themes
 	import { page } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
-	import { fly, fade } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fly } from 'svelte/transition';
 	import { swipeable } from '@react2svelte/swipeable';
 	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import Icon from '@iconify/svelte';
@@ -34,11 +33,11 @@
 	}
 </script>
 
-<nav class="absolute z-50 mx-auto flex w-full border-b-2 border-black bg-blue p-2">
+<nav class="fixed z-50 mx-auto flex w-full border-b-2 border-black bg-blue p-2">
 	<div class="container mx-auto flex flex-row items-center justify-between">
 		<a
 			href="/"
-			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 focus:scale-95"
+			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
 			<img src="/logo.png" class="group-hover:animate-wiggle h-8 pr-2" />
 			<p>small fish</p></a
@@ -98,7 +97,8 @@
 							href={route.href}
 							icon={route.icon}
 							label={route.label}
-							disabled={$page.url.pathname == route.href}
+							disabled={false}
+							large={true}
 						/>
 					</div>
 				{/each}
