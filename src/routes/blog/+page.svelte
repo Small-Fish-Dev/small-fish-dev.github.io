@@ -33,7 +33,7 @@
 <div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" />
 
 <div
-	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-32 font-poppins sm:px-4 lg:px-32 xl:px-40"
+	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-24 font-poppins sm:px-4 lg:px-32 xl:px-40"
 >
 	{#each Object.entries(groupedPosts) as [monthYear, postsInMonthYear]}
 		<h1 class="text-4xl font-bold underline decoration-blue">{monthYear}</h1>

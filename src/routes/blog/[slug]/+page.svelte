@@ -35,7 +35,7 @@
 	<div class="background-fade absolute top-0 flex h-screen w-screen justify-center" />
 </div>
 
-<div class="md:px-18 container z-10 mx-auto flex flex-col pt-32 font-poppins lg:px-32 xl:px-64">
+<div class="md:px-18 container z-10 mx-auto flex flex-col pt-24 font-poppins lg:px-32 xl:px-64">
 	<div class="mb-5 px-5 text-white text-shadow sm:px-0">
 		<h1 class="mb-2 text-5xl font-medium">{data.frontmatter.title}</h1>
 		{#if data.frontmatter.description}

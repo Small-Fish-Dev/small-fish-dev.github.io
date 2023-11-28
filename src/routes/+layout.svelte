@@ -34,34 +34,36 @@
 	}
 </script>
 
-<nav class="nav-gradient absolute z-50 flex w-full justify-between p-4">
-	<a href="/" class="logo pointer-events-auto left-6 top-4">
-		<img class="image aspect-square h-16 md:h-24" src="/logo.png" alt="logo" />
-	</a>
-	<div class="mr-6 hidden flex-row items-center md:flex">
-		{#each routes as route}
-			<div>
-				<NavButton
-					href={route.href}
-					icon={route.icon}
-					label={route.label}
-					disabled={$page.url.pathname == route.href}
-				/>
-			</div>
-		{/each}
+<nav class="absolute z-50 mx-auto flex w-full border-b-2 border-black bg-blue p-2">
+	<div class="container mx-auto flex flex-row items-center justify-between">
+		<a
+			href="/"
+			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 focus:scale-95"
+		>
+			<img src="/logo.png" class="group-hover:animate-wiggle h-8 pr-2" />
+			<p>small fish</p></a
+		>
+		<div class="hidden flex-row items-center gap-2 md:flex">
+			{#each routes as route}
+				<div>
+					<NavButton
+						href={route.href}
+						icon={route.icon}
+						label={route.label}
+						disabled={$page.url.pathname == route.href}
+					/>
+				</div>
+			{/each}
+		</div>
+		<button
+			class="pointer-events-auto scale-100 text-white transition-all md:hidden"
+			on:click={() => {
+				isMenuOpen = !isMenuOpen;
+			}}
+		>
+			<Icon icon="material-symbols:menu" class="text-4xl" />
+		</button>
 	</div>
-	<button
-		class="pointer-events-auto scale-100 text-white transition-all hover:scale-110 md:hidden"
-		on:click={() => {
-			isMenuOpen = !isMenuOpen;
-		}}
-	>
-		<Icon
-			icon="mdi:hamburger-menu"
-			class="text-6xl"
-			style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5))"
-		/>
-	</button>
 </nav>
 
 <!-- Hamburger menu. -->
@@ -110,20 +112,6 @@
 </div>
 
 <style>
-	.nav-gradient {
-		background: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 0.7) 0%,
-			rgba(0, 0, 0, 0.1) 80%,
-			rgba(0, 0, 0, 0) 100%
-		);
-		pointer-events: none;
-	}
-
-	.image {
-		filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
-	}
-
 	.blue-gradient {
 		background: linear-gradient(
 			to bottom,
@@ -131,31 +119,5 @@
 			rgba(36, 70, 247, 1) 50vh,
 			rgb(21, 42, 145) 70vh
 		);
-	}
-
-	.logo:hover {
-		animation-name: wiggle;
-		animation-duration: 1500ms;
-		animation-iteration-count: infinite;
-		transform: rotate(0deg);
-		transition-timing-function: ease-in-out;
-	}
-
-	@keyframes wiggle {
-		20% {
-			transform: rotate(5deg);
-		}
-		40% {
-			transform: rotate(-5deg);
-		}
-		60% {
-			transform: rotate(5deg);
-		}
-		80% {
-			transform: rotate(-5deg);
-		}
-		100% {
-			transform: rotate(0deg);
-		}
 	}
 </style>

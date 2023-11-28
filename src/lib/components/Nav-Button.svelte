@@ -9,15 +9,16 @@
 
 <a
 	{href}
-	class="nav-button flex items-center font-poppins font-medium text-3xl px-4 py-2
-           hover:scale-105
-           transition-all
-		   whitespace-nowrap
+	class="nav-button flex items-center whitespace-nowrap px-2 py-1 font-poppins
+           text-xl
+           font-medium
 		   text-white
-		   hover:text-blue
+		   transition-all
+		   hover:scale-105
 		   hover:bg-white
-		   {disabled ? 'opacity-75 pointer-events-none' : 'pointer-events-auto'}"
+		   hover:text-blue
+		   {disabled ? 'pointer-events-none opacity-75' : 'pointer-events-auto'}"
 >
-	<Icon {icon} class="text-4xl mr-2" />
+	<Icon {icon} class="mr-2 text-xl" />
 	<p>{label}</p>
 </a>
