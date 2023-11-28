@@ -240,7 +240,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 		ctx.translate(translatedPoint.x, translatedPoint.y);
 
 		if (zoom) {
-			const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE };
+			const zoomPoint = { x: point.x + DEFAULT_PIN_SIZE, y: point.y + DEFAULT_PIN_SIZE + 54 };
 			zoomOn(zoomPoint, 3 * (canvas.height / canvas.width));
 		}
 
