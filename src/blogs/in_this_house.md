@@ -41,7 +41,8 @@ Recognizing that we might fall behind on the shop and the third level, I decided
 
 While I had never done maps before, I approached it with the mindset that they are somewhat like models.
 
-TODO: Photos of the shop and bathrooms.
+<ImageCollage images={["shop_1.jpg", "shop_2.jpg"]} />
+<ImageCollage images={["bathrooms_1.jpg", "bathrooms_2.jpg", "bathrooms_3.jpg"]} />
 
 Additionally, I set up various map prefabs for myself and Cyber to use in the final two levels, and they turned out really nice!
 Helped making the maps SUPER quick
