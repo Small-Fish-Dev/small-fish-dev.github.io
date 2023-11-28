@@ -35,7 +35,7 @@
 			href="/"
 			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/logo-round.png" alt="logo" class="h-8 pr-2" />
+			<img src="/logo-round.png" alt="round logo" class="h-8 pr-2" />
 			<p>small fish</p></a
 		>
 		<div class="hidden flex-row items-center gap-2 md:flex">
@@ -87,14 +87,3 @@
 <div class="flex min-h-screen flex-col">
 	<slot />
 </div>
-
-<style>
-	.blue-gradient {
-		background: linear-gradient(
-			to bottom,
-			rgba(36, 70, 247, 1) 0%,
-			rgba(36, 70, 247, 1) 50vh,
-			rgb(21, 42, 145) 70vh
-		);
-	}
-</style>
