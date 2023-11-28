@@ -5,7 +5,6 @@
 	export let icon: string;
 	export let label: string;
 	export let disabled: boolean = false;
-	export let large: boolean = false;
 </script>
 
 <a
@@ -17,7 +16,6 @@
 		   hover:scale-105
 		   hover:bg-white
 		   hover:text-blue
-		   {large ? 'text-3xl' : 'text-xl'}
 		   {disabled ? 'pointer-events-none opacity-75' : 'pointer-events-auto'}"
 >
 	<Icon {icon} class="mr-2" />

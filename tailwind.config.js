@@ -45,28 +45,10 @@ export default {
 					'100%': {
 						backgroundPosition: '100% 100%'
 					}
-				},
-				wiggle: {
-					'20%': {
-						transform: 'rotate(5deg)'
-					},
-					'40%': {
-						transform: 'rotate(-5deg)'
-					},
-					'60%': {
-						transform: 'rotate(5deg)'
-					},
-					'80%': {
-						transform: 'rotate(-5deg)'
-					},
-					'100%': {
-						transform: 'rotate(0deg)'
-					}
 				}
 			},
 			animation: {
-				scroll: 'scrolling 120s infinite linear',
-				wiggle: 'wiggle 1500ms infinite ease-in-out'
+				scroll: 'scrolling 120s infinite linear'
 			},
 			typography: {
 				DEFAULT: {

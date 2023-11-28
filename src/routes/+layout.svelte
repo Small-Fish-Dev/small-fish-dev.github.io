@@ -2,10 +2,9 @@
 	import '../app.css';
 	import '../syntax-highlight.css'; // https://github.com/PrismJS/prism-themes
 	import { page } from '$app/stores';
+	import { slide } from 'svelte/transition';
+	import { navigating } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
-	import { fly } from 'svelte/transition';
-	import { swipeable } from '@react2svelte/swipeable';
-	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import Icon from '@iconify/svelte';
 
 	const routes: App.Route[] = [
@@ -26,21 +25,17 @@
 		// }
 	];
 
-	let preloadMenu;
-	let isMenuOpen = false;
-
-	function swipeHandler(event: CustomEvent<SwipeEventData>) {
-		if (event.detail.dir === 'Right') isMenuOpen = false;
-	}
+	let isMenuOpen = true;
+	$: if ($navigating) isMenuOpen = false;
 </script>
 
-<nav class="fixed z-50 mx-auto flex w-full border-b-2 border-black bg-blue p-2">
+<nav class="fixed z-50 mx-auto flex w-full flex-col border-b-2 border-black bg-blue p-2">
 	<div class="container mx-auto flex flex-row items-center justify-between">
 		<a
 			href="/"
 			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/logo.png" alt="logo" class="group-hover:animate-wiggle h-8 pr-2" />
+			<img src="/logo-round.png" alt="logo" class="h-8 pr-2" />
 			<p>small fish</p></a
 		>
 		<div class="hidden flex-row items-center gap-2 md:flex">
@@ -61,52 +56,33 @@
 				isMenuOpen = !isMenuOpen;
 			}}
 		>
-			<Icon icon="material-symbols:menu" class="text-4xl" />
+			{#if !isMenuOpen}
+				<div in:slide={{ duration: 100 }}>
+					<Icon icon="material-symbols:menu" class="text-4xl" />
+				</div>
+			{:else}
+				<div in:slide={{ duration: 100 }}>
+					<Icon icon="material-symbols:close" class="text-4xl" />
+				</div>
+			{/if}
 		</button>
 	</div>
-</nav>
-
-<!-- Hamburger menu. -->
-{#if isMenuOpen}
-	<div bind:this={preloadMenu} class="relative z-50 w-full">
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-static-element-interactions -->
+	{#if isMenuOpen}
 		<div
-			on:click={() => {
-				isMenuOpen = false;
-			}}
-			class="fixed z-0 h-screen w-screen bg-black bg-opacity-50"
-		/>
-		<nav
-			use:swipeable
-			on:swiped={swipeHandler}
-			in:fly={{ duration: 200, x: '100%' }}
-			out:fly={{ duration: 100, x: '100%' }}
-			class="blue-gradient fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto border-l-2 border-black px-6 py-6"
+			class="container mx-auto flex flex-col gap-2 pt-2 font-poppins text-xl font-medium text-white"
+			transition:slide
 		>
-			<img src="/logo-hamburger.png" alt="poop fish logo" />
-			<div class="flex flex-col gap-4 pt-8">
-				{#each routes as route}
-					<!-- svelte-ignore a11y-click-events-have-key-events -->
-					<!-- svelte-ignore a11y-no-static-element-interactions -->
-					<div
-						on:click={() => {
-							isMenuOpen = false;
-						}}
-					>
-						<NavButton
-							href={route.href}
-							icon={route.icon}
-							label={route.label}
-							disabled={false}
-							large={true}
-						/>
-					</div>
-				{/each}
-			</div>
-		</nav>
-	</div>
-{/if}
+			{#each routes as route}
+				<!-- svelte-ignore a11y-click-events-have-key-events -->
+				<!-- svelte-ignore a11y-no-static-element-interactions -->
+				<a href={route.href} class="flex origin-left items-center transition-all active:scale-95">
+					<Icon icon={route.icon} class="mr-2" />
+					<p>{route.label}</p>
+				</a>
+			{/each}
+		</div>
+	{/if}
+</nav>
 
 <div class="flex min-h-screen flex-col">
 	<slot />
