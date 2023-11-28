@@ -26,6 +26,7 @@
 		// }
 	];
 
+	let preloadMenu;
 	let isMenuOpen = false;
 
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
@@ -39,7 +40,7 @@
 			href="/"
 			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/logo.png" class="group-hover:animate-wiggle h-8 pr-2" />
+			<img src="/logo.png" alt="logo" class="group-hover:animate-wiggle h-8 pr-2" />
 			<p>small fish</p></a
 		>
 		<div class="hidden flex-row items-center gap-2 md:flex">
@@ -67,7 +68,7 @@
 
 <!-- Hamburger menu. -->
 {#if isMenuOpen}
-	<div class="relative z-50 w-full">
+	<div bind:this={preloadMenu} class="relative z-50 w-full">
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
