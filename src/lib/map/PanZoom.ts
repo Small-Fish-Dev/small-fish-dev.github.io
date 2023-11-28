@@ -241,7 +241,7 @@ export function panzoom(canvas: HTMLCanvasElement, options: Options) {
 
 		if (zoom) {
 			const zoomPoint = {
-				x: point.x + DEFAULT_PIN_SIZE * dpr,
+				x: point.x + DEFAULT_PIN_SIZE,
 				y: point.y + DEFAULT_PIN_SIZE + 54 * dpr
 			};
 			zoomOn(zoomPoint, 3 * (canvas.height / canvas.width));
