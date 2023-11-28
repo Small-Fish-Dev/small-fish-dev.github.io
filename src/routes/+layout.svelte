@@ -57,11 +57,11 @@
 			}}
 		>
 			{#if !isMenuOpen}
-				<div in:slide={{ duration: 100 }}>
+				<div in:slide={{ axis: 'x', duration: 100 }}>
 					<Icon icon="material-symbols:menu" class="text-4xl" />
 				</div>
 			{:else}
-				<div in:slide={{ duration: 100 }}>
+				<div in:slide={{ axis: 'x', duration: 100 }}>
 					<Icon icon="material-symbols:close" class="text-4xl" />
 				</div>
 			{/if}
@@ -70,7 +70,7 @@
 	{#if isMenuOpen}
 		<div
 			class="container mx-auto flex flex-col gap-2 pt-2 font-poppins text-xl font-medium text-white"
-			transition:slide
+			transition:slide={{ duration: 300 }}
 		>
 			{#each routes as route}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
