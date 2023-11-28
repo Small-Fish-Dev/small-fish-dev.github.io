@@ -10,7 +10,8 @@
 <a
 	{href}
 	class="nav-button flex items-center whitespace-nowrap px-2 py-1 font-poppins
-           font-medium
+		   text-lg
+		   font-medium
 		   text-white
 		   transition-all
 		   hover:scale-105
