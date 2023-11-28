@@ -79,11 +79,11 @@
 		<nav
 			use:swipeable
 			on:swiped={swipeHandler}
-			in:fly={{ duration: 100, x: '100%' }}
+			in:fly={{ duration: 200, x: '100%' }}
 			out:fly={{ duration: 100, x: '100%' }}
 			class="blue-gradient fixed right-0 z-50 flex h-full w-5/6 max-w-sm flex-col overflow-y-auto border-l-2 border-black px-6 py-6"
 		>
-			<img src="/home/header-logo.png" alt="poop fish logo" />
+			<!-- <img src="/home/header-logo.png" alt="poop fish logo" /> -->
 			<div class="flex flex-col gap-4 pt-8">
 				{#each routes as route}
 					<!-- svelte-ignore a11y-click-events-have-key-events -->
