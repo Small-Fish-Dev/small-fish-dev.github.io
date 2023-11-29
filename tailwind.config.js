@@ -20,6 +20,10 @@ export default {
 				heavy: '2px 2px 2px rgba(0, 0, 0, 1)',
 				DEFAULT: '2px 2px 4px rgba(0, 0, 0, 0.5)'
 			},
+			height: {
+				// 54 px for navbar
+				screen: 'calc(100vh - 54px)'
+			},
 			boxShadow: {
 				xs: '3px 3px black',
 				sm: '4px 4px black',

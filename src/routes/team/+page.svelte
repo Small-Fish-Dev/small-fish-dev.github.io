@@ -216,7 +216,7 @@
 	}
 </script>
 
-<div class="full-screen w-full overflow-hidden">
+<div class="h-screen w-full overflow-hidden">
 	<div class="scroll h-full w-full bg-[url('/team/pxgrid.png')]">
 		{#await promise then options}
 			<canvas
@@ -253,10 +253,6 @@
 			background-position-x: 100%;
 			background-position-y: 100%;
 		}
-	}
-
-	.full-screen {
-		height: calc(100vh - 54px);
 	}
 
 	:global(.pointer) {

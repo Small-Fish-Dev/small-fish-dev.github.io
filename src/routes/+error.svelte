@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="scroll flex h-max full-screen flex-col items-center justify-center bg-[url('/error/pxgrid_red.png')] font-poppins text-4xl font-bold text-white"
+	class="scroll flex h-screen flex-col items-center justify-center bg-[url('/error/pxgrid_red.png')] font-poppins text-4xl font-bold text-white"
 >
 	<img class="pixelated w-[300px] bg-cover" src="/error/pxerror.png" alt="error" />
 
@@ -16,10 +16,6 @@
 </div>
 
 <style>
-	.full-screen {
-        height: calc(100vh - 54px);
-    }
-
 	@keyframes scroll {
 		0% {
 			background-position-x: 0%;
