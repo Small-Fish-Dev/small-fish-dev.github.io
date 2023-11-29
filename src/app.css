@@ -30,6 +30,12 @@
 	src: url('/fonts/Poppins-Medium.ttf');
 }
 
+body,
+html {
+	/* Navbar height */
+	scroll-padding-top: 60px;
+}
+
 .no-x-scroll {
 	overflow-x: hidden;
 }
