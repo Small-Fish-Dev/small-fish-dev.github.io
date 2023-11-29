@@ -2,7 +2,7 @@
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
 	import { fly } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { cubicInOut, quintOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 	import { onDestroy, onMount } from 'svelte';
 
@@ -30,6 +30,11 @@
 		timer = setInterval(() => {
 			currentIndex = (currentIndex + 1) % images.length;
 		}, 60);
+
+		document.body.classList.add('no-x-scroll');
+		return () => {
+			document.body.classList.remove('no-x-scroll');
+		};
 	});
 
 	onDestroy(() => {

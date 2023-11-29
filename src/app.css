@@ -29,3 +29,7 @@
 	font-weight: 500;
 	src: url('/fonts/Poppins-Medium.ttf');
 }
+
+.no-x-scroll {
+	overflow-x: hidden;
+}
