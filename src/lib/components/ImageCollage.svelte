@@ -120,5 +120,6 @@
 
 	.blog {
 		height: 50vh;
+		margin-bottom: 2em;
 	}
 </style>
