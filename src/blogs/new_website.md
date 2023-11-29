@@ -9,7 +9,7 @@ published: true
 
 For the past few weeks, we have been hard at work developing our new website. Finally, we are ready to unveil it. This post will cover some of the implementation details and hurdles we faced during development. If you want to check out the source code, it's available [here](https://github.com/Small-Fish-Dev/small-fish-dev.github.io).
 
-A big thanks to matek and ceitine for developing the entire website, and to wheatleymf for designing the website itself.
+A big thanks to ceitine for assisting me with the development of the website, and to wheatleymf for designing the website itself.
 
 <Heading title="Selecting a Framework" caption="by matek" />
 
