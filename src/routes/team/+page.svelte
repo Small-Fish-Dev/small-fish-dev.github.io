@@ -211,7 +211,7 @@
 	}
 </script>
 
-<div class="overflow h-screen w-screen overflow-hidden">
+<div class="h-screen w-full overflow-hidden">
 	<div class="scroll h-full w-full bg-[url('/team/pxgrid.png')]">
 		{#await promise then options}
 			<canvas
@@ -231,7 +231,7 @@
 		<div
 			in:fly={{ duration: 300, x: '100%', opacity: 0.5, easing: quintOut }}
 			out:fly={{ duration: 300, x: '100%', opacity: 0.5 }}
-			class="pointer-events-none absolute right-0 top-0 z-20 flex h-full w-[320px] max-w-[450px] p-4 pb-16 md:w-96 md:p-8"
+			class="pointer-events-none absolute right-0 top-0 z-20 flex h-full w-[320px] max-w-[450px] p-4 md:w-96 md:p-8"
 		>
 			<MemberCard {member} onClose={() => tryOpenCard()} />
 		</div>
