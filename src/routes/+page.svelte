@@ -15,7 +15,7 @@
 			})
 		);
 
-		videos.forEach((path) => {
+		videos.forEach(async (path) => {
 			const request = fetch(path).then((response) => response.blob());
 		});
 	});
