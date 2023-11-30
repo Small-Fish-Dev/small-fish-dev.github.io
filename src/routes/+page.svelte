@@ -14,10 +14,6 @@
 				return path.substring(cut.length, path.length);
 			})
 		);
-
-		videos.forEach(async (path) => {
-			const request = fetch(path).then((response) => response.blob());
-		});
 	});
 
 	const socials = [
