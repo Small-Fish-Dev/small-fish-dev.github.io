@@ -15,13 +15,20 @@
 		'https://discord.gg/rx2qqTqv36'
 	];
 
+	const shuffle = (array: string[]) => { 
+		for (let i = array.length - 1; i > 0; i--) { 
+			const j = Math.floor(Math.random() * (i + 1)); 
+			[array[i], array[j]] = [array[j], array[i]]; 
+		} 
+		return array; 
+	}; 
+	
 	let index = 0;
-	const videos = Object.keys(import.meta.glob("/static/home/intro_videos/*.mp4"))
+	const videos = shuffle(Object.keys(import.meta.glob("/static/home/intro_videos/*.mp4"))
 		.map((path) => {
 			const cut = "/static/";
 			return path.substring(cut.length, path.length);	
-		})
-		.sort(() => Math.random() - 0.5);
+		}));
 
 	const moveVideo = (amount: number) => {
 		index = (index + amount) % videos.length;
@@ -31,7 +38,7 @@
 
 <div>
 	<header
-		class="relative  overflow-hidden flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
+		class="relative overflow-hidden flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
@@ -58,7 +65,7 @@
 			
 		<!-- Background video -->
 		{#each [videos[index]] as src (index)}
-			<video  preload="auto" autoplay muted class="z-5 absolute h-full w-full object-cover" 
+			<video preload="auto" autoplay muted class="z-5 absolute h-full w-full object-cover" 
 			on:ended={() => moveVideo(1)}
 			in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
 			out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut  }}
