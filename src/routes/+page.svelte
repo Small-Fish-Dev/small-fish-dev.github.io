@@ -23,7 +23,9 @@
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
-					<p class="subtitle subtitle text-4xl font-medium text-white text-shadow-heavy">
+					<p
+						class="subtitle subtitle text-center text-2xl font-medium text-white text-shadow-heavy md:text-4xl"
+					>
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
 				</div>
