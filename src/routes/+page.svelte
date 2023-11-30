@@ -1,12 +1,20 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
 
 	let ready = false;
-	onMount(() => (ready = true));
+	onMount(() => {
+		ready = true;
+		videos = shuffle(
+			Object.keys(import.meta.glob('/static/home/intro_videos/*.mp4')).map((path) => {
+				const cut = '/static/';
+				return path.substring(cut.length, path.length);
+			})
+		);
+	});
 
 	const socials = [
 		'https://twitter.com/SmallFishDev',
@@ -15,20 +23,16 @@
 		'https://discord.gg/rx2qqTqv36'
 	];
 
-	const shuffle = (array: string[]) => { 
-		for (let i = array.length - 1; i > 0; i--) { 
-			const j = Math.floor(Math.random() * (i + 1)); 
-			[array[i], array[j]] = [array[j], array[i]]; 
-		} 
-		return array; 
-	}; 
-	
+	const shuffle = (array: string[]) => {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[array[i], array[j]] = [array[j], array[i]];
+		}
+		return array;
+	};
+
 	let index = 0;
-	const videos = shuffle(Object.keys(import.meta.glob("/static/home/intro_videos/*.mp4"))
-		.map((path) => {
-			const cut = "/static/";
-			return path.substring(cut.length, path.length);	
-		}));
+	let videos: string[];
 
 	const moveVideo = (amount: number) => {
 		index = (index + amount) % videos.length;
@@ -62,17 +66,25 @@
 			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel mix-blend-multiply"
 		/>
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
-			
+
 		<!-- Background video -->
-		{#each [videos[index]] as src (index)}
-			<video preload="auto" autoplay muted class="z-5 absolute h-full w-full object-cover" 
-			on:ended={() => moveVideo(1)}
-			in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
-			out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut  }}
-			>
-				<source {src} type="video/mp4" />
-			</video>
-		{/each}
+		{#if videos}
+			<div class="absolute h-full w-full" in:fade={{ duration: 600, easing: quintOut }}>
+				{#each [videos[index]] as src (index)}
+					<video
+						preload="auto"
+						autoplay
+						muted
+						class="z-5 absolute h-full w-full object-cover"
+						on:ended={() => moveVideo(1)}
+						in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
+						out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut }}
+					>
+						<source {src} type="video/mp4" />
+					</video>
+				{/each}
+			</div>
+		{/if}
 	</header>
 </div>
 
