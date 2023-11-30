@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import SocialButton from '$lib/components/SocialButton.svelte';
+	import { Slogans } from '$lib/types/Slogan';
 
 	let ready = false;
 	onMount(() => (ready = true));
@@ -16,12 +17,16 @@
 
 <div>
 	<header
-		class="font-display relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 md:gap-12"
+		class="relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
-				<img src="home/header-logo.png" alt="Small Fish Logo" />
-				<div class="flex flex-wrap justify-center gap-2 p-4"></div>
+				<img src="home/header-logo.png" alt="Small Fish Logo" class="logo" />
+				<div class="flex flex-wrap justify-center pb-8 pt-4">
+					<p class="subtitle subtitle text-4xl font-medium text-white text-shadow">
+						{Slogans[Math.floor(Math.random() * Slogans.length)]}
+					</p>
+				</div>
 				<div class="flex justify-center gap-4">
 					{#each socials as social}
 						<SocialButton href={social} showHoverTop={false} class="w-12" />
@@ -43,5 +48,26 @@
 <style>
 	.background-fade {
 		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
+	}
+
+	.logo {
+		-webkit-filter: drop-shadow(5px 5px 5px #222);
+		filter: drop-shadow(5px 5px 5px #222);
+	}
+
+	.subtitle {
+		animation: zoom-in-zoom-out 2s ease-in-out infinite;
+	}
+
+	@keyframes zoom-in-zoom-out {
+		0% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.1);
+		}
+		100% {
+			transform: scale(1);
+		}
 	}
 </style>
