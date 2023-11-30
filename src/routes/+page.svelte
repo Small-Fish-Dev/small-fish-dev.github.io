@@ -42,7 +42,7 @@
 
 <div>
 	<header
-		class="relative overflow-hidden flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
+		class="relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 overflow-hidden p-4 font-poppins md:gap-12"
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
@@ -63,7 +63,7 @@
 		{/if}
 
 		<div
-			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel mix-blend-multiply"
+			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel opacity-75 mix-blend-multiply"
 		/>
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 
