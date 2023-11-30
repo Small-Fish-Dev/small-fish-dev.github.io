@@ -69,6 +69,10 @@
 
 		<!-- Background video -->
 		{#if videos}
+			{#each videos as src}
+				<link rel="preload" as="video" type="video/mp4" href={src} />
+			{/each}
+
 			<div class="absolute h-full w-full" in:fade={{ duration: 600, easing: quintOut }}>
 				{#each [videos[index]] as src (index)}
 					<video
