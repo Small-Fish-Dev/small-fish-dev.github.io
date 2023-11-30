@@ -24,7 +24,7 @@
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
 					<p
-						class="subtitle subtitle text-center text-2xl font-medium text-white text-shadow-heavy md:text-4xl"
+						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy md:text-4xl"
 					>
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
@@ -50,21 +50,5 @@
 <style>
 	.background-fade {
 		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
-	}
-
-	.subtitle {
-		animation: zoom-in-zoom-out 2s ease-in-out infinite;
-	}
-
-	@keyframes zoom-in-zoom-out {
-		0% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(1.1);
-		}
-		100% {
-			transform: scale(1);
-		}
 	}
 </style>

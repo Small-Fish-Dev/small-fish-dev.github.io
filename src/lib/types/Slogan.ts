@@ -3,5 +3,6 @@ export const Slogans: string[] = [
 	'small fish, big pond!',
 	'think it, dream it, do it.',
 	'we make waves! not just games...',
-	'bóbr, kurwa!'
+	'bóbr, kurwa!',
+	"hey, what's up?"
 ];
