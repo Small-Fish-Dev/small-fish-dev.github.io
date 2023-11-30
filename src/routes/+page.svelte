@@ -24,7 +24,7 @@
 				<img src="home/header-logo.png" alt="Small Fish Logo" class="logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
 					<p class="subtitle subtitle text-4xl font-medium text-white text-shadow">
-						{Slogans[Math.floor(Math.random() * Slogans.length)]}
+						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
 				</div>
 				<div class="flex justify-center gap-4">
