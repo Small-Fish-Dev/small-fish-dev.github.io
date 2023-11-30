@@ -21,9 +21,9 @@
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
-				<img src="home/header-logo.png" alt="Small Fish Logo" class="logo" />
+				<img src="home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
-					<p class="subtitle subtitle text-4xl font-medium text-white text-shadow">
+					<p class="subtitle subtitle text-4xl font-medium text-white text-shadow-heavy">
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
 				</div>
@@ -48,11 +48,6 @@
 <style>
 	.background-fade {
 		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
-	}
-
-	.logo {
-		-webkit-filter: drop-shadow(5px 5px 5px #222);
-		filter: drop-shadow(5px 5px 5px #222);
 	}
 
 	.subtitle {
