@@ -149,8 +149,6 @@
 		// If not a left click, or if multi-touch on mobile.
 		if (event.button !== 0 || pointers.size >= 2) return;
 
-		console.log(pointers.size);
-
 		let hovered = getHoveringPin(getTransformedPoint(event.offsetX, event.offsetY));
 		activePin =
 			!hovered && activePin

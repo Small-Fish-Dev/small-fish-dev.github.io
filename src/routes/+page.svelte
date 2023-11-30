@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
@@ -20,12 +20,12 @@
 		.map((path) => {
 			const cut = "/static/";
 			return path.substring(cut.length, path.length);	
-		});
+		})
+		.sort(() => Math.random() - 0.5);
 
 	const moveVideo = (amount: number) => {
 		index = (index + amount) % videos.length;
 		if (index < 0) index = videos.length + index;
-		console.log(index);
 	};
 </script>
 
@@ -60,8 +60,8 @@
 		{#each [videos[index]] as src (index)}
 			<video autoplay muted class="z-5 absolute h-full w-full object-cover" 
 			on:ended={() => moveVideo(1)}
-			in:fly={{ duration: 300, y: '100%', opacity: 1, easing: quintOut }}
-			out:fly={{ duration: 300, y: '-100%', opacity: 1, easing: quintOut  }}
+			in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
+			out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut  }}
 			>
 				<source {src} type="video/mp4" />
 			</video>

@@ -38,7 +38,6 @@
 			url = new URL(link);
 			host = getHost(url).replace(/\.com$/, '');
 		} catch {
-			console.log('Invalid link on SocialButton icon.');
 			return icons['none'];
 		}
 
