@@ -58,7 +58,7 @@
 			
 		<!-- Background video -->
 		{#each [videos[index]] as src (index)}
-			<video autoplay muted class="z-5 absolute h-full w-full object-cover" 
+			<video  preload="auto" autoplay muted class="z-5 absolute h-full w-full object-cover" 
 			on:ended={() => moveVideo(1)}
 			in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
 			out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut  }}
