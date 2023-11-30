@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
+	import { fade, fly } from 'svelte/transition';
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Slogans } from '$lib/types/Slogan';
+	import { quintOut } from 'svelte/easing';
 
 	let ready = false;
 	onMount(() => (ready = true));
@@ -13,11 +14,24 @@
 		'https://asset.party/fish',
 		'https://discord.gg/rx2qqTqv36'
 	];
+
+	let index = 0;
+	const videos = Object.keys(import.meta.glob("/static/home/intro_videos/*.mp4"))
+		.map((path) => {
+			const cut = "/static/";
+			return path.substring(cut.length, path.length);	
+		});
+
+	const moveVideo = (amount: number) => {
+		index = (index + amount) % videos.length;
+		if (index < 0) index = videos.length + index;
+		console.log(index);
+	};
 </script>
 
 <div>
 	<header
-		class="relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
+		class="relative  overflow-hidden flex h-screen shrink-0 flex-col items-center justify-center gap-8 p-4 font-poppins md:gap-12"
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
@@ -41,9 +55,17 @@
 			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel mix-blend-multiply"
 		/>
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
-		<video autoplay loop muted class="z-5 absolute h-full w-full object-cover"
-			><source src="home/smallfishtrailer.mp4" type="video/mp4" /></video
-		>
+			
+		<!-- Background video -->
+		{#each [videos[index]] as src (index)}
+			<video autoplay muted class="z-5 absolute h-full w-full object-cover" 
+			on:ended={() => moveVideo(1)}
+			in:fly={{ duration: 300, y: '100%', opacity: 1, easing: quintOut }}
+			out:fly={{ duration: 300, y: '-100%', opacity: 1, easing: quintOut  }}
+			>
+				<source {src} type="video/mp4" />
+			</video>
+		{/each}
 	</header>
 </div>
 
