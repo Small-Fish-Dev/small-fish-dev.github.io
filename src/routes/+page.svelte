@@ -14,6 +14,12 @@
 				return path.substring(cut.length, path.length);
 			})
 		);
+
+		const v = document.createElement('video');
+		v.src = videos[0];
+		v.addEventListener('loadeddata', () => {
+			firstVideoLoaded = true;
+		});
 	});
 
 	const socials = [
@@ -33,10 +39,17 @@
 
 	let index = 0;
 	let videos: string[];
+	let firstVideoLoaded: boolean = false;
 
 	const moveVideo = (amount: number) => {
-		index = (index + amount) % videos.length;
-		if (index < 0) index = videos.length + index;
+		let nextIndex = (index + amount) % videos.length;
+		if (nextIndex < 0) nextIndex = videos.length + index;
+
+		const v = document.createElement('video');
+		v.src = videos[nextIndex];
+		v.addEventListener('loadeddata', () => {
+			index = nextIndex;
+		});
 	};
 </script>
 
@@ -68,11 +81,7 @@
 		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 
 		<!-- Background video -->
-		{#if videos}
-			{#each videos as src}
-				<link rel="preload" as="video" type="video/mp4" href={src} />
-			{/each}
-
+		{#if videos && firstVideoLoaded}
 			<div class="absolute h-full w-full" in:fade={{ duration: 600, easing: quintOut }}>
 				{#each [videos[index]] as src (index)}
 					<video
