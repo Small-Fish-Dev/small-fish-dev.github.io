@@ -31,6 +31,9 @@
 			currentIndex = (currentIndex + 1) % images.length;
 		}, 60);
 
+		// Make sure we sent cursor on load.
+		onPointerMove(new PointerEvent('touch'));
+
 		document.body.classList.add('no-x-scroll');
 		return () => {
 			document.body.classList.remove('no-x-scroll');
@@ -159,10 +162,13 @@
 			tryOpenCard(activePin.member.name);
 			// Bit scuffed, we let the main rendering loop lerp this back to its proper value.
 			activePin.size *= 0.75;
+		} else {
+			canvas.classList.add('move');
 		}
 	}
 
 	function onPointerUp(event: PointerEvent) {
+		canvas.classList.remove('move');
 		pointers.delete(event.pointerId);
 	}
 
@@ -186,8 +192,13 @@
 			hasHoveredPin = pin.isHovered;
 		}
 
-		if (hoveredPin) canvas.classList.add('pointer');
-		else canvas.classList.remove('pointer');
+		if (hoveredPin) {
+			canvas.classList.add('pointer');
+			canvas.classList.remove('pan');
+		} else {
+			canvas.classList.remove('pointer');
+			canvas.classList.add('pan');
+		}
 
 		return hoveredPin;
 	}
@@ -255,6 +266,14 @@
 
 	:global(.pointer) {
 		cursor: pointer !important;
+	}
+
+	:global(.pan) {
+		cursor: grab !important;
+	}
+
+	:global(.move) {
+		cursor: grabbing !important;
 	}
 
 	canvas {
