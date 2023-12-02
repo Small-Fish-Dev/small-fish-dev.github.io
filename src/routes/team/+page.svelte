@@ -32,9 +32,6 @@
 			currentIndex = (currentIndex + 1) % images.length;
 		}, 60);
 
-		// Make sure we sent cursor on load.
-		onPointerMove(new PointerEvent('touch'));
-
 		return () => {
 			document.body.classList.remove('no-x-scroll');
 		};
