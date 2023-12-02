@@ -29,7 +29,7 @@
 	$: if ($navigating) isMenuOpen = false;
 </script>
 
-<nav class="sticky top-0 z-50 mx-auto flex w-full flex-col border-b-2 border-black bg-blue p-2">
+<nav class="sticky top-0 z-50 mx-auto flex w-full flex-col border-b-2 border-darkblue bg-blue p-2">
 	<div class="container mx-auto flex flex-row items-center justify-between">
 		<a
 			href="/"
