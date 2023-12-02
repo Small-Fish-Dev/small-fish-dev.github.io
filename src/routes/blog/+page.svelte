@@ -47,7 +47,7 @@
 					>
 						{#if post.thumbnail}
 							<img
-								class="md: absolute h-full w-full bg-darkblue object-cover"
+								class="absolute h-full w-full bg-darkblue object-cover"
 								src={`/blogs/${post.slug}/${post.thumbnail}`}
 								alt="thumbnail"
 							/>

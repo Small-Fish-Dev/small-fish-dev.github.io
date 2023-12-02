@@ -100,7 +100,7 @@
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
 					<img
-						class="absolute w-full bg-no-repeat"
+						class="absolute h-full w-full bg-darkblue object-cover"
 						src={`/blogs/${data.nextfrontmatter.slug}/${data.nextfrontmatter.thumbnail}`}
 						alt="thumbnail"
 					/>
