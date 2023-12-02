@@ -40,17 +40,36 @@
 	let index = 0;
 	let videos: string[];
 	let firstVideoLoaded: boolean = false;
+	let nextVideoLoaded: boolean = false;
 
-	const moveVideo = (amount: number) => {
-		let nextIndex = (index + amount) % videos.length;
+	async function loadNextvideo() {
+		let nextIndex = (index + 1) % videos.length;
+		if (nextIndex < 0) nextIndex = videos.length + index;
+
+		await awaitNextVideoLoad();
+
+		index = nextIndex;
+	}
+
+	async function cacheNextVideo() {
+		nextVideoLoaded = false;
+
+		let nextIndex = (index + 1) % videos.length;
 		if (nextIndex < 0) nextIndex = videos.length + index;
 
 		const v = document.createElement('video');
 		v.src = videos[nextIndex];
 		v.addEventListener('loadeddata', () => {
-			index = nextIndex;
+			nextVideoLoaded = true;
 		});
-	};
+	}
+
+	async function awaitNextVideoLoad() {
+		while (!nextVideoLoaded) {
+			await new Promise((resolve) => setTimeout(resolve, 100));
+		}
+		return true;
+	}
 </script>
 
 <div>
@@ -89,7 +108,8 @@
 						autoplay
 						muted
 						class="z-5 absolute h-full w-full object-cover"
-						on:ended={() => moveVideo(1)}
+						on:loadeddata={() => cacheNextVideo()}
+						on:ended={() => loadNextvideo()}
 						in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
 						out:fly={{ duration: 600, y: '-100%', opacity: 1, easing: quintOut }}
 					>
