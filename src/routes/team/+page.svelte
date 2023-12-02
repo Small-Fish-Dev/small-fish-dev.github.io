@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
-	import { fly } from 'svelte/transition';
+	import { fade, fly, slide } from 'svelte/transition';
 	import { cubicInOut, quintOut } from 'svelte/easing';
 	import MemberCard from '$lib/components/MemberCard.svelte';
 	import { onDestroy, onMount } from 'svelte';
@@ -19,6 +19,7 @@
 
 	let ready = false;
 	onMount(() => {
+		document.body.classList.add('no-x-scroll');
 		ready = true;
 
 		paths.forEach((path) => {
@@ -34,7 +35,6 @@
 		// Make sure we sent cursor on load.
 		onPointerMove(new PointerEvent('touch'));
 
-		document.body.classList.add('no-x-scroll');
 		return () => {
 			document.body.classList.remove('no-x-scroll');
 		};
