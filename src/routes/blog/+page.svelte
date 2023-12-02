@@ -2,7 +2,6 @@
 	import type { PageData } from './$types';
 	import { page } from '$app/stores';
 	import Icon from '@iconify/svelte';
-	import { fly } from 'svelte/transition';
 
 	export let data: PageData;
 
@@ -44,11 +43,11 @@
 			>
 				<div class="flex flex-col overflow-hidden md:flex-row">
 					<div
-						class="relative h-48 w-full border-b-2 border-black md:h-auto md:basis-1/2 md:border-b-0 md:border-r-2"
+						class="relative h-48 w-full border-b-2 border-darkblue md:h-auto md:basis-1/2 md:border-b-0 md:border-r-2"
 					>
 						{#if post.thumbnail}
 							<img
-								class="md: absolute h-full w-full bg-black object-cover"
+								class="md: absolute h-full w-full bg-darkblue object-cover"
 								src={`/blogs/${post.slug}/${post.thumbnail}`}
 								alt="thumbnail"
 							/>
@@ -59,7 +58,7 @@
 							{#if post.member}
 								<div class="flex origin-left flex-row items-center gap-1 text-gray">
 									<img
-										class="h-[42px] w-[42px] border-2 border-black bg-cover"
+										class="h-[42px] w-[42px] border-2 border-darkblue bg-cover"
 										src={post.member.avatar == null
 											? '/team/profiles/none.jpg'
 											: post.member.avatar}

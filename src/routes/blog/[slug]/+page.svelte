@@ -53,7 +53,7 @@
 					class="flex origin-left flex-row items-center gap-1 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 				>
 					<img
-						class="h-[42px] w-[42px] border-2 border-black bg-cover"
+						class="h-[42px] w-[42px] border-2 border-darkblue bg-cover"
 						src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
 						alt="publisher"
 						on:error={imageFallback}
