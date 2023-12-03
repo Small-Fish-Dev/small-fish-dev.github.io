@@ -23,7 +23,7 @@
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
 
-<div class="w-fullbg-fixed fixed h-full">
+<div class="w-fullbg-fixed fixed h-full" style="z-index: -1">
 	{#if data.frontmatter.thumbnail}
 		<img
 			class="absolute h-screen w-screen bg-fixed object-cover"

@@ -87,3 +87,14 @@
 <div class="relative flex flex-col">
 	<slot />
 </div>
+
+<footer class="bg-darkblue">
+	<div
+		class="mx-auto w-full max-w-screen-xl justify-center px-2 py-6 text-center font-poppins text-white md:flex"
+	>
+		<p>
+			<span class="font-bold">2021 - 2024 Small Fish.</span> All rights are protected in a high level
+			security bunker with lasers and guns
+		</p>
+	</div>
+</footer>

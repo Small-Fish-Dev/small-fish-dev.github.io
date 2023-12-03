@@ -29,7 +29,7 @@
 	const groupedPosts = groupPostsByMonthYear(data.posts);
 </script>
 
-<div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" />
+<div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" style="z-index: -1" />
 
 <div
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-6 font-poppins sm:px-4 lg:px-32 xl:px-40"
