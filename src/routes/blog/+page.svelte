@@ -99,8 +99,3 @@
 		{/each}
 	{/each}
 </div>
-
-<style>
-	.test {
-	}
-</style>
