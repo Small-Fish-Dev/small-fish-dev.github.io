@@ -14,9 +14,7 @@
 		   font-medium
 		   text-white
 		   transition-all
-		   hover:scale-105
-		   hover:bg-white
-		   hover:text-blue
+		   hover:scale-110
 		   {disabled ? 'pointer-events-none opacity-75' : 'pointer-events-auto'}"
 >
 	<Icon {icon} class="mr-2" />

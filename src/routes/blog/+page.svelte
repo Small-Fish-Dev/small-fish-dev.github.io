@@ -35,16 +35,16 @@
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-6 font-poppins sm:px-4 lg:px-32 xl:px-40"
 >
 	{#each Object.entries(groupedPosts) as [monthYear, postsInMonthYear]}
-		<h1 class="text-4xl font-bold underline decoration-blue">{monthYear}</h1>
+		<h1 class="text-4xl font-bold underline decoration-blue">
+			{monthYear}
+		</h1>
 		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="shadow-sm transition-all text-shadow hover:-translate-y-1 hover:shadow-lg"
+				class="hover:drop-shadow-hover drop-shadow-md transition-all text-shadow hover:-translate-y-2"
 			>
-				<div class="flex flex-col overflow-hidden md:flex-row">
-					<div
-						class="relative h-48 w-full border-b-2 border-darkblue md:h-auto md:basis-1/2 md:border-b-0 md:border-r-2"
-					>
+				<div class="flex flex-col overflow-hidden rounded-lg md:flex-row">
+					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
 						{#if post.thumbnail}
 							<img
 								class="absolute h-full w-full bg-darkblue object-cover"
@@ -53,12 +53,14 @@
 							/>
 						{/if}
 					</div>
-					<div class="gradient flex w-full flex-col justify-center break-words p-4 md:p-8">
+					<div
+						class="flex w-full flex-col justify-center break-words bg-gradient-to-r from-blue to-lightblue p-4 md:p-8"
+					>
 						<div class="flex flex-row flex-wrap justify-between gap-4 pb-4">
 							{#if post.member}
 								<div class="flex origin-left flex-row items-center gap-1 text-gray">
 									<img
-										class="h-[42px] w-[42px] border-2 border-darkblue bg-cover"
+										class="h-[42px] w-[42px] rounded-full bg-cover drop-shadow-md"
 										src={post.member.avatar == null
 											? '/team/profiles/none.jpg'
 											: post.member.avatar}
@@ -99,7 +101,6 @@
 </div>
 
 <style>
-	.gradient {
-		background: linear-gradient(to bottom, #2446f7 40%, #152a96 100%);
+	.test {
 	}
 </style>

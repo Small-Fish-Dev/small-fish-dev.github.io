@@ -10,7 +10,7 @@ export default {
 			black: '#000000',
 			darkblue: '#091856',
 			gray: '#e2e2e2',
-			lightblue: '#6a81f8'
+			lightblue: '#0092ff'
 		},
 		extend: {
 			fontFamily: {
@@ -29,6 +29,10 @@ export default {
 				sm: '4px 4px black',
 				md: '8px 8px black',
 				lg: '10px 10px black'
+			},
+			dropShadow: {
+				md: '0px 0px 2px #091856',
+				hover: '0px 6px 2px #091856'
 			},
 			backgroundImage: {
 				pixel: "url('/home/pixel-overlay.png')",

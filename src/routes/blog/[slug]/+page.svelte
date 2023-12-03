@@ -53,7 +53,7 @@
 					class="flex origin-left flex-row items-center gap-1 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 				>
 					<img
-						class="h-[42px] w-[42px] border-2 border-darkblue bg-cover"
+						class="h-[42px] w-[42px] rounded-full bg-cover drop-shadow-md"
 						src={data.publisher.avatar == null ? '/team/profiles/none.jpg' : data.publisher.avatar}
 						alt="publisher"
 						on:error={imageFallback}
@@ -83,19 +83,23 @@
 	</div>
 
 	<article
-		class="prose border-2 border-black
-		bg-white p-5
-		shadow-md lg:prose-xl
+		class="prose
+		rounded-t-lg
+		bg-white
+		p-5
+		drop-shadow-md
+		lg:prose-xl
 		prose-a:text-blue
-		hover:prose-a:text-lightblue hover:prose-a:transition-all prose-code:break-words
-		md:mb-8 md:p-10"
+		hover:prose-a:text-lightblue
+		hover:prose-a:transition-all prose-code:break-words md:mb-8
+		md:rounded-lg md:p-10"
 	>
 		<svelte:component this={component} />
 	</article>
 
 	{#if data.nextfrontmatter}
 		<div
-			class="relative overflow-hidden border-2 border-black text-white shadow-sm transition-all text-shadow hover:-translate-y-1 hover:shadow-lg hover:brightness-105 md:mb-8"
+			class="hover:drop-shadow-hover relative overflow-hidden text-white drop-shadow-md transition-all text-shadow hover:-translate-y-1 md:mb-8 md:rounded-lg"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}
