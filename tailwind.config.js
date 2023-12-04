@@ -22,7 +22,7 @@ export default {
 			},
 			height: {
 				// 54 px for navbar
-				screen: 'calc(100vh - 54px)'
+				screen: 'calc(100vh - 52px)'
 			},
 			boxShadow: {
 				xs: '3px 3px black',
