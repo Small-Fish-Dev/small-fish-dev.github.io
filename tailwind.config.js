@@ -6,11 +6,14 @@ export default {
 	theme: {
 		colors: {
 			white: '#FFFFFF',
+			transparentblue: '#2447f779',
 			blue: '#2446f7',
 			black: '#000000',
 			darkblue: '#091856',
+			navyblue: '#0f2898',
 			gray: '#e2e2e2',
-			lightblue: '#0092ff'
+			lightblue: '#0092ff',
+			transparent: 'transparent'
 		},
 		extend: {
 			fontFamily: {
@@ -53,10 +56,17 @@ export default {
 					'100%': {
 						backgroundPosition: '100% 100%'
 					}
+				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(0deg)' },
+					'25%': { transform: 'rotate(1deg)' },
+					'50%': { transform: 'rotate(-1deg)' },
+					'75%': { transform: 'rotate(1deg)' }
 				}
 			},
 			animation: {
-				scroll: 'scrolling 120s infinite linear'
+				scroll: 'scrolling 120s infinite linear',
+				wiggle: 'wiggle 1s ease-in-out infinite'
 			},
 			typography: {
 				DEFAULT: {

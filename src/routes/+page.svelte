@@ -4,6 +4,7 @@
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
+	import ProjectLink from '$lib/components/ProjectLink.svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -93,11 +94,9 @@
 				</div>
 			</div>
 		{/if}
-
 		<div
-			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel opacity-75 mix-blend-multiply"
+			class="from-transparentblue to-navyblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60%"
 		/>
-		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 
 		<!-- Background video -->
 		{#if videos && firstVideoLoaded}
@@ -107,7 +106,7 @@
 						preload="auto"
 						autoplay
 						muted
-						class="z-5 absolute h-full w-full object-cover"
+						class="z-5 absolute h-full w-full object-cover blur-sm"
 						on:loadeddata={() => cacheNextVideo()}
 						on:ended={() => loadNextvideo()}
 						in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
@@ -119,10 +118,26 @@
 			</div>
 		{/if}
 	</header>
+	<body class="bg-navyblue">
+		<div class="flex justify-center px-2 pt-8 text-center">
+			<p class="font-poppins text-xl font-bold text-white text-shadow md:w-1/2">
+				Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
+				big hits, such as...
+			</p>
+		</div>
+		<div class="flex flex-wrap justify-center py-8">
+			<ProjectLink
+				imagePath="/home/goblin-tide.png"
+				description="Steal moni. Set whole village afire. Life good."
+				buttonText="More about GoblinTide"
+				buttonLink="https://www.youtube.com/watch?v=kfTCxoYRMT4"
+			/>
+			<ProjectLink
+				imagePath="/home/inthishouse.png"
+				description="This house is said to be haunted by the ghost of a lady..."
+				buttonText="More about In This House"
+				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
+			/>
+		</div>
+	</body>
 </div>
-
-<style>
-	.background-fade {
-		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
-	}
-</style>
