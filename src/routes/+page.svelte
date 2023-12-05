@@ -5,6 +5,7 @@
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
+	import Icon from '@iconify/svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -129,7 +130,7 @@
 			<ProjectLink
 				imagePath="/home/goblin-tide.png"
 				description="Steal moni. Set whole village afire. Life good."
-				buttonText="More about GoblinTide"
+				buttonText="More about Goblin Tide"
 				buttonLink="https://www.youtube.com/watch?v=kfTCxoYRMT4"
 			/>
 			<ProjectLink
@@ -142,16 +143,18 @@
 		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
 			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
 				<p class="text-center text-2xl font-bold">
-					We have other games too! Check out the full collection here
+					We write interesting things sometimes! Check out the blog here
 				</p>
 				<a
-					href="/"
-					class="rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
+					href="/blog"
+					class="flex items-center rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
 				>
-					Small Fish Games
+					<Icon icon="ic:sharp-newspaper" class="mr-2" />
+					Amazing Blog Posts
 					<img
 						src="/home/fishsoy.png"
-						class="absolute left-[-30px] top-[30px] w-[80px] hover:animate-wiggle"
+						alt="soy fish"
+						class="absolute left-[-40px] top-[30px] w-[80px] hover:animate-wiggle"
 					/>
 				</a>
 			</div>
