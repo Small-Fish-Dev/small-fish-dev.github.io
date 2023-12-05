@@ -6,6 +6,7 @@
 	import { quintOut } from 'svelte/easing';
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import Icon from '@iconify/svelte';
+	import StatCard from '$lib/components/StatCard.svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -126,7 +127,7 @@
 				big hits, such as...
 			</p>
 		</div>
-		<div class="flex flex-wrap justify-center py-8">
+		<div class="flex flex-wrap justify-center gap-4 py-8">
 			<ProjectLink
 				imagePath="/home/goblin-tide.png"
 				description="Steal moni. Set whole village afire. Life good."
@@ -159,6 +160,10 @@
 				</a>
 			</div>
 		</div>
-		<div class="h-48 bg-navyblue"></div>
+		<div class="flex w-full flex-wrap justify-center gap-4 py-8">
+			<img src="/home/concretefree.png" alt="poop tavern" class="h-20 rounded-lg" />
+			<img src="/home/pegi.png" alt="pegi 12" class="h-20 rounded-lg" />
+			<img src="/home/trustpilot.png" alt="poop tavern" class="h-20 rounded-lg" />
+		</div>
 	</body>
 </div>

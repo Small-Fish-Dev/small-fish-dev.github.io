@@ -41,7 +41,7 @@
 		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="hover:drop-shadow-hover drop-shadow-md transition-all text-shadow hover:-translate-y-2"
+				class="drop-shadow-md transition-all text-shadow hover:-translate-y-2 hover:drop-shadow-hover"
 			>
 				<div class="flex flex-col overflow-hidden rounded-lg md:flex-row">
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
