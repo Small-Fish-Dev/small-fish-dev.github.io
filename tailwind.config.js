@@ -10,7 +10,8 @@ export default {
 			black: '#000000',
 			darkblue: '#091856',
 			gray: '#e2e2e2',
-			lightblue: '#0092ff'
+			lightblue: '#0092ff',
+			transparent: 'transparent'
 		},
 		extend: {
 			fontFamily: {

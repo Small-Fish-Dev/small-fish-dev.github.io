@@ -93,11 +93,9 @@
 				</div>
 			</div>
 		{/if}
-
 		<div
-			class="absolute z-20 h-full w-auto w-full max-w-none animate-scroll bg-pixel opacity-75 mix-blend-multiply"
+			class="from-transparent absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-80% to-darkblue"
 		/>
-		<div class="background-fade absolute z-10 h-full w-auto w-full max-w-none" />
 
 		<!-- Background video -->
 		{#if videos && firstVideoLoaded}
@@ -107,7 +105,7 @@
 						preload="auto"
 						autoplay
 						muted
-						class="z-5 absolute h-full w-full object-cover"
+						class="z-5 absolute h-full w-full object-cover blur-sm"
 						on:loadeddata={() => cacheNextVideo()}
 						on:ended={() => loadNextvideo()}
 						in:fly={{ duration: 600, y: '100%', opacity: 1, easing: quintOut }}
@@ -119,10 +117,5 @@
 			</div>
 		{/if}
 	</header>
+	<body class="h-96 bg-darkblue"> </body>
 </div>
-
-<style>
-	.background-fade {
-		background: linear-gradient(0deg, #0e1233 0%, transparent 50%);
-	}
-</style>
