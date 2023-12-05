@@ -5,6 +5,8 @@
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
+	import Icon from '@iconify/svelte';
+	import StatCard from '$lib/components/StatCard.svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -82,7 +84,7 @@
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
 					<p
-						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy md:text-4xl"
+						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy hover:animate-wiggle md:text-4xl"
 					>
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
@@ -95,7 +97,7 @@
 			</div>
 		{/if}
 		<div
-			class="from-transparentblue to-navyblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60%"
+			class="absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-transparentblue from-60% to-navyblue"
 		/>
 
 		<!-- Background video -->
@@ -125,11 +127,11 @@
 				big hits, such as...
 			</p>
 		</div>
-		<div class="flex flex-wrap justify-center py-8">
+		<div class="flex flex-wrap justify-center gap-4 py-8">
 			<ProjectLink
 				imagePath="/home/goblin-tide.png"
 				description="Steal moni. Set whole village afire. Life good."
-				buttonText="More about GoblinTide"
+				buttonText="More about Goblin Tide"
 				buttonLink="https://www.youtube.com/watch?v=kfTCxoYRMT4"
 			/>
 			<ProjectLink
@@ -138,6 +140,30 @@
 				buttonText="More about In This House"
 				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
 			/>
+		</div>
+		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
+			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
+				<p class="text-center text-2xl font-bold">
+					We write interesting things sometimes! Check out the blog here
+				</p>
+				<a
+					href="/blog"
+					class="flex items-center rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
+				>
+					<Icon icon="ic:sharp-newspaper" class="mr-2" />
+					Amazing Blog Posts
+					<img
+						src="/home/fishsoy.png"
+						alt="soy fish"
+						class="absolute left-[-40px] top-[30px] w-[80px] hover:animate-wiggle"
+					/>
+				</a>
+			</div>
+		</div>
+		<div class="flex w-full flex-wrap justify-center gap-4 py-8">
+			<img src="/home/concretefree.png" alt="poop tavern" class="h-20 rounded-lg" />
+			<img src="/home/pegi.png" alt="pegi 12" class="h-20 rounded-lg" />
+			<img src="/home/trustpilot.png" alt="poop tavern" class="h-20 rounded-lg" />
 		</div>
 	</body>
 </div>
