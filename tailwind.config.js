@@ -6,6 +6,7 @@ export default {
 	theme: {
 		colors: {
 			white: '#FFFFFF',
+			transparentblue: '#2447f779',
 			blue: '#2446f7',
 			black: '#000000',
 			darkblue: '#091856',

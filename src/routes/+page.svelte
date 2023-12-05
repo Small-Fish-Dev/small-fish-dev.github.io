@@ -94,7 +94,7 @@
 			</div>
 		{/if}
 		<div
-			class="from-transparent absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-80% to-darkblue"
+			class="from-transparentblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60% to-darkblue"
 		/>
 
 		<!-- Background video -->
@@ -117,5 +117,5 @@
 			</div>
 		{/if}
 	</header>
-	<body class="h-96 bg-darkblue"> </body>
+	<body></body>
 </div>
