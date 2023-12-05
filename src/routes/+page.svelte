@@ -82,7 +82,7 @@
 				<img src="home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
 					<p
-						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy md:text-4xl"
+						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy hover:animate-wiggle md:text-4xl"
 					>
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
@@ -95,7 +95,7 @@
 			</div>
 		{/if}
 		<div
-			class="from-transparentblue to-navyblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60%"
+			class="absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-transparentblue from-60% to-navyblue"
 		/>
 
 		<!-- Background video -->
@@ -139,5 +139,23 @@
 				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
 			/>
 		</div>
+		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
+			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
+				<p class="text-center text-2xl font-bold">
+					We have other games too! Check out the full collection here
+				</p>
+				<a
+					href="/"
+					class="rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
+				>
+					Small Fish Games
+					<img
+						src="/home/fishsoy.png"
+						class="absolute left-[-30px] top-[30px] w-[80px] hover:animate-wiggle"
+					/>
+				</a>
+			</div>
+		</div>
+		<div class="h-48 bg-navyblue"></div>
 	</body>
 </div>
