@@ -10,6 +10,7 @@ export default {
 			blue: '#2446f7',
 			black: '#000000',
 			darkblue: '#091856',
+			navyblue: '#0f2898',
 			gray: '#e2e2e2',
 			lightblue: '#0092ff',
 			transparent: 'transparent'

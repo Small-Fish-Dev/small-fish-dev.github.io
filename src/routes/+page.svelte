@@ -4,6 +4,7 @@
 	import SocialButton from '$lib/components/SocialButton.svelte';
 	import { Slogans } from '$lib/types/Slogan';
 	import { quintOut } from 'svelte/easing';
+	import ProjectLink from '$lib/components/ProjectLink.svelte';
 
 	let ready = false;
 	onMount(() => {
@@ -94,7 +95,7 @@
 			</div>
 		{/if}
 		<div
-			class="from-transparentblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60% to-darkblue"
+			class="from-transparentblue to-navyblue absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-60%"
 		/>
 
 		<!-- Background video -->
@@ -117,5 +118,26 @@
 			</div>
 		{/if}
 	</header>
-	<body></body>
+	<body class="bg-navyblue">
+		<div class="flex justify-center px-2 pt-8 text-center">
+			<p class="font-poppins text-xl font-bold text-white text-shadow md:w-1/2">
+				Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
+				big hits, such as...
+			</p>
+		</div>
+		<div class="flex flex-wrap justify-center py-8">
+			<ProjectLink
+				imagePath="/home/goblin-tide.png"
+				description="Steal moni. Set whole village afire. Life good."
+				buttonText="More about GoblinTide"
+				buttonLink="https://www.youtube.com/watch?v=kfTCxoYRMT4"
+			/>
+			<ProjectLink
+				imagePath="/home/inthishouse.png"
+				description="This house is said to be haunted by the ghost of a lady..."
+				buttonText="More about In This House"
+				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
+			/>
+		</div>
+	</body>
 </div>
