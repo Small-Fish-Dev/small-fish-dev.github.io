@@ -56,10 +56,17 @@ export default {
 					'100%': {
 						backgroundPosition: '100% 100%'
 					}
+				},
+				wiggle: {
+					'0%, 100%': { transform: 'rotate(0deg)' },
+					'25%': { transform: 'rotate(1deg)' },
+					'50%': { transform: 'rotate(-1deg)' },
+					'75%': { transform: 'rotate(1deg)' }
 				}
 			},
 			animation: {
-				scroll: 'scrolling 120s infinite linear'
+				scroll: 'scrolling 120s infinite linear',
+				wiggle: 'wiggle 1s ease-in-out infinite'
 			},
 			typography: {
 				DEFAULT: {

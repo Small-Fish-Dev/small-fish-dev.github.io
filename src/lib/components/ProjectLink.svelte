@@ -7,7 +7,7 @@
 </script>
 
 <section class="flex flex-col px-2 text-center font-poppins text-white text-shadow">
-	<img src={imagePath} alt={imagePath} class="w-[500px] self-center" />
+	<img src={imagePath} alt={imagePath} class="hover:animate-wiggle w-[500px] self-center" />
 	<p class="text-lg font-light">{description}</p>
 	<a
 		href={buttonLink}
