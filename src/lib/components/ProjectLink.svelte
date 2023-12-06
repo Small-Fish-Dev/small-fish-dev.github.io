@@ -9,7 +9,7 @@
 <section class="flex flex-col px-2 text-center font-poppins text-white text-shadow">
 	<img src={imagePath} alt={imagePath} class="w-[500px] self-center hover:animate-wiggle" />
 	<div class="flex justify-center">
-		<p class="h-[50px] w-[500px] text-lg font-light">{description}</p>
+		<p class="text-lg font-light md:h-[50px] md:w-[500px]">{description}</p>
 	</div>
 	<a
 		href={buttonLink}
