@@ -66,7 +66,7 @@
 				</div>
 				<div class="flex items-center text-lg font-medium">
 					<Icon
-						icon="material-symbols:calendar-today-outline-sharp"
+						icon="material-symbols:calendar-today"
 						class="mr-1"
 						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
 					/>
@@ -99,7 +99,7 @@
 
 	{#if data.nextfrontmatter}
 		<div
-			class="hover:drop-shadow-hover relative overflow-hidden text-white drop-shadow-md transition-all text-shadow hover:-translate-y-1 md:mb-8 md:rounded-lg"
+			class="relative overflow-hidden text-white drop-shadow-md transition-all text-shadow hover:-translate-y-1 hover:drop-shadow-hover md:mb-8 md:rounded-lg"
 		>
 			<a rel="external" target="_self" href={data.nextfrontmatter.slug}>
 				{#if data.nextfrontmatter.thumbnail}

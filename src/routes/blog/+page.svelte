@@ -74,7 +74,7 @@
 							{/if}
 							<div class="flex items-center text-lg font-medium text-white">
 								<Icon
-									icon="material-symbols:calendar-today-outline-sharp"
+									icon="material-symbols:calendar-today"
 									class="mr-1"
 									style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
 								/>

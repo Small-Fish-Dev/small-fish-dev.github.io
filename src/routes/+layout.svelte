@@ -15,7 +15,7 @@
 		},
 		{
 			label: 'blogs',
-			icon: 'ic:sharp-newspaper',
+			icon: 'material-symbols:newspaper',
 			href: '/blog'
 		}
 		// {

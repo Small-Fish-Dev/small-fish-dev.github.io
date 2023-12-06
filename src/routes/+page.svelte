@@ -143,15 +143,15 @@
 		</div>
 		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
 			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
-				<p class="text-center text-2xl font-bold">
-					We write interesting things sometimes! Check out the blog here
+				<p class="text-center text-2xl font-bold md:w-1/2 md:pr-4">
+					We teach you how to make games. Graduate from our Fish School program!
 				</p>
 				<a
-					href="/blog"
+					href="https://www.youtube.com/watch?v=ijju9rbeN1A&list=PLIcPBTNc7_9oFEEoHSCuPrdGQnU27yLuj"
 					class="flex items-center rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
 				>
-					<Icon icon="ic:sharp-newspaper" class="mr-2" />
-					Amazing Blog Posts
+					<Icon icon="fluent:hat-graduation-12-filled" class="mr-2" />
+					Fish School
 					<img
 						src="/home/fishsoy.png"
 						alt="soy fish"
@@ -168,7 +168,7 @@
 				link="https://www.youtube.com/watch?v=z3VGIuZaGnI&list=PLIcPBTNc7_9qJi73IXO2fUCZG4aIdo8sk"
 			/>
 			<StatCard
-				count="178"
+				count="180+"
 				countType="models"
 				description="uploaded to asset.party"
 				link="https://asset.party/fish"
