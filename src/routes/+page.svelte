@@ -136,7 +136,7 @@
 			/>
 			<ProjectLink
 				imagePath="/home/inthishouse.png"
-				description="This house is said to be haunted by the ghost of a lady..."
+				description="A dangerous dive into a strange house to extract mysterious valuable artifacts..."
 				buttonText="More about In This House"
 				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
 			/>
