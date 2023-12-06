@@ -161,6 +161,26 @@
 			</div>
 		</div>
 		<div class="flex w-full flex-wrap justify-center gap-4 py-8">
+			<StatCard
+				count="23"
+				countType="videos"
+				description="of Fish School & Fish Bites"
+				link="https://www.youtube.com/watch?v=z3VGIuZaGnI&list=PLIcPBTNc7_9qJi73IXO2fUCZG4aIdo8sk"
+			/>
+			<StatCard
+				count="178"
+				countType="models"
+				description="uploaded to asset.party"
+				link="https://asset.party/fish"
+			/>
+			<StatCard
+				count="20"
+				countType="banned"
+				description="from the Small Fish discord"
+				link="https://discord.gg/rx2qqTqv36"
+			/>
+		</div>
+		<div class="flex w-full flex-wrap justify-center gap-4 pb-8 pt-4">
 			<img src="/home/concretefree.png" alt="poop tavern" class="h-20 rounded-lg" />
 			<img src="/home/pegi.png" alt="pegi 12" class="h-20 rounded-lg" />
 			<img src="/home/trustpilot.png" alt="poop tavern" class="h-20 rounded-lg" />
