@@ -181,9 +181,17 @@
 			/>
 		</div>
 		<div class="flex w-full flex-wrap justify-center gap-4 pb-8 pt-4">
-			<img src="/home/concretefree.png" alt="poop tavern" class="h-20 rounded-lg" />
-			<img src="/home/pegi.png" alt="pegi 12" class="h-20 rounded-lg" />
-			<img src="/home/trustpilot.png" alt="poop tavern" class="h-20 rounded-lg" />
+			<img
+				src="/home/concretefree.png"
+				alt="poop tavern"
+				class="h-20 rounded-lg hover:animate-wiggle"
+			/>
+			<img src="/home/pegi.png" alt="pegi 12" class="h-20 rounded-lg hover:animate-wiggle" />
+			<img
+				src="/home/trustpilot.png"
+				alt="poop tavern"
+				class="h-20 rounded-lg hover:animate-wiggle"
+			/>
 		</div>
 	</body>
 </div>
