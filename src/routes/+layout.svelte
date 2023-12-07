@@ -5,7 +5,9 @@
 	import { slide } from 'svelte/transition';
 	import { navigating } from '$app/stores';
 	import NavButton from '$lib/components/Nav-Button.svelte';
+	import Snow from '$lib/components/Snow.svelte';
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
 
 	const routes: App.Route[] = [
 		{
@@ -27,7 +29,13 @@
 
 	let isMenuOpen = false;
 	$: if ($navigating) isMenuOpen = false;
+
+	let displaySnow = new Date().getMonth() + 1 == 12;
 </script>
+
+{#if displaySnow}
+	<Snow />
+{/if}
 
 <nav class="sticky top-0 z-50 mx-auto flex w-full flex-col bg-blue p-2 drop-shadow-md">
 	<div class="container mx-auto flex flex-row items-center justify-between">
