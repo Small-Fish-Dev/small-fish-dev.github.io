@@ -3,20 +3,16 @@
 <div class="snowflakes" aria-hidden="true" style="z-index: 500;">
 	{#each { length: 12 } as _, i}
 		<div class="snowflake">
-			<div class="inner">❄</div>
+			<img
+				src="/home/winter/snowflake_{Math.floor(Math.random() * 4) + 1}.png"
+				alt="Snowflake"
+				class="inner"
+			/>
 		</div>
 	{/each}
 </div>
 
 <style>
-	/* customizable snowflake styling */
-	.snowflake {
-		color: #fff;
-		font-size: 1.3em;
-		font-family: Arial, sans-serif;
-		text-shadow: 0 0 5px #000;
-	}
-
 	.snowflake,
 	.snowflake .inner {
 		animation-iteration-count: infinite;
