@@ -38,8 +38,9 @@ export default {
 				hover: '0px 6px 2px #091856'
 			},
 			backgroundImage: {
-				pixel: "url('/home/pixel-overlay.png')",
-				'pixel-white': "url('/home/pixel-overlay-white.png')"
+				pixel: "url('/common/pixel-overlay.png')",
+				'pixel-white': "url('/common/pixel-overlay-white.png')",
+				'pixel-large': "url('/common/pixel-overlay-large.png')"
 			},
 			backgroundSize: {
 				pixel: '7px',

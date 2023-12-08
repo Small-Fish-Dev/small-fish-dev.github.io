@@ -30,10 +30,10 @@
 	let isMenuOpen = false;
 	$: if ($navigating) isMenuOpen = false;
 
-	let displaySnow = new Date().getMonth() + 1 == 12;
+	const isDecember = new Date().getMonth() + 1 == 12;
 </script>
 
-{#if displaySnow}
+{#if isDecember}
 	<Snow />
 {/if}
 
@@ -43,7 +43,7 @@
 			href="/"
 			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/logo-round.png" alt="round logo" class="h-8 pr-2" />
+			<img src="/common/logo-round.png" alt="round logo" class="h-8 pr-2" />
 			<p>small fish</p></a
 		>
 		<div class="hidden flex-row items-center gap-2 md:flex">

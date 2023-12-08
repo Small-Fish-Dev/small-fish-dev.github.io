@@ -118,6 +118,8 @@
 					</video>
 				{/each}
 			</div>
+		{:else}
+			<div class="bg-pixel-large absolute h-full w-full animate-scroll" />
 		{/if}
 	</header>
 	<body class="bg-navyblue">

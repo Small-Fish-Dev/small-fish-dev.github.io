@@ -223,7 +223,7 @@
 </script>
 
 <div class="h-screen w-full overflow-hidden">
-	<div class="scroll h-full w-full bg-[url('/team/pxgrid.png')]">
+	<div class="scroll bg-pixel-large h-full w-full">
 		{#await promise then options}
 			<canvas
 				bind:this={canvas}
