@@ -6,6 +6,6 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <!-- svelte-ignore a11y-media-has-caption -->
-<video class="mx-auto flex justify-center" controls>
+<video class="mx-auto flex justify-center rounded-lg" controls>
 	<source src="/blogs/{$page.params.slug}/{src}" />
 </video>

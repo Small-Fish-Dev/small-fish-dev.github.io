@@ -49,7 +49,7 @@
 	use:swipeable
 	on:swiped={swipeHandler}
 	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden
-		{$page.route.id == '/blog/[slug]' ? 'blog' : ''} {className}"
+		{$page.route.id == '/blog/[slug]' ? 'blog rounded-lg' : ''} {className}"
 >
 	<!-- Current image-->
 	<p
@@ -80,10 +80,10 @@
 		class="absolute z-10 top-0 left-0 pointer-events-auto flex w-full h-full justify-between items-center text-6xl text-white"
 	>
 		<button class="transition-all hover:scale-110" on:click={() => move(-1)}>
-			<Icon icon="material-symbols:arrow-back-ios-new" />
+			<Icon icon="material-symbols:arrow-back-ios-new-rounded" />
 		</button>
 		<button class="transition-all hover:scale-110" on:click={() => move(1)}>
-			<Icon icon="material-symbols:arrow-forward-ios" />
+			<Icon icon="material-symbols:arrow-forward-ios-rounded" />
 		</button>
 	</div>
 

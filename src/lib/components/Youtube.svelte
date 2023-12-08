@@ -2,7 +2,7 @@
 	export let id: String;
 </script>
 
-<div class="video-container">
+<div class="video-container rounded-lg overflow-hidden">
 	<iframe
 		title="Youtube video"
 		src={`https://www.youtube.com/embed/${id}`}
