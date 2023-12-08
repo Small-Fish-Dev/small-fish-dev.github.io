@@ -88,6 +88,7 @@
 		bg-white
 		p-5
 		drop-shadow-md
+		prose-pre:drop-shadow-md
 		lg:prose-xl
 		prose-a:text-blue
 		hover:prose-a:text-lightblue

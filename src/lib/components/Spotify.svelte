@@ -16,7 +16,7 @@
 	<iframe
 		data-testid="spotify"
 		title={`spotify-${src}`}
-		class="spotify-sveltekit-embed"
+		class="spotify-sveltekit-embed drop-shadow-md"
 		src={`https://open.spotify.com/embed/${src}`}
 		frameBorder="0"
 		allow="encrypted-media"

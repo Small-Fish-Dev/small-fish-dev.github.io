@@ -23,7 +23,7 @@
 	onDestroy(remove_twitter_widget_script);
 </script>
 
-<div class="tweet-wrapper">
+<div class="tweet-wrapper drop-shadow-md">
 	<blockquote class="twitter-tweet">
 		<!-- svelte-ignore a11y-missing-content -->
 		<a href={`https://twitter.com/${id}`}></a>

@@ -44,12 +44,11 @@
 	});
 </script>
 
-<!-- The width clamping is kinda hardcoded, should probably look more into this. -->
 <div
 	use:swipeable
 	on:swiped={swipeHandler}
 	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden
-		{$page.route.id == '/blog/[slug]' ? 'blog rounded-lg' : ''} {className}"
+		{$page.route.id == '/blog/[slug]' ? 'blog rounded-lg drop-shadow-md' : ''} {className}"
 >
 	<!-- Current image-->
 	<p
