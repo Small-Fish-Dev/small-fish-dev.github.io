@@ -26,8 +26,10 @@
 	};
 
 	function getHost(url: URL) {
-		let split = url.hostname.split('.');
-		let name = split[Math.max(split.length - 2, 0)];
+		const isEmail = url.href.includes('mailto:');
+		const hostname = isEmail ? 'email' : url.hostname;
+		const split = hostname.split('.');
+		const name = split[Math.max(split.length - 2, 0)];
 		if (split.length > 1) return `${name}.${split[split.length - 1]}`;
 
 		return name;
@@ -53,7 +55,7 @@
 	<HoverIcon
 		src={tryGetIcon(href)}
 		showTop={showHoverTop}
-		class="transition-all uppercase font-poppins text-sm"
+		class="font-poppins text-sm uppercase transition-all"
 		text={host}
 	/>
 </a>

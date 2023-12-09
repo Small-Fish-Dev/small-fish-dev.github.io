@@ -29,7 +29,8 @@
 		'https://twitter.com/SmallFishDev',
 		'https://www.youtube.com/@SmallFishDev',
 		'https://asset.party/fish',
-		'https://discord.gg/rx2qqTqv36'
+		'https://discord.gg/rx2qqTqv36',
+		'mailto:info@smallfi.sh'
 	];
 
 	const shuffle = (array: string[]) => {
@@ -119,7 +120,7 @@
 				{/each}
 			</div>
 		{:else}
-			<div class="bg-pixel-large absolute h-full w-full animate-scroll" />
+			<div class="absolute h-full w-full animate-scroll bg-pixel-large" />
 		{/if}
 	</header>
 	<body class="bg-navyblue">
