@@ -22,7 +22,8 @@
 		'itch.io': '/socials/itch.png',
 		'discord.gg': '/socials/discord.png',
 		'asset.party': '/socials/asset_party.png',
-		'soundcloud.com': '/socials/soundcloud.png'
+		'soundcloud.com': '/socials/soundcloud.png',
+		email: '/socials/gmail.png'
 	};
 
 	function getHost(url: URL) {
