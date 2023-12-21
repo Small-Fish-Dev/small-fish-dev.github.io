@@ -1,6 +1,9 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 /// <reference types="@react2svelte/swipeable" />
+
+import type { Member } from '$lib/types/Member';
+
 declare global {
 	namespace App {
 		// interface Error {}
@@ -29,6 +32,7 @@ declare global {
 			description: string;
 			published: boolean;
 			publisher: string;
+			member?: Member;
 		}
 	}
 }
