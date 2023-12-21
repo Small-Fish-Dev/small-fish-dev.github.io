@@ -4,7 +4,6 @@ thumbnail: 'cryptid_hunt.png'
 date: '2022-11-1'
 description: '2022 Gvarados Halloween Horror Super Jam entry'
 publisher: 'luke'
-published: true
 ---
 
 We have even more developers than the last jam, so this should go well!

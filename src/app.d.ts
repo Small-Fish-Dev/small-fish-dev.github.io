@@ -30,7 +30,6 @@ declare global {
 			thumbnail: string;
 			date: string;
 			description: string;
-			published: boolean;
 			publisher: string;
 			member?: Member;
 		}

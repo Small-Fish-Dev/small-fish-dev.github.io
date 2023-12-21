@@ -4,7 +4,6 @@ thumbnail: 'thumbnail.png'
 date: '2022-1-1'
 description: '2021 Eagle One Jambox entry'
 publisher: 'luke'
-published: true
 ---
 
 We successfully completed our first-ever game jam and officially formed a team of developers!

@@ -4,7 +4,6 @@ thumbnail: 'thumbnail.jpg'
 date: '2023-11-21'
 description: 'My personal experience with finding out you were too late at capitalizing a trend'
 publisher: 'ubre'
-published: true
 ---
 
 Have you ever scrolled past a game or a meme that reminded you of something you were working on in the past but gave up?

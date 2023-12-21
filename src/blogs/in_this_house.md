@@ -4,7 +4,6 @@ thumbnail: 'thumbnail.jpg'
 publisher: 'luke'
 description: '2023 Brickjam entry'
 date: '2023-11-1'
-published: true
 ---
 
 It's that time of year again—the winter/halloween jams are upon us.

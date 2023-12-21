@@ -4,7 +4,6 @@ thumbnail: 'map.png'
 date: '2023-11-20'
 description: 'We wrote our own fucking website'
 publisher: 'matek'
-published: true
 ---
 
 For the past few weeks, we have been hard at work developing our new website. Finally, we are ready to unveil it. This post will cover some of the implementation details and hurdles we faced during development. If you want to check out the source code, it's available [here](https://github.com/Small-Fish-Dev/small-fish-dev.github.io).
