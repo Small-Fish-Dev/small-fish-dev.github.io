@@ -5,5 +5,5 @@ export const Slogans: string[] = [
 	'we make waves! not just games...',
 	'bóbr, kurwa!',
 	"hey, what's up?",
-	"nolankicks is not a memeber"
+	"nolankicks is not a member"
 ];
