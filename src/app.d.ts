@@ -31,6 +31,7 @@ declare global {
 			date: string;
 			description: string;
 			publisher: string;
+			published?: boolean;
 			member?: Member;
 		}
 	}
