@@ -18,10 +18,6 @@ I think they're pretty important considering the fact that we want to keep worki
 These tools helped us during the jam, and will keep doing so in the future.
 The interaction bounds gizmos only ended up being used for the slot machine, but maybe in the future we'll want to use it for stuff like the radio buttons.
 
-<Heading title="UI" caption="by wheatleymf, gio, matek and ceitine" />
-
-Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good.
-
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
 The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The perfect way to handle this was a component that held a property list of `Interaction` objects. The most important field in the `Interaction` object was an action graph definition. This would allow us to add interactions through the editor and define the behaviour via action graph.
@@ -53,6 +49,24 @@ interactions.AddInteraction( new Interaction()
 ```
 
 This would ensure that every single item in our game by default can use the same pickup interaction.
+
+<Heading title="Dialogue System" caption="by matek" />
+
+We didn't have much time and a dialogue system needed to be implemented. The only thing I knew is that I wanted to use the action graph to drive the dialogue tree behaviour. With a perfectly good interaction system already built, I decided to build the dialogue system on top of the interaction system.
+
+Here is an example of one of the dialogue interactions. You define a dialogue interaction very similarly to a regular interaction. It needs a keybind, description, and an action graph function to execute.
+
+<Img src="dialogue_interaction.jpg" />
+
+Then we just use the action graph function to execute any dialogue and move us to any other dialogue stage we need!
+
+<Img src="dialogue_actiongraph.jpg" />
+
+If you have not realized already action graph played a major part with our ability to produce mass amounts of content for our game.
+
+<Heading title="UI" caption="by wheatleymf, gio, matek and ceitine" />
+
+Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good.
 
 <Heading h="h4" title="Character Creation" caption="by ceitine" />
 Initially, I wasn't sure if the designs were a bit too ambitious for what we could do in a month, but I ended up doing most of the character creation on the first week's weekend. I did do adjustments and improvements to it through out the whole contest though.
