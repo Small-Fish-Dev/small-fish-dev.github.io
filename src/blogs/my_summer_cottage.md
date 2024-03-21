@@ -9,15 +9,6 @@ published: false
 
 This is our journey on the first s&box game contest. We all think we did pretty good...
 
-<Heading title="Tools & Gizmos" caption="by ceitine and ubre" />
-Ubre and I spent some time adding cool gizmos and tools for our game just to make it faster to push out content.
-I think they're pretty important considering the fact that we want to keep working on this game in the future.
-
-<ImageCollage images={["hold_tool.jpg", "icon_tool.jpg", "interaction.jpg", "signal_widget.jpg"]} />
-
-These tools helped us during the jam, and will keep doing so in the future.
-The interaction bounds gizmos only ended up being used for the slot machine, but maybe in the future we'll want to use it for stuff like the radio buttons.
-
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
 The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The perfect way to handle this was a component that held a property list of `Interaction` objects. The most important field in the `Interaction` object was an action graph definition. This would allow us to add interactions through the editor and define the behaviour via action graph.
@@ -61,6 +52,14 @@ Here is an example of one of the dialogue interactions. You define a dialogue in
 Then we just use the action graph function to execute any dialogue and move us to any other dialogue stage we need!
 
 <Img src="dialogue_actiongraph.jpg" />
+
+<Heading title="Tools & Gizmos" caption="by ceitine and ubre" />
+Ubre and I spent some time adding cool gizmos and tools for our game just to make it faster to push out content.
+I think they're pretty important considering the fact that we want to keep working on this game in the future.
+
+<ImageCollage images={["hold_tool.jpg", "icon_tool.jpg", "interaction.jpg", "signal_widget.jpg"]} />
+
+These tools helped us during the jam, and will keep doing so in the future. We even added onto our interaction system by setting up interaction bounds gizmos. This only ended up being used for the slot machine, but, maybe in the future we'll want to use it for more functionality like radio buttons.
 
 If you have not realized already action graph played a major part with our ability to produce mass amounts of content for our game.
 
