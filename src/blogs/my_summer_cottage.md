@@ -80,11 +80,11 @@ Here are the initial UI designs by wheatley, and what I managed to turn them int
 I just gathered a list of many props and made them.
 I also kept stealing props from wheatleys list and making them to give him time on the map.
 Overall, if someone said "hey we need X model" I would just quickly bang it out in an hour or two and thats how all these models came to be.
-<ImageCollage images={["lukes/props1.png", "lukes/props2.png", "lukes/props3.png", "lukes/props4.png", "lukes/props5.png", "lukes/items.png" ]} />
+<ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
 
 <Heading title="Clothing" caption="by Luke" />
 I did all the clothing. In total, counting re-skins and coloured variations i did around 96 pieces of clothing.
-<ImageCollage images={["clothing1.png", "clothing2.png", "clothing3.png", "clothing4.png", "clothing5.png",]} />
+<ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
 
 It was just the bog standard clothing modelling process, make model, skin model to rig, make sure it fits playermodel.
 However I made massive used of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh),
@@ -92,7 +92,7 @@ since we have a fatness morph and needed clothing to also have fatness, here is 
 <Img src="morph_transfer.gif" />
 
 Then setting up the clothing prefab, just add a skinned model renderer, then use our item equipment comonent, then set up icon and it just works!
-<ImageCollage images={["clothing_prefab.png", "clothing_icon.png"]} />
+<ImageCollage images={["clothing_prefab.jpg", "clothing_icon.jpg"]} />
 
 <Heading title="Particles" caption="by Luke" />
 Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points. 
