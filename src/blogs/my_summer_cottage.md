@@ -4,7 +4,7 @@ thumbnail: 'bg.jpg'
 date: '2024-3-20'
 description: "Our submission for Facepunch's first s&box game contest!"
 publisher: 'matek'
-published: true
+published: false
 ---
 
 This is our journey on the first s&box game contest. We all think we did pretty good...
