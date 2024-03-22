@@ -4,7 +4,7 @@ thumbnail: 'bg.jpg'
 date: '2024-3-20'
 description: "Our submission for Facepunch's first s&box game contest!"
 publisher: 'matek'
-published: false
+published: true
 ---
 
 This is our journey on the first s&box game contest. We all think we did pretty good...
@@ -73,3 +73,33 @@ Initially, I wasn't sure if the designs were a bit too ambitious for what we cou
 Here are the initial UI designs by wheatley, and what I managed to turn them into.
 <ImageCollage images={["passport.jpg", "appearance.jpg", "dressing_up.jpg", "mugshot.jpg"]} />
 <ImageCollage images={["passport_wheatley.jpg", "appearance_wheatley.jpg", "dressing_up_wheatley.jpg", "mugshot_wheatley.jpg"]} />
+
+<Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
+
+<Heading h="h4" title="Lukes" />
+I just gathered a list of many props and made them.
+I also kept stealing props from wheatleys list and making them to give him time on the map.
+Overall, if someone said "hey we need X model" I would just quickly bang it out in an hour or two and thats how all these models came to be.
+<ImageCollage images={["lukes/props1.png", "lukes/props2.png", "lukes/props3.png", "lukes/props4.png", "lukes/props5.png", "lukes/items.png" ]} />
+
+<Heading title="Clothing" caption="by Luke" />
+I did all the clothing. In total, counting re-skins and coloured variations i did around 96 pieces of clothing.
+<ImageCollage images={["clothing1.png", "clothing2.png", "clothing3.png", "clothing4.png", "clothing5.png",]} />
+
+It was just the bog standard clothing modelling process, make model, skin model to rig, make sure it fits playermodel.
+However I made massive used of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh),
+since we have a fatness morph and needed clothing to also have fatness, here is an example of it working, it worked perfect almost every time!
+<Img src="morph_transfer.gif" />
+
+Then setting up the clothing prefab, just add a skinned model renderer, then use our item equipment comonent, then set up icon and it just works!
+<ImageCollage images={["clothing_prefab.png", "clothing_icon.png"]} />
+
+<Heading title="Particles" caption="by Luke" />
+Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points. 
+
+So instead I taught myself the new particle system and attempted to work around its limitations. While I'm not entirely satisfied with the results and felt restricted, it serves its purpose.
+
+Additionally, I created custom sprites for our particles, including both animated and static variations. 
+
+Here are the finaly particles, along with some unused particles.
+<ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif" ]} />
