@@ -133,6 +133,22 @@ I wanted to get over that fear for this game jam, so I had the help of Luke, Whe
 
 The best way I learned to make decent psx style models that could be near the same level as wheatleys, was to use photoshop to texture, resize the image to 128 x 128, 256 x256 if it was a big item, then change the photoshop mode to indexed color. This would create a really good effect as you can see on most of my models they came out to be very stylized to what we were doing. In the future I want to try what wheatley does, by making high quality models, then compressing them down. I think it gives it a really high quality look even though its psx style. Something new and fresh.
 
+<Heading title="NPCs" caption="by ubre" />
+NPCs were a huge headache, as with every game jam I spend an absurd amount of time on NPCs.
+
+First off there's the question of pathfinding, our NPCs don't use pathfinding because Navmesh doesn't generate on such a big and conchplex map, we could've gotten away with it if there were no trees.
+What I implemented instead is an obstacle avoidance behaviour which surprisingly works well in our setting: It won't solve mazes, but it will enter buildings and avoid anything that's in the way.
+
+Unfortunately it's expensive, I can't just snap the NPC on the navmesh which already took collisions and terrain into account.
+I have to actually check what's around the NPC and use a very expensive MoveHelper to make it navigate the world, which is why you lag inside of the city despit the aggressive culling, we can't really have more than 5 active NPCs without the FPS being impacted. In the future I'll rework it not to use MoveHelpers which are usually reserved for player controllers.
+
+For the actual brain of the NPC, ActionGraph was the choice from the beginning, but I initially bit off more than I could chew by attempting to implement a full-on behaviour tree inside of it.
+
+When that and all other options didn't work out, I wrote down everything NPCs needed to do and realized it wasn't much, so I just had the following actions to attach ActionGraphs to: `OnIdle`, `OnEnemyDetected`, `OnEnemyAttacked`, `OnEnemyEscaped`, `OnSpawn`, `OnDeath`. Everything else was either a node or property.
+
+<ImageCollage images={["ubres/peeper_follow.jpg", "ubres/peeper_escape.jpg"]} />
+The logic for the creepy peeper following you and the logic for attacking you
+
 <Heading title="Yapping" caption="by Cyberagent" />
 
 I wrote a lot of story tasks, that sorta made it in, but due to time constraints, a lot didn't end up making it in. In a future update, I am going to get with everyone and add all the story tasks.
