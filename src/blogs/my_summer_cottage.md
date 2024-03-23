@@ -174,3 +174,18 @@ I don't know if I managed to help out by all the micro managing I did on everyon
 Other than that I am so proud of the work we did. My group is so talented and I am filled with joy everyday to be apart of it, and how special the group is makes me happier than i've ever been.
 
 Thank you Small Fish.
+
+<Heading title="What comes after?" caption="by ubre" />
+
+We'll be taking a break for a while, and I'll get back to Fish School soon after.
+
+As for My Summer Cottage, we eventually plan on releasing it on Steam, but there's a lot of work left to do.
+We have a lot that was scrapped, including systems and a story, some of these are already in the game but not hooked up to anything!
+
+We want to first fix any leftover bug, work on the performance as much as we can, and then expand some systems so they're not shit.
+Initially we planned on having hundreds of events and a month long story, but clearly we never got that far.
+We have it all written down too! So what's left now is to implement it all.
+
+See you soon!
+
+`&gt;&lt;&#40;&#40;&#40;&deg;&gt;`
