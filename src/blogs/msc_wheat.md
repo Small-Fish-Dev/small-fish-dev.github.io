@@ -8,67 +8,55 @@ published: false
 ---
 
 <Heading title="Environment Art" caption="by wheatleymf" />
-My contribution was creation of the environment art & UI design. This includes materials, some prop models, terrain and it's shader, cliffs (and it's shader too), nature assets like rocks and trees, character creation scene and other things. I suppose that someone above already showed off original UI concepts, so I'll just go over what I did for the in-game art. This turned out to be an extremely long wall of text, so I don't mind if you skip it all over, I just wanted to share my one-month-long journey.  
+I've ended up making making whole environment art for this game and UI design. That includes bunch of materials, some hard surface props, some nature props like rocks, cliffs and trees, whole UI, and some shader work like terrain & cliff shader. 
 
 <Heading h="h3" title="Terrain" />
-Oh boy, massive yapping ahead. By the time I have started working on My Summer Cottage, we still haven't agreed on many fundamental gameplay features but it was apparent that we'll need a better map with proper terrain. During that time Matt from Facepunch mentioned a few times that new Terrain System version is nearly done, but I've decided to look into implementing our own solution anyway — I knew that such new big features take time and it wouldn't hurt to have plan B.
+Terrain used in My Summer Cottage is a custom implementation that is done mostly in Hammer. When we've started working on this game, Matt's terrain system wasn't released yet so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance & frustum culling, some other fancy things, but after all final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game. 
 
-I've started with creating a test terrain in **World Creator** and then writing a custom terrain shader. I knew that one month is good enough to make a solid game, but not enough to afford experimenting with everything you want, so there is nothing fancy about this implementation: it supports only four splat maps, all data is baked and you're expected to import a complete terrain mesh. 
+Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. Resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature. 
 
---image goes here--
-
-Textures are applied with triplanar mapping. Splat blending is done in a very lazy way and I should've done it better, unfortunately splats still don't use normal maps. Since you import a complete mesh, you can't easily edit it. There are two benefits though, I could easily pass pre-baked normal and AO maps so terrain has better shading even when you lower the mesh resolution. 
-
-There was another problem! Terrain was imported right into Hammer. It is using the entire supported area so I couldn't nicely hide the edges of this terrain. Also, ubre couldn't get s&box to generate the navmesh properly, so I had to significantly lower the terrain resolution to something horribly low, but it didn't hurt the map much luckily.
-
---terrain material view image here--
-
-Terrain was meant to look much nicer initially. Along with custom terrain shader, I was also working on implementing grass so it would look alright in-game. I was hoping that I'd get it working through tessellation and geometry shader. I've got geometry shader working nicely -- grass size/color variation, frustum culling, and it all looked nice. But you have to tessellate your mesh to achieve acceptable grass density, and unfortunately I couldn't figure it out. Maybe it's just me, or there's something on s&box's end, but I was running out of time so I had to scrap it all.
-
---terrain before grass has been removed--
-
-In future updates for My Summer Cottage, I hope I will be able to figure out most issues and try use Matt's terrain system, even though this might require reworking a huge portion of the map. There's a huge room for terrain to improve.
+As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal & roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added a pre-baked normal and AO maps from a higher resolution version of this terrain mesh. 
 
 <Heading h="h3" title="Town" />
 --town image--
 
 Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
 
---wip screenshot from smallfish discord--
+--wip screenshots from smallfish discord--
 
-Nearly everything is filled with props made by Luke, he really saved my ass here and helped to make town feel more like a... town. Some stuff like trash bags, road signs and mail boxes are made by Cyber. Working with such limited timeframes takes many hours, so I couldn't resist adding some dumb easter eggs.
+Nearly everything is filled with props made by Luke, he really saved my ass here and helped to make town feel more like a... town. Some stuff like trash bags, road signs and mail boxes are made by Cyber. Working with such limited timeframes takes many hours and it can feel pressuring, so I couldn't resist adding some dumb easter eggs.
 
 --collage of gas station toilet with legs and bottle, competitive shitting in bar, "get well soon" elk--
 
-I had like 4-5 hours of sleep last week and it did fuck up my health a little. I'm getting old...
+I don't think anybody asked me to make the town as large as I did, because initially the plan was just a market, gas station and few points of interest, not an actual town. But I believed that we can do better stuff than just few shitshacks. I had like 4-5 hours of sleep last week and it did fuck up my health a little though. I'm getting old...
 
 <Heading h="h3" title="Police Station" />
 This game technically begins with police discovering you butt naked in forest, with no documents with you. That's the entire reason why you have to give your character a name, appearance and choose some starter clothes. Let me show you something that wasn't used in final game though — a corridor. You'd start in one of these cells and then follow the police officer. 
 
 --police station corridor pic here--
 
-This was the first map thing I've made for the game, and that's where I've made my first batch of materials. It was kind of helpful to decide which materials should be done, as well as figure out the best way to implement them and define for myself how do I imagine the final game.
+This was the first map thing I've made for the game, and it was quite helpful to decide which materials I need to add into the game. This is where Luke and I made first batch of props that I'd later use everywhere on the map.
 
 --police station character creation scene--
 
 <Heading h="h3" title="Materials" />
-Speaking of materials, I don't have much to tell here but have some stuff to show off. If you haven't seen my WAYWO post in s&box discord, then you can look at my stuff here. I've made all materials for the map and police station, more than 40 of them! Originally, all materials are made in 2k resolution since it makes easier to generate AO map for them and include little details.
+All materials are done in Substance Designer, and as some of you might know already, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. 
 
---bunch of mats here--
+-- assets --
 
-When it's complete, I'm downscaling the material to 256x256 resolution and apply indexed color mode in Photoshop, which creates limited palette and nice dithering pattern. To make it look better in-game, I usually also combine AO with albedo map before downscaling, it adds some depth to the material that can't be done via shading when texture is in such low resolution.
+Once new material is complete, I'd go to Photoshop and process each texture. Combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inacurrate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad consdering that total My Summer Cottage's size is ~300MB.
 
-The only exception are terrain materials - rock, grass, forest and stones materials, they're in 512x512 resolution since that makes them look more seamless. 
-
-<Heading h="h3" title="Nature — Trees" />
+<Heading h="h3" title="Nature — Foliage" />
 --render of oak trees--
 Hunting is an important part of the game, so forest had to look at least somewhat acceptable. So I've made 7 tree variants, three types of oak tree and four spruce trees. Oak tree was mainly used in areas like town and cottages, while spruce trees were in the "wild" area. 
 
 --render of spruce trees--
 
+I also wanted to do grass but unfortunately I couldn't come up a nice solution for it before we ran out of time. I'll try figuring this out later. 
+
 <Heading h="h3" title="Nature — Cliffs and Rocks" />
 --screenshot from twitter--
-Something I knew should be added are cliffs and rocks. Cliffs added some difficulty in exploring the wild area, and rocks just made it look slightly more believable. While there's nothing to tell about rocks, (it's just bunch of rocks generated in Blender using Displace modifier and some noise textures) there's something I did for cliffs...
+Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more complex.
 
 --cliff showcase video--
 
