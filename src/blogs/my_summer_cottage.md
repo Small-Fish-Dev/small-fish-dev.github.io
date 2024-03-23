@@ -63,6 +63,15 @@ These tools helped us during the jam, and will keep doing so in the future. We e
 
 If you have not realized already action graph played a major part with our ability to produce mass amounts of content for our game.
 
+<Heading h="h4" title="Signal Widget" caption="by ubre" />
+We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit but in the end the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
+
+As expected, the artists hated this system, it was mostly guessing and to know specific signals you had to look through the code and piece things together to get the correct signal.
+
+So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widger, is implicitly casted and equatable to string, and for the sake of working with ActionGraph I had to learn how to do custom JSON Serializers and Deserializers for it.
+
+<ImageCollage images={["ubres/signal_search.jpg", "ubres/signal_events.jpg", "ubres/signal_scene.jpg", "ubres/signal_task.jpg"]} />
+
 <Heading title="UI" caption="by wheatleymf, gio, matek and ceitine" />
 
 Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good.
