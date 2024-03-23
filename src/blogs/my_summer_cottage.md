@@ -135,27 +135,6 @@ I've added few little details into shader as well so it wouldn't look too bad, s
 
 As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal & roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added a pre-baked normal and AO maps from a higher resolution version of this terrain mesh. 
 
-<Heading h="h3" title="Town" />
-<Img src="whmf/town.png" />
-
-Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
-
-<ImageCollage images={["whmf/town3.png", "whmf/town2.png", "whmf/town1.png"]} />
-
-Nearly everything is filled with props made by Luke, he really saved my ass here and helped to make town feel more like a... town. Some stuff like trash bags, road signs and mail boxes are made by Cyber. Working with such limited timeframes takes many hours and it can feel pressuring, so I couldn't resist adding some dumb easter eggs.
-
-<Img src="whmf/things.png" />
-
-I don't think anybody asked me to make the town as large as I did, because initially the plan was just a market, gas station and few points of interest, not an actual town. But I believed that we can do better stuff than just few shitshacks. I had like 4-5 hours of sleep last week and it did fuck up my health a little though. I'm getting old...
-
-<Heading h="h3" title="Police Station" />
-This game technically begins with police discovering you butt naked in forest, with no documents with you. That's the entire reason why you have to give your character a name, appearance and choose some starter clothes. Let me show you something that wasn't used in final game though — a corridor. You'd start in one of these cells and then follow the police officer. 
-
-<ImageCollage images={["whmf/police1.png", "whmf/police2.png"]} />
-
-This was the first map thing I've made for this game, and it was quite helpful to decide which materials I need to add into the game. This is where Luke and I made first batch of props that I'd later use everywhere on the map.
-
-<Img src="whmf/police3.png" />
 
 <Heading h="h3" title="Materials" />
 All materials are done in Substance Designer, and as some of you might know already, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show some of my favorite ones.
@@ -181,6 +160,28 @@ I wrote a cliff shader that would improve control over their visuals. Basically,
 <ImageCollage images={["whmf/cliffshader.png", "whmf/cliffshader2.png"]} />
 
 Cliff shader will be uploaded to asset.party later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps. 
+
+<Heading h="h3" title="Town" />
+<Img src="whmf/town.png" />
+
+Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
+
+<ImageCollage images={["whmf/town3.png", "whmf/town2.png", "whmf/town1.png"]} />
+
+Nearly everything is filled with props made by Luke, he really saved my ass here and helped to make town feel more like a... town. Some stuff like trash bags, road signs and mail boxes are made by Cyber. Working with such limited timeframes takes many hours and it can feel pressuring, so I couldn't resist adding some dumb easter eggs.
+
+<Img src="whmf/things.png" />
+
+I don't think anybody asked me to make the town as large as I did, because initially the plan was just a market, gas station and few points of interest, not an actual town. But I believed that we can do better stuff than just few shitshacks. I had like 4-5 hours of sleep last week and it did fuck up my health a little though. I'm getting old...
+
+<Heading h="h3" title="Police Station" />
+This game technically begins with police discovering you butt naked in forest, with no documents with you. That's the entire reason why you have to give your character a name, appearance and choose some starter clothes. Let me show you something that wasn't used in final game though — a corridor. You'd start in one of these cells and then follow the police officer. 
+
+<ImageCollage images={["whmf/police1.png", "whmf/police2.png"]} />
+
+This was the first map thing I've made for this game, and it was quite helpful to decide which materials I need to add into the game. This is where Luke and I made first batch of props that I'd later use everywhere on the map.
+
+<Img src="whmf/police3.png" />
 
 <Heading title="Particles" caption="by Luke" />
 Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points. 
