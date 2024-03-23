@@ -11,7 +11,9 @@ published: false
 I've ended up making making whole environment art for this game and UI design. That includes bunch of materials, some hard surface props, some nature props like rocks, cliffs and trees, whole UI, and some shader work like terrain & cliff shader. 
 
 <Heading h="h3" title="Terrain" />
-Terrain used in My Summer Cottage is a custom implementation that is done mostly in Hammer. When we've started working on this game, Matt's terrain system wasn't released yet so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance & frustum culling, some other fancy things, but after all final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game. 
+Terrain used in My Summer Cottage is a custom implementation that is done mostly in Hammer. When we've started working on this game, Matt's terrain system wasn't released yet so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance & frustum culling, some other fancy things, but after all final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game.
+
+<Img src="whmf/terrain.png" />
 
 Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. Resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature. 
 
@@ -46,6 +48,8 @@ All materials are done in Substance Designer, and as some of you might know alre
 
 Once new material is complete, I'd go to Photoshop and process each texture. Combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inacurrate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad consdering that total My Summer Cottage's size is ~300MB.
 
+Most materials (in their original resolution) will be later uploaded to asset.party, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
+
 <Heading h="h3" title="Nature — Foliage" />
 --render of oak trees--
 Hunting is an important part of the game, so forest had to look at least somewhat acceptable. So I've made 7 tree variants, three types of oak tree and four spruce trees. Oak tree was mainly used in areas like town and cottages, while spruce trees were in the "wild" area. 
@@ -64,4 +68,4 @@ I wrote a cliff shader that would improve control over their visuals. Basically,
 
 --graph showing required assets for the cliff material--
 
-I am really happy with this workflow. I think it's quite convenient. 
+Cliff shader will be uploaded to asset.party later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps. 
