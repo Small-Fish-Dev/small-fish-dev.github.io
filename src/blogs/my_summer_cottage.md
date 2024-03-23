@@ -149,6 +149,17 @@ When that and all other options didn't work out, I wrote down everything NPCs ne
 <ImageCollage images={["ubres/peeper_follow.jpg", "ubres/peeper_escape.jpg"]} />
 The logic for the creepy peeper following you and the logic for attacking you
 
+<Heading title="Events" caption="by ubre" />
+To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
+
+<Img src="ubres/event_setup.jpg", caption="The Driver Jacket event" />
+
+Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
+
+If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
+
+<Img src="ubres/event_aliens.jpg", caption="ActionGraph for the UFO event" />
+
 <Heading title="Yapping" caption="by Cyberagent" />
 
 I wrote a lot of story tasks, that sorta made it in, but due to time constraints, a lot didn't end up making it in. In a future update, I am going to get with everyone and add all the story tasks.
