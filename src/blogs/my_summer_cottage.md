@@ -104,19 +104,19 @@ Additionally, I created custom sprites for our particles, including both animate
 Here are the finaly particles, along with some unused particles.
 <ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif" ]} />
 
-<Heading h="h4" title="Cyberagent" />
-I wrote a lot of story tasks, that sorta made it in, but due to time constraints, a lot didn't end up making it in. In a future update, I am going to get with everyone and add all the story tasks.
-Here is a glimpse of whats to come.
-<Img src="https://i.imgur.com/1MPyjjg.png" />
-
-<Heading title="Models" caption="by Cyberagent" />
+<Heading title="Models" caption="by CyberAgent" />
 I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures.
 I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and grodbert, teach me the ways of their texturing and how simple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
 <ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
 
 The best way I learned to make decent psx style models that could be near the same level as wheatleys, was to use photoshop to texture, resize the image to 128 x 128, 256 x256 if it was a big item, then change the photoshop mode to indexed color. This would create a really good effect as you can see on most of my models they came out to be very stylized to what we were doing. In the future I want to try what wheatley does, by making high quality models, then compressing them down. I think it gives it a really high quality look even though its psx style. Something new and fresh.
 
-<Heading title="Quality Assurance" caption="by Cyberagent" />
+<Heading title="Yapping" caption="by Cyberagent" />
+
+I wrote a lot of story tasks, that sorta made it in, but due to time constraints, a lot didn't end up making it in. In a future update, I am going to get with everyone and add all the story tasks.
+Here is a glimpse of whats to come.
+<Img src="https://i.imgur.com/1MPyjjg.png" />
+
 I want to be a big studio game designer/producer one day, so I tried to do a lot of play-testing and feedback to my team on what I think would make it, and what wouldnt, as well as suggesting mechanics to add to make the game more interesting. 
 
 Don't get me wrong. Small Fish is a strong group, and we have many talented people. Way more talented than me, but I got a little nervous towards the last couple weeks that we weren't play testing enough. So I made it my lifes goal to test whenever possible and give feedback on errors and scope creep. I also tried to keep everyones head on straight about what they could and couldnt do. I wanted to make sure we could keep the project within the scope we had set for it. 
