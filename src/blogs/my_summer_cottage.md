@@ -3,11 +3,10 @@ title: 'My Summer Cottage'
 thumbnail: 'bg.jpg'
 date: '2024-3-20'
 description: "Our submission for Facepunch's first s&box game contest!"
-publisher: 'matek'
 published: false
 ---
 
-This is our journey on the first s&box game contest. We all think we did pretty good...
+This is our journey on the [first s&box game contest](https://asset.party/c/gamejam1/results). We all think we did pretty good...
 
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
