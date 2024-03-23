@@ -94,6 +94,19 @@ since we have a fatness morph and needed clothing to also have fatness, here is 
 Then setting up the clothing prefab, just add a skinned model renderer, then use our item equipment comonent, then set up icon and it just works!
 <ImageCollage images={["clothing_prefab.jpg", "clothing_icon.jpg"]} />
 
+<Heading title="Player" caption="by Grodbert" />
+Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project, compared to my later animation work, the player's are noticeably wonky and snappy. 
+The model, walking, running, crouching, jumping and the fatness morphs were already done, to finish it I added the rest of what a playermodel needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
+
+<Img src="grods/player.png", caption="High poly player model" />
+
+<Heading title="Animals" caption="by Grodbert" />
+The forest needed some life, I needed some work, so Ceitine gave me a list of typical finnish animals, Elk, Foxes, and Hares.
+Unfortunately, nobody told me that in Finland they call Moose "Elks", luckily my plan was to have a versatile base and retexture to add more variety, Reindeers, Moose, and actual Elks, even though they aren't found in Finland, nobody will care!
+Hares were useful "Early game" animals that could be killed with the BB gun, and Foxes hunt hares and steal your fish, I'm happy I got to practice a lot with sculpting, rigging, and animating, I was really lacking in those departments.
+
+<ImageCollage images={["grods/elkanims.gif", "grods/hareanims.gif", "grods/foxanims.gif"]} />
+
 <Heading title="Particles" caption="by Luke" />
 Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points. 
 
