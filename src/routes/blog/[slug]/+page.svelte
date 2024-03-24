@@ -29,7 +29,7 @@
 			alt="background"
 		/>
 	{/if}
-	<div class="h-screen w-screen bg-pixel mix-blend-multiply" />
+	<div class="h-screen w-screen bg-pixel-dark mix-blend-multiply" />
 	<div class="background-fade absolute top-0 flex h-screen w-screen justify-center" />
 </div>
 
@@ -88,12 +88,12 @@
 		bg-white
 		p-5
 		drop-shadow-md
-		lg:prose-xl
+		lg:prose-lg
 		prose-a:text-blue
 		hover:prose-a:text-lightblue
 		hover:prose-a:transition-all
 		prose-code:break-words prose-pre:drop-shadow-md md:mb-8
-		md:rounded-lg md:p-10"
+		md:rounded-lg md:p-20"
 	>
 		<svelte:component this={data.content} />
 	</article>
