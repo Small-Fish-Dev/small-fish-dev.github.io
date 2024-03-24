@@ -54,42 +54,47 @@ Then we just use the action graph function to execute any dialogue and move us t
 
 <Heading title="Tools & Gizmos" caption="by ceitine and ubre" />
 
-Ubre and I spent some time adding cool gizmos and tools for our game just to make it faster to push out content.
-I think they're pretty important considering the fact that we want to keep working on this game in the future.
+Ubre and I spent some time adding cool gizmos and tools for our game just to make it faster to push out content. I think they're pretty important considering the fact that we want to keep working on this game in the future.
 
 <ImageCollage images={["hold_tool.jpg", "icon_tool.jpg", "interaction.jpg", "signal_widget.jpg"]} />
 
-These tools helped us during the jam, and will keep doing so in the future. We even added onto our interaction system by setting up interaction bounds gizmos. This only ended up being used for the slot machine, but, maybe in the future we'll want to use it for more functionality like radio buttons.
+These tools helped us during the jam and will continue to do so in the future. We even expanded our interaction system by setting up interaction bounds gizmos. This feature ended up being used only for the slot machine, but perhaps in the future, we'll want to utilize it for more functionality, such as radio buttons.
 
-If you have not realized already action graph played a major part with our ability to produce mass amounts of content for our game.
+If you haven't realized already, the action graph played a major part in our ability to produce mass amounts of content for our game.
 
 <Heading h="h4" title="Signal Widget" caption="by ubre" />
-We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit but in the end the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
 
-As expected, the artists hated this system, it was mostly guessing and to know specific signals you had to look through the code and piece things together to get the correct signal.
+We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit, but in the end, the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
 
-So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widger, is implicitly casted and equatable to string, and for the sake of working with ActionGraph I had to learn how to do custom JSON Serializers and Deserializers for it.
+As expected, the artists hated this system. It was mostly guesswork, and to know specific signals, you had to look through the code and piece things together to get the correct signal.
+
+So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widget, is implicitly casted and equal to a string, and for the sake of working with ActionGraph, I had to learn how to do custom JSON Serializers and Deserializers for it.
 
 <ImageCollage images={["ubres/signal_search.jpg", "ubres/signal_events.jpg", "ubres/signal_scene.jpg", "ubres/signal_task.jpg"]} />
 
 <Heading title="UI" caption="by wheatleymf, gio, matek and ceitine" />
 
-Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good.
+Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good as his original mock-ups.
 
 <Heading h="h4" title="Character Creation" caption="by ceitine and wheatleymf" />
-Initially, I wasn't sure if the designs were a bit too ambitious for what we could do in a month, but I ended up doing most of the character creation on the first week's weekend. I did do adjustments and improvements to it through out the whole contest though.
 
-Here are the initial UI designs by wheatley, and what I managed to turn them into.
-<ImageCollage images={["passport.jpg", "appearance.jpg", "dressing_up.jpg", "mugshot.jpg"]} />
+Initially, I wasn't sure if the designs were a bit too ambitious for what we could do in a month, but I ended up doing most of the character creation on the first weekend of the contest. I made adjustments and improvements to it throughout the entire contest, though.
+
+Here are the initial mock-ups by Wheatley
+
 <ImageCollage images={["passport_wheatley.jpg", "appearance_wheatley.jpg", "dressing_up_wheatley.jpg", "mugshot_wheatley.jpg"]} />
 
+and the final results in game
+
+<ImageCollage images={["passport.jpg", "appearance.jpg", "dressing_up.jpg", "mugshot.jpg"]} />
+
 <Heading h="h4" title="Day Recap" caption="by ceitine and wheatleymf" />
-I asked wheatley for a day recap screen design, he sent it over and that was it. 
-I didn't question what the sweet memories part was supposed to be, I just went with my imagination and it ended up aligning pretty well with wheatley's.
+
+I asked Wheatley for a day recap screen design, and he sent it over. I didn't question what the "sweet memories" part was supposed to be; I just went with my imagination, and it ended up aligning pretty well with Wheatley's vision.
+
 <ImageCollage images={["day_recap_wheatley.jpg", "day_recap.jpg", "funny_picture_1.jpg", "funny_picture_2.jpg"]} />
 
-I made the code for it really shrimple, so that you could easily capture moments from AnimGraph or code.
-Here's an example of how the big fish catches are captured.
+I made the code for it really simple, so that you could easily capture moments from AnimGraph or code. Here's an example of how the big fish catches are captured.
 
 ```csharp
 var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
@@ -110,34 +115,41 @@ if ( weight >= range.y * 0.3f ) // Has to be atleast 30% of max weight.
 <Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
 
 <Heading h="h4" title="Lukes" />
-I just gathered a list of many props and made them.
-I also kept stealing props from wheatleys list and making them to give him time on the map.
-Overall, if someone said "hey we need X model" I would just quickly bang it out in an hour or two and thats how all these models came to be.
+
+I just gathered a list of many props and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
+
 <ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
 
 <Heading h="h4" title="Wheatley's" />
-I've made few props as well. I was much slower at doing them, but I've made stuff like electrical box with Ape Tavern reference, trash bin, character creation things like passport, tablet & mugshot, as well as these three things. 
+
+I've made few props as well. I was much slower at doing them, but I've made stuff like electrical box with Ape Tavern reference, trash bin, character creation things like passport, tablet & mugshot, as well as these three things.
+
 <Img src="whmf/props.png" />
 
 <Heading title="Clothing" caption="by Luke" />
-I did all the clothing. In total, counting re-skins and coloured variations i did around 96 pieces of clothing.
+
+I did all the clothing. In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
+
 <ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
 
-It was just the bog standard clothing modelling process, make model, skin model to rig, make sure it fits playermodel.
-However I made massive used of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh),
-since we have a fatness morph and needed clothing to also have fatness, here is an example of it working, it worked perfect almost every time!
+It was just the bog standard clothing modeling process: make the model, skin the model to rig, and make sure it fits the player model. However, I made massive use of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh). Since we have a fatness morph and needed clothing to also accommodate fatness, here is an example of it working. It worked perfectly almost every time!
+
 <Img src="morph_transfer.gif" />
 
-Then setting up the clothing prefab, just add a skinned model renderer, then use our item equipment comonent, then set up icon and it just works!
+Then setting up the clothing prefab was straightforward: just add a skinned model renderer, then use our item equipment component, and finally set up the icon. And it just works!
+
 <ImageCollage images={["clothing_prefab.jpg", "clothing_icon.jpg"]} />
 
 <Heading title="Player" caption="by Grodbert" />
-Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project, compared to my later animation work, the player's are noticeably wonky and snappy. 
-The model, walking, running, crouching, jumping and the fatness morphs were already done, to finish it I added the rest of what a playermodel needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
+
+Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the players are noticeably wonky and snappy.
+
+The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
 
 <Img src="grods/player.png", caption="High poly player model" />
 
 <Heading title="Animals" caption="by Grodbert" />
+
 The forest needed some life, I needed some work, so Ceitine gave me a list of typical finnish animals, Elk, Foxes, and Hares.
 Unfortunately, nobody told me that in Finland they call Moose "Elks", luckily my plan was to have a versatile base and retexture to add more variety, Reindeers, Moose, and actual Elks, even though they aren't found in Finland, nobody will care!
 Hares were useful "Early game" animals that could be killed with the BB gun, and Foxes hunt hares and steal your fish, I'm happy I got to practice a lot with sculpting, rigging, and animating, I was really lacking in those departments.
