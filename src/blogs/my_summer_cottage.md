@@ -144,7 +144,7 @@ Then setting up the clothing prefab was straightforward: just add a skinned mode
 
 <Heading title="Player" caption="by Grodbert" />
 
-Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the players are noticeably wonky and snappy.
+Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the player's are noticeably wonky and snappy.
 
 The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
 
