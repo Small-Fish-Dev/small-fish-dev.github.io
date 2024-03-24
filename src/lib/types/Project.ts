@@ -50,6 +50,11 @@ export const Projects: Project[] = [
 		tags: [tags.featured, tags.sbox]
 	},
 	{
+		title: 'Cryptid Hunt',
+		description: 'Wacky Poland simulator',
+		contributors: ['ubre', 'rndtrash', 'ceitine', 'Luke', 'wheatleymf', 'Grodbert']
+	},
+	{
 		title: 'Hamsteria',
 		description:
 			'Restaurant simulator inspired by Citizen Burger Disorder where you micromanage and automate every crazy part of your business.',
