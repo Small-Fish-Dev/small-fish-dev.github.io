@@ -150,43 +150,49 @@ The model, walking, running, crouching, jumping, and the fatness morphs were alr
 
 <Heading title="Animals" caption="by Grodbert" />
 
-The forest needed some life, I needed some work, so Ceitine gave me a list of typical finnish animals, Elk, Foxes, and Hares.
-Unfortunately, nobody told me that in Finland they call Moose "Elks", luckily my plan was to have a versatile base and retexture to add more variety, Reindeers, Moose, and actual Elks, even though they aren't found in Finland, nobody will care!
-Hares were useful "Early game" animals that could be killed with the BB gun, and Foxes hunt hares and steal your fish, I'm happy I got to practice a lot with sculpting, rigging, and animating, I was really lacking in those departments.
+The forest needed some life, and I needed some work, so Ceitine gave me a list of typical Finnish animals: Elk, Foxes, and Hares. Unfortunately, nobody told me that in Finland they call Moose "Elks." Luckily, my plan was to have a versatile base and retexture to add more variety: Reindeers, Moose, and actual Elks, even though they aren't found in Finland. But nobody will care!
+
+Hares were useful "early game" animals that could be killed with the BB gun, and Foxes hunt hares and steal your fish. I'm happy I got to practice a lot with sculpting, rigging, and animating; I was really lacking in those departments.
 
 <ImageCollage images={["grods/elkanims.gif", "grods/hareanims.gif", "grods/foxanims.gif"]} />
 
 <Heading title="Environment Art" caption="by wheatleymf" />
-I've ended up making making environment art for this game, as well as UI design. That includes bunch of materials, some hard surface props, some nature props like rocks, cliffs and trees, whole UI, and some shader work like terrain & cliff shader.
+
+I ended up making environment art for this game, as well as UI design. That includes a bunch of materials, some hard surface props, some nature props like rocks, cliffs, and trees, the whole UI, and some shader work like terrain and cliff shaders.
 
 <Heading h="h3" title="Terrain" />
-Terrain used in My Summer Cottage is a custom implementation that is done mostly in Hammer. When we've started working on this game, Matt's terrain system wasn't released yet so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance & frustum culling, some other fancy things, but after all final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game.
+
+Terrain used in "My Summer Cottage" is a custom implementation that is done mostly in Hammer. When we started working on this game, Matt's terrain system wasn't released yet, so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance and frustum culling, and some other fancy things, but after all, the final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game.
 
 <Img src="whmf/terrain.png" />
 
-Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. Resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature.
+Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. The resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature.
 
-I've added few little details into shader as well so it wouldn't look too bad, such as color variance and shoreline wetness so it'd look "wet" on water level.
+I've added a few little details into the shader as well so it wouldn't look too bad, such as color variance and shoreline wetness so it'd look "wet" at the water level.
+
 <Video src="whmf/sbox-dev_dXuyFSVnmc.mp4" />
 <Video src="whmf/sbox-dev_eTEqv5U0nB.mp4" />
 
-As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal & roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added a pre-baked normal and AO maps from a higher resolution version of this terrain mesh.
+As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal, and roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added pre-baked normal and AO maps from a higher resolution version of this terrain mesh.
 
 <Heading h="h3" title="Materials" />
-All materials are done in Substance Designer, and as some of you might know already, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show some of my favorite ones.
+
+All materials are done in Substance Designer, and as some of you might already know, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show you some of my favorite ones.
 
 <Img src="whmf/materials.jpg" />
 
-Once new material is complete, I'd go to Photoshop and process each texture. Combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inacurrate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad consdering that total My Summer Cottage's size is ~300MB.
+Once a new material is complete, I'd go to Photoshop and process each texture. I'd combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inaccurate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad considering that the total size of My Summer Cottage is ~300MB.
 
-Most materials (in their original resolution) will be later uploaded to asset.party, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
+Most materials (in their original resolution) will be later uploaded to asset.party. I can't promise an exact date though, as I'm still dealing with fever dreams about Hammer and trying to solve issues I've encountered this month.
 
 <Heading h="h3" title="Nature — Foliage" />
 <ImageCollage images={["whmf/trees2.jpg", "whmf/trees1.jpg"]} />
-Hunting is an important part of the game, so forest had to look at least somewhat acceptable. So I've made 7 tree variants, three types of oak tree and four spruce trees. Oak tree was mainly used in areas like town and cottages, while spruce trees were in the "wild" area. I also wanted to do grass but unfortunately I couldn't come up a nice solution for it before we ran out of time. I'll try figuring this out later.
+
+Hunting is an important part of the game, so the forest had to look at least somewhat acceptable. So I made 7 tree variants: three types of oak trees and four spruce trees. Oak trees were mainly used in areas like the town and cottages, while spruce trees were in the "wild" area. I also wanted to do grass, but unfortunately, I couldn't come up with a nice solution for it before we ran out of time. I'll try figuring this out later.
 
 <Heading h="h3" title="Nature — Cliffs and Rocks" />
 <Img src="whmf/rocks.jpg" />
+
 Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more complex.
 
 <Video src="whmf/sbox-dev_fFTPvJPZNi.mp4" />
@@ -230,11 +236,14 @@ Here are the finaly particles, along with some unused particles.
 <ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif" ]} />
 
 <Heading title="Models" caption="by CyberAgent" />
-I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures.
-I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and grodbert, teach me the ways of their texturing and how simple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
+
+I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how simple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
+
 <ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
 
-The best way I learned to make decent psx style models that could be near the same level as wheatleys, was to use photoshop to texture, resize the image to 128 x 128, 256 x256 if it was a big item, then change the photoshop mode to indexed color. This would create a really good effect as you can see on most of my models they came out to be very stylized to what we were doing. In the future I want to try what wheatley does, by making high quality models, then compressing them down. I think it gives it a really high quality look even though its psx style. Something new and fresh.
+The best way I learned to make decent PSX-style models that could be near the same level as Wheatley's was to use Photoshop to texture. I'd resize the image to 128 x 128, or 256 x 256 if it was a big item, then change the Photoshop mode to indexed color. This would create a really good effect, as you can see on most of my models they came out to be very stylized to what we were doing.
+
+In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
 
 <Heading title="NPCs" caption="by ubre" />
 NPCs were a huge headache, as with every game jam I spend an absurd amount of time on NPCs.
