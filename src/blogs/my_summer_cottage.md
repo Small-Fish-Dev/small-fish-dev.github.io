@@ -8,6 +8,17 @@ published: true
 
 We ended up participating in the first FacePunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
+<Heading title="Events" caption="by ubre" />
+To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
+
+<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event" />
+
+Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
+
+If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
+
+<Img src="ubres/event_aliens.jpg" caption="ActionGraph for the UFO event" />
+
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
 The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The most important field in the Interaction object was an action graph definition. This would allow us to add interactions through the editor and define the behavior via action graph.
@@ -250,13 +261,13 @@ The best way I learned to make decent PSX-style models that could be near the sa
 In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
 
 <Heading title="NPCs" caption="by ubre" />
-NPCs were a huge headache, as with every game jam I spend an absurd amount of time on NPCs.
+NPCs were a huge headache, as with every gamejam I spent an absurd amount of time on it.
 
 First off there's the question of pathfinding, our NPCs don't use pathfinding because Navmesh doesn't generate on such a big and conchplex map, we could've gotten away with it if there were no trees.
 What I implemented instead is an obstacle avoidance behaviour which surprisingly works well in our setting: It won't solve mazes, but it will enter buildings and avoid anything that's in the way.
 
 Unfortunately it's expensive, I can't just snap the NPC on the navmesh which already took collisions and terrain into account.
-I have to actually check what's around the NPC and use a very expensive MoveHelper to make it navigate the world, which is why you lag inside of the city despit the aggressive culling, we can't really have more than 5 active NPCs without the FPS being impacted. In the future I'll rework it not to use MoveHelpers which are usually reserved for player controllers.
+I have to actually check what's around the NPC and use a very expensive MoveHelper to make it navigate the world, which is why you lag inside of the city despite the aggressive culling, we can't really have more than 5 active NPCs without the FPS being impacted. In the future I'll rework it not to use MoveHelpers which are usually reserved for player controllers.
 
 For the actual brain of the NPC, ActionGraph was the choice from the beginning, but I initially bit off more than I could chew by attempting to implement a full-on behaviour tree inside of it.
 
@@ -264,17 +275,6 @@ When that and all other options didn't work out, I wrote down everything NPCs ne
 
 <ImageCollage images={["ubres/peeper_follow.jpg", "ubres/peeper_escape.jpg"]} />
 The logic for the creepy peeper following you and the logic for attacking you
-
-<Heading title="Events" caption="by ubre" />
-To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
-
-<Img src="ubres/event_setup.jpg", caption="The Driver Jacket event" />
-
-Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
-
-If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
-
-<Img src="ubres/event_aliens.jpg", caption="ActionGraph for the UFO event" />
 
 <Heading title="Yapping" caption="by Cyberagent" />
 
