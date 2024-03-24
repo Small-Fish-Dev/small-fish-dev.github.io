@@ -39,6 +39,7 @@ export default {
 			},
 			backgroundImage: {
 				pixel: "url('/common/pixel-overlay.png')",
+				'pixel-dark': "url('/common/pixel-overlay-dark.png')",
 				'pixel-white': "url('/common/pixel-overlay-white.png')",
 				'pixel-large': "url('/common/pixel-overlay-large.png')"
 			},
