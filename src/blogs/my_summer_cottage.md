@@ -96,7 +96,7 @@ I asked Wheatley for a day recap screen design, and he sent it over. I didn't qu
 
 <ImageCollage images={["day_recap_wheatley.jpg", "day_recap.jpg", "funny_picture_1.jpg", "funny_picture_2.jpg"]} />
 
-I made the code for it really simple, so that you could easily capture moments from ActionGraph or code. Here's an example of how the big fish catches are captured.
+I made the code for it really shrimple, so that you could easily capture moments from ActionGraph or code. Here's an example of how the big fish catches are captured.
 
 ```csharp
 var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
@@ -197,7 +197,7 @@ Hunting is an important part of the game, so the forest had to look at least som
 <Heading h="h3" title="Nature — Cliffs and Rocks" />
 <Img src="whmf/rocks.jpg" />
 
-Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more complex.
+Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more conchplex.
 
 <Video src="whmf/sbox-dev_fFTPvJPZNi.mp4" />
 
@@ -241,7 +241,7 @@ Here are the finaly particles, along with some unused particles.
 
 <Heading title="Models" caption="by CyberAgent" />
 
-I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how simple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
+I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how shrimple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
 
 <ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
 
