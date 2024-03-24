@@ -8,6 +8,17 @@ published: true
 
 We ended up participating in the first FacePunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
+<Heading title="Events" caption="by ubre" />
+To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
+
+<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event" />
+
+Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
+
+If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
+
+<Img src="ubres/event_aliens.jpg" caption="ActionGraph for the UFO event" />
+
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
 The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The most important field in the Interaction object was an action graph definition. This would allow us to add interactions through the editor and define the behavior via action graph.
@@ -66,9 +77,11 @@ If you haven't realized already, the action graph played a major part in our abi
 
 We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit, but in the end, the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
 
-As expected, the artists hated this system. It was mostly guesswork, and to know specific signals, you had to look through the code and piece things together to get the correct signal.
+As usual the artists hated this system. It was mostly guesswork, and to know specific signals you had to look through the code and piece things together to get the correct signal.
 
-So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widget, is implicitly casted and equal to a string, and for the sake of working with ActionGraph, I had to learn how to do custom JSON Serializers and Deserializers for it.
+So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widget and is implicitly casted and equal to a string.
+
+Populating the menu was a huge pain, a lot of C# reflection and JSON deserialization was involved, so I had to learn how to do custom JSON Serializers and Deserializers for it.
 
 <ImageCollage images={["ubres/signal_search.jpg", "ubres/signal_events.jpg", "ubres/signal_scene.jpg", "ubres/signal_task.jpg"]} />
 
@@ -94,7 +107,7 @@ I asked Wheatley for a day recap screen design, and he sent it over. I didn't qu
 
 <ImageCollage images={["day_recap_wheatley.jpg", "day_recap.jpg", "funny_picture_1.jpg", "funny_picture_2.jpg"]} />
 
-I made the code for it really simple, so that you could easily capture moments from AnimGraph or code. Here's an example of how the big fish catches are captured.
+I made the code for it really shrimple, so that you could easily capture moments from ActionGraph or code. Here's an example of how the big fish catches are captured.
 
 ```csharp
 var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
@@ -142,11 +155,13 @@ Then setting up the clothing prefab was straightforward: just add a skinned mode
 
 <Heading title="Player" caption="by Grodbert" />
 
-Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the players are noticeably wonky and snappy.
+Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the player's are noticeably wonky and snappy.
 
-The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
+The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finnish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
 
-<Img src="grods/player.png", caption="High poly player model" />
+<Video src="grods/player.mp4" />
+
+Since the camera was attached to the world model's head, I wasn't given much freedom with the movements in the animations, which resulted in some tame looking attacks, actions, and poses. Hopefully our next project will have a separate first/third person.
 
 <Heading title="Animals" caption="by Grodbert" />
 
@@ -193,7 +208,7 @@ Hunting is an important part of the game, so the forest had to look at least som
 <Heading h="h3" title="Nature — Cliffs and Rocks" />
 <Img src="whmf/rocks.jpg" />
 
-Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more complex.
+Something I knew should be added are cliffs and rocks. Rocks are made with Blender and stack of Displace modifiers with voronoi & other noise generators. But there's also a cliff shader and it's a little bit more conchplex.
 
 <Video src="whmf/sbox-dev_fFTPvJPZNi.mp4" />
 
@@ -206,7 +221,7 @@ Cliff shader will be uploaded to asset.party later, too. There are a few things 
 <Heading h="h3" title="Town" />
 <Img src="whmf/town.png" />
 
-Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
+Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finnished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
 
 <ImageCollage images={["whmf/town3.png", "whmf/town2.png", "whmf/town1.png"]} />
 
@@ -237,7 +252,7 @@ Here are the finaly particles, along with some unused particles.
 
 <Heading title="Models" caption="by CyberAgent" />
 
-I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how simple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
+I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just shrimply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how shrimple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
 
 <ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
 
@@ -246,13 +261,13 @@ The best way I learned to make decent PSX-style models that could be near the sa
 In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
 
 <Heading title="NPCs" caption="by ubre" />
-NPCs were a huge headache, as with every game jam I spend an absurd amount of time on NPCs.
+NPCs were a huge headache, as with every gamejam I spent an absurd amount of time on it.
 
 First off there's the question of pathfinding, our NPCs don't use pathfinding because Navmesh doesn't generate on such a big and conchplex map, we could've gotten away with it if there were no trees.
 What I implemented instead is an obstacle avoidance behaviour which surprisingly works well in our setting: It won't solve mazes, but it will enter buildings and avoid anything that's in the way.
 
 Unfortunately it's expensive, I can't just snap the NPC on the navmesh which already took collisions and terrain into account.
-I have to actually check what's around the NPC and use a very expensive MoveHelper to make it navigate the world, which is why you lag inside of the city despit the aggressive culling, we can't really have more than 5 active NPCs without the FPS being impacted. In the future I'll rework it not to use MoveHelpers which are usually reserved for player controllers.
+I have to actually check what's around the NPC and use a very expensive MoveHelper to make it navigate the world, which is why you lag inside of the city despite the aggressive culling, we can't really have more than 5 active NPCs without the FPS being impacted. In the future I'll rework it not to use MoveHelpers which are usually reserved for player controllers.
 
 For the actual brain of the NPC, ActionGraph was the choice from the beginning, but I initially bit off more than I could chew by attempting to implement a full-on behaviour tree inside of it.
 
@@ -260,17 +275,6 @@ When that and all other options didn't work out, I wrote down everything NPCs ne
 
 <ImageCollage images={["ubres/peeper_follow.jpg", "ubres/peeper_escape.jpg"]} />
 The logic for the creepy peeper following you and the logic for attacking you
-
-<Heading title="Events" caption="by ubre" />
-To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
-
-<Img src="ubres/event_setup.jpg", caption="The Driver Jacket event" />
-
-Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
-
-If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
-
-<Img src="ubres/event_aliens.jpg", caption="ActionGraph for the UFO event" />
 
 <Heading title="Yapping" caption="by Cyberagent" />
 
