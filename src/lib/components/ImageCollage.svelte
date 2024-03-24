@@ -48,7 +48,7 @@
 	use:swipeable
 	on:swiped={swipeHandler}
 	class="relative flex justify-center bg-white font-poppins text-sm overflow-hidden
-		{$page.route.id == '/blog/[slug]' ? 'blog rounded-lg drop-shadow-md' : ''} {className}"
+		{$page.route.id == '/blog/[slug]' ? 'blog rounded-lg' : ''} {className}"
 >
 	<!-- Current image-->
 	<p
@@ -102,10 +102,6 @@
 <style>
 	.tag {
 		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
-	}
-
-	.image {
-		filter: drop-shadow(0px 0px 16px black);
 	}
 
 	button {
