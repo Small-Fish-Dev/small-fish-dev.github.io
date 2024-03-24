@@ -66,9 +66,11 @@ If you haven't realized already, the action graph played a major part in our abi
 
 We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit, but in the end, the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
 
-As expected, the artists hated this system. It was mostly guesswork, and to know specific signals, you had to look through the code and piece things together to get the correct signal.
+As usual the artists hated this system. It was mostly guesswork, and to know specific signals you had to look through the code and piece things together to get the correct signal.
 
-So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widget, is implicitly casted and equal to a string, and for the sake of working with ActionGraph, I had to learn how to do custom JSON Serializers and Deserializers for it.
+So I spent an entire day working on Signals, a class which just contains a string, but comes with its own editor widget and is implicitly casted and equal to a string.
+
+Populating the menu was a huge pain, a lot of C# reflection and JSON deserialization was involved, so I had to learn how to do custom JSON Serializers and Deserializers for it.
 
 <ImageCollage images={["ubres/signal_search.jpg", "ubres/signal_events.jpg", "ubres/signal_scene.jpg", "ubres/signal_task.jpg"]} />
 
@@ -146,7 +148,7 @@ Most of the player was actually done around the time "Sauna" was first conceived
 
 The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
 
-<Img src="grods/player.png", caption="High poly player model" />
+<Video src="grods/player.mp4" />
 
 <Heading title="Animals" caption="by Grodbert" />
 
