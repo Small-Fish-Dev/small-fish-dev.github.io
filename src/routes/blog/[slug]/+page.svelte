@@ -91,6 +91,8 @@
 		lg:prose-lg
 		prose-a:text-blue
 		hover:prose-a:text-lightblue
+		prose-a:decoration-2
+		prose-a:underline-offset-2
 		hover:prose-a:transition-all
 		prose-code:break-words prose-pre:drop-shadow-md md:mb-8
 		md:rounded-lg md:p-20"
@@ -102,9 +104,9 @@
 <style>
 	.background-fade {
 		background: linear-gradient(
-			to bottom, 
-			rgba(22, 42, 151, 0.5) 0%, 
-			rgba(22, 42, 151, 0.8) 50vh, 
+			to bottom,
+			rgba(22, 42, 151, 0.5) 0%,
+			rgba(22, 42, 151, 0.8) 50vh,
 			rgb(22 42 151) 70vh
 		);
 	}

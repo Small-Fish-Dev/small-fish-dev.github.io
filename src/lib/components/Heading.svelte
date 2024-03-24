@@ -35,14 +35,15 @@
 
 	h3,
 	h4 {
-		color: blue;
+		color: #2446f7;
 	}
 
 	h2 {
 		text-decoration: underline;
-		text-decoration-color: blue;
-		text-decoration-thickness: 4px;
+		text-decoration-color: #2446f7;
+		text-decoration-thickness: 6px;
 		text-underline-offset: 4px;
+		font-size: 2.3em;
 	}
 
 	p {
