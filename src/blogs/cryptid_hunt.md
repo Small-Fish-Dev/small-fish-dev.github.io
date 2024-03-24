@@ -2,7 +2,7 @@
 title: 'Cryptid Hunt'
 thumbnail: 'cryptid_hunt.png'
 date: '2022-11-1'
-description: '2022 Gvarados Halloween Horror Super Jam entry'
+description: 'Our entry to the Gvarados Halloween Horror Super Jam'
 publisher: 'luke'
 ---
 

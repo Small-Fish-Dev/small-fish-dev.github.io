@@ -2,7 +2,7 @@
 title: 'Frostrial, our first Gamejam'
 thumbnail: 'thumbnail.png'
 date: '2022-1-1'
-description: '2021 Eagle One Jambox entry'
+description: 'Our entry to the Eagle One Jambox'
 publisher: 'luke'
 ---
 

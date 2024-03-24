@@ -2,25 +2,25 @@
 title: 'My Summer Cottage'
 thumbnail: 'bg.jpg'
 date: '2024-3-20'
-description: "Our submission for Facepunch's first s&box game contest!"
-published: false
+description: 'Our submission for the first FacePunch hosted s&box game jam'
+published: true
 ---
 
-This is our journey on the [first s&box game contest](https://asset.party/c/gamejam1/results). We all think we did pretty good...
+We ended up participating in the first FacePunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
-The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The perfect way to handle this was a component that held a property list of `Interaction` objects. The most important field in the `Interaction` object was an action graph definition. This would allow us to add interactions through the editor and define the behaviour via action graph.
+The interaction system is what enables every single interaction between the player and some object in the world. Essentially, every single object should allow for multiple interactions. These interactions should call a piece of code that gives them access to the player interacting and the object being interacted with. The most important field in the Interaction object was an action graph definition. This would allow us to add interactions through the editor and define the behavior via action graph.
 
 Here is an example of the beer bottle object. We define an interaction "Drink" which is triggered via "mouse1".
 
 <Img src="beer_interaction.jpg" />
 
-Then using the `Action` property we can hookup some action graph code to trigger the functionality. In this case, the `interactor` (which is the player) receives 20 experience and the obj (the bottle) is destroyed.
+Then using the Action property, we can hook up some action graph code to trigger the functionality. In this case, the interactor (which is the player) receives 20 experience and the obj (the bottle) is destroyed.
 
 <Img src="beer_actiongraph.jpg" />
 
-There are a few cases where instead of using action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the `OnStart()` of our `ItemComponent` we would do the following...
+There are a few cases where instead of using action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the OnStart() of our ItemComponent, we would do the following...
 
 ```csharp
 // Pickup
@@ -42,7 +42,7 @@ This would ensure that every single item in our game by default can use the same
 
 <Heading title="Dialogue System" caption="by matek" />
 
-We didn't have much time and a dialogue system needed to be implemented. The only thing I knew is that I wanted to use the action graph to drive the dialogue tree behaviour. With a perfectly good interaction system already built, I decided to build the dialogue system on top of the interaction system.
+We didn't have much time, and a dialogue system needed to be implemented. The only thing I knew is that I wanted to use the action graph to drive the dialogue tree behavior. With a perfectly good interaction system already built, I decided to build the dialogue system on top of the interaction system.
 
 Here is an example of one of the dialogue interactions. You define a dialogue interaction very similarly to a regular interaction. It needs a keybind, description, and an action graph function to execute.
 
@@ -53,6 +53,7 @@ Then we just use the action graph function to execute any dialogue and move us t
 <Img src="dialogue_actiongraph.jpg" />
 
 <Heading title="Tools & Gizmos" caption="by ceitine and ubre" />
+
 Ubre and I spent some time adding cool gizmos and tools for our game just to make it faster to push out content.
 I think they're pretty important considering the fact that we want to keep working on this game in the future.
 
@@ -89,6 +90,7 @@ I didn't question what the sweet memories part was supposed to be, I just went w
 
 I made the code for it really shrimple, so that you could easily capture moments from AnimGraph or code.
 Here's an example of how the big fish catches are captured.
+
 ```csharp
 var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
 if ( weight >= range.y * 0.3f ) // Has to be atleast 30% of max weight.
@@ -143,21 +145,20 @@ Hares were useful "Early game" animals that could be killed with the BB gun, and
 <ImageCollage images={["grods/elkanims.gif", "grods/hareanims.gif", "grods/foxanims.gif"]} />
 
 <Heading title="Environment Art" caption="by wheatleymf" />
-I've ended up making making environment art for this game, as well as UI design. That includes bunch of materials, some hard surface props, some nature props like rocks, cliffs and trees, whole UI, and some shader work like terrain & cliff shader. 
+I've ended up making making environment art for this game, as well as UI design. That includes bunch of materials, some hard surface props, some nature props like rocks, cliffs and trees, whole UI, and some shader work like terrain & cliff shader.
 
 <Heading h="h3" title="Terrain" />
 Terrain used in My Summer Cottage is a custom implementation that is done mostly in Hammer. When we've started working on this game, Matt's terrain system wasn't released yet so it made sense to rely on ourselves. There were many experiments with it -- chunking, procedural grass with distance & frustum culling, some other fancy things, but after all final terrain is just one big mesh. It's lazy, it's stupid, but it was a thing that worked best and didn't require too much time to implement into the game.
 
 <Img src="whmf/terrain.png" />
 
-Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. Resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature. 
+Terrain is done in **World Creator 2**. Once it's done, I'd just export the .obj file and splat map image, then finalize it in Blender. Resolution of this mesh was low enough to effortlessly add it into Hammer, and when I needed to adjust the terrain for buildings and cliffs, I could easily convert the model into editable Hammer mesh with no issues. I really, really like this feature.
 
-I've added few little details into shader as well so it wouldn't look too bad, such as color variance and shoreline wetness so it'd look "wet" on water level. 
+I've added few little details into shader as well so it wouldn't look too bad, such as color variance and shoreline wetness so it'd look "wet" on water level.
 <Video src="whmf/sbox-dev_dXuyFSVnmc.mp4" />
 <Video src="whmf/sbox-dev_eTEqv5U0nB.mp4" />
 
-As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal & roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added a pre-baked normal and AO maps from a higher resolution version of this terrain mesh. 
-
+As for textures and other stuff, it was done with a quickly crafted shader. Nothing fancy about it -- you just import splat data in RGBA format and then set up each splat color, normal & roughness maps. To avoid stretching on slopes, terrain uses triplanar mapping. For slightly better shading and details, I've added a pre-baked normal and AO maps from a higher resolution version of this terrain mesh.
 
 <Heading h="h3" title="Materials" />
 All materials are done in Substance Designer, and as some of you might know already, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show some of my favorite ones.
@@ -170,7 +171,7 @@ Most materials (in their original resolution) will be later uploaded to asset.pa
 
 <Heading h="h3" title="Nature — Foliage" />
 <ImageCollage images={["whmf/trees2.jpg", "whmf/trees1.jpg"]} />
-Hunting is an important part of the game, so forest had to look at least somewhat acceptable. So I've made 7 tree variants, three types of oak tree and four spruce trees. Oak tree was mainly used in areas like town and cottages, while spruce trees were in the "wild" area. I also wanted to do grass but unfortunately I couldn't come up a nice solution for it before we ran out of time. I'll try figuring this out later. 
+Hunting is an important part of the game, so forest had to look at least somewhat acceptable. So I've made 7 tree variants, three types of oak tree and four spruce trees. Oak tree was mainly used in areas like town and cottages, while spruce trees were in the "wild" area. I also wanted to do grass but unfortunately I couldn't come up a nice solution for it before we ran out of time. I'll try figuring this out later.
 
 <Heading h="h3" title="Nature — Cliffs and Rocks" />
 <Img src="whmf/rocks.jpg" />
@@ -182,7 +183,7 @@ I wrote a cliff shader that would improve control over their visuals. Basically,
 
 <ImageCollage images={["whmf/cliffshader.png", "whmf/cliffshader2.png"]} />
 
-Cliff shader will be uploaded to asset.party later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps. 
+Cliff shader will be uploaded to asset.party later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps.
 
 <Heading h="h3" title="Town" />
 <Img src="whmf/town.png" />
@@ -198,7 +199,7 @@ Nearly everything is filled with props made by Luke, he really saved my ass here
 I don't think anybody asked me to make the town as large as I did, because initially the plan was just a market, gas station and few points of interest, not an actual town. But I believed that we can do better stuff than just few shitshacks. I had like 4-5 hours of sleep last week and it did fuck up my health a little though. I'm getting old...
 
 <Heading h="h3" title="Police Station" />
-This game technically begins with police discovering you butt naked in forest, with no documents with you. That's the entire reason why you have to give your character a name, appearance and choose some starter clothes. Let me show you something that wasn't used in final game though — a corridor. You'd start in one of these cells and then follow the police officer. 
+This game technically begins with police discovering you butt naked in forest, with no documents with you. That's the entire reason why you have to give your character a name, appearance and choose some starter clothes. Let me show you something that wasn't used in final game though — a corridor. You'd start in one of these cells and then follow the police officer.
 
 <ImageCollage images={["whmf/police1.png", "whmf/police2.png"]} />
 
@@ -207,11 +208,11 @@ This was the first map thing I've made for this game, and it was quite helpful t
 <Img src="whmf/police3.png" />
 
 <Heading title="Particles" caption="by Luke" />
-Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points. 
+Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points.
 
 So instead I taught myself the new particle system and attempted to work around its limitations. While I'm not entirely satisfied with the results and felt restricted, it serves its purpose.
 
-Additionally, I created custom sprites for our particles, including both animated and static variations. 
+Additionally, I created custom sprites for our particles, including both animated and static variations.
 
 Here are the finaly particles, along with some unused particles.
 <ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif" ]} />
@@ -256,11 +257,11 @@ I wrote a lot of story tasks, that sorta made it in, but due to time constraints
 Here is a glimpse of whats to come.
 <Img src="https://i.imgur.com/1MPyjjg.png" />
 
-I want to be a big studio game designer/producer one day, so I tried to do a lot of play-testing and feedback to my team on what I think would make it, and what wouldnt, as well as suggesting mechanics to add to make the game more interesting. 
+I want to be a big studio game designer/producer one day, so I tried to do a lot of play-testing and feedback to my team on what I think would make it, and what wouldnt, as well as suggesting mechanics to add to make the game more interesting.
 
-Don't get me wrong. Small Fish is a strong group, and we have many talented people. Way more talented than me, but I got a little nervous towards the last couple weeks that we weren't play testing enough. So I made it my lifes goal to test whenever possible and give feedback on errors and scope creep. I also tried to keep everyones head on straight about what they could and couldnt do. I wanted to make sure we could keep the project within the scope we had set for it. 
+Don't get me wrong. Small Fish is a strong group, and we have many talented people. Way more talented than me, but I got a little nervous towards the last couple weeks that we weren't play testing enough. So I made it my lifes goal to test whenever possible and give feedback on errors and scope creep. I also tried to keep everyones head on straight about what they could and couldnt do. I wanted to make sure we could keep the project within the scope we had set for it.
 
-I don't know if I managed to help out by all the micro managing I did on everyone, but I like to think that it helped greatly and made everyone realize what we could feasibly get done in time. 
+I don't know if I managed to help out by all the micro managing I did on everyone, but I like to think that it helped greatly and made everyone realize what we could feasibly get done in time.
 
 Other than that I am so proud of the work we did. My group is so talented and I am filled with joy everyday to be apart of it, and how special the group is makes me happier than i've ever been.
 

@@ -2,7 +2,7 @@
 title: 'Goblintide'
 thumbnail: 'thumbnail.jpg'
 date: '2023-04-10'
-description: '2023 Game jam entry'
+description: 'Another entry to a game jam'
 publisher: 'luke'
 ---
 

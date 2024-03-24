@@ -2,7 +2,7 @@
 title: 'In This House'
 thumbnail: 'thumbnail.jpg'
 publisher: 'luke'
-description: '2023 Brickjam entry'
+description: 'Our entry to the Brickjam game jam'
 date: '2023-11-1'
 ---
 
