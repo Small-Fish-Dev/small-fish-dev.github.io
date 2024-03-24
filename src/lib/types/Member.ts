@@ -217,7 +217,41 @@ export const Members: Member[] = [
 	{
 		name: 'wheatleymf',
 		avatar: '/team/profiles/wheatleymf.jpg',
-		description: 'I am doing lots of stuff at the cost of my sleep schedule.',
+		description: 'Your local fartist with a messed up sleep schedule.',
+		roles: {
+			Programming: [
+				Languages.CSharp,
+				Languages.HLSL
+			],
+			'Webdev': [
+				Languages.JS,
+				Languages.HTML,
+				Languages.CSS,
+				Languages.PHP
+			],
+			'3D Artist': [
+				Software.Blender,
+				Software.Designer,
+				Software.Marmoset,
+				Software.SpeedTree,
+				Software.Topogun
+			],
+			'Graphics Design': [
+				Software.Photoshop,
+				Software.Illustrator,
+				Software.Figma
+			],
+			'Level Design': [ Software.Hammer ]
+		},
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Carnivora', 'https://en.wikipedia.org/wiki/Carnivora'],
+			family: ['Phocidae', 'https://en.wikipedia.org/wiki/Earless_seal'],
+			genus: ['Pusa', 'https://en.wikipedia.org/wiki/Pusa'],
+			species: ['P. sibirica', 'https://en.wikipedia.org/wiki/Baikal_seal']
+		},
 		point: { x: 365, y: 38 },
 		country: Countries.Russia,
 		socials: ['https://wheatleymf.net', 'https://twitter.com/wheatleymf']
