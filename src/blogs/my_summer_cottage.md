@@ -77,7 +77,7 @@ These tools helped us during the jam and will continue to do so in the future. W
 
 If you haven't realized already, the action graph played a major part in our ability to produce mass amounts of content for our game.
 
-<Heading h="h4" title="Signal Widget" caption="by ubre" />
+<Heading h="h3" title="Signal Widget" caption="by ubre" />
 
 We needed a way to connect everything up: Tasks, Interactions, Events, Items, NPC. We experimented a bit, but in the end, the easiest method was the best: Something happens, send a unique signal (string) that identifies what happened to the master, the master checks through each manager to see if there's logic to be run, and let the manager do its thing.
 
@@ -93,7 +93,7 @@ Populating the menu was a huge pain, a lot of C# reflection and JSON deserializa
 
 Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good as his original mock-ups.
 
-<Heading h="h4" title="Character Creation" caption="by ceitine and wheatleymf" />
+<Heading h="h3" title="Character Creation" caption="by ceitine and wheatleymf" />
 
 Initially, I wasn't sure if the designs were a bit too ambitious for what we could do in a month, but I ended up doing most of the character creation on the first weekend of the contest. I made adjustments and improvements to it throughout the entire contest, though.
 
@@ -105,7 +105,7 @@ and the final results in game
 
 <ImageCollage images={["passport.jpg", "appearance.jpg", "dressing_up.jpg", "mugshot.jpg"]} />
 
-<Heading h="h4" title="Day Recap" caption="by ceitine and wheatleymf" />
+<Heading h="h3" title="Day Recap" caption="by ceitine and wheatleymf" />
 
 I asked Wheatley for a day recap screen design, and he sent it over. I didn't question what the "sweet memories" part was supposed to be; I just went with my imagination, and it ended up aligning pretty well with Wheatley's vision.
 
@@ -141,7 +141,7 @@ Since the camera was attached to the world model's head, I wasn't given much fre
 
 <Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
 
-<Heading h="h4" title="Lukes" />
+<Heading h="h3" title="Lukes" />
 
 I just gathered a list of many props and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
 
@@ -150,13 +150,13 @@ I did end up re-using 4-5 existing models, and ended up changing their gemootry 
 <ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
 Reskins of posters and store signs were mostly all Wheatley's doing + 1 design by shlako.
 
-<Heading h="h4" title="Wheatley's" />
+<Heading h="h3" title="Wheatley's" />
 
 I've made few props as well. I was much slower at doing them, but I've made stuff like electrical box with Ape Tavern reference, trash bin, character creation things like passport, tablet & mugshot, as well as these three things.
 
 <Img src="whmf/props.png" />
 
-<Heading h="h4" title="Cyber's" />
+<Heading h="h3" title="Cyber's" />
 
 I am still relatively new too modelling, texturing is a big thing i needed to learn for this jam, so learning from the other artists, i looked at how they did it, and decided for now to just do it in photoshop.
 
@@ -313,7 +313,7 @@ Here an exagerated example.
 
 <ImageCollage images={["no_dither.jpg", "dither.jpg"]} />
 
-<Heading h="h4" title="Censoring" caption="by ceitine" />
+<Heading h="h3" title="Censoring" caption="by ceitine" />
 
 I made a shrimple way to censor any GameObject with a ModelRenderer. All you needed to do was:
 1. Add the EyeProtector component to your main CameraComponent.
