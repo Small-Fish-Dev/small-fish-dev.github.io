@@ -33,9 +33,9 @@
 	<div class="background-fade absolute top-0 flex h-screen w-screen justify-center" />
 </div>
 
-<div class="md:px-18 container z-10 mx-auto flex flex-col pt-6 font-poppins lg:px-32 xl:px-64">
+<div class="md:px-18 container z-10 mx-auto flex flex-col pt-16 font-poppins lg:px-32 xl:px-64">
 	<div class="mb-5 px-5 text-white text-shadow sm:px-0">
-		<h1 class="mb-2 text-5xl font-medium">{data.blogPost.title}</h1>
+		<h1 class="mb-2 text-5xl font-bold">{data.blogPost.title}</h1>
 		{#if data.blogPost.description}
 			<p class="mb-4 text-gray">{data.blogPost.description}</p>
 		{/if}
@@ -102,10 +102,10 @@
 <style>
 	.background-fade {
 		background: linear-gradient(
-			to bottom,
-			rgba(36, 70, 247, 0.5) 0%,
-			rgba(36, 70, 247, 0.8) 50vh,
-			rgb(36, 70, 247) 70vh
+			to bottom, 
+			rgba(22, 42, 151, 0.5) 0%, 
+			rgba(22, 42, 151, 0.8) 50vh, 
+			rgb(22 42 151) 70vh
 		);
 	}
 </style>
