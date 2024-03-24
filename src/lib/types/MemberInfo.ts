@@ -26,7 +26,9 @@ export const Software: Record<string, string> = {
 	Audition: '/team/software/audition.png',
 	Topogun: '/team/software/topogun.png',
 	ZBrush: '/team/software/zbrush.png',
-	Hammer: '/team/software/hammer.png'
+	Hammer: '/team/software/hammer.png',
+	SpeedTree: '/team/software/speedtree.png',
+	Figma: '/team/software/figma.png'
 };
 
 export const Countries: Record<string, string> = {
