@@ -150,6 +150,8 @@ The model, walking, running, crouching, jumping, and the fatness morphs were alr
 
 <Video src="grods/player.mp4" />
 
+Since the camera was attached to the world model's head, I wasn't given much freedom with the movements in the animations, which resulted in some tame looking attacks, actions, and poses. Hopefully our next project will have a separate first/third person.
+
 <Heading title="Animals" caption="by Grodbert" />
 
 The forest needed some life, and I needed some work, so Ceitine gave me a list of typical Finnish animals: Elk, Foxes, and Hares. Unfortunately, nobody told me that in Finland they call Moose "Elks." Luckily, my plan was to have a versatile base and retexture to add more variety: Reindeers, Moose, and actual Elks, even though they aren't found in Finland. But nobody will care!
