@@ -146,7 +146,7 @@ Then setting up the clothing prefab was straightforward: just add a skinned mode
 
 Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the player's are noticeably wonky and snappy.
 
-The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
+The model, walking, running, crouching, jumping, and the fatness morphs were already done. To finnish it, I added the rest of what a player model needs, stuff like holding, interacting, height, weapons, and even an unused feature to control penis length.
 
 <Video src="grods/player.mp4" />
 
@@ -210,7 +210,7 @@ Cliff shader will be uploaded to asset.party later, too. There are a few things 
 <Heading h="h3" title="Town" />
 <Img src="whmf/town.png" />
 
-Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
+Town was done in a super short amount of time so forgive me for making it look pretty bland and empty. I've started with adding buildings that are important for the gameplay -- gas station, shop, bar, and fishing shop. Once shape was complete, I have finnished texturing on the next day and then moved onto filling the entire town with decorative buildings and apartments.
 
 <ImageCollage images={["whmf/town3.png", "whmf/town2.png", "whmf/town1.png"]} />
 
@@ -241,7 +241,7 @@ Here are the finaly particles, along with some unused particles.
 
 <Heading title="Models" caption="by CyberAgent" />
 
-I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just simply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how shrimple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
+I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just shrimply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how shrimple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
 
 <ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
 
