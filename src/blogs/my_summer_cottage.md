@@ -3,7 +3,7 @@ title: 'My Summer Cottage'
 thumbnail: 'bg.jpg'
 date: '2024-3-20'
 description: 'Our submission for the first FacePunch hosted s&box game jam'
-published: true
+published: false
 ---
 
 We ended up participating in the first FacePunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
@@ -299,6 +299,33 @@ I don't know if I managed to help out by all the micro managing I did on everyon
 Other than that I am so proud of the work we did. My group is so talented and I am filled with joy everyday to be apart of it, and how special the group is makes me happier than i've ever been.
 
 Thank you Small Fish.
+
+<Heading title="Shaders" caption="by ceitine, matek, wheatleymf and Luke" />
+Ceitine set up various shaders for this project, for the low precision vertex snapping effect, and to have point filtering. You can find many many examples of that online, its nothing new.
+However there was issues with the shadow pass combined and transparency, so Luke went through and cleared up some issues surrounding that.
+
+Wheatley also set up shader stuff for his terrain inwhich you can read more about in that section of this blog.
+
+Ceitine also set up Dithering post processing, again nothing ground breaking but it really helps to sell the style we go for.
+Here an exagerated example.
+
+<ImageCollage images={["no_dither.jpg", "dither.jpg"]} />
+
+<Heading h="h4" title="Censoring"/>
+
+Ceitine and matek also did by far the most interesting shader work, Censoring.
+
+<Img src="censored.jpg" />
+
+<Img src="censor_camera.jpg" />
+<Img src="censor_model.jpg" />
+TODO TODO TODO TODO TODO
+EXPLAIN THIS SHIT ITS COOL AS FUCK
+TODO TODO TODO TODO TODO
+
+
+
+
 
 <Heading title="What comes after?" caption="by ubre" />
 
