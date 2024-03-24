@@ -27,13 +27,20 @@ export const Projects: Project[] = [
 	{
 		title: 'Death Card',
 		description: 'A dungeon crawler where the levels are procedurally generated voxel worlds!',
-		contributors: ['ceitine', 'rndtrash', 'Grodbert'],
+		contributors: ['ceitine', 'rndtrash', 'Grodbert', 'wheatleymf'],
 		tags: [tags.featured, tags.sbox, tags.in_progress]
 	},
 	{
-		title: 'Sauna',
+		title: 'My Summer Cottage',
 		description: 'A social simulator game where you play as the average Finnish man!',
-		tags: [tags.featured, tags.sbox]
+		contributors: ['ceitine', 'matek', 'rndtrash', 'wheatleymf', 'Grodbert', 'ubre', 'gio', 'CyberAgent', 'Luke'],
+		tags: [tags.featured, tags.sbox, tags.finished]
+	},
+	{
+		title: 'Goblintide',
+		description: 'Steal moni. Set whole village afire. Life good. (is this even used anywhere?)',
+		contributors: ['ceitine', 'ubre', 'Grodbert', 'wheatleymf', 'Luke', 'gio'],
+		tags: [tags.featured, tags.sbox, tags.finished]
 	},
 	{
 		title: 'Bomb Survival',
@@ -46,6 +53,7 @@ export const Projects: Project[] = [
 		title: 'Hamsteria',
 		description:
 			'Restaurant simulator inspired by Citizen Burger Disorder where you micromanage and automate every crazy part of your business.',
+		contributors: ['ubre', 'Grodbert', 'Luke'],
 		tags: [tags.featured, tags.sbox]
 	}
 ];
