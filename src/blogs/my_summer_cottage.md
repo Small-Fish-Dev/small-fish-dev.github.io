@@ -96,7 +96,7 @@ I asked Wheatley for a day recap screen design, and he sent it over. I didn't qu
 
 <ImageCollage images={["day_recap_wheatley.jpg", "day_recap.jpg", "funny_picture_1.jpg", "funny_picture_2.jpg"]} />
 
-I made the code for it really simple, so that you could easily capture moments from AnimGraph or code. Here's an example of how the big fish catches are captured.
+I made the code for it really simple, so that you could easily capture moments from ActionGraph or code. Here's an example of how the big fish catches are captured.
 
 ```csharp
 var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
