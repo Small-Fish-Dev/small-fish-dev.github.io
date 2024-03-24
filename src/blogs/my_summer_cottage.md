@@ -15,7 +15,7 @@ You can look at the code on [GitHub](https://github.com/Small-Fish-Dev/My-Summer
 <Heading title="Events" caption="by ubre" />
 To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
 
-<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event - by NotGaylien" />
+<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event - by Luke" />
 
 Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
 
@@ -139,7 +139,7 @@ The model, walking, running, crouching, jumping, and the fatness morphs were alr
 
 Since the camera was attached to the world model's head, I wasn't given much freedom with the movements in the animations, which resulted in some tame looking attacks, actions, and poses. Hopefully our next project will have a separate first/third person.
 
-<Heading title="Props, items and props", caption="by NotGaylien, wheatleymf & cyberagent" />
+<Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
 
 <Heading h="h4" title="Lukes" />
 
@@ -166,7 +166,7 @@ In Photoshop i set the mode to indexed color. This would create a really good ef
 
 In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
 
-<Heading title="Clothing" caption="by NotGaylien" />
+<Heading title="Clothing" caption="by Luke" />
 
 I did all the clothing. In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
 
@@ -260,7 +260,7 @@ This was the first map thing I've made for this game, and it was quite helpful t
 
 <Img src="whmf/police3.png" />
 
-<Heading title="Particles" caption="by NotGaylien" />
+<Heading title="Particles" caption="by Luke" />
 Initially, we utilized legacy particles, but encountered issues with particle positions resetting to the world origin and occasional extreme random sporadic lag when setting control points.
 
 So instead I taught myself the new particle system and attempted to work around its limitations. While I'm not entirely satisfied with the results and felt restricted, it serves its purpose.
@@ -302,7 +302,7 @@ Other than that I am so proud of the work we did. My group is so talented and I 
 
 Thank you Small Fish.
 
-<Heading title="Shaders" caption="by ceitine, matek, wheatleymf and NotGaylien" />
+<Heading title="Shaders" caption="by ceitine, matek, wheatleymf and Luke" />
 Ceitine set up various shaders for this project, for the low precision vertex snapping effect, and to have point filtering. You can find many many examples of that online, its nothing new.
 However there was issues with the shadow pass combined and transparency, so Luke went through and cleared up some issues surrounding that.
 
