@@ -75,12 +75,35 @@ So I spent an entire day working on Signals, a class which just contains a strin
 
 Wheatley did some amazing UI designs for everything and the rest of us tried our best to make it look as good.
 
-<Heading h="h4" title="Character Creation" caption="by ceitine" />
+<Heading h="h4" title="Character Creation" caption="by ceitine and wheatleymf" />
 Initially, I wasn't sure if the designs were a bit too ambitious for what we could do in a month, but I ended up doing most of the character creation on the first week's weekend. I did do adjustments and improvements to it through out the whole contest though.
 
 Here are the initial UI designs by wheatley, and what I managed to turn them into.
 <ImageCollage images={["passport.jpg", "appearance.jpg", "dressing_up.jpg", "mugshot.jpg"]} />
 <ImageCollage images={["passport_wheatley.jpg", "appearance_wheatley.jpg", "dressing_up_wheatley.jpg", "mugshot_wheatley.jpg"]} />
+
+<Heading h="h4" title="Day Recap" caption="by ceitine and wheatleymf" />
+I asked wheatley for a day recap screen design, he sent it over and that was it. 
+I didn't question what the sweet memories part was supposed to be, I just went with my imagination and it ended up aligning pretty well with wheatley's.
+<ImageCollage images={["day_recap_wheatley.jpg", "day_recap.jpg", "funny_picture_1.jpg", "funny_picture_2.jpg"]} />
+
+I made the code for it really shrimple, so that you could easily capture moments from AnimGraph or code.
+Here's an example of how the big fish catches are captured.
+```csharp
+var range = definition.GetComponent<Fish>().Get<RangedFloat>( "WeightRange" );
+if ( weight >= range.y * 0.3f ) // Has to be atleast 30% of max weight.
+{
+	var caption = Game.Random.FromArray( fishingCaptions )
+		.Replace( "%w", (record.MaxWeight / 1000f).ToString() )
+		.Replace( "%s", species );
+	var delay = Game.Random.Int( 0, 400 );
+	GameTask.RunInThreadAsync( async () =>
+	{
+		await GameTask.Delay( delay );
+		CaptureMemory( caption, "big_catch" );
+	} );
+}
+```
 
 <Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
 
@@ -250,7 +273,7 @@ We'll be taking a break for a while, and I'll get back to Fish School soon after
 As for My Summer Cottage, we eventually plan on releasing it on Steam, but there's a lot of work left to do.
 We have a lot that was scrapped, including systems and a story, some of these are already in the game but not hooked up to anything!
 
-We want to first fix any leftover bug, work on the performance as much as we can, and then expand some systems so they're not shit.
+We want to first fix any leftover bugs, work on the performance as much as we can, and then expand some systems so they're not shit.
 Initially we planned on having hundreds of events and a month long story, but clearly we never got that far.
 We have it all written down too! So what's left now is to implement it all.
 
