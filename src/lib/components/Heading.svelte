@@ -20,7 +20,7 @@
 </script>
 
 <div>
-	<a class="decoration-blue decoration-4 underline-offset-4" href={`#${title}`} target="_self">
+	<a class="no-underline" href={`#${title}`} target="_self">
 		<svelte:element this={h} id={title} class:caption>{title}</svelte:element></a
 	>
 	{#if caption}
@@ -31,6 +31,18 @@
 <style>
 	.caption {
 		margin-bottom: 0px;
+	}
+
+	h3,
+	h4 {
+		color: blue;
+	}
+
+	h2 {
+		text-decoration: underline;
+		text-decoration-color: blue;
+		text-decoration-thickness: 4px;
+		text-underline-offset: 4px;
 	}
 
 	p {
