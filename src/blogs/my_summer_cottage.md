@@ -8,16 +8,18 @@ published: true
 
 We ended up participating in the first FacePunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
+Not everything each induvidual person did ended up in here, there was too many cases where X made all these, X also fixed that, X did this which didnt make it in in time, so keep in mind there was even more than you see here that went on.
+
 <Heading title="Events" caption="by ubre" />
 To correctly simulate the average finnish day we had to include events, ranging from mildly annoying to batshit insane. Of course it was mostly set up with ActionGraph, all it needed was a bunch of custom nodes and components.
 
-<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event" />
+<Img src="ubres/event_setup.jpg" caption="The Driver Jacket event - by Luke" />
 
 Every event is already placed in the scene disabled, at the start of each day it's enabled. To make working in the scene less shit when there's a lot of events, every component and child in an event is disabled until you select it through the handler placed in the world.
 
 If the start-state of the event is different from the end-state (For example something that moves or spawns npcs) then the initial state will be serialized, and when the event restarts it will be deserialized and reinstantiated after deleting the old one.
 
-<Img src="ubres/event_aliens.jpg" caption="ActionGraph for the UFO event" />
+<Img src="ubres/event_aliens.jpg" caption="ActionGraph for the UFO event - by Ubre" />
 
 <Heading title="Interaction System" caption="by matek and ceitine" />
 
@@ -125,34 +127,6 @@ if ( weight >= range.y * 0.3f ) // Has to be atleast 30% of max weight.
 }
 ```
 
-<Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
-
-<Heading h="h4" title="Lukes" />
-
-I just gathered a list of many props and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
-
-<ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
-
-<Heading h="h4" title="Wheatley's" />
-
-I've made few props as well. I was much slower at doing them, but I've made stuff like electrical box with Ape Tavern reference, trash bin, character creation things like passport, tablet & mugshot, as well as these three things.
-
-<Img src="whmf/props.png" />
-
-<Heading title="Clothing" caption="by Luke" />
-
-I did all the clothing. In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
-
-<ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
-
-It was just the bog standard clothing modeling process: make the model, skin the model to rig, and make sure it fits the player model. However, I made massive use of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh). Since we have a fatness morph and needed clothing to also accommodate fatness, here is an example of it working. It worked perfectly almost every time!
-
-<Img src="morph_transfer.gif" />
-
-Then setting up the clothing prefab was straightforward: just add a skinned model renderer, then use our item equipment component, and finally set up the icon. And it just works!
-
-<ImageCollage images={["clothing_prefab.jpg", "clothing_icon.jpg"]} />
-
 <Heading title="Player" caption="by Grodbert" />
 
 Most of the player was actually done around the time "Sauna" was first conceived, since Ceitine needed a player for his project. Compared to my later animation work, the player's are noticeably wonky and snappy.
@@ -162,6 +136,50 @@ The model, walking, running, crouching, jumping, and the fatness morphs were alr
 <Video src="grods/player.mp4" />
 
 Since the camera was attached to the world model's head, I wasn't given much freedom with the movements in the animations, which resulted in some tame looking attacks, actions, and poses. Hopefully our next project will have a separate first/third person.
+
+<Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
+
+<Heading h="h4" title="Lukes" />
+
+I just gathered a list of many props and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
+
+I did end up re-using 4-5 existing models, and ended up changing their gemootry and re-texturing on most of them. But everything else was made with these 2 hands of mine in that 4 week period.
+
+<ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
+Reskins of posters and store signs were mostly all Wheatley's doing + 1 design by shlako.
+
+<Heading h="h4" title="Wheatley's" />
+
+I've made few props as well. I was much slower at doing them, but I've made stuff like electrical box with Ape Tavern reference, trash bin, character creation things like passport, tablet & mugshot, as well as these three things.
+
+<Img src="whmf/props.png" />
+
+<Heading h="h4" title="Cyber's" />
+
+I am still relatively new too modelling, texturing is a big thing i needed to learn for this jam, so learning from the other artists, i looked at how they did it, and decided for now to just do it in photoshop.
+
+<ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
+
+In Photoshop i set the mode to indexed color. This would create a really good effect, as you can see on most of my models they came out to be very stylized as consistent to what we needed as we could.
+
+In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
+
+<Heading title="Clothing" caption="by Luke" />
+
+I did all the clothing. In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
+
+<ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
+
+I did 1 massive shortcut that you may notice in the final models...
+NO high poly, only base low poly, and then painting in height folds in substance painter, you may notice it, but the low-res crunch hides most of that ugliness of it not being right.
+Made way more clothes with this method.
+<Img src="lukes/clothing_folds.jpg" />
+
+I also made massive use of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh). Since we have a fatness morph and needed clothing to also accommodate fatness, here is an example of it working. It worked perfectly almost every time!
+
+<Img src="morph_transfer.gif" />
+
+Then i finally would just set up clothing prefabs and icons so they can be used ingame.
 
 <Heading title="Animals" caption="by Grodbert" />
 
@@ -248,17 +266,7 @@ So instead I taught myself the new particle system and attempted to work around 
 Additionally, I created custom sprites for our particles, including both animated and static variations.
 
 Here are the finaly particles, along with some unused particles.
-<ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif" ]} />
-
-<Heading title="Models" caption="by CyberAgent" />
-
-I am somewhat of a noob modeler. I love modeling, but I never got into texturing. I would just shrimply make models and never texture them, terrified of the idea of ruining what I had created with poor textures. I wanted to get over that fear for this game jam, so I had the help of Luke, Wheatley, and Grodbert teach me the ways of their texturing and how shrimple and fun it could be. I want to continue to do more modeling for future stuff, so I will continue to model for future updates in My Summer Cottage.
-
-<ImageCollage images={["cyberairhorn.png", "cyberammo.png", "cyberaxe.png", "cybercollage.png", "cybercrate.png", "cyberflash.png", "cybermeat.png" ]} />
-
-The best way I learned to make decent PSX-style models that could be near the same level as Wheatley's was to use Photoshop to texture. I'd resize the image to 128 x 128, or 256 x 256 if it was a big item, then change the Photoshop mode to indexed color. This would create a really good effect, as you can see on most of my models they came out to be very stylized to what we were doing.
-
-In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
+<ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif", "particles/rain.gif" ]} />
 
 <Heading title="NPCs" caption="by ubre" />
 NPCs were a huge headache, as with every gamejam I spent an absurd amount of time on it.
