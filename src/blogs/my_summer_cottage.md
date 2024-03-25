@@ -337,3 +337,5 @@ We have it all written down too! So what's left now is to implement it all.
 See you soon!
 
 `&gt;&lt;&#40;&#40;&#40;&deg;&gt;`
+
+<ImageCollage images={["anything_your_heart_desires.png", "anything_your_heart_desires.png", "anything_your_heart_desires.png", "anything_your_heart_desires.png", "anything_your_heart_desires.png", "anything_your_heart_desires.png", "anything_your_heart_desires.png" ]} />
