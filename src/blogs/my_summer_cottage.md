@@ -66,6 +66,14 @@ This allowed the more art side of things to looks very pretty.
 
 <Video src="day_night/dncycle.mp4" />
 
+We used the built-in <a href="https://asset.party/api/Sandbox.Gradient">Gradient</a> and <a href="https://asset.party/api/Sandbox.Curve">Curve</a> types, since they had nice editor widgets that allowed us to iterate quickly over which colors look the best.
+
+<Img src="day_night/gradient.png" />
+
+Fun fact: The game is set in Karigasniemi, a town in the north of Finland. Here in summer, the sun actually <a href="https://en.wikipedia.org/wiki/Midnight_sun">never goes down</a>! That means we didn't need 70% of the Day/Night Cycle Component's functionality. Oh well! ¯\\\_(ツ)\_/¯
+
+<Img src="day_night/sun.png" />
+
 <Heading title="Inventory" caption="by matek, ceitine and gio" />
 Going from the UI mock-ups wheatley had made, we began getting together a handsome inventory.
 <ImageCollage images={["inventory/base_design.jpg", "inventory/design_additional.jpg", "inventory/context_menu.jpg"]} />
