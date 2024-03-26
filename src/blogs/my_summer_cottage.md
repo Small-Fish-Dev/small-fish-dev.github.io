@@ -5,10 +5,9 @@ date: '2024-3-20'
 description: 'Our submission for the first Facepunch hosted s&box game jam'
 published: false
 ---
-
 We ended up participating in the first Facepunch-hosted game jam and ended up [winning 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
-Not everything each induvidual person did ended up in here, there was too many cases where X made all these, X also fixed that, X did this which didnt make it in in time, so keep in mind there was even more than you see here that went on.
+Not everything each individual person did ended up in here; there were too many cases where X made all these, X also fixed that, X did this which didn't make it in in time, so keep in mind there was even more than you see here that went on. There is still ALOT to digest in here...
 
 You can look at the code on [GitHub](https://github.com/Small-Fish-Dev/My-Summer-Cottage), or even use it, as long as you follow the license.
 
@@ -35,7 +34,7 @@ Then using the Action property, we can hook up some action graph code to trigger
 
 <Img src="beer_actiongraph.jpg" />
 
-There are a few cases where instead of us ing action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the OnStart() of our ItemComponent, we would do the following...
+There are a few cases where instead of using action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the OnStart() of our ItemComponent, we would do the following...
 
 ```csharp
 // Pickup
@@ -61,18 +60,18 @@ Technically our Day/Night cycle took many things into account.
 <Img src="day_night/component.jpg" />
 
 Not only did it move the sun around for shadows, but it dictated the colour of the sky, how intense the lighting would be, how thick the fog would get, how fast the clouds moved.
-Also its what determined how quick each ingame story day would go and what the current day is! we could have percise control over it all, visually and gameplay wise from 1 component.
+Also its what determined how quick each ingame story day would go and what the current day is! we could have precise control over it all, visually and gameplay wise from 1 component.
 
 This allowed the more art side of things to looks very pretty.
 
 <Video src="day_night/dncycle.mp4" />
 
 <Heading title="Inventory" caption="by matek, ceitine and gio" />
-Going from the UI mockups wheatley had made, we began getting together a handsome inventory.
+Going from the UI mock-ups wheatley had made, we began getting together a handsome inventory.
 <ImageCollage images={["inventory/base_design.jpg", "inventory/design_additional.jpg", "inventory/context_menu.jpg"]} />
 
 This got us most the way to where we are now in terms of the final layout and the design, it just looked right.
-We have the info we need, its clear what everthing is, plus it just looks handsome.
+We have the info we need, its clear what everything  is, plus it just looks handsome.
 
 <Img src="inventory/final_inventory.jpg" />
 
@@ -82,7 +81,7 @@ we decided to go for the easiest approach we could think of.
 Items always exist as gameobjects, when they are equiped or in your inventory, they just get parented to your player object, then are bone-merged if equiped or disabled if in inventory.
 So technically all items in your inventory are just disabled at your feet at all times!
 
-Now was the technical part, getting dragging, dropping, interacting and so on working within this ui, and getting our little player render to match our actual player and follow the cursor! Alot of work went into this, and it was worth it, because it just works so well.
+Now was the technical part, getting dragging, dropping, interacting and so on working within this ui, and getting our little player render to match our actual player and follow the cursor! A lot of work went into this, and it was worth it, because it just works so well.
 <ImageCollage images={["inventory/demo.gif", "inventory/item_inspect.jpg" ]} />
 
 <Heading title="Dialogue System" caption="by matek" />
@@ -172,7 +171,7 @@ Since the camera was attached to the world model's head, I wasn't given much fre
 <Heading title="Clothing" caption="by Luke" />
 
 I did all the clothing, jumped right in i created a list of everything i wanted to make, and took in the occasional request. 
-In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
+In total, counting re-skins and coloured variations, I did around 96 pieces of clothing.
 
 <ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
 
@@ -185,7 +184,7 @@ I also made massive use of a Blender plugin called ["Mesh Data Transfer"](https:
 
 <Img src="morph_transfer.gif" />
 
-Then i finally would just set up clothing prefabs and icons so they can be used ingame.
+Then i finally would just set up clothing prefabs and icons so they can be used in game.
 
 
 <Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
@@ -245,7 +244,7 @@ As for textures and other stuff, it was done with a quickly crafted shader. Noth
 
 <Heading h="h3" title="Materials" />
 
-All materials are done in Substance Designer, and as some of you might already know, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show you some of my favorite ones.
+All materials are done in Substance Designer, and as some of you might already know, all of them were initially made in 2K resolution. Why? Well, it's just easier to add details and generate more accurate AO maps when your heightmap is in high resolution. Let me show you some of my favourite ones.
 
 <Img src="whmf/materials.jpg" />
 
@@ -300,7 +299,7 @@ So instead I taught myself the new particle system and attempted to work around 
 
 Additionally, I created custom sprites for our particles, including both animated and static variations.
 
-Here are the finaly particles, along with some unused particles.
+Here are the final particles, along with some unused particles.
 <ImageCollage images={["particles/blood.gif", "particles/coins.gif", "particles/dirrect_steam.gif", "particles/floor_steam.gif", "particles/dust.gif", "particles/piss.gif", "particles/piss_indication.gif", "particles/splash.gif", "particles/stinky.gif", "particles/twinkle.gif", "particles/rain.gif" ]} />
 
 <Heading title="NPCs" caption="by ubre" />
@@ -322,12 +321,12 @@ The logic for the creepy peeper following you and the logic for attacking you
 <Heading title="Yapping" caption="by Cyberagent" />
 
 I wrote a lot of story tasks, that sorta made it in, but due to time constraints, a lot didn't end up making it in. In a future update, I am going to get with everyone and add all the story tasks.
-Here is a glimpse of whats to come.
+Here is a glimpse of what's  to come.
 <Img src="https://i.imgur.com/1MPyjjg.png" />
 
-I want to be a big studio game designer/producer one day, so I tried to do a lot of play-testing and feedback to my team on what I think would make it, and what wouldnt, as well as suggesting mechanics to add to make the game more interesting.
+I want to be a big studio game designer/producer one day, so I tried to do a lot of play-testing and feedback to my team on what I think would make it, and what wouldn't, as well as suggesting mechanics to add to make the game more interesting.
 
-Don't get me wrong. Small Fish is a strong group, and we have many talented people. Way more talented than me, but I got a little nervous towards the last couple weeks that we weren't play testing enough. So I made it my lifes goal to test whenever possible and give feedback on errors and scope creep. I also tried to keep everyones head on straight about what they could and couldnt do. I wanted to make sure we could keep the project within the scope we had set for it.
+Don't get me wrong. Small Fish is a strong group, and we have many talented people. Way more talented than me, but I got a little nervous towards the last couple weeks that we weren't play testing enough. So I made it my lifes goal to test whenever possible and give feedback on errors and scope creep. I also tried to keep everyone's  head on straight about what they could and couldn't  do. I wanted to make sure we could keep the project within the scope we had set for it.
 
 I don't know if I managed to help out by all the micro managing I did on everyone, but I like to think that it helped greatly and made everyone realize what we could feasibly get done in time.
 
@@ -342,7 +341,7 @@ However there was issues with the shadow pass combined and transparency, so Luke
 Wheatley also set up shader stuff for his terrain inwhich you can read more about in that section of this blog.
 
 Ceitine also set up dithering post processing, again nothing ground breaking but it really helps to sell the style we go for.
-Here an exagerated example.
+Here an exaggerated  example.
 
 <ImageCollage images={["no_dither.jpg", "dither.jpg"]} />
 
