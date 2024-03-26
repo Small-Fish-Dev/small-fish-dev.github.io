@@ -35,7 +35,7 @@ Then using the Action property, we can hook up some action graph code to trigger
 
 <Img src="beer_actiongraph.jpg" />
 
-There are a few cases where instead of using action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the OnStart() of our ItemComponent, we would do the following...
+There are a few cases where instead of us ing action graph you'd want to define these in code. One such instance is that every single item in the game should have a "Pickup" interaction by default. It'd be annoying to have to add this interaction to each object manually. During the OnStart() of our ItemComponent, we would do the following...
 
 ```csharp
 // Pickup
@@ -54,6 +54,36 @@ interactions.AddInteraction( new Interaction()
 ```
 
 This would ensure that every single item in our game by default can use the same pickup interaction.
+
+<Heading title="Day/Night Cycle" caption="by rndtrash, ubre and matek" />
+Technically our Day/Night cycle took many things into account.
+
+<Img src="day_night/component.jpg" />
+
+Not only did it move the sun around for shadows, but it dictated the colour of the sky, how intense the lighting would be, how thick the fog would get, how fast the clouds moved.
+Also its what determined how quick each ingame story day would go and what the current day is! we could have percise control over it all, visually and gameplay wise from 1 component.
+
+This allowed the more art side of things to looks very pretty.
+
+<Video src="day_night/dncycle.mp4" />
+
+<Heading title="Inventory" caption="by matek, ceitine and gio" />
+Going from the UI mockups wheatley had made, we began getting together a handsome inventory.
+<ImageCollage images={["inventory/base_design.jpg", "inventory/design_additional.jpg", "inventory/context_menu.jpg"]} />
+
+This got us most the way to where we are now in terms of the final layout and the design, it just looked right.
+We have the info we need, its clear what everthing is, plus it just looks handsome.
+
+<Img src="inventory/final_inventory.jpg" />
+
+Now the hardest part was making it all function correctly,
+we decided to go for the easiest approach we could think of.
+
+Items always exist as gameobjects, when they are equiped or in your inventory, they just get parented to your player object, then are bone-merged if equiped or disabled if in inventory.
+So technically all items in your inventory are just disabled at your feet at all times!
+
+Now was the technical part, getting dragging, dropping, interacting and so on working within this ui, and getting our little player render to match our actual player and follow the cursor! Alot of work went into this, and it was worth it, because it just works so well.
+<ImageCollage images={["inventory/demo.gif", "inventory/item_inspect.jpg" ]} />
 
 <Heading title="Dialogue System" caption="by matek" />
 
@@ -139,16 +169,35 @@ The model, walking, running, crouching, jumping, and the fatness morphs were alr
 
 Since the camera was attached to the world model's head, I wasn't given much freedom with the movements in the animations, which resulted in some tame looking attacks, actions, and poses. Hopefully our next project will have a separate first/third person.
 
+<Heading title="Clothing" caption="by Luke" />
+
+I did all the clothing, jumped right in i created a list of everything i wanted to make, and took in the occasional request. 
+In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
+
+<ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
+
+I did 1 massive shortcut that you may notice in the final models...
+NO high poly, only base low poly, and then painting in height folds in substance painter, you may notice it, but the low-res crunch hides most of that ugliness of it not being right.
+Made way more clothes with this method.
+<Img src="lukes/clothing_folds.jpg" />
+
+I also made massive use of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh). Since we have a fatness morph and needed clothing to also accommodate fatness, here is an example of it working. It worked perfectly almost every time!
+
+<Img src="morph_transfer.gif" />
+
+Then i finally would just set up clothing prefabs and icons so they can be used ingame.
+
+
 <Heading title="Props, items and props", caption="by Luke, wheatleymf & cyberagent" />
 
 <Heading h="h3" title="Lukes" />
 
-I just gathered a list of many props and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
+I just gathered a list of many useful props as i could think of and made them. I also kept stealing props from Wheatley's list and making them to give him time on the map. Overall, if someone said "hey we need X model," I would just quickly bang it out in an hour or two, and that's how all these models came to be.
 
-I did end up re-using 4-5 existing models, and ended up changing their gemootry and re-texturing on most of them. But everything else was made with these 2 hands of mine in that 4 week period.
+4-5 existing models got re-used, but I ended up changing their geometry and re-texturing on most of them. But everything else was made with these 2 hands of mine in that 4 week period.
 
 <ImageCollage images={["lukes/props1.jpg", "lukes/props2.jpg", "lukes/props3.jpg", "lukes/props4.jpg", "lukes/props5.jpg", "lukes/items.jpg" ]} />
-Reskins of posters and store signs were mostly all Wheatley's doing + 1 design by shlako.
+Reskins of posters and store signs were mostly all Wheatley's doing + 1 design by shlako, total credit to them!
 
 <Heading h="h3" title="Wheatley's" />
 
@@ -166,22 +215,6 @@ In Photoshop i set the mode to indexed color. This would create a really good ef
 
 In the future, I want to try what Wheatley does, by making high-quality models, then compressing them down. I think it gives it a really high-quality look even though it's PSX style. It's something new and fresh.
 
-<Heading title="Clothing" caption="by Luke" />
-
-I did all the clothing. In total, counting re-skins and colored variations, I did around 96 pieces of clothing.
-
-<ImageCollage images={["clothing1.jpg", "clothing2.jpg", "clothing3.jpg", "clothing4.jpg", "clothing5.jpg",]} />
-
-I did 1 massive shortcut that you may notice in the final models...
-NO high poly, only base low poly, and then painting in height folds in substance painter, you may notice it, but the low-res crunch hides most of that ugliness of it not being right.
-Made way more clothes with this method.
-<Img src="lukes/clothing_folds.jpg" />
-
-I also made massive use of a Blender plugin called ["Mesh Data Transfer"](https://mmemoli.gumroad.com/l/tOKEh). Since we have a fatness morph and needed clothing to also accommodate fatness, here is an example of it working. It worked perfectly almost every time!
-
-<Img src="morph_transfer.gif" />
-
-Then i finally would just set up clothing prefabs and icons so they can be used ingame.
 
 <Heading title="Animals" caption="by Grodbert" />
 
