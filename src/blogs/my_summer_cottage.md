@@ -54,6 +54,19 @@ interactions.AddInteraction( new Interaction()
 
 This would ensure that every single item in our game by default can use the same pickup interaction.
 
+<Heading title="Fishing" caption="by rndtrash, ceitine, matek and ubre" />
+Fishing was more specialised than other equipable items, since it had to rely on things outside of itself to function.
+We made our fishing simply consists of 3 parts.
+
+The fishing rod, this is whats the player controls, all it does is casting your bobber, pulling the bobber back and sorting out the line.
+<Img src="fishing/player_view.jpg" />
+The bobber, this is what the fishing spawner uses to say if you got a fish or not for you to pull in.
+<Img src="fishing/splash.jpg" />
+The fishing spawer, this is goes onto water, its where most of the logic for if you have a fish biting or not and so on happens, fish type so on so fourth, it will "attach" and "detach" a fish onto the bobber or not.
+<Img src="fishing/component.jpg" />
+
+
+
 <Heading title="Day/Night Cycle" caption="by rndtrash, ubre and matek" />
 Technically our Day/Night cycle took many things into account.
 
