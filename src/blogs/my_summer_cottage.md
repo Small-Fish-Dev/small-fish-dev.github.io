@@ -69,6 +69,20 @@ The fishing spawner exists in the water. This is where a lot of the logic is det
 
 <Img src="fishing/component.jpg" />
 
+The initial plan was to split the water body into a bunch of individual cells, where each had its own set of fish depending on the deepest spot of said cell. That way, we could exclude the illegal fishing spots and detect the player's presence in the water to scare the fish away. There was also the perspective of adding the actual fish that the players can see or even try to catch with their bare hands!
+
+<Video src="fishing/cells.mp4" />
+
+That solution scaled poorly, though. The water in our game is basically a giant box that covers the entire map, and the code has generated about 2,000 cells each time you start the game! In the end, we decided to use the whole water box as one big trigger for the bobbers.
+
+<Img src="fishing/cells.png" />
+
+The fish AI is pretty *shrimple*: when you throw a bobber, the fishing component makes a trace downwards to see how deep the water is. Then it looks through the private list of fishes for one that lives in said depth, and after some time, it gives every bobber a random fish. The fishes have an attention span of about 10 seconds, after which time they drop their target and "eat the bait" (remove the bobber from a list). The "fish pool" is updated every 30 seconds, but only if there's at least one bobber present.
+
+Trash like bags of chips or empty bottles of water is also technically "a fish," though they don't count as such on the Fish Collection screen.
+
+<Img src="fishing/fish_collection.png" />
+
 <Heading title="Day/Night Cycle" caption="by rndtrash, ubre and matek" />
 Technically, our day and night cycle took many factors into account.
 
