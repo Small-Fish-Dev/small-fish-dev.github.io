@@ -105,6 +105,22 @@ So technically all items in your inventory are just disabled at your feet at all
 Now was the technical part, getting dragging, dropping, interacting and so on working within this ui, and getting our little player render to match our actual player and follow the cursor! A lot of work went into this, and it was worth it, because it just works so well.
 <ImageCollage images={["inventory/demo.gif", "inventory/item_inspect.jpg" ]} />
 
+<Heading title="Music" caption="by guest writer: Dawdle" />
+
+Hey all, this is Craig Alan “Dawdle” Carroll, composer of Surfin 81. I started my track for My Summer Cottage the same way I typically do: listening to references provided by the group and considering where in the game the music will take place. 
+
+I was given a mixed bag of 70s/80s Finnish folk rock tracks to listen to but there was one that stood out, Onnelliset by Leevi and the Leavings off their 1981 album. The song, like many of the others on the album heavily featured twangy guitar riffs similar to those found in the 60s. When digging deeper and listening to their 1985 album, I heard that they also prominently favored synthesizers. Their music follows classic major and minor diatonic patterns so that was an element I felt I should incorporate.
+
+Like many of my other projects, I started with a few quick sketches to narrow down the sound. When I do this, many elements are attempted and thrown away rapidly until I find ones that feel good. Listening back to the first reference track, I decided that the melody would be in that twangy guitar, so I borrowed heavily from a genre that prominently featured lead guitar—surf rock, specifically the early 60's sound of the band The Ventures.
+
+<Img src="dawdle.png" />
+
+With my elements sorted, I set off to write my 80's synthpop/surf rock song. Just like with my sketches, I threw out early ideas until I found ones that felt right. To me, there’s a moment when I can step away and still hear those details in my head. If they’re sticky enough for them to last in my own head, that’s usually a good sign that the same will happen for others. I often hear other composers say that they write the melody first but for me, I tend to start with whatever moment is catchiest. In this case it was the synth arpeggio at the end of the chorus. That was the first phrase to be completely locked in. From there, I went back and filled out the rhythm guitar and bass parts for the verse and the chorus. Then I looped a four bar phrase of the verse and played lead guitar lines for about twenty minutes until I had something that felt like I was headed in the right direction. I recorded a rough take of the verse with an improvised chorus and came back to it about an hour later. With another listen, my thought-out verse and improvised chorus were pretty catchy! So I began doing more serious takes and blending them together to create a more polished product.
+
+With the team's initial approval, I came back to my piece and wrote a second verse and chorus, added a bridge, and finished out with a final chorus with slight variations. As the track built further along, I felt that the sound should continue to build as well so I added more synthesizer to the second and third chorus and added a third guitar line to harmonize the lead guitar. Because I’d taken time to trial so many different sounds initially, it felt like the further I got on the track, the easier it was to find the end. 
+
+I’ve had multiple members of the team ask me how to get the song out of their head, so I’d say I was successful!
+
 <Heading title="Dialogue System" caption="by matek" />
 
 We didn't have much time, and a dialogue system needed to be implemented. The only thing I knew is that I wanted to use the action graph to drive the dialogue tree behavior. With a perfectly good interaction system already built, I decided to build the dialogue system on top of the interaction system.
