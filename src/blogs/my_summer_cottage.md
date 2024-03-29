@@ -3,7 +3,6 @@ title: 'My Summer Cottage'
 thumbnail: 'bg.jpg'
 date: '2024-3-20'
 description: 'Our submission for the first Facepunch hosted s&box game jam'
-published: false
 ---
 
 We ended up participating in the first Facepunch-hosted game jam and [won 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
@@ -77,7 +76,7 @@ That solution scaled poorly, though. The water in our game is basically a giant 
 
 <Img src="fishing/cells.png" />
 
-The fish AI is pretty *shrimple*: when you throw a bobber, the fishing component makes a trace downwards to see how deep the water is. Then it looks through the private list of fishes for one that lives in said depth, and after some time, it gives every bobber a random fish. The fishes have an attention span of about 10 seconds, after which time they drop their target and "eat the bait" (remove the bobber from a list). The "fish pool" is updated every 30 seconds, but only if there's at least one bobber present.
+The fish AI is pretty _shrimple_: when you throw a bobber, the fishing component makes a trace downwards to see how deep the water is. Then it looks through the private list of fishes for one that lives in said depth, and after some time, it gives every bobber a random fish. The fishes have an attention span of about 10 seconds, after which time they drop their target and "eat the bait" (remove the bobber from a list). The "fish pool" is updated every 30 seconds, but only if there's at least one bobber present.
 
 Trash like bags of chips or empty bottles of water is also technically "a fish," though they don't count as such on the Fish Collection screen.
 
