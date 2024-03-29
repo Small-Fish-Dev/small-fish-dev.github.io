@@ -177,7 +177,7 @@
 				link="https://asset.party/fish"
 			/>
 			<StatCard
-				count="20"
+				count="21"
 				countType="banned"
 				description="from the Small Fish discord"
 				link="https://discord.gg/rx2qqTqv36"
