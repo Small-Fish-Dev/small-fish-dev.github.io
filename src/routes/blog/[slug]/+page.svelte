@@ -40,10 +40,10 @@
 			<p class="mb-4 text-gray">{data.blogPost.description}</p>
 		{/if}
 
-		{#if data.blogPost.member}
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<!-- svelte-ignore a11y-no-static-element-interactions -->
-			<div class="flex items-center justify-between">
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
+		<!-- svelte-ignore a11y-no-static-element-interactions -->
+		<div class="flex items-center justify-between">
+			{#if data.blogPost.member}
 				<div
 					on:click={() => {
 						goto(`/team#${data.blogPost.member?.name}`);
@@ -64,22 +64,22 @@
 						>
 					</p>
 				</div>
-				<div class="flex items-center text-lg font-medium">
-					<Icon
-						icon="material-symbols:calendar-today"
-						class="mr-1"
-						style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
-					/>
-					<p>
-						{new Date(data.blogPost.date).toLocaleString('en-us', {
-							month: 'short',
-							day: 'numeric',
-							year: 'numeric'
-						})}
-					</p>
-				</div>
+			{/if}
+			<div class="flex items-center text-lg font-medium">
+				<Icon
+					icon="material-symbols:calendar-today"
+					class="mr-1"
+					style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+				/>
+				<p>
+					{new Date(data.blogPost.date).toLocaleString('en-us', {
+						month: 'short',
+						day: 'numeric',
+						year: 'numeric'
+					})}
+				</p>
 			</div>
-		{/if}
+		</div>
 	</div>
 
 	<article
@@ -90,9 +90,9 @@
 		drop-shadow-md
 		lg:prose-lg
 		prose-a:text-blue
-		hover:prose-a:text-lightblue
 		prose-a:decoration-2
 		prose-a:underline-offset-2
+		hover:prose-a:text-lightblue
 		hover:prose-a:transition-all
 		prose-code:break-words prose-pre:drop-shadow-md md:mb-8
 		md:rounded-lg md:p-20"
