@@ -76,6 +76,8 @@
 	}
 </script>
 
+<title>Small Fish</title>
+
 <div>
 	<header
 		class="relative flex h-screen shrink-0 flex-col items-center justify-center gap-8 overflow-hidden p-4 font-poppins md:gap-12"

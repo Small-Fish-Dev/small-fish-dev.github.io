@@ -24,6 +24,8 @@
 	const groupedPosts = groupPostsByMonthYear(data.posts);
 </script>
 
+<title>Blogs</title>
+
 <div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" style="z-index: -1" />
 
 <div

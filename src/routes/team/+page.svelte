@@ -222,6 +222,12 @@
 	}
 </script>
 
+{#if member}
+	<title>Team / {member.name}</title>
+{:else}
+	<title>Team</title>
+{/if}
+
 <div class="h-screen w-full overflow-hidden">
 	<div class="scroll bg-pixel-large h-full w-full">
 		{#await promise then options}

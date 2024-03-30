@@ -20,6 +20,7 @@
 
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
+<title>Blog / {data.blogPost.title}</title>
 
 <div class="w-fullbg-fixed fixed h-full" style="z-index: -1">
 	{#if data.blogPost.thumbnail}
