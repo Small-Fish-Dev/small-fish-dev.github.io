@@ -59,7 +59,7 @@ export const Members: Member[] = [
 		name: 'Luke',
 		description: 'A man of many talents... A master of none... Professionally useless...',
 		avatar: '/team/profiles/luke.jpg',
-		point: { x: 303, y: 57 },
+		point: { x: 303, y: 52 },
 		country: Countries.UK,
 		roles: {
 			Programmer: [Languages.CSharp, Languages.HLSL, Languages.JS, Languages.Python],
@@ -219,16 +219,8 @@ export const Members: Member[] = [
 		avatar: '/team/profiles/wheatleymf.jpg',
 		description: 'Your local fartist with a messed up sleep schedule.',
 		roles: {
-			Programming: [
-				Languages.CSharp,
-				Languages.HLSL
-			],
-			'Webdev': [
-				Languages.JS,
-				Languages.HTML,
-				Languages.CSS,
-				Languages.PHP
-			],
+			Programming: [Languages.CSharp, Languages.HLSL],
+			Webdev: [Languages.JS, Languages.HTML, Languages.CSS, Languages.PHP],
 			'3D Artist': [
 				Software.Blender,
 				Software.Designer,
@@ -236,12 +228,8 @@ export const Members: Member[] = [
 				Software.SpeedTree,
 				Software.Topogun
 			],
-			'Graphics Design': [
-				Software.Photoshop,
-				Software.Illustrator,
-				Software.Figma
-			],
-			'Level Design': [ Software.Hammer ]
+			'Graphics Design': [Software.Photoshop, Software.Illustrator, Software.Figma],
+			'Level Design': [Software.Hammer]
 		},
 		classification: {
 			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
@@ -361,6 +349,36 @@ export const Members: Member[] = [
 			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
 			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
 			species: ['R. rattus', 'https://en.wikipedia.org/wiki/Black_rat']
+		}
+	},
+
+	// Pukes
+	{
+		name: 'PUKES',
+		description:
+			'Creator of the soon to be released "PUKES\' Submarine Game" (currently delayed indefinitely)',
+		avatar: '/team/profiles/pukes.jpg',
+		point: { x: 300, y: 62 },
+		country: Countries.UK,
+		roles: {
+			Programmer: [Languages.CSharp],
+			'3D Artist': [Software.Blender, Software.Marmoset, Software.Painter, Software.ZBrush],
+			Multimedia: [Software.Audacity, Software.Photoshop]
+		},
+		socials: [
+			'https://twitter.com/ImPukes',
+			'https://github.com/TheNameIsMatt',
+			'https://steamcommunity.com/id/imPukes/'
+		],
+		classification: {
+			domain: ['Eukaryota', 'https://en.wikipedia.org/wiki/Eukaryote'],
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Actinopterygii', 'https://en.wikipedia.org/wiki/Actinopterygii'],
+			order: ['Lophiiformes', 'https://en.wikipedia.org/wiki/Anglerfish'],
+			family: ['Centrophrynidae', 'https://en.wikipedia.org/wiki/Horned_lantern_fish'],
+			genus: ['Centrophryne', 'https://en.wikipedia.org/wiki/Horned_lantern_fish'],
+			species: ['C. spinulosa', 'https://en.wikipedia.org/wiki/Horned_lantern_fish']
 		}
 	},
 
