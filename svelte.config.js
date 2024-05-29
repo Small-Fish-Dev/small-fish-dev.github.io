@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { mdsvex } from 'mdsvex';
 import mdsvexConfig from './mdsvex.config.js';
+import autoImport from 'sveltekit-autoimport';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -28,7 +29,14 @@ const config = {
 		}
 	},
 	extensions: ['.svelte', '.md'],
-	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)]
+	preprocess: [
+		vitePreprocess(),
+		mdsvex(mdsvexConfig),
+		autoImport({
+			include: ['**/*.(svelte|md)'],
+			components: ['./src/lib/components/', { name: './src' }]
+		})
+	]
 };
 
 export default config;
