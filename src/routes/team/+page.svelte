@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { Members, type Member } from '$lib/types/Member';
 	import { panzoom, type Options, type Point, DEFAULT_PIN_SIZE } from '$lib/map/PanZoom';
 	import { fade, fly, slide } from 'svelte/transition';
@@ -79,9 +80,10 @@
 			count++;
 		});
 
-		var hash = window.location.hash;
-		hash = hash.substring(1, hash.length);
-		const member = tryOpenCard(hash);
+		var search = window.location.search;
+		search = search.substring(1, search.length);
+		const member = tryOpenCard(search);
+
 		const startingPos = member ? { x: member.point.x, y: member.point.y } : undefined;
 
 		let target = pins.find((x) => x.member?.name == member?.name);
@@ -128,7 +130,8 @@
 
 	function tryOpenCard(name?: string) {
 		if (name == null) {
-			window.location.hash = '';
+			window.history.replaceState({}, '', `team?`);
+
 			member = null;
 			activePin = null;
 			return undefined;
@@ -138,8 +141,9 @@
 		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
 		if (target == null) return undefined;
 
-		window.location.hash = `#${target.name}`;
 		member = target;
+		window.history.replaceState({}, '', `team?${member.name}`);
+
 		return member;
 	}
 
@@ -220,6 +224,20 @@
 		t = Math.max(0, Math.min(1, t));
 		return start + t * (end - start);
 	}
+
+	function getMemberFromSearch() {
+		var search = $page.url.search;
+		search = search.substring(1, search.length);
+
+		const decodedName = decodeURI(search);
+		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
+		if (target == null) return false;
+
+		initialMember = target;
+		return true;
+	}
+
+	let initialMember: Member;
 </script>
 
 <svelte:head>
@@ -227,17 +245,21 @@
 
 	{#if member}
 		<title>Team / {member.name}</title>
+	{:else}
+		<title>Team</title>
+	{/if}
 
+	{#if getMemberFromSearch()}
 		<meta
 			property="og:description"
-			content="{member.name}{member.description != null ? `: ${member.description}` : ''}"
+			content="{initialMember.name}{initialMember.description != null
+				? `: ${initialMember.description}`
+				: ''}"
 		/>
-		<meta property="og:image" content="https://smallfi.sh/{member.avatar}" />
+		<meta property="og:image" content="https://smallfi.sh/{initialMember.avatar}" />
 	{:else}
 		<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
 		<meta property="og:description" content="Take a look at our talented developers!" />
-
-		<title>Team</title>
 	{/if}
 </svelte:head>
 
