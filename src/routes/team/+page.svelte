@@ -222,11 +222,24 @@
 	}
 </script>
 
-{#if member}
-	<title>Team / {member.name}</title>
-{:else}
-	<title>Team</title>
-{/if}
+<svelte:head>
+	<meta property="og:title" content="Small Fish - Team" />
+
+	{#if member}
+		<title>Team / {member.name}</title>
+
+		<meta
+			property="og:description"
+			content="{member.name}{member.description != null ? `: ${member.description}` : ''}"
+		/>
+		<meta property="og:image" content="https://smallfi.sh/{member.avatar}" />
+	{:else}
+		<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
+		<meta property="og:description" content="Take a look at our talented developers!" />
+
+		<title>Team</title>
+	{/if}
+</svelte:head>
 
 <div class="h-screen w-full overflow-hidden">
 	<div class="scroll bg-pixel-large h-full w-full">

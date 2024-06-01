@@ -76,7 +76,13 @@
 	}
 </script>
 
-<title>Small Fish</title>
+<svelte:head>
+	<meta property="og:title" content="Small Fish" />
+	<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
+	<meta property="og:description" content="The greatest developer group of all time!" />
+
+	<title>Small Fish</title>
+</svelte:head>
 
 <div>
 	<header

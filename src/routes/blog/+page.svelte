@@ -24,7 +24,16 @@
 	const groupedPosts = groupPostsByMonthYear(data.posts);
 </script>
 
-<title>Blogs</title>
+<svelte:head>
+	<meta property="og:title" content="Small Fish - Blogs" />
+	<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
+	<meta
+		property="og:description"
+		content="You can get a little more insight on our games by reading our blogs!"
+	/>
+
+	<title>Blogs</title>
+</svelte:head>
 
 <div class="fixed h-full w-full animate-scroll bg-pixel-white bg-pixel-lg" style="z-index: -1" />
 

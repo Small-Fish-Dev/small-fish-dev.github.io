@@ -20,7 +20,15 @@
 
 <!-- Hacky way to make hyperlinks automatically target blank :D -->
 <base target="_blank" />
-<title>Blog / {data.blogPost.title}</title>
+
+<svelte:head>
+	<title>Blog / {data.blogPost.title}</title>
+
+	<meta property="og:title" content="Small Fish - {data.blogPost.title}" />
+	<meta property="og:description" content={data.blogPost.description} />
+	<meta property="og:image" content="https://smallfi.sh/{resolvePath(data.blogPost.thumbnail)}" />
+	<meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
 
 <div class="w-fullbg-fixed fixed h-full" style="z-index: -1">
 	{#if data.blogPost.thumbnail}
