@@ -80,7 +80,7 @@
 			count++;
 		});
 
-		var search = window.location.search;
+		let search = window.location.search;
 		search = search.substring(1, search.length);
 		const member = tryOpenCard(search);
 
@@ -226,7 +226,7 @@
 	}
 
 	function getMemberFromSearch() {
-		var search = $page.url.search;
+		let search = $page.url.search;
 		search = search.substring(1, search.length);
 
 		const decodedName = decodeURI(search);
@@ -241,26 +241,29 @@
 </script>
 
 <svelte:head>
-	<meta property="og:title" content="Small Fish - Team" />
-
 	{#if member}
 		<title>Team / {member.name}</title>
 	{:else}
 		<title>Team</title>
 	{/if}
 
-	{#if getMemberFromSearch()}
-		<meta
-			property="og:description"
-			content="{initialMember.name}{initialMember.description != null
-				? `: ${initialMember.description}`
-				: ''}"
-		/>
+	<meta property="og:title" content="Small Fish - Team" />
+	<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
+	<meta property="og:description" content="Take a look at our talented developers!" />
+
+	<!--{#if getMemberFromSearch()}
+		<meta property="og:title" content="Small Fish - {initialMember.name}" />
+
+		{#if initialMember.description}
+			<meta property="og:description" content={initialMember.description} />
+		{/if}
+
 		<meta property="og:image" content="https://smallfi.sh/{initialMember.avatar}" />
 	{:else}
+		<meta property="og:title" content="Small Fish - Team" />
 		<meta property="og:image" content="https://smallfi.sh/common/logo-round.png" />
 		<meta property="og:description" content="Take a look at our talented developers!" />
-	{/if}
+	{/if}-->
 </svelte:head>
 
 <div class="h-screen w-full overflow-hidden">
