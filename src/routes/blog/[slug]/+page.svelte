@@ -55,7 +55,7 @@
 			{#if data.blogPost.member}
 				<div
 					on:click={() => {
-						goto(`/team#${data.blogPost.member?.name}`);
+						goto(`/team/${data.blogPost.member?.name}`);
 					}}
 					class="flex origin-left flex-row items-center gap-1 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 				>

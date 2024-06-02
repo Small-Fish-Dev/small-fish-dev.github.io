@@ -37,7 +37,7 @@
 			{#if project.contributors}
 				{#each project.contributors as contributor, i}
 					<a
-						href="/team#{contributor}"
+						href="/team/{contributor}"
 						class="mr-2 text-blue underline after:text-black last:mr-0 [&:not(:last-child)]:after:content-[',']"
 						>{contributor}</a
 					>

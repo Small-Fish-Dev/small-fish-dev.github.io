@@ -11,7 +11,7 @@
 			const regex = new RegExp(member.name, 'gi');
 			text = text.replace(
 				regex,
-				`<a class="transition-all text-blue no-underline font-bold hover:text-lightblue" href="/team#${member.name}">${member.name}</a>`
+				`<a class="transition-all text-blue no-underline font-bold hover:text-lightblue" href="/team/${member.name}">${member.name}</a>`
 			);
 		}
 
