@@ -30,6 +30,7 @@
 		'https://www.youtube.com/@SmallFishDev',
 		'https://sbox.game/fish',
 		'https://discord.gg/rx2qqTqv36',
+		'https://github.com/Small-Fish-Dev/',
 		'mailto:info@smallfi.sh'
 	];
 
