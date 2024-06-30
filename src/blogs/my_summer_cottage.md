@@ -5,7 +5,7 @@ date: '2024-3-20'
 description: 'Our submission for the first Facepunch hosted s&box game jam'
 ---
 
-We ended up participating in the first Facepunch-hosted game jam and [won 1st place!](https://asset.party/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
+We ended up participating in the first Facepunch-hosted game jam and [won 1st place!](https://sbox.game/c/gamejam1/results) If you're curious about any development details, we've compiled together some of the most interesting parts below.
 
 Not everything each individual person did ended up in here; there were too many cases where X made all these, X also fixed that, X did this which didn't make it in time. So, keep in mind there was even more than what you see here that went on. There is still A LOT to digest in here..
 
@@ -93,7 +93,7 @@ This integration enabled the artistic side of things to look very aesthetically 
 
 <Video src="day_night/dncycle.mp4" />
 
-We used the built-in <a href="https://asset.party/api/Sandbox.Gradient">gradient</a> and <a href="https://asset.party/api/Sandbox.Curve">curve</a> types, since they had nice editor widgets that allowed us to iterate quickly over which colors look the best.
+We used the built-in <a href="https://sbox.game/api/Sandbox.Gradient">gradient</a> and <a href="https://sbox.game/api/Sandbox.Curve">curve</a> types, since they had nice editor widgets that allowed us to iterate quickly over which colors look the best.
 
 <Img src="day_night/gradient.png" />
 
@@ -297,7 +297,7 @@ All materials are done in Substance Designer, and as some of you might already k
 
 Once a new material is complete, I'd go to Photoshop and process each texture. I'd combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inaccurate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad considering that the total size of My Summer Cottage is ~300MB.
 
-Most materials (in their original resolution) will be later uploaded to [asset.party](https://asset.party/). I can't promise an exact date though, as I'm still dealing with fever dreams about Hammer and trying to solve issues I've encountered this month.
+Most materials (in their original resolution) will be later uploaded to [sbox.game](https://sbox.game/). I can't promise an exact date though, as I'm still dealing with fever dreams about Hammer and trying to solve issues I've encountered this month.
 
 <Heading h="h3" title="Nature — Foliage" />
 <ImageCollage images={["whmf/trees2.jpg", "whmf/trees1.jpg"]} />
@@ -315,7 +315,7 @@ I wrote a cliff shader that would improve control over their visuals. Basically,
 
 <ImageCollage images={["whmf/cliffshader.png", "whmf/cliffshader2.png"]} />
 
-The cliff shader will be uploaded to [asset.party](https://asset.party/) later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps.
+The cliff shader will be uploaded to [sbox.game](https://sbox.game/) later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps.
 
 <Heading h="h3" title="Town" />
 <Img src="whmf/town.png" />

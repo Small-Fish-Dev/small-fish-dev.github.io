@@ -21,7 +21,7 @@
 		'paypal.me': '/socials/paypal.png',
 		'itch.io': '/socials/itch.png',
 		'discord.gg': '/socials/discord.png',
-		'asset.party': '/socials/asset_party.png',
+		'sbox.game': '/socials/asset_party.png',
 		'soundcloud.com': '/socials/soundcloud.png',
 		email: '/socials/gmail.png'
 	};

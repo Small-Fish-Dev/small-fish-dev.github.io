@@ -48,7 +48,7 @@ All materials are done in Substance Designer, and as some of you might know alre
 
 Once new material is complete, I'd go to Photoshop and process each texture. Combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inacurrate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad consdering that total My Summer Cottage's size is ~300MB.
 
-Most materials (in their original resolution) will be later uploaded to asset.party, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
+Most materials (in their original resolution) will be later uploaded to sbox.game, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
 
 <Heading h="h3" title="Nature — Foliage" />
 --render of oak trees--
@@ -68,4 +68,4 @@ I wrote a cliff shader that would improve control over their visuals. Basically,
 
 --graph showing required assets for the cliff material--
 
-Cliff shader will be uploaded to asset.party later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps. 
+Cliff shader will be uploaded to sbox.game later, too. There are a few things I'd like to improve before that, and provide better documentation how to use it and how can you generate mesh data maps. 
