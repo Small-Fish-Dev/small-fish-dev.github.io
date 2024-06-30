@@ -28,7 +28,7 @@
 	const socials = [
 		'https://twitter.com/SmallFishDev',
 		'https://www.youtube.com/@SmallFishDev',
-		'https://asset.party/fish',
+		'https://sbox.game/fish',
 		'https://discord.gg/rx2qqTqv36',
 		'mailto:info@smallfi.sh'
 	];
@@ -181,8 +181,8 @@
 			<StatCard
 				count="180+"
 				countType="models"
-				description="uploaded to asset.party"
-				link="https://asset.party/fish"
+				description="uploaded to sbox.game"
+				link="https://sbox.game/fish"
 			/>
 			<StatCard
 				count="20"

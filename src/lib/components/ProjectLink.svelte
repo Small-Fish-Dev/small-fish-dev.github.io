@@ -3,7 +3,7 @@
 	export let description: string;
 	export let buttonText: string;
 	export let buttonLink: string;
-	export let assetPartyLink: string = '';
+	export let sboxGameLink: string = '';
 </script>
 
 <section class="flex flex-col px-2 text-center font-poppins text-white text-shadow">
@@ -17,7 +17,7 @@
 	>
 		{buttonText}
 	</a>
-	{#if assetPartyLink}
+	{#if sboxGameLink}
 		<p>TODO</p>
 	{/if}
 </section>

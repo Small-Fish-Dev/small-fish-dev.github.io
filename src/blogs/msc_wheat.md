@@ -48,7 +48,7 @@ All materials are done in Substance Designer, and as some of you might know alre
 
 Once new material is complete, I'd go to Photoshop and process each texture. Combine albedo and AO maps, downscale to 256x256, then apply indexed colors. Sometimes I did that with normal and roughness maps too. To reduce inacurrate and "blurry" normals, I often had to disable normal map compression in material settings. That's probably not a good idea, but I hope it wasn't too bad consdering that total My Summer Cottage's size is ~300MB.
 
-Most materials (in their original resolution) will be later uploaded to asset.party, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
+Most materials (in their original resolution) will be later uploaded to sbox.game, I can't promise an exact date though. As soon as I stop having fever dreams about Hammer and trying to solve issues I've encountered this month.
 
 <Heading h="h3" title="Nature — Foliage" />
 --render of oak trees--
