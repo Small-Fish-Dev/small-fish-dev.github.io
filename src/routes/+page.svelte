@@ -91,7 +91,7 @@
 	>
 		{#if ready}
 			<div transition:fly={{ y: 100, duration: 1000 }} class="relative z-30 max-w-3xl">
-				<img src="home/header-logo.png" alt="Small Fish Logo" />
+				<img src="/home/header-logo.png" alt="Small Fish Logo" />
 				<div class="flex flex-wrap justify-center pb-8 pt-4">
 					<p
 						class="subtitle text-center text-2xl font-medium text-white text-shadow-heavy hover:animate-wiggle md:text-4xl"
@@ -133,23 +133,35 @@
 		{/if}
 	</header>
 	<body class="bg-navyblue">
-        <div class="flex justify-center px-2 pt-8 text-center mb-20">
-            <p class="font-poppins text-sm sm:text-2xl font-bold text-white text-shadow md:w-1/2">
-                     Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
-                     big hits, such as...
-            </p>
-        </div>
-		<div class="flex flex-col sm:flex-col items-center px-0 pt-8 text-center font-poppins text-white text-shadow text-1xl sm:text-3xl">
-                <div class="w-[70%] h-auto bg-[url('home/msc_cottage.png')] bg-no-repeat items-center shadow-[inset_0px_0px_80px_rgba(0,0,0,1)]">
-                    <img src="home/msc_title.png" class="-rotate-[3deg] scale-[115%] hover:scale-[120%] duration-200 ease-in-out">
-                    <div class="flex flex-col items-center gap-2 p-2 sm:py-10 ">
-                        <p class="font-bold">Latest game from Small Fish, now available in s&box!</p>
-                        <a target="_blank" href="https://sbox.game/fish/sauna" class="w-full sm:w-1/2 m-3 rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-sm sm:text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover md:p-6">
-                            VISIT ON SBOX.GAME</a>
-                    </div>
-                </div>
+		<div class="mb-20 flex justify-center px-2 pt-8 text-center">
+			<p class="font-poppins text-sm font-bold text-white text-shadow sm:text-2xl md:w-1/2">
+				Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
+				big hits, such as...
+			</p>
 		</div>
-		<div class="flex flex-wrap justify-center gap-4 py-8">
+		<div
+			class="text-1xl mb-20 flex flex-col items-center px-0 text-center font-poppins text-white text-shadow sm:flex-col sm:text-3xl"
+		>
+			<div
+				class="h-auto w-[90%] items-center bg-[url('/home/msc_cottage.jpg')] bg-cover shadow-[inset_0px_0px_80px_rgba(0,0,0,1)] md:w-[65%]"
+			>
+				<img
+					src="/home/msc_title.png"
+					class="-rotate-[3deg] scale-[100%] duration-200 ease-in-out hover:scale-[105%]"
+				/>
+				<div class="flex flex-col items-center gap-2 p-2 sm:py-10">
+					<p class="font-bold">Latest game from Small Fish, now available in s&box!</p>
+					<a
+						target="_blank"
+						href="https://sbox.game/fish/sauna"
+						class="m-3 w-full rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-sm font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover sm:w-1/2 sm:text-xl md:p-6"
+					>
+						VISIT ON SBOX.GAME</a
+					>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="flex flex-wrap justify-center gap-4 py-8">
 			<ProjectLink
 				imagePath="/home/goblin-tide.png"
 				description="Steal moni. Set whole village afire. Life good."
@@ -162,7 +174,7 @@
 				buttonText="More about In This House"
 				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
 			/>
-		</div>
+		</div> -->
 		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
 			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
 				<p class="text-center text-2xl font-bold md:w-1/2 md:pr-4">
@@ -184,7 +196,7 @@
 		</div>
 		<div class="flex w-full flex-wrap justify-center gap-4 py-8">
 			<StatCard
-				count="23"
+				count="23+"
 				countType="videos"
 				description="of Fish School & Fish Bites"
 				link="https://www.youtube.com/watch?v=z3VGIuZaGnI&list=PLIcPBTNc7_9qJi73IXO2fUCZG4aIdo8sk"
@@ -196,7 +208,7 @@
 				link="https://sbox.game/fish"
 			/>
 			<StatCard
-				count="20"
+				count="20+"
 				countType="banned"
 				description="from the Small Fish discord"
 				link="https://discord.gg/rx2qqTqv36"
