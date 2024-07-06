@@ -133,11 +133,21 @@
 		{/if}
 	</header>
 	<body class="bg-navyblue">
-		<div class="flex justify-center px-2 pt-8 text-center">
-			<p class="font-poppins text-xl font-bold text-white text-shadow md:w-1/2">
-				Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
-				big hits, such as...
-			</p>
+        <div class="flex justify-center px-2 pt-8 text-center mb-20">
+            <p class="font-poppins text-sm sm:text-2xl font-bold text-white text-shadow md:w-1/2">
+                     Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
+                     big hits, such as...
+            </p>
+        </div>
+		<div class="flex flex-col sm:flex-col items-center px-0 pt-8 text-center font-poppins text-white text-shadow text-1xl sm:text-3xl">
+                <div class="w-[70%] h-auto bg-[url('home/msc_cottage.png')] bg-no-repeat items-center shadow-[inset_0px_0px_80px_rgba(0,0,0,1)]">
+                    <img src="home/msc_title.png" class="-rotate-[3deg] scale-[115%] hover:scale-[120%] duration-200 ease-in-out">
+                    <div class="flex flex-col items-center gap-2 p-2 sm:py-10 ">
+                        <p class="font-bold">Latest game from Small Fish, now available in s&box!</p>
+                        <a target="_blank" href="https://sbox.game/fish/sauna" class="w-full sm:w-1/2 m-3 rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-sm sm:text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover md:p-6">
+                            VISIT ON SBOX.GAME</a>
+                    </div>
+                </div>
 		</div>
 		<div class="flex flex-wrap justify-center gap-4 py-8">
 			<ProjectLink
