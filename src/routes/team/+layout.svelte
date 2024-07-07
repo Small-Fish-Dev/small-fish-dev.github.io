@@ -232,11 +232,13 @@
 	}
 </script>
 
-{#if member}
-	<title>Team / {member.name}</title>
-{:else}
-	<title>Team</title>
-{/if}
+<svelte:head>
+	{#if member}
+		<title>Team / {member.name}</title>
+	{:else}
+		<title>Team</title>
+	{/if}
+</svelte:head>
 
 <slot />
 
