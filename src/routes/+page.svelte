@@ -140,7 +140,7 @@
 			</p>
 		</div>
 		<div
-			class="text-1xl mb-20 flex flex-col items-center px-0 text-center font-poppins text-white text-shadow sm:flex-col sm:text-3xl"
+			class="text-1xl flex flex-col items-center px-0 text-center font-poppins text-white text-shadow sm:flex-col sm:text-3xl"
 		>
 			<div
 				class="h-auto w-[90%] items-center bg-[url('/home/msc_cottage.jpg')] bg-cover shadow-[inset_0px_0px_80px_rgba(0,0,0,1)] md:w-[65%]"
@@ -161,7 +161,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="flex flex-wrap justify-center gap-4 py-8">
+		<div class="flex flex-wrap justify-center gap-4 py-8">
 			<ProjectLink
 				imagePath="/home/goblin-tide.png"
 				description="Steal moni. Set whole village afire. Life good."
@@ -174,7 +174,7 @@
 				buttonText="More about In This House"
 				buttonLink="https://www.youtube.com/watch?v=3-TrbOxmK08"
 			/>
-		</div> -->
+		</div>
 		<div class="bg-darkblue p-2 py-8 font-poppins text-white text-shadow">
 			<div class="container mx-auto flex flex-wrap place-items-center justify-center gap-8">
 				<p class="text-center text-2xl font-bold md:w-1/2 md:pr-4">
