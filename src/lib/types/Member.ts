@@ -153,27 +153,6 @@ export const Members: Member[] = [
 		}
 	},
 
-	// dimon
-	{
-		name: 'DIMON!',
-		avatar: '/team/profiles/dimon.jpg',
-		description: 'Здравствуйте, я бухгалтер в компании Smallfish.',
-		point: { x: 388, y: 67 },
-		country: Countries.Russia,
-		roles: {
-			Accounting: []
-		},
-		classification: {
-			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
-			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
-			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
-			order: ['Rodentia', 'https://en.wikipedia.org/wiki/Rodent'],
-			family: ['Muridae', 'https://en.wikipedia.org/wiki/Muridae'],
-			subfamily: ['Cricetinae', 'https://en.wikipedia.org/wiki/Hamster']
-		},
-		socials: ['https://steamcommunity.com/id/dim4a_2546/']
-	},
-
 	// rndtrash
 	{
 		name: 'rndtrash',
@@ -279,7 +258,7 @@ export const Members: Member[] = [
 	},
 
 	// Gkaf
-	{
+	/*{
 		name: 'Gkaf',
 		avatar: '/team/profiles/gkaf.jpg',
 		description: 'Donate to my paypal today!',
@@ -306,7 +285,7 @@ export const Members: Member[] = [
 			genus: ['Pandaka', 'https://en.wikipedia.org/wiki/Pandaka_(fish)'],
 			species: ['P. pygmaea', 'https://en.wikipedia.org/wiki/Dwarf_pygmy_goby']
 		}
-	},
+	},*/
 
 	// CyberAgent
 	{
