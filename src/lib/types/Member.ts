@@ -239,7 +239,7 @@ export const Members: Member[] = [
 		name: 'matek',
 		avatar: '/team/profiles/matek.jpg',
 		description: 'I wrote my own fucking compiler',
-		point: { x: 145, y: 74 },
+		point: { x: 62, y: 65 },
 		country: Countries.Poland,
 		roles: {
 			Programmer: [Languages.CPP, Languages.CSharp, Languages.JS, Languages.Java, Languages.Python],
@@ -256,36 +256,6 @@ export const Members: Member[] = [
 			species: ['U. a. syriacus', 'https://en.wikipedia.org/wiki/Syrian_brown_bear']
 		}
 	},
-
-	// Gkaf
-	/*{
-		name: 'Gkaf',
-		avatar: '/team/profiles/gkaf.jpg',
-		description: 'Donate to my paypal today!',
-		point: { x: 150, y: 85 },
-		country: Countries.US,
-		roles: {
-			'3D Artist': [Software.Blender, Software.Painter, Software.Designer],
-			'Level Design': [Software.Hammer],
-			Multimedia: [Software.Photoshop]
-		},
-		socials: [
-			'http://gkaf.me',
-			'https://gunnarkafel.artstation.com',
-			'https://twitter.com/GunnarKafel',
-			'https://www.paypal.com/paypalme/gkaf'
-		],
-		classification: {
-			domain: ['Eukaryota', 'https://en.wikipedia.org/wiki/Eukaryote'],
-			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
-			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
-			class: ['Actinopterygii', 'https://en.wikipedia.org/wiki/Actinopterygii'],
-			order: ['Gobiiformes', 'https://en.wikipedia.org/wiki/Gobiiformes'],
-			family: ['Oxudercidae', 'https://en.wikipedia.org/wiki/Oxudercidae'],
-			genus: ['Pandaka', 'https://en.wikipedia.org/wiki/Pandaka_(fish)'],
-			species: ['P. pygmaea', 'https://en.wikipedia.org/wiki/Dwarf_pygmy_goby']
-		}
-	},*/
 
 	// CyberAgent
 	{
