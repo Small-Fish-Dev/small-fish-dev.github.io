@@ -28,7 +28,8 @@ export const Software: Record<string, string> = {
 	ZBrush: '/team/software/zbrush.png',
 	Hammer: '/team/software/hammer.png',
 	SpeedTree: '/team/software/speedtree.png',
-	Figma: '/team/software/figma.png'
+	Figma: '/team/software/figma.png',
+	Mixcraft: '/team/software/mixcraft.png'
 };
 
 export const Countries: Record<string, string> = {

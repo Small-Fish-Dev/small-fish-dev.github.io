@@ -228,7 +228,19 @@ export const Members: Member[] = [
 	{
 		name: 'Mungus',
 		avatar: '/team/profiles/mungus.jpg',
-		description: '"s&box oh s&box... LETS PLAY SOME S&BOX!"',
+		description: 'My name gog, but you can call me Fungus, I mean Fungus, I mean Fungus, I mean Fungus, I mean Fungus..',
+		roles: {
+			Musician: [Software.Mixcraft]
+		},
+		classification: {
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Mammalia', 'https://en.wikipedia.org/wiki/Mammal'],
+			order: ['Carnivora', 'https://en.wikipedia.org/wiki/Carnivora'],
+			family: ['Felidae', 'https://en.wikipedia.org/wiki/Felidae'],
+			species: ['F. catus', 'https://en.wikipedia.org/wiki/Cat'],
+			breed: ['Maine Coon', 'https://en.wikipedia.org/wiki/Maine_Coon']
+		},
 		point: { x: 325, y: 48 },
 		country: Countries.Denmark,
 		socials: ['https://www.youtube.com/@MungusBox', 'https://soundcloud.com/mungussbox']
