@@ -228,7 +228,7 @@ export const Members: Member[] = [
 	{
 		name: 'Mungus',
 		avatar: '/team/profiles/mungus.jpg',
-		description: 'My name gog, but you can call me Fungus, I mean Fungus, I mean Fungus, I mean Fungus, I mean Fungus..',
+		description: 'My name Fungus, I mean Fungus, I mean Fungus, I mean Fungus, I mean Fungus..',
 		roles: {
 			Musician: [Software.Mixcraft]
 		},
