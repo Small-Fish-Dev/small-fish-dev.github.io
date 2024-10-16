@@ -60,5 +60,11 @@ export const Projects: Project[] = [
 			'Restaurant simulator inspired by Citizen Burger Disorder where you micromanage and automate every crazy part of your business.',
 		contributors: ['ubre', 'Grodbert', 'Luke'],
 		tags: [tags.featured, tags.sbox]
+	},
+	{
+		title: 'Frostrial',
+		description:
+			'Collect fish, avoid yeti, do something else. I dont remember anything else.',
+		contributors: ['ubre', 'Grodbert', 'ceitine', 'Luke', 'rndtrash', 'Mungus']
 	}
 ];
