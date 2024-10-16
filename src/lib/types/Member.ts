@@ -221,7 +221,7 @@ export const Members: Member[] = [
 		},
 		point: { x: 365, y: 38 },
 		country: Countries.Russia,
-		socials: ['https://wheatleymf.net', 'https://twitter.com/wheatleymf']
+		socials: ['https://www.artstation.com/wheatleymf', 'https://wheatleymf.net', 'https://twitter.com/wheatleymf']
 	},
 
 	// Mungus
