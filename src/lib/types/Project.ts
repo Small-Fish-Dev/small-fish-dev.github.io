@@ -27,7 +27,7 @@ export const Projects: Project[] = [
 	{
 		title: 'Death Card',
 		description: 'A dungeon crawler where the levels are procedurally generated voxel worlds!',
-		contributors: ['ceitine', 'rndtrash', 'Grodbert', 'wheatleymf'],
+		contributors: ['ceitine', 'rndtrash', 'Grodbert', 'wheatleymf', 'Mungus', 'ubre', 'matek', 'Luke', 'CyberAgent', 'gio'],
 		tags: [tags.featured, tags.sbox, tags.in_progress]
 	},
 	{
