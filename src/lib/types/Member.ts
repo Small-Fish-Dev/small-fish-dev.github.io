@@ -343,6 +343,30 @@ export const Members: Member[] = [
 		}
 	},
 
+	// yart
+	{
+		name: 'yart',
+		description:
+			'You are reading this.',
+		avatar: '/team/profiles/yart.png',
+		point: { x: 100, y: 80 },
+		country: Countries.US,
+		roles: {
+			Programmer: [Languages.CSharp, Languages.LUA],
+		},
+		socials: ['https://github.com/youarereadingthis'],
+		classification: {
+			domain: ['Eukaryota', 'https://en.wikipedia.org/wiki/Eukaryote'],
+			kingdom: ['Animalia', 'https://en.wikipedia.org/wiki/Animal'],
+			phylum: ['Chordata', 'https://en.wikipedia.org/wiki/Chordate'],
+			class: ['Chondrichthyes', 'https://en.wikipedia.org/wiki/Chondrichthyes'],
+			order: ['Squatiniformes', 'https://en.wikipedia.org/wiki/Squatiniformes'],
+			family: ['Squatinidae', 'https://en.wikipedia.org/wiki/Squatiniformes'],
+			genus: ['Squatina', 'https://en.wikipedia.org/wiki/Angelshark'],
+			species: ['S. squatina', 'https://en.wikipedia.org/wiki/Angelshark']
+		}
+	},
+
 	// Cool looking jellyfish
 	{
 		name: 'Cool Looking Jellyfish',
