@@ -6,6 +6,8 @@
 	let className: string = '';
 	export { className as class };
 
+	export let clickDisabled: boolean = false;
+
 	let url: URL;
 	let host: string;
 
@@ -52,7 +54,11 @@
 	}
 </script>
 
-<a {href} class="{className} transition-all hover:scale-110" target="_blank">
+<a
+	{href}
+	class="{className} transition-all hover:scale-110 {clickDisabled ? 'pointer-events-none' : ''}"
+	target="_blank"
+>
 	<HoverIcon
 		src={tryGetIcon(href)}
 		showTop={showHoverTop}

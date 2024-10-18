@@ -7,8 +7,11 @@
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import Icon from '@iconify/svelte';
 	import StatCard from '$lib/components/StatCard.svelte';
+	import { FetchNewsAsync, type NewsPost } from '$lib/types/Backend';
+	import NewsCard from '$lib/components/NewsCard.svelte';
 
 	let ready = false;
+	let posts: NewsPost[] | null;
 	onMount(() => {
 		ready = true;
 		videos = shuffle(
@@ -22,6 +25,11 @@
 		v.src = videos[0];
 		v.addEventListener('loadeddata', () => {
 			firstVideoLoaded = true;
+		});
+
+		FetchNewsAsync().then((res) => {
+			posts = res;
+			console.log(res);
 		});
 	});
 
@@ -133,12 +141,30 @@
 		{/if}
 	</header>
 	<body class="bg-navyblue">
+		{#if posts}
+			<div class="mb-20 flex justify-center px-2 pt-8 text-center">
+				<p class="font-poppins text-sm font-bold text-white text-shadow sm:text-2xl md:w-1/2">
+					Latest Small Fish fishy news!
+				</p>
+			</div>
+
+			<div class="flex flex-row items-center md:px-20 px-5 gap-10 mb-20 w-full justify-center">
+				<!-- Show a maximum of 4 items. -->
+				{#each posts as post, i}
+					{#if i < 4}
+						<NewsCard {post} class="w-[30rem]" />
+					{/if}
+				{/each}
+			</div>
+		{/if}
+
 		<div class="mb-20 flex justify-center px-2 pt-8 text-center">
 			<p class="font-poppins text-sm font-bold text-white text-shadow sm:text-2xl md:w-1/2">
 				Small Fish is an independent "award-winning" gamedev team. We're the creators of many s&box
 				big hits, such as...
 			</p>
 		</div>
+
 		<div
 			class="text-1xl flex flex-col items-center px-0 text-center font-poppins text-white text-shadow sm:flex-col sm:text-3xl"
 		>
