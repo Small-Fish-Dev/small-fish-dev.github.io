@@ -16,7 +16,7 @@ interface NewsSection {
     Slug: string;
 }
 
-export interface NewsPost {
+interface NewsPost {
     Id: string;
     Url: string;
     Created: string;
@@ -26,6 +26,39 @@ export interface NewsPost {
     Media: string;
     Sections: NewsSection[];
     Package: string;
+}
+
+export type NewsEntry = {
+    url: string;
+    date: Date;
+    title: string;
+    summary: string;
+    thumbnail: string;
+    package: string | undefined;
+    source: string;
+}
+
+export const BlogAsNews = function(blog: App.BlogPost): NewsEntry {
+    return {
+        url: `${location.origin}/blog/${blog.slug}`,
+        thumbnail: `/blogs/${blog.slug}/${blog.thumbnail}`,
+        date: new Date(blog.date),
+        title: blog.title,
+        summary: blog.description,
+        source: 'Fishblog'
+    } as NewsEntry;
+}
+
+export const NewsAsNews = function(news: NewsPost): NewsEntry {
+    return {
+        url: `https://sbox.game${news.Url}`,
+        thumbnail: news.Media,
+        date: new Date(news.Created),
+        title: news.Title,
+        summary: news.Summary,
+        package: news.Package.substring(5),
+        source: 'sbox.game'
+    } as NewsEntry;
 }
 
 export const FetchNewsAsync = async function (): Promise<NewsPost[] | null> {

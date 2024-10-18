@@ -25,6 +25,8 @@
 		'discord.gg': '/socials/discord.png',
 		'sbox.game': '/socials/asset_party.png',
 		'soundcloud.com': '/socials/soundcloud.png',
+		'smallfi.sh': '/socials/smallfish.png',
+		localhost: '/socials/smallfish.png',
 		email: '/socials/gmail.png'
 	};
 

@@ -7,11 +7,11 @@
 	import ProjectLink from '$lib/components/ProjectLink.svelte';
 	import Icon from '@iconify/svelte';
 	import StatCard from '$lib/components/StatCard.svelte';
-	import { FetchNewsAsync, type NewsPost } from '$lib/types/Backend';
+	import { BlogAsNews, FetchNewsAsync, NewsAsNews, type NewsEntry } from '$lib/types/News';
 	import NewsCard from '$lib/components/NewsCard.svelte';
 
 	let ready = false;
-	let posts: NewsPost[] | null;
+	let posts: NewsEntry[] = [];
 	onMount(() => {
 		ready = true;
 		videos = shuffle(
@@ -27,10 +27,28 @@
 			firstVideoLoaded = true;
 		});
 
-		FetchNewsAsync().then((res) => {
-			posts = res;
-			console.log(res);
-		});
+		FetchNewsAsync()
+			.then((res) => {
+				// Fetch news posts.
+				if (res == null) {
+					console.log('Failed to fetch sbox.game news posts');
+					return;
+				}
+
+				posts = res.map((n) => NewsAsNews(n));
+			})
+			.then(async () => {
+				// Get blog posts.
+				const response = await fetch(`/api/posts`);
+				const blogPosts: App.BlogPost[] = (await response.json()).filter(
+					(post: App.BlogPost) => post.published ?? true
+				);
+
+				const blogs = blogPosts.map((b) => BlogAsNews(b));
+				posts = [...posts, ...blogs];
+				posts = posts.slice(0, 3);
+				posts = posts.sort((a, b) => (b.date as any) - (a.date as any));
+			});
 	});
 
 	const socials = [
@@ -114,8 +132,9 @@
 				</div>
 			</div>
 		{/if}
+
 		<div
-			class="absolute z-10 h-full w-auto w-full max-w-none bg-gradient-to-b from-transparentblue from-60% to-navyblue"
+			class="absolute z-10 h-full w-full max-w-none bg-gradient-to-b from-transparentblue from-60% to-navyblue"
 		/>
 
 		<!-- Background video -->
@@ -148,10 +167,12 @@
 				</p>
 			</div>
 
-			<div class="flex flex-row items-center md:px-20 px-5 gap-10 mb-20 w-full justify-center">
+			<div
+				class="flex flex-row items-center md:px-20 px-5 gap-10 mb-20 w-full justify-center flex-wrap"
+			>
 				<!-- Show a maximum of 4 items. -->
 				{#each posts as post, i}
-					{#if i < 4}
+					{#if i < 3}
 						<NewsCard {post} class="w-[30rem]" />
 					{/if}
 				{/each}
@@ -174,6 +195,7 @@
 				<img
 					src="/home/msc_title.png"
 					class="-rotate-[3deg] scale-[100%] duration-200 ease-in-out hover:scale-[105%]"
+					alt="my summer cottage thumbnail"
 				/>
 				<div class="flex flex-col items-center gap-2 p-2 sm:py-10">
 					<p class="font-bold">Latest game from Small Fish, now available in s&box!</p>

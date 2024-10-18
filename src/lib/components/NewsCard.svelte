@@ -1,14 +1,13 @@
 <script lang="ts">
-	import { type NewsPost } from '$lib/types/Backend';
+	import { type NewsEntry } from '$lib/types/News';
 	import SocialButton from './SocialButton.svelte';
 
 	let className: string = '';
 
 	export { className as class };
-	export let post: NewsPost | undefined;
+	export let post: NewsEntry;
 
-	function formatTime(dateString: string): string {
-		const date = new Date(dateString);
+	function formatTime(date: Date): string {
 		const seconds = Math.floor(((new Date() as any) - (date as any)) / 1000);
 		let interval = seconds / 31536000;
 
@@ -32,32 +31,35 @@
 
 {#if post}
 	<a
-		href={`https://sbox.game${post.Url}`}
+		href={post.url}
 		class="relative aspect-video transition-all hover:scale-[102%] hover:cursor-pointer {className} flex"
 		target="_blank"
 	>
 		<!-- Background -->
-		<img src={post.Media} class="absolute w-full h-full rounded-md" />
+		<img src={post.thumbnail} class="absolute w-full h-full rounded-md" alt="thumbnail" />
 		<div
 			class="absolute w-full h-full bg-gradient-to-b from-transparentblack0 to-transparentblack1 rounded-md"
 		/>
 
 		<!-- Inner content -->
 		<div class="relative flex w-full h-full p-5 justify-between flex-col">
-			<div class="flex flex-row gap-2">
-				<SocialButton href="https://sbox.game/" clickDisabled={true} class="h-full aspect-square" />
+			<div class="flex flex-row items-center gap-2">
+				<SocialButton href={post.url} clickDisabled={true} class="w-12 aspect-square" />
 				<div class="gap-2 h-full text-white items-center">
-					<p class="font-bold text-2xl">sbox.game</p>
-					<p class="text-1xl">{formatTime(post.Created)} ago</p>
+					<p class="font-bold text-2xl">{post.source}</p>
+					<p class="text-1xl">{formatTime(post.date)} ago</p>
 				</div>
 			</div>
 
 			<div class="flex flex-col">
-				<p class="font-bold text-1xl text-blue uppercase">
-					{post.Package.substring(5)}
-				</p>
-				<p class="font-bold text-2xl text-white mb-1">{post.Title}</p>
-				<p class="text-1xl text-white">{post.Summary}</p>
+				{#if post.package}
+					<p class="font-bold text-1xl text-blue uppercase">
+						{post.package}
+					</p>
+				{/if}
+
+				<p class="font-bold text-2xl text-white mb-1">{post.title}</p>
+				<p class="text-1xl text-white">{post.summary}</p>
 			</div>
 		</div>
 	</a>
