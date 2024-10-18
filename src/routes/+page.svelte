@@ -125,7 +125,7 @@
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
 				</div>
-				<div class="flex justify-center gap-4">
+				<div class="flex justify-center gap-4 flex-wrap">
 					{#each socials as social}
 						<SocialButton href={social} showHoverTop={false} class="w-12" />
 					{/each}
@@ -170,11 +170,8 @@
 			<div
 				class="flex flex-row items-center md:px-20 px-5 gap-10 mb-20 w-full justify-center flex-wrap"
 			>
-				<!-- Show a maximum of 4 items. -->
 				{#each posts as post, i}
-					{#if i < 3}
-						<NewsCard {post} class="w-[30rem]" />
-					{/if}
+					<NewsCard {post} class="w-[30rem]" />
 				{/each}
 			</div>
 		{/if}
