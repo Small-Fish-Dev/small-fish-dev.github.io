@@ -43,9 +43,9 @@
 			href="/"
 			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/common/logo-round.png" alt="round logo" class="h-8 pr-2" />
-			<p>small fish</p></a
-		>
+			<img src="/common/logo-square.png" alt="square logo" class="h-12 pr-2" />
+			<p>small fish</p>
+		</a>
 		<div class="hidden flex-row items-center gap-2 md:flex">
 			{#each routes as route}
 				<div>
@@ -77,7 +77,7 @@
 	</div>
 	{#if isMenuOpen}
 		<div
-			class="container mx-auto flex flex-col gap-2 pt-2 font-poppins text-xl font-medium text-white"
+			class="container mx-auto flex flex-col gap-2 pt-2 font-poppins text-xl font-medium text-white md:hidden"
 			transition:slide={{ duration: 300 }}
 		>
 			{#each routes as route}
