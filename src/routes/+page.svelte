@@ -253,7 +253,7 @@
 				link="https://sbox.game/fish"
 			/>
 			<StatCard
-				count="20+"
+				count="200+"
 				countType="banned"
 				description="from the Small Fish discord"
 				link="https://discord.gg/rx2qqTqv36"
