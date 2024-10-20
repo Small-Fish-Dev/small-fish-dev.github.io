@@ -37,18 +37,18 @@
 	<Snow />
 {/if}
 
-<nav class="sticky top-0 z-50 mx-auto flex w-full flex-col bg-blue p-2 drop-shadow-md">
-	<div class="container mx-auto flex flex-row items-center justify-between">
+<nav class="sticky top-0 z-50 mx-auto flex w-full flex-col bg-blue drop-shadow-md">
+	<div class="container mx-auto flex h-16 flex-row items-center justify-between px-2">
 		<a
 			href="/"
-			class="group pointer-events-auto flex items-center font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
+			class="group pointer-events-auto flex items-center py-2 font-poppins text-xl font-bold text-white transition-all hover:scale-105 active:scale-95"
 		>
-			<img src="/common/logo-square.png" alt="square logo" class="h-12 pr-2" />
+			<img src="/common/logo-square.png" alt="square logo" class="h-14 pr-2" />
 			<p>small fish</p>
 		</a>
-		<div class="hidden flex-row items-center gap-2 md:flex">
+		<div class="hidden h-full flex-row items-center gap-2 md:flex">
 			{#each routes as route}
-				<div>
+				<div class="h-full">
 					<NavButton
 						href={route.href}
 						icon={route.icon}
@@ -77,13 +77,18 @@
 	</div>
 	{#if isMenuOpen}
 		<div
-			class="container mx-auto flex flex-col gap-2 pt-2 font-poppins text-xl font-medium text-white md:hidden"
+			class="container mx-auto flex flex-col gap-2 p-4 pt-2 font-poppins text-xl font-medium text-white md:hidden"
 			transition:slide={{ duration: 300 }}
 		>
 			{#each routes as route}
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
 				<!-- svelte-ignore a11y-no-static-element-interactions -->
-				<a href={route.href} class="flex origin-left items-center transition-all active:scale-95">
+				<a
+					href={route.href}
+					class="flex origin-left {$page.url.pathname == route.href
+						? 'opacity-75'
+						: ''} items-center transition-all active:scale-95"
+				>
 					<Icon icon={route.icon} class="mr-2" />
 					<p>{route.label}</p>
 				</a>
