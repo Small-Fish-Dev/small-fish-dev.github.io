@@ -43,42 +43,42 @@
 </div>
 
 <div class="md:px-18 container z-10 mx-auto flex flex-col pt-16 font-poppins lg:px-32 xl:px-64">
-	<div class="mb-5 px-5 text-white text-shadow sm:px-0">
+	<div class="mb-5 px-5 text-white sm:px-0">
 		<h1 class="mb-2 text-5xl font-bold">{data.blogPost.title}</h1>
 		{#if data.blogPost.description}
-			<p class="mb-4 text-gray">{data.blogPost.description}</p>
+			<p class="mb-4 text-gray mb-12">{data.blogPost.description}</p>
 		{/if}
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div class="flex items-center justify-between">
+		<div class="flex items-center">
 			{#if data.blogPost.member}
 				<div
 					on:click={() => {
 						goto(`/team/${data.blogPost.member?.name}`);
 					}}
-					class="flex origin-left flex-row items-center gap-1 text-gray transition-all hover:scale-110 hover:cursor-pointer"
+					class="flex origin-left flex-row items-center gap-3 text-gray transition-all hover:scale-110 hover:cursor-pointer"
 				>
 					<img
-						class="h-[42px] w-[42px] rounded-full bg-cover drop-shadow-md"
+						class="h-[42px] w-[42px] rounded-[2px] bg-cover"
 						src={data.blogPost.member.avatar == null
 							? '/team/profiles/none.jpg'
 							: data.blogPost.member.avatar}
 						alt="publisher"
 						on:error={imageFallback}
 					/>
-					<p class="font-medium">
+					<p class="font-bold">
 						by <span class="font-bold text-gray transition-all hover:text-white"
 							>{data.blogPost.member.name}</span
 						>
 					</p>
 				</div>
 			{/if}
-			<div class="flex items-center text-lg font-medium">
+			<div class="flex items-center text-gray font-bold ml-10">
 				<Icon
 					icon="material-symbols:calendar-today"
-					class="mr-1"
-					style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+					class="mr-3"
+					style="transform: scale( 1.4 )"
 				/>
 				<p>
 					{new Date(data.blogPost.date).toLocaleString('en-us', {
