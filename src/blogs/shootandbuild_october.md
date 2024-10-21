@@ -62,10 +62,15 @@ Other than tweaking acceleration and jump, I was forced by our animator to make 
 
 Now throwing a grenade isn't just an instant thing, it has a proper viewmodel animation. If you decide to hold your grenade, there'll be a proper UI showing how much time is left before it blows up in your hand. This may appear as a nerf, but in exchange grenades now have a larger explosion radius.
 
-<Heading title="User Interface" caption="by matek" />
-<ImageCollage images={["lobbies.png", "settings.png"]} />
+<Heading title="Viewmodel animations" caption="by matek" />
+<Video src="viewmodel.mp4" />
 
-There's progress on implementing UI for all game things. Settings now allow adjusting view distance, FOV, and applying some graphics settings like retro mode and colorblindness filters. Lobby creation menu is also under development.
+I find that procedural animations for view models are extremely important for first person games. It adds a layer of polish and fluidity to the view models that is essential. You'll notice that when you look around, jump, crouch, sprint, etc. all of these are procedurally done.
+
+<Heading title="User Interface" caption="by matek" />
+<ImageCollage images={["lobbies.jpg", "settings.jpg"]} />
+
+I've been working through the mockups that wheatley has designed and implementing them. We have some interesting settings this time around allowing for the adjustment of view distance, FOV, "retro mode" and colorblind options.
 
 <Heading title="Chat Improvements" caption="by wheatleymf" />
 <Video src="chat.mp4" />
