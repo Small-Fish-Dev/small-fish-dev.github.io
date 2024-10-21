@@ -13,12 +13,6 @@
 		return true;
 	}
 
-	function resolvePath(src: string) {
-		return src.startsWith('http://') || src.startsWith('https://')
-			? src
-			: `/blogs/${$page.params.slug}/${src}`;
-	}
-
 	let initialGame: Game;
 </script>
 
@@ -30,7 +24,7 @@
 		{/if}
 
 		{#if initialGame.logo}
-			<meta property="og:image" content="https://smallfi.sh/{resolvePath(initialGame.logo)}" />
+			<meta property="og:image" content="https://smallfi.sh/{initialGame.logo}" />
 		{/if}
 	{/if}
 </svelte:head>

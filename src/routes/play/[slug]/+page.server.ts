@@ -27,8 +27,6 @@ export function load({ params }) {
 			message: 'Not found'
 		});
 	}
-
-	throw redirect(302, `steam://run/590830//-rungame ${game.sboxIdent}`);
 }
 
 export const prerender = true;

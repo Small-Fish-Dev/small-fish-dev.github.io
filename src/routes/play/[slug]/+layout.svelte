@@ -1,24 +1,32 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Games, type Game } from '$lib/types/Games';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { goto } from '$app/navigation';
 
-	function getGameFromIdent(): Boolean {
+	const cullIdent = (ident: string): string => {
+		if (ident.startsWith('fish.')) ident = ident.substring(5);
+		return ident;
+	};
+
+	function getGameFromIdent(): boolean {
 		const slug = $page.params.slug;
 		const decodedName = decodeURI(slug);
 
 		const target = Games.find(
-			(g) => g.sboxIdent?.toLowerCase() === decodedName.toLocaleLowerCase()
+			(g) =>
+				cullIdent(g.sboxIdent ?? 'fuck-you-kid').toLowerCase() === decodedName.toLocaleLowerCase()
 		);
 		if (target == null) return false;
 
 		game = target;
-		return true;
-	}
+		if (browser) {
+			window.location.href = `steam://run/590830//-rungame ${game.sboxIdent}`;
+			goto('/');
+		}
 
-	function resolvePath(src: string) {
-		return src.startsWith('http://') || src.startsWith('https://')
-			? src
-			: `/blogs/${$page.params.slug}/${src}`;
+		return true;
 	}
 
 	let game: Game;
@@ -32,7 +40,9 @@
 		{/if}
 
 		{#if game.logo}
-			<meta property="og:image" content="https://smallfi.sh/{resolvePath(game.logo)}" />
+			<meta property="og:image" content="https://smallfi.sh/{game.logo}" />
 		{/if}
 	{/if}
 </svelte:head>
+
+<slot />
