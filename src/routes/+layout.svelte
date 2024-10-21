@@ -19,12 +19,12 @@
 			label: 'blogs',
 			icon: 'material-symbols:newspaper',
 			href: '/blog'
-		},
-		{
-			label: 'fish games',
-			icon: 'material-symbols:videogame-asset',
-			href: '/games'
 		}
+		// {
+		// 	label: 'fish games',
+		// 	icon: 'material-symbols:videogame-asset',
+		// 	href: '/games'
+		// }
 	];
 
 	let isMenuOpen = false;
