@@ -14,15 +14,15 @@
 
 <a
 	{href}
-	class="nav-button flex h-full items-center whitespace-nowrap px-4 py-1
+	class="nav-button flex h-full items-center whitespace-nowrap px-7 py-1
 		   font-poppins
-		   text-xl
-		   font-medium
+		   text-[18px]
+		   font-bold
 		   transition-all
 		   hover:scale-110
 		   {isCurrent() ? 'bg-white text-blue' : 'text-white'}
 		   {disabled ? 'pointer-events-none' : 'pointer-events-auto'}"
 >
-	<Icon {icon} class="mr-2" />
+	<Icon {icon} class="mr-5" />
 	<p>{label}</p>
 </a>
