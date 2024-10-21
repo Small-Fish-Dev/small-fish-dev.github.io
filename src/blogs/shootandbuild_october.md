@@ -49,6 +49,14 @@ New guns are coming! In fact, they were in the game since very early days of dev
 
 Most of them lack proper sounds at the moment, but we'll get that sorted out.
 
+<Heading title="Player controller rework" caption="by ubre" />
+
+Players disliked the old character controller, especially block climbing, so I shrimplemented the [Shrimple Character Controller](https://sbox.game/fish/scc)
+
+The first thing I focused on was block climbing. The faster you move, the faster you'll be able to climb blocks, so it's *less* annoying when sprinting and not jarring when crouching. It also uses the same logic as step climbing, making it more reliable. Plus you'll be able to climb blocks even in mid-air, which means parkour noobs don't have to fear for their lives.
+
+Other than tweaking acceleration and jump, I was forced by our animator to make walking much slower compared to sprinting. If you have any complaints direct them to @Grodbert on Discord.
+
 <Heading title="Grenade Animations" caption="by ceitine & wheatleymf" />
 <Video src="grenades.mp4" />
 
@@ -122,7 +130,6 @@ There are even more changes, but they're pretty small so here's a list:
 - Reduced air acceleration 
 - Added footsteps
 - Reduced mesh density of a water plane
-- Improvements to block climbing 
 - Implemented damage indicator 
 - [Editor] Added "You Can Do It!" library to motivate devs
 - [Editor] Removed "You Can Do It!" library (original commit: "Remove virus and unblock ceitine")
