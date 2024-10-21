@@ -41,13 +41,13 @@
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-6 font-poppins sm:px-4 lg:px-32 xl:px-40"
 >
 	{#each groupedPosts.entries() as [monthYear, postsInMonthYear]}
-		<h1 class="text-4xl font-bold underline decoration-blue">
+		<h1 class="text-4xl mt-10 mb-2 font-bold underline decoration-blue decoration-8">
 			{monthYear}
 		</h1>
 		{#each postsInMonthYear as post, i}
 			<a
 				href="{$page.url.pathname}/{post.slug}"
-				class="drop-shadow-md transition-all text-shadow hover:-translate-y-2 hover:drop-shadow-hover"
+				class="transition-all hover:-translate-y-2"
 			>
 				<div class="flex flex-col overflow-hidden rounded-lg md:flex-row">
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
@@ -60,13 +60,13 @@
 						{/if}
 					</div>
 					<div
-						class="flex w-full flex-col justify-center break-words bg-gradient-to-r from-blue to-lightblue p-4 md:p-8"
+						class="flex w-full flex-col justify-center break-words bg-blue p-4 md:p-8"
 					>
 						<div class="flex flex-row flex-wrap justify-between gap-4 pb-4">
 							{#if post.member}
-								<div class="flex origin-left flex-row items-center gap-1 text-gray">
+								<div class="flex origin-left flex-row items-center gap-3 text-gray">
 									<img
-										class="h-[42px] w-[42px] rounded-full bg-cover drop-shadow-md"
+										class="h-[42px] w-[42px] rounded-[2px] bg-cover"
 										src={post.member.avatar == null
 											? '/team/profiles/none.jpg'
 											: post.member.avatar}
@@ -78,11 +78,11 @@
 									</p>
 								</div>
 							{/if}
-							<div class="flex items-center text-lg font-medium text-white">
+							<div class="flex items-center text-lg font-bold text-white">
 								<Icon
 									icon="material-symbols:calendar-today"
-									class="mr-1"
-									style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));"
+									class="mr-1 mr-3"
+									style="transform: scale( 1.3 )"
 								/>
 								<p>
 									{new Date(post.date).toLocaleString('en-us', {
@@ -94,7 +94,7 @@
 							</div>
 						</div>
 
-						<h2 class="text-3xl font-medium text-white">{post.title}</h2>
+						<h2 class="text-3xl font-bold text-white">{post.title}</h2>
 
 						{#if post.description}
 							<p class="text-white">{post.description}</p>
