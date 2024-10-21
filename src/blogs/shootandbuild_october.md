@@ -119,7 +119,7 @@ After receiving the feedback on Kar98k and SMG during last playtest, I've made b
 - Shortened SMG deploy time
 
 <Heading title="Visual Effects" caption="by wheatleymf" />
-<Video src="explosion.mp4" />
+<Video src="http://files.smallfi.sh/u/sbox-dev_I308DL9hcc.mp4" />
 
 - Added explosion effect. Looks more fancy and noticeable
 - Added muzzleflash effect for weapons
