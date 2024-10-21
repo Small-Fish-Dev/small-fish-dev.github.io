@@ -9,7 +9,7 @@ published: false
 <Img src="snb_playtest_promo.png" />
 
 **Shoot & Build** is coming back with a new playtests and plenty of changes! New weapons, tons of improvements to player animations, graphics improvements,
-bug fixes, some gameplay changes, tons of UI additions and many other awesome things. 
+bug fixes, some gameplay changes, tons of UI additions and many other awesome things.
 
 <Heading title="Playtest" />
 
@@ -29,7 +29,7 @@ more powerful than regular loadout weapons. Lets take a deeper look at them:
 <Video src="rocketlauncher.mp4" />
 
 <b>Rocket Launcher</b> is pretty self-explanatory! It shoots rockets! And also pretty destructive, making it
-a very efficient tool to destroy enemy buildings. Rocket Launcher has a special zooming scope, which you must use before firing a rocket. Projectile is pretty slow, but explosion radius is much greater than from any other explosive in the game. Also, if you liked rocket jumping in other multiplayer games, we highly recommend you try doing it. 
+a very efficient tool to destroy enemy buildings. Rocket Launcher has a special zooming scope, which you must use before firing a rocket. Projectile is pretty slow, but explosion radius is much greater than from any other explosive in the game. Also, if you liked rocket jumping in other multiplayer games, we highly recommend you try doing it.
 <Video src="rocketjump.mp4" />
 
 <Heading h="h3" title="Minigun" />
@@ -45,7 +45,7 @@ New guns are coming! In fact, they were in the game since very early days of dev
 
 - Assault Rifle
 - Heavy Machine Gun
-- Shotgun 
+- Shotgun
 
 Most of them lack proper sounds at the moment, but we'll get that sorted out.
 
@@ -53,7 +53,7 @@ Most of them lack proper sounds at the moment, but we'll get that sorted out.
 
 Players disliked the old character controller, especially block climbing, so I shrimplemented the [Shrimple Character Controller](https://sbox.game/fish/scc)
 
-The first thing I focused on was block climbing. The faster you move, the faster you'll be able to climb blocks, so it's *less* annoying when sprinting and not jarring when crouching. It also uses the same logic as step climbing, making it more reliable. Plus you'll be able to climb blocks even in mid-air, which means parkour noobs don't have to fear for their lives.
+The first thing I focused on was block climbing. The faster you move, the faster you'll be able to climb blocks, so it's _less_ annoying when sprinting and not jarring when crouching. It also uses the same logic as step climbing, making it more reliable. Plus you'll be able to climb blocks even in mid-air, which means parkour noobs don't have to fear for their lives.
 
 Other than tweaking acceleration and jump, I was forced by our animator to make walking much slower compared to sprinting. If you have any complaints direct them to @Grodbert on Discord.
 
@@ -70,7 +70,7 @@ There's progress on implementing UI for all game things. Settings now allow adju
 <Heading title="Chat Improvements" caption="by wheatleymf" />
 <Video src="chat.mp4" />
 
-Chat was looking pretty unfinished during previous playtests, but now it's pretty much complete. I've updated the visuals and implemented team chat, so you can communicate with your team now. Press <b>TAB</b> to cycle between global/team chats. 
+Chat was looking pretty unfinished during previous playtests, but now it's pretty much complete. I've updated the visuals and implemented team chat, so you can communicate with your team now. Press <b>TAB</b> to cycle between global/team chats.
 
 <Heading title="Headshot Gore" caption="by yart" />
 <Video src="headshot_gore_2.mp4" />
@@ -82,14 +82,14 @@ Hello my name is Grodbert. Players now have proper animations! They properly hol
 <Heading title="Water Shader Improvements" caption="by wheatleymf" />
 <Video src="watah.mp4" />
 
-This wasn't absolutely necessary, but I've made bunch of changes to water shader. It now has proper reflections, nicer normals, better foam rendering, 
-and colors should be a bit more fancy in general. You probably won't even notice it unless you play on a map with plenty of water, but who cares! Also, previously we were generating an unnecessarily dense water plane mesh - now it's been optimized.  
+This wasn't absolutely necessary, but I've made bunch of changes to water shader. It now has proper reflections, nicer normals, better foam rendering,
+and colors should be a bit more fancy in general. You probably won't even notice it unless you play on a map with plenty of water, but who cares! Also, previously we were generating an unnecessarily dense water plane mesh - now it's been optimized.
 
 <Heading title="Retro Mode" caption="by wheatleymf" />
 <Video src="retromode.mp4" />
 If you don't like modern graphics (or performance isn't looking good for you), you can now try retro mode! I've tried to make it look like original Ace of Spades
  as much as possible, but understandably there'll be some difference. It takes away all fancy s&box graphics features and just renders everything flat, also
- adds "classic" screen space fog. 
+ adds "classic" screen space fog.
 
 <Heading title="Better Aiming" caption="by yart" />
 <Video src="aiming.mp4" />
@@ -98,7 +98,7 @@ Weapons now offset to center properly when you're aiming.
 <Heading title="Colorblind Filters" caption="by wheatleymf" />
 <Video src="colorblind.mp4" />
 I've added colorblind filters for deuteranopia, protanopia and tritanopia. It's available in graphics settings. Our games always lacked some accessibility features,
-so this is a first little step towards them. In near future there'll be also brightness/contrast correction available. 
+so this is a first little step towards them. In near future there'll be also brightness/contrast correction available.
 
 <Heading title="Weapon Gameplay Changes" caption="by wheatleymf" />
 After receiving the feedback on Kar98k and SMG during last playtest, I've made bunch of changes to these guns:
@@ -119,17 +119,17 @@ After receiving the feedback on Kar98k and SMG during last playtest, I've made b
 - Added explosion effect. Looks more fancy and noticeable
 - Added muzzleflash effect for weapons
 - Added postprocessing effect when receiving damage
-- Added eject shells when firing a gun 
+- Added eject shells when firing a gun
 
 <Heading title="Misc Changes" />
 There are even more changes, but they're pretty small so here's a list:
 
 - Plenty of bug fixes! Most of them were spot during previous playtest, so thank you everyone who was there.
-- Added player ragdolls after they die 
-- Green team is now Red. Now it's Red vs. Blue... 
-- Reduced air acceleration 
+- Added player ragdolls after they die
+- Green team is now Red. Now it's Red vs. Blue...
+- Reduced air acceleration
 - Added footsteps
 - Reduced mesh density of a water plane
-- Implemented damage indicator 
+- Implemented damage indicator
 - [Editor] Added "You Can Do It!" library to motivate devs
 - [Editor] Removed "You Can Do It!" library (original commit: "Remove virus and unblock ceitine")
