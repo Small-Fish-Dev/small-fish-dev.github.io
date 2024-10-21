@@ -34,7 +34,7 @@ export const Games: Game[] = [
 		summary:
 			'A dungeon crawler where the levels are procedurally generated voxel worlds! You and your party of daring adventurers are thrust into the world of Death Card where no dungeon is ever the same.',
 		date: new Date(2023, 8, 1),
-		logo: '/games/deathcard-logo.png',
+		logo: '/games/deathcard_logo.png',
 		contributors: [
 			'ceitine',
 			'rndtrash',

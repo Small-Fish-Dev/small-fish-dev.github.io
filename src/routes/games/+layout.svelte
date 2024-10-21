@@ -12,7 +12,7 @@
 	}
 
 	onMount(() => {
-		window.history.replaceState(null, '', `/games/${decodeURI(game.title).toLocaleLowerCase()}`);
+		window.history.replaceState(null, '', `/games/${decodeURI(game.title)}`);
 	});
 </script>
 

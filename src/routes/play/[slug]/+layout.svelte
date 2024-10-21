@@ -23,7 +23,7 @@
 		game = target;
 		if (browser) {
 			window.location.href = `steam://run/590830//-rungame ${game.sboxIdent}`;
-			goto('/');
+			//goto('/', { replaceState: true });
 		}
 
 		return true;
@@ -46,3 +46,38 @@
 </svelte:head>
 
 <slot />
+
+<div
+	class="scroll flex h-screen flex-col items-center justify-center bg-[url('/common/pixel-overlay.png')] font-poppins text-4xl text-white"
+>
+	<p class="font-bold lowercase">redirecting to {cullIdent(game.sboxIdent ?? 'fuck-you-kid')}...</p>
+	<a href="steam://run/590830//-rungame {game.sboxIdent}">
+		<p class="mt-5 scale-100 lowercase transition-all hover:scale-[102%]">click to retry</p>
+	</a>
+</div>
+
+<style>
+	@keyframes scroll {
+		0% {
+			background-position-x: 0%;
+			background-position-y: 0%;
+		}
+		100% {
+			background-position-x: 100%;
+			background-position-y: 100%;
+		}
+	}
+
+	.scroll {
+		animation: scroll 120s infinite linear;
+	}
+
+	p {
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+	}
+
+	.pixelated {
+		image-rendering: pixelated;
+		filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+	}
+</style>
