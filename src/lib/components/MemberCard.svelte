@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { shrimplifyPath, type Member } from '$lib/types/Member';
-	import { Projects } from '$lib/types/Project';
+	import { Games } from '$lib/types/Games';
 	import { swipeable } from '@react2svelte/swipeable';
 	import type { SwipeEventData } from '@react2svelte/swipeable';
 	import SocialButton from './SocialButton.svelte';
@@ -14,6 +14,14 @@
 	const imageFallback = (event: any) => {
 		if (!event.target) return;
 		event.target.src = '/team/profiles/none.jpg';
+	};
+
+	const getProjects = () => {
+		return Games.filter(
+			(proj) =>
+				proj.contributors == null ||
+				proj.contributors?.find((m) => m.toLowerCase() == member.name.toLocaleLowerCase())
+		).sort();
 	};
 
 	function swipeHandler(event: CustomEvent<SwipeEventData>) {
@@ -118,14 +126,16 @@
 		{/if}
 
 		<!-- Spotted in -->
-		<h1 class="w-full bg-blue p-[10px] font-medium text-white">SPOTTED IN</h1>
-		<div class="p-[10px]">
-			<ul class="ml-5 flex list-disc flex-col justify-center">
-				{#each Projects.filter((proj) => proj.contributors == null || proj.contributors?.find((m) => m.toLowerCase() == member.name.toLocaleLowerCase())).sort() as project}
-					<li>{project.title}</li>
-				{/each}
-			</ul>
-		</div>
+		{#if getProjects().length > 0}
+			<h1 class="w-full bg-blue p-[10px] font-medium text-white">SPOTTED IN</h1>
+			<div class="p-[10px]">
+				<ul class="ml-5 flex list-disc flex-col justify-center">
+					{#each getProjects() as project}
+						<li>{project.title}</li>
+					{/each}
+				</ul>
+			</div>
+		{/if}
 	</div>
 </div>
 
