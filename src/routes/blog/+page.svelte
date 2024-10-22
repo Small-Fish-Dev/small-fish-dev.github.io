@@ -41,14 +41,11 @@
 	class="md:px-18 container z-10 mx-auto mb-20 flex flex-col gap-4 px-2 pt-6 font-poppins sm:px-4 lg:px-32 xl:px-40"
 >
 	{#each groupedPosts.entries() as [monthYear, postsInMonthYear]}
-		<h1 class="text-4xl mt-10 mb-2 font-bold underline decoration-blue decoration-8">
+		<h1 class="mb-2 mt-10 text-4xl font-bold underline decoration-blue decoration-8">
 			{monthYear}
 		</h1>
 		{#each postsInMonthYear as post, i}
-			<a
-				href="{$page.url.pathname}/{post.slug}"
-				class="transition-all hover:-translate-y-2"
-			>
+			<a href="/blog/{post.slug}" class="transition-all hover:-translate-y-2">
 				<div class="flex flex-col overflow-hidden rounded-lg md:flex-row">
 					<div class="relative h-48 w-full md:h-auto md:basis-1/2">
 						{#if post.thumbnail}
@@ -59,9 +56,7 @@
 							/>
 						{/if}
 					</div>
-					<div
-						class="flex w-full flex-col justify-center break-words bg-blue p-4 md:p-8"
-					>
+					<div class="flex w-full flex-col justify-center break-words bg-blue p-4 md:p-8">
 						<div class="flex flex-row flex-wrap justify-between gap-4 pb-4">
 							{#if post.member}
 								<div class="flex origin-left flex-row items-center gap-3 text-gray">
