@@ -16,6 +16,8 @@
 	onMount(() => {
 		window.history.replaceState(null, '', `/games/${game.slug}`);
 	});
+
+	let mediaIndex: number = 0;
 </script>
 
 <slot />
@@ -24,11 +26,11 @@
 	<title>Games / {game.title}</title>
 </svelte:head>
 
-<div class="flex h-screen w-full justify-center font-poppins">
+<div class="flex h-screen w-full justify-center overflow-x-hidden bg-[#222222] font-poppins">
 	<!-- Main content -->
-	<div class="flex h-full w-full flex-row bg-blue xl:w-[85%]">
+	<div class="flex h-full w-full flex-row xl:w-[85%]">
 		<!-- Media and navigation -->
-		<div class="flex w-[65%] flex-shrink flex-col">
+		<div class="flex w-[65%] flex-shrink flex-col gap-10">
 			<!-- Navigation -->
 			<div class="flex flex-col gap-2 px-10 pt-5">
 				<p class="text-lg text-gray">quick fish games navigation:</p>
@@ -44,6 +46,45 @@
 						>
 					{/each}
 				</div>
+			</div>
+
+			<!-- Active media -->
+			<div class="relative flex h-full w-full pb-40">
+				{#if game.media && game.media[mediaIndex]}
+					{@const src = game.media[mediaIndex]}
+
+					<div class="relative flex w-full justify-center bg-black">
+						{#if src.endsWith('mp4')}
+							<video {src} />
+						{:else}
+							<div
+								class="absolute left-0 -ml-60 h-full w-[110vw] overflow-x-hidden blur-md brightness-50"
+							>
+								<img class="h-full w-full" {src} loading="lazy" />
+							</div>
+							<img
+								class="z-20 h-full object-contain"
+								{src}
+								alt={`image ${mediaIndex}`}
+								loading="lazy"
+							/>
+						{/if}
+					</div>
+
+					<div
+						class="absolute bottom-0 z-30 flex h-40 w-full -translate-y-[20%] flex-row items-start justify-center gap-8 px-4 drop-shadow-sm"
+					>
+						{#each game.media as media, i}
+							{@const activeClass = i == mediaIndex ? '-translate-y-4' : 'brightness-50'}
+							<button
+								class="flex aspect-video flex-grow basis-0 justify-center bg-black transition-all hover:-translate-y-2 hover:cursor-pointer hover:brightness-110 {activeClass}"
+								on:click={() => (mediaIndex = i)}
+							>
+								<img src={media} class="h-full" alt="media" />
+							</button>
+						{/each}
+					</div>
+				{/if}
 			</div>
 		</div>
 

@@ -63,7 +63,14 @@ export const Games: Game[] = [
 		title: 'In This House',
 		summary:
 			'Spooky Robathon with 3 levels and 3 monsters trying to kick you out. 1st Place winner of the Mighty Brick Game Jam.',
-		media: ['/blogs/example/ex.png', '/blogs/frostrial/clothes.png'],
+		media: [
+			'/blogs/example/ex.png',
+			'/blogs/frostrial/clothes.png',
+			'/blogs/example/ex.png',
+			'/blogs/frostrial/clothes.png',
+			'/blogs/example/ex.png',
+			'/blogs/frostrial/clothes.png'
+		],
 		contributors: ['ubre', 'Grodbert', 'ceitine', 'gio', 'rndtrash', 'Luke', 'CyberAgent'],
 		date: new Date(2023, 10, 20),
 		state: GameState['Dead Till Revival'],
