@@ -3,10 +3,10 @@
 	import { Games, type Game } from '$lib/types/Games';
 
 	function getGameFromSlug(): Boolean {
-		let slug = $page.params.slug;
-		const decodedName = decodeURI(slug);
+		const slug = $page.params.slug;
+		const decodedName = slug?.toLocaleLowerCase();
 
-		let target = Games.find((g) => g.title.toLowerCase() === decodedName.toLocaleLowerCase());
+		const target = Games.find((g) => g.slug == decodedName);
 		if (target == null) return false;
 
 		initialGame = target;

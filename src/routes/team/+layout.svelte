@@ -233,17 +233,19 @@
 </script>
 
 <svelte:head>
-	{#if member}
-		<title>Team / {member.name}</title>
-	{:else}
-		<title>Team</title>
-	{/if}
+	{#key member}
+		{#if member}
+			<title>Team / {member.name}</title>
+		{:else}
+			<title>Team</title>
+		{/if}
+	{/key}
 </svelte:head>
 
 <slot />
 
 <div class="h-screen w-full overflow-hidden">
-	<div class="scroll bg-pixel-large h-full w-full">
+	<div class="scroll h-full w-full bg-pixel-large">
 		{#await promise then options}
 			<canvas
 				bind:this={canvas}

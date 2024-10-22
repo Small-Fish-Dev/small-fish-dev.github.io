@@ -3,7 +3,7 @@ import { Games, type Game } from '$lib/types/Games';
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	return Games.map(function (g) {
-		return { slug: decodeURI(g.title) };
+		return { slug: g.slug ?? 'fuck-you-kid' };
 	});
 }
 

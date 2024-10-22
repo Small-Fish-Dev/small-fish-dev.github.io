@@ -26,8 +26,8 @@ export default {
 				DEFAULT: '2px 2px 4px rgba(0, 0, 0, 0.5)'
 			},
 			height: {
-				// 54 px for navbar
-				screen: 'calc(100vh - 52px)'
+				// 64 px for navbar
+				screen: 'calc(100vh - 64px)'
 			},
 			boxShadow: {
 				xs: '3px 3px black',

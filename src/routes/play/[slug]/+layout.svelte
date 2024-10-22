@@ -10,14 +10,11 @@
 		return ident;
 	};
 
-	function getGameFromIdent(): boolean {
+	function getGameFromSlug(): boolean {
 		const slug = $page.params.slug;
-		const decodedName = decodeURI(slug);
+		const decodedName = slug.toLocaleLowerCase();
 
-		const target = Games.find(
-			(g) =>
-				cullIdent(g.sboxIdent ?? 'fuck-you-kid').toLowerCase() === decodedName.toLocaleLowerCase()
-		);
+		const target = Games.find((g) => (g.slug ?? 'fuck-you-kid').toLowerCase() === decodedName);
 		if (target == null) return false;
 
 		game = target;
@@ -33,7 +30,7 @@
 </script>
 
 <svelte:head>
-	{#if getGameFromIdent()}
+	{#if getGameFromSlug()}
 		<meta property="og:title" content="Play {game.title}" />
 		{#if game.summary}
 			<meta property="og:description" content={game.summary} />
@@ -74,10 +71,5 @@
 
 	p {
 		text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-	}
-
-	.pixelated {
-		image-rendering: pixelated;
-		filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 	}
 </style>

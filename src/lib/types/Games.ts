@@ -8,6 +8,7 @@ export interface Game {
 	state?: GameState;
 	contestDetails?: ContestDetails;
 	sboxIdent?: string;
+	slug?: string;
 }
 
 export interface ContestDetails {
@@ -19,7 +20,10 @@ export interface ContestDetails {
 export enum Placement {
 	'1st',
 	'2nd',
-	'3rd'
+	'3rd',
+	'4th',
+	'5th',
+	None
 }
 
 export enum GameState {
@@ -51,7 +55,7 @@ export const Games: Game[] = [
 		contestDetails: {
 			url: 'https://sbox.game/c/gamejam2',
 			placement: Placement['2nd'],
-			title: 'Facepunch Game Contest'
+			title: 'Facepunch Game Contest II'
 		},
 		sboxIdent: 'fish.deathcard'
 	},
@@ -111,3 +115,9 @@ export const Games: Game[] = [
 		contributors: ['ubre', 'Grodbert', 'ceitine', 'Luke', 'rndtrash', 'Mungus']
 	}
 ];
+
+// Give all games a slug!
+Games.forEach((game) => {
+	if (game.slug) return;
+	game.slug = game.title.toLowerCase().replaceAll(' ', '_').replaceAll('/[^a-z0-9]/gi', '');
+});
