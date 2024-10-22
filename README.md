@@ -1,12 +1,12 @@
-# SmallFish Website
+# Small Fish Website
 
-The SmallFish website is created using [SvelteKit](https://kit.svelte.dev/) and hosted via [GitHub Pages](https://pages.github.com/)
+The Small Fish website is created using [SvelteKit](https://kit.svelte.dev/) and hosted via [GitHub Pages](https://pages.github.com/)
 
 ## Setup and running locally
 
-1. Download and install [NodeJs](https://nodejs.org/en/)
-2. Open the project folder using your favourite IDE (use [vscode](https://code.visualstudio.com/)!)
-3. Using terminal, run the following commands...
+1. Download and install [Node.js](https://nodejs.org/en/)
+2. Open the project folder using your favourite IDE (use [VS Code](https://code.visualstudio.com/)!)
+3. In a terminal, run the following commands...
 
 ```
 npm install
