@@ -43,99 +43,101 @@
 			</button>
 		</div>
 
-		<!-- Avatar -->
-		<div class="relative flex aspect-square w-full flex-col justify-between">
-			{#if member.avatar}
-				<img
-					class="absolute aspect-square w-full bg-cover"
-					src={member.avatar}
-					alt="avatar"
-					on:error={imageFallback}
-				/>
-			{:else}
-				<img
-					class="absolute aspect-square w-full bg-cover"
-					src="/team/profiles/none.jpg"
-					alt="avatar"
-				/>
-			{/if}
+		{#key member}
+			<!-- Avatar -->
+			<div class="relative flex aspect-square w-full flex-col justify-between">
+				{#if member.avatar}
+					<img
+						class="absolute aspect-square w-full bg-cover"
+						src={member.avatar}
+						alt="avatar"
+						on:error={imageFallback}
+					/>
+				{:else}
+					<img
+						class="absolute aspect-square w-full bg-cover"
+						src="/team/profiles/none.jpg"
+						alt="avatar"
+					/>
+				{/if}
 
-			<!-- Name -->
-			<div class="mt-4 flex w-full justify-end">
-				<h1
-					class="z-10 bg-blue p-[5px] pl-[10px] pr-[10px] text-2xl font-medium text-white text-shadow-heavy"
-				>
-					{member.name}
-				</h1>
+				<!-- Name -->
+				<div class="mt-4 flex w-full justify-end">
+					<h1
+						class="z-10 bg-blue p-[5px] pl-[10px] pr-[10px] text-2xl font-medium text-white text-shadow-heavy"
+					>
+						{member.name}
+					</h1>
+				</div>
+
+				<!-- Socials -->
+				{#if member.socials}
+					<div
+						class="flex w-full flex-row flex-wrap-reverse justify-center gap-2 p-[10px] opacity-60 hover:opacity-90"
+					>
+						{#each member.socials.sort() as social}
+							<SocialButton href={social} class="aspect-square w-[48px]" />
+						{/each}
+					</div>
+				{/if}
 			</div>
 
-			<!-- Socials -->
-			{#if member.socials}
-				<div
-					class="flex w-full flex-row flex-wrap-reverse justify-center gap-2 p-[10px] opacity-60 hover:opacity-90"
-				>
-					{#each member.socials.sort() as social}
-						<SocialButton href={social} class="aspect-square w-[48px]" />
+			<!-- About -->
+			{#if member.description}
+				<h1 class="w-full bg-blue p-[10px] font-medium text-white">ABOUT</h1>
+				<div class="p-[10px]">
+					<p>{member.description}</p>
+				</div>
+			{/if}
+
+			<!-- Scientific Classification -->
+			{#if member.classification}
+				<h1 class="w-full bg-blue p-[10px] font-medium text-white">SCIENTIFIC CLASSIFICATION</h1>
+				<div class="flex flex-col p-[10px]">
+					{#each Object.keys(member.classification) as type}
+						<div class="flex w-full flex-row justify-between pl-[25px] pr-[25px]">
+							<p class="font-bold uppercase">{type}:</p>
+							<a class="text-blue underline" href={member.classification[type][1]} target="_blank"
+								>{member.classification[type][0]}</a
+							>
+						</div>
 					{/each}
 				</div>
 			{/if}
-		</div>
 
-		<!-- About -->
-		{#if member.description}
-			<h1 class="w-full bg-blue p-[10px] font-medium text-white">ABOUT</h1>
-			<div class="p-[10px]">
-				<p>{member.description}</p>
-			</div>
-		{/if}
-
-		<!-- Scientific Classification -->
-		{#if member.classification}
-			<h1 class="w-full bg-blue p-[10px] font-medium text-white">SCIENTIFIC CLASSIFICATION</h1>
-			<div class="flex flex-col p-[10px]">
-				{#each Object.keys(member.classification) as type}
-					<div class="flex w-full flex-row justify-between pl-[25px] pr-[25px]">
-						<p class="font-bold uppercase">{type}:</p>
-						<a class="text-blue underline" href={member.classification[type][1]} target="_blank"
-							>{member.classification[type][0]}</a
-						>
-					</div>
-				{/each}
-			</div>
-		{/if}
-
-		<!-- Skills -->
-		{#if member.roles}
-			<h1 class="w-full bg-blue p-[10px] font-medium text-white">SUBFAMILIES</h1>
-			<div class="flex flex-col gap-2 p-[10px]">
-				{#each Object.keys(member.roles) as role}
-					<div class="flex flex-row">
-						<p class="mr-[50px] whitespace-nowrap">{role}</p>
-						<div class="flex flex-grow flex-row flex-wrap-reverse justify-center gap-1">
-							{#each member.roles[role].sort() as skill}
-								<HoverIcon
-									src={skill}
-									class="pixelate aspect-square w-[32px] drop-shadow transition-all"
-									text={shrimplifyPath(skill)}
-								/>
-							{/each}
+			<!-- Skills -->
+			{#if member.roles}
+				<h1 class="w-full bg-blue p-[10px] font-medium text-white">SUBFAMILIES</h1>
+				<div class="flex flex-col gap-2 p-[10px]">
+					{#each Object.keys(member.roles) as role}
+						<div class="flex flex-row">
+							<p class="mr-[50px] whitespace-nowrap">{role}</p>
+							<div class="flex flex-grow flex-row flex-wrap-reverse justify-center gap-1">
+								{#each member.roles[role].sort() as skill}
+									<HoverIcon
+										src={skill}
+										class="pixelate aspect-square w-[32px] drop-shadow transition-all"
+										text={shrimplifyPath(skill)}
+									/>
+								{/each}
+							</div>
 						</div>
-					</div>
-				{/each}
-			</div>
-		{/if}
-
-		<!-- Spotted in -->
-		{#if getProjects().length > 0}
-			<h1 class="w-full bg-blue p-[10px] font-medium text-white">SPOTTED IN</h1>
-			<div class="p-[10px]">
-				<ul class="ml-5 flex list-disc flex-col justify-center">
-					{#each getProjects() as project}
-						<li>{project.title}</li>
 					{/each}
-				</ul>
-			</div>
-		{/if}
+				</div>
+			{/if}
+
+			<!-- Spotted in -->
+			{#if getProjects().length > 0}
+				<h1 class="w-full bg-blue p-[10px] font-medium text-white">SPOTTED IN</h1>
+				<div class="p-[10px]">
+					<ul class="ml-5 flex list-disc flex-col justify-center">
+						{#each getProjects() as project}
+							<li>{project.title}</li>
+						{/each}
+					</ul>
+				</div>
+			{/if}
+		{/key}
 	</div>
 </div>
 
