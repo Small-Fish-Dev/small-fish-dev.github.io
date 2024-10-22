@@ -6,7 +6,9 @@
 		let slug = $page.params.slug;
 		const decodedName = decodeURI(slug);
 
-		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
+		let target = Members.find(
+			(m) => !m.hidden && m.name.toLowerCase() === decodedName.toLocaleLowerCase()
+		);
 		if (target == null) return false;
 
 		initialMember = target;

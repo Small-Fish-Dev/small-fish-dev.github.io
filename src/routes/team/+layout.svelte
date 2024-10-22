@@ -67,6 +67,8 @@
 		// Create pins.
 		let count = 0;
 		Members.forEach((member) => {
+			if (member.hidden) return;
+
 			let image = new Image();
 			image.src = member.country;
 
@@ -142,7 +144,9 @@
 		}
 
 		const decodedName = decodeURI(name);
-		let target = Members.find((m) => m.name.toLowerCase() === decodedName.toLocaleLowerCase());
+		let target = Members.find(
+			(m) => !m.hidden && m.name.toLowerCase() === decodedName.toLocaleLowerCase()
+		);
 		if (target == null) return undefined;
 
 		member = target;

@@ -17,10 +17,8 @@
 	};
 
 	const getProjects = () => {
-		return Games.filter(
-			(proj) =>
-				proj.contributors == null ||
-				proj.contributors?.find((m) => m.toLowerCase() == member.name.toLocaleLowerCase())
+		return Games.filter((proj) =>
+			proj.contributors?.find((m) => m.toLowerCase() == member.name.toLocaleLowerCase())
 		).sort();
 	};
 

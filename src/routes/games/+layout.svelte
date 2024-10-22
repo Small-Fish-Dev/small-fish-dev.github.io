@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { type Game, Games, Placement } from '$lib/types/Games';
+	import { type Game, Games, GameState, Placement } from '$lib/types/Games';
+	import { Members } from '$lib/types/Member';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
@@ -48,18 +49,18 @@
 
 		<!-- Information container -->
 		<div
-			class="flex h-full w-[35%] flex-shrink-0 flex-grow flex-col bg-transparentblack1 p-8 backdrop-blur-md"
+			class="flex h-full w-[35%] flex-shrink-0 flex-grow flex-col gap-12 bg-transparentblack1 p-8 backdrop-blur-md xl:px-14"
 		>
 			<!-- Contest -->
 			{#if game.contestDetails}
 				{@const placement = Placement[game.contestDetails.placement]}
 
 				<div
-					class="flex flex-row items-center gap-8 border-4 border-white p-4 placement-{placement}"
+					class="flex flex-row items-center gap-8 border-2 border-white p-2 px-2 xl:px-8 placement-{placement}"
 				>
 					<Icon class="hidden text-8xl lg:flex" icon="material-symbols:trophy" />
 					<div class="flex flex-col gap-1">
-						<p class="text-xl font-bold uppercase">{game.contestDetails.title}</p>
+						<p class="text-lg font-bold uppercase">{game.contestDetails.title}</p>
 						<p class="text-md brightness-90">
 							{#if game.contestDetails.placement == Placement.None}
 								This game was submitted for a gamejam didn't place :(
@@ -67,6 +68,58 @@
 								This game was submitted for a gamejam and placed {placement}.
 							{/if}
 						</p>
+					</div>
+				</div>
+			{:else}
+				<div class="h-[7.25rem]" />
+			{/if}
+
+			<!-- Title and summary -->
+			<div class="flex flex-col gap-4">
+				<p class="text-4xl font-bold text-white">{game.title}</p>
+
+				<div class="flex flex-row flex-wrap gap-4 text-lg text-white">
+					{#if game.date}
+						<p class="flex items-center justify-center bg-blue px-6">
+							{game.date.toLocaleString('default', { month: 'long', year: 'numeric' })}
+						</p>
+					{/if}
+					{#if game.state}
+						<p class="flex items-center justify-center bg-blue px-6">
+							{GameState[game.state]}
+						</p>
+					{/if}
+				</div>
+
+				<div class="h-60 overflow-y-auto">
+					<p class="text-lg text-gray">{game.summary}</p>
+				</div>
+			</div>
+
+			<!-- Developers -->
+			{#if game.contributors}
+				<div class="flex flex-col gap-2">
+					<p class="text-lg font-bold text-white">DEVELOPED BY</p>
+					<div class="flex flex-row flex-wrap gap-1">
+						{#each game.contributors as memberName}
+							{@const member = Members.find(
+								(m) => m.name.toLowerCase() == memberName.toLowerCase()
+							)}
+							{#if member}
+								<a
+									class="flex h-8 w-[32%] flex-row items-center gap-2 bg-white bg-opacity-10 transition-all hover:scale-[102%] hover:brightness-125"
+									href="/team/{member.name}"
+									target="_blank"
+								>
+									<img src={member.avatar} class="aspect-square h-full" alt="avatar" />
+									<p
+										class="inline-block overflow-hidden text-ellipsis whitespace-nowrap pr-2 text-sm text-gray"
+									>
+										{member.name}
+									</p>
+								</a>
+							{/if}
+						{/each}
 					</div>
 				</div>
 			{/if}

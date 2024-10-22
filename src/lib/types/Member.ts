@@ -10,6 +10,7 @@ export interface Member {
 	roles?: Record<string, string[]>;
 	socials?: string[];
 	classification?: Record<string, string[]>;
+	hidden?: boolean;
 }
 
 export const shrimplifyPath = (path: string) => {
@@ -221,7 +222,11 @@ export const Members: Member[] = [
 		},
 		point: { x: 365, y: 38 },
 		country: Countries.Russia,
-		socials: ['https://www.artstation.com/wheatleymf', 'https://wheatleymf.net', 'https://twitter.com/wheatleymf']
+		socials: [
+			'https://www.artstation.com/wheatleymf',
+			'https://wheatleymf.net',
+			'https://twitter.com/wheatleymf'
+		]
 	},
 
 	// Mungus
@@ -346,13 +351,12 @@ export const Members: Member[] = [
 	// yart
 	{
 		name: 'yart',
-		description:
-			'You are reading this.',
+		description: 'You are reading this.',
 		avatar: '/team/profiles/yart.png',
 		point: { x: 100, y: 80 },
 		country: Countries.US,
 		roles: {
-			Programmer: [Languages.CSharp, Languages.LUA],
+			Programmer: [Languages.CSharp, Languages.LUA]
 		},
 		socials: ['https://github.com/youarereadingthis'],
 		classification: {
