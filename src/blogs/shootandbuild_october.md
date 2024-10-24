@@ -8,7 +8,7 @@ published: false
 
 <Img src="snb_playtest_promo.png" />
 
-**Shoot & Build** is coming back with a new playtests and plenty of changes! New weapons, tons of improvements to player animations, graphics improvements,
+**Shoot & Build** is coming back with a new playtest and plenty of changes! New weapons, tons of improvements to player animations, graphics improvements,
 bug fixes, some gameplay changes, tons of UI additions and many other awesome things.
 
 <Heading title="Playtest" />
@@ -20,6 +20,7 @@ as (probably) hang out in voice chat.
 
 <Heading title="Power Weapons" caption="by yart & wheatleymf" />
 <Img src="powerweapons.png" />
+
 Our new lovely Small Fish programmer, yart, has been working on implementing power weapons. What is it? During the match, a special cargoship will
 drop supply crates that contain a random power weapon - <b>Minigun</b> or <b>Rocket Launcher</b>. Power weapons have limited amount of ammo and cannot be used
 with other weapons in your loadout, (switching to other gun will automatically drop the power weapon) but in exchange they are much
@@ -33,7 +34,6 @@ a very efficient tool to destroy enemy buildings. Rocket Launcher has a special 
 <Video src="rocketjump.mp4" />
 
 <Heading h="h3" title="Minigun" />
-insert an image here
 
 <b>Minigun</b> is a deadly weapon up close, and still pretty intimidating at distance. It takes some time before firing, but in right hands it can easily wipe out
 the entire area. Keep in mind that you'll be slower during revving up/firing state, and it has a big aimcone which makes it less effective against players
@@ -125,6 +125,15 @@ After receiving the feedback on Kar98k and SMG during last playtest, I've made b
 - Added muzzleflash effect for weapons
 - Added postprocessing effect when receiving damage
 - Added eject shells when firing a gun
+
+<Heading title="October Summary" />
+This month was pretty slow, since most of us are busy with real life things, however since last playtest we've made dozens of improvements and now it should feel like
+a much more solid looking game. Most animations are implemented, some gameplay feaures have been improved and even expanded, movement should feel much nicer, visuals
+are slightly better than before. Some sounds got improvements. There's still a good chunk of work ahead of us, so next playtest after this one will bring even more
+interesting stuff! 
+
+Speaking of next playtest, it's probably too early to talk about it. This is something we will announce separately sometime in near future,
+with a new blogpost and announcement in our Discord server.
 
 <Heading title="Misc Changes" />
 There are even more changes, but they're pretty small so here's a list:
