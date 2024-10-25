@@ -3,7 +3,8 @@ title: 'Shoot & Build: October Playtest update'
 thumbnail: 'snb_playtest_promo.png'
 date: '2024-10-27'
 description: 'New Shoot & Build playtest is coming with tons of changes!'
-published: false
+publisher: 'ubre'
+published: true
 ---
 
 <Img src="snb_playtest_promo.png" />
@@ -13,10 +14,11 @@ bug fixes, some gameplay changes, tons of UI additions and many other awesome th
 
 <Heading title="Playtest" />
 
-We'll be hosting new playtest this weekend. <b>October 27th</b>? [specify the date and time, link discord here]
+We'll be hosting new playtest this weekend, <b>October 27th, 19:00 GMT</b>!
 
 If you're interested, please make sure to visit our Discord! This is where we will post any updates on this playtest, as well
-as (probably) hang out in voice chat.
+as (probably) hang out in voice chat. Also keep in mind that there's a small chance that not all mentioned features in this blog 
+may appear in current playtest! 
 
 <Heading title="Power Weapons" caption="by yart & wheatleymf" />
 <Img src="powerweapons.png" />
@@ -39,15 +41,32 @@ a very efficient tool to destroy enemy buildings. Rocket Launcher has a special 
 the entire area. Keep in mind that you'll be slower during revving up/firing state, and it has a big aimcone which makes it less effective against players
 standing far away from you!
 
-<Heading title="New Weapons (?)" caption="by wheatleymf" />
+<Heading title="New Weapons (WIP)" caption="by wheatleymf" />
 <Img src="newguns.png" />
-New guns are coming! In fact, they were in the game since very early days of development, but it took a while before we were able to implement team selection and loadout editor. New weapons are:
+These guns were sitting in game assets since early development days but weren't implemented. Now, you can try them out! Sounds are not final, however
+this should be enough for now. We will listen to the feedback and adjust weapons accordingly. 
+(at the moment of writing this blog, loadout selection menu isn't implemented yet but hopefully will be ready until 27th. if it isn't, we're sorry!)
 
 - Assault Rifle
 - Heavy Machine Gun
 - Shotgun
 
-Most of them lack proper sounds at the moment, but we'll get that sorted out.
+<Heading title="Landmines" caption="by wheatleymf" />
+<Img src="landmines.png" />
+
+This week I have implemented landmines. They work like... landmines. If you step on an enemy landmine, you'll have a chance to break it by using your shovel.
+(you can try using guns as well! but it may not end well) If you try stepping away, it will blow up, killing everyone else in the radius. If there are any other 
+landmines in proximity radius, they will explode too, causing a chain reaction. 
+
+After deploying a landmine, it will activate in one second. If you're playing a team-based gamemode, landmines will be painted by a team-specific color, so you can know 
+which landmines are placed by teammates. You can't break, trigger or blow up team landmines. They also will automatically decay in 3 minutes after deploying, which 
+means that you can't fill an entire map with landmines. 
+
+Currently players have 3 landmines to place, and you cannot place more than 5 landmines in world. This means that you have to destroy/blow up existing landmines 
+you've placed before deploying new ones. 
+
+All features listed here are "work in progress", so I'll correct anything for future playtests depending on how it goes this weekend. 
+Also keep in mind that I'm not a very experienced programmer, so expect tons of weird bugs with them! 
 
 <Heading title="Player controller rework" caption="by ubre" />
 
@@ -56,6 +75,16 @@ Players disliked the old character controller, especially block climbing, so I s
 The first thing I focused on was block climbing. The faster you move, the faster you'll be able to climb blocks, so it's _less_ annoying when sprinting and not jarring when crouching. It also uses the same logic as step climbing, making it more reliable. Plus you'll be able to climb blocks even in mid-air, which means parkour noobs don't have to fear for their lives.
 
 Other than tweaking acceleration and jump, I was forced by our animator to make walking much slower compared to sprinting. If you have any complaints direct them to @Grodbert on Discord.
+
+<Heading title="Health Regeneration" caption="by yart" />
+Players now will slowly regenerate health if their HP is below 60. This will start taking effect if you haven't received any damage recently.
+
+<Heading title="Medkits" caption="by wheatleymf" />
+<Video src="medkits.mp4" />
+
+I've also added respawnable medkits. Just approach them and they will restore 50 HP. Currently our system for spawnable weapons/medkits isn't complete 
+so this may or may not appear in the playtest. It depends on how hard we want to hack this stuff into upcoming playtest before we've updated our internal 
+map definition system. 
 
 <Heading title="Grenade Animations" caption="by ceitine & wheatleymf" />
 <Video src="grenades.mp4" />
@@ -119,21 +148,15 @@ After receiving the feedback on Kar98k and SMG during last playtest, I've made b
 - Shortened SMG deploy time
 
 <Heading title="Visual Effects" caption="by wheatleymf" />
-<Video src="http://files.smallfi.sh/u/sbox-dev_I308DL9hcc.mp4" />
 
 - Added explosion effect. Looks more fancy and noticeable
 - Added muzzleflash effect for weapons
 - Added postprocessing effect when receiving damage
 - Added eject shells when firing a gun
 
-<Heading title="October Summary" />
-This month was pretty slow, since most of us are busy with real life things, however since last playtest we've made dozens of improvements and now it should feel like
-a much more solid looking game. Most animations are implemented, some gameplay feaures have been improved and even expanded, movement should feel much nicer, visuals
-are slightly better than before. Some sounds got improvements. There's still a good chunk of work ahead of us, so next playtest after this one will bring even more
-interesting stuff! 
-
-Speaking of next playtest, it's probably too early to talk about it. This is something we will announce separately sometime in near future,
-with a new blogpost and announcement in our Discord server.
+<Heading title="What's Next?" />
+We've done some good progress, although admittedly early October was pretty slow. Game is shaping up pretty well and hopefully we will be able to host
+new playtest very soon. We have more cool stuff in development, so stay tuned! 
 
 <Heading title="Misc Changes" />
 There are even more changes, but they're pretty small so here's a list:
