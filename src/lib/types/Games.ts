@@ -125,7 +125,7 @@ export const Games: Game[] = [
 		title: 'Frostrial',
 		summary: 'Collect fish, avoid yeti, do something else. I dont remember anything else.',
 		contributors: ['ubre', 'Grodbert', 'ceitine', 'Luke', 'rndtrash', 'Mungus']
-	},
+	}
 ];
 
 // Give all games a slug!
