@@ -3,7 +3,7 @@ title: 'Shoot & Build: October Playtest update'
 thumbnail: 'snb_playtest_promo.png'
 date: '2024-10-27'
 description: 'New Shoot & Build playtest is coming with tons of changes!'
-publisher: 'ubre'
+publisher: 'wheatleymf'
 published: true
 ---
 
