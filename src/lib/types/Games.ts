@@ -34,6 +34,25 @@ export enum GameState {
 
 export const Games: Game[] = [
 	{
+		title: 'Shoot and Build',
+		summary:
+			'A first-person shooter where you can destroy everything that surrounds you. Inspired by the classic hit game Ace of Spades.',
+		date: new Date(2024, 9, 1),
+		logo: '/games/snb_logo.png',
+		contributors: [
+			'ceitine',
+			'rndtrash',
+			'Grodbert',
+			'wheatleymf',
+			'yart',
+			'ubre',
+			'matek',
+			'CyberAgent'
+		],
+		state: GameState['In Development'],
+		sboxIdent: 'fish.shoot_and_build'
+	},
+	{
 		title: 'Death Card',
 		summary:
 			'A dungeon crawler where the levels are procedurally generated voxel worlds! You and your party of daring adventurers are thrust into the world of Death Card where no dungeon is ever the same.',
@@ -59,6 +78,7 @@ export const Games: Game[] = [
 		},
 		sboxIdent: 'fish.deathcard'
 	},
+
 	{
 		title: 'In This House',
 		summary:
