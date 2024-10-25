@@ -33,6 +33,11 @@ export enum GameState {
 }
 
 export const Games: Game[] = [
+    {
+        title: 'Shoot and Build',
+        summary: 'A game where you shoot and build. What else do you need to know?',
+        contributors: ['yart', 'Grodbert', 'ceitine', 'matek', 'wheatleymf', 'CyberAgent']
+    },
 	{
 		title: 'Death Card',
 		summary:
@@ -120,7 +125,7 @@ export const Games: Game[] = [
 		title: 'Frostrial',
 		summary: 'Collect fish, avoid yeti, do something else. I dont remember anything else.',
 		contributors: ['ubre', 'Grodbert', 'ceitine', 'Luke', 'rndtrash', 'Mungus']
-	}
+	},
 ];
 
 // Give all games a slug!
