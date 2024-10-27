@@ -47,16 +47,18 @@
 			<p>small fish</p>
 		</a>
 		<div class="hidden h-full flex-row items-center gap-2 md:flex">
-			{#each routes as route}
-				<div class="h-full">
-					<NavButton
-						href={route.href}
-						icon={route.icon}
-						label={route.label}
-						disabled={$page.url.pathname == route.href}
-					/>
-				</div>
-			{/each}
+			{#key $page.url.pathname}
+				{#each routes as route}
+					<div class="h-full">
+						<NavButton
+							href={route.href}
+							icon={route.icon}
+							label={route.label}
+							disabled={$page.url.pathname == route.href}
+						/>
+					</div>
+				{/each}
+			{/key}
 		</div>
 		<button
 			class="pointer-events-auto scale-100 text-white transition-all md:hidden"
