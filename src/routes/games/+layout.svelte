@@ -4,6 +4,7 @@
 	import { Members } from '$lib/types/Member';
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
+	import { dragscroll } from '@svelte-put/dragscroll';
 
 	let game: Game;
 
@@ -49,14 +50,18 @@
 			<!-- Navigation -->
 			<div class="mask-right flex flex-col gap-2 px-10 pt-5">
 				<p class="text-lg text-gray">quick fish games navigation:</p>
-				<div class="flex h-16 w-full flex-row gap-4 overflow-x-scroll pb-4">
+				<div
+					onmousedown="return false"
+					class="flex h-16 w-full select-none flex-row gap-4 overflow-x-scroll pb-4"
+					use:dragscroll
+				>
 					{#each Games as game}
 						{@const activeClass =
 							game.slug == $page.params.slug || (!$page.params.slug && game == Games[0])
 								? 'bg-white text-blue'
 								: 'text-white'}
 						<a
-							class="flex flex-shrink-0 items-center border-2 border-white px-4 text-center text-lg font-bold uppercase transition-all {activeClass}"
+							class="flex flex-shrink-0 items-center border-2 border-white px-4 text-center text-lg font-bold uppercase transition-all hover:brightness-110 {activeClass}"
 							href="/games/{game.slug}">{game.title}</a
 						>
 					{/each}
