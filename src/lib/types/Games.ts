@@ -85,9 +85,7 @@ export const Games: Game[] = [
 			'Spooky Robathon with 3 levels and 3 monsters trying to kick you out. 1st Place winner of the Mighty Brick Game Jam.',
 		media: [
 			'/blogs/example/ex.png',
-			'/blogs/frostrial/clothes.png',
 			'/blogs/example/ex.png',
-			'/blogs/frostrial/clothes.png',
 			'/blogs/example/ex.png',
 			'/blogs/frostrial/clothes.png'
 		],

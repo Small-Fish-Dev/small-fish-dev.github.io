@@ -18,6 +18,12 @@
 	});
 
 	let mediaIndex: number = 0;
+
+	const getMediaByIndex = function (index: number): string | undefined {
+		if (game?.media == undefined) return undefined;
+		index = index < 0 ? game.media.length + (index % game.media.length) : index % game.media.length;
+		return game.media[index];
+	};
 </script>
 
 <slot />
@@ -26,15 +32,24 @@
 	<title>Games / {game.title}</title>
 </svelte:head>
 
-<div class="flex h-screen w-full justify-center overflow-x-hidden bg-[#222222] font-poppins">
+<div class="relative flex h-screen w-full justify-center overflow-hidden bg-[#222222] font-poppins">
+	{#if getMediaByIndex(mediaIndex)}
+		<img
+			class="absolute h-full w-full blur-sm brightness-[20%]"
+			src={getMediaByIndex(mediaIndex)}
+			alt={`media image`}
+			loading="lazy"
+		/>
+	{/if}
+
 	<!-- Main content -->
 	<div class="flex h-full w-full flex-row xl:w-[85%]">
 		<!-- Media and navigation -->
-		<div class="flex w-[65%] flex-shrink flex-col gap-10">
+		<div class="relative flex w-[65%] flex-shrink flex-col gap-10">
 			<!-- Navigation -->
-			<div class="flex flex-col gap-2 px-10 pt-5">
+			<div class="mask-right flex flex-col gap-2 px-10 pt-5">
 				<p class="text-lg text-gray">quick fish games navigation:</p>
-				<div class="flex h-10 w-full flex-row gap-4 overflow-x-clip">
+				<div class="flex h-16 w-full flex-row gap-4 overflow-x-scroll pb-4">
 					{#each Games as game}
 						{@const activeClass =
 							game.slug == $page.params.slug || (!$page.params.slug && game == Games[0])
@@ -50,40 +65,36 @@
 
 			<!-- Active media -->
 			<div class="relative flex h-full w-full pb-40">
-				{#if game.media && game.media[mediaIndex]}
-					{@const src = game.media[mediaIndex]}
+				{#if game.media}
+					{#each [-1, 0, 1] as offset}
+						{@const src = getMediaByIndex(mediaIndex + offset)}
+						{@const classes = offset != 0 ? `${offset == -1 ? 'right-[100%]' : 'left-[100%]'}` : ''}
+						{#if src}
+							<div class="absolute {classes} flex aspect-video w-full justify-center bg-black">
+								{#if src.endsWith('mp4')}
+									<video {src} />
+								{:else}
+									<img class="h-full object-contain" {src} alt={`media image`} loading="lazy" />
+								{/if}
 
-					<div class="relative flex w-full justify-center bg-black">
-						{#if src.endsWith('mp4')}
-							<video {src} />
-						{:else}
-							<div
-								class="absolute left-0 -ml-60 h-full w-[110vw] overflow-x-hidden blur-md brightness-50"
-							>
-								<img class="h-full w-full" {src} loading="lazy" />
+								{#if offset == 0}
+									<div
+										class="absolute top-[100%] z-30 flex h-20 w-full -translate-y-[40%] flex-row items-start justify-center gap-2 px-4 drop-shadow-sm"
+									>
+										{#each game.media as media, i}
+											{@const activeClass = i == mediaIndex ? '-translate-y-4' : 'brightness-50'}
+											<button
+												class="flex aspect-video h-full basis-0 justify-center bg-black transition-all hover:-translate-y-2 hover:cursor-pointer hover:brightness-110 {activeClass}"
+												on:click={() => (mediaIndex = i)}
+											>
+												<img src={media} class="h-full" alt="media" />
+											</button>
+										{/each}
+									</div>
+								{/if}
 							</div>
-							<img
-								class="z-20 h-full object-contain"
-								{src}
-								alt={`image ${mediaIndex}`}
-								loading="lazy"
-							/>
 						{/if}
-					</div>
-
-					<div
-						class="absolute bottom-0 z-30 flex h-40 w-full -translate-y-[20%] flex-row items-start justify-center gap-8 px-4 drop-shadow-sm"
-					>
-						{#each game.media as media, i}
-							{@const activeClass = i == mediaIndex ? '-translate-y-4' : 'brightness-50'}
-							<button
-								class="flex aspect-video flex-grow basis-0 justify-center bg-black transition-all hover:-translate-y-2 hover:cursor-pointer hover:brightness-110 {activeClass}"
-								on:click={() => (mediaIndex = i)}
-							>
-								<img src={media} class="h-full" alt="media" />
-							</button>
-						{/each}
-					</div>
+					{/each}
 				{/if}
 			</div>
 		</div>
@@ -184,5 +195,31 @@
 	.placement-5th {
 		color: #ff5733;
 		border-color: #ff5733;
+	}
+
+	.mask-right {
+		mask-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.8) 60%,
+			rgba(0, 0, 0, 0.6) 80%,
+			rgba(0, 0, 0, 0) 95%
+		);
+	}
+
+	::-webkit-scrollbar {
+		height: 0.5rem;
+	}
+
+	::-webkit-scrollbar:disabled {
+		width: 0px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: white;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #2446f7;
 	}
 </style>
