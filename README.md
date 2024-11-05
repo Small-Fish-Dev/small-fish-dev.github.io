@@ -17,6 +17,10 @@ npm run dev
 
 Check out the `example.md` [file located within the repo](https://github.com/Small-Fish-Dev/small-fish-dev.github.io/tree/main/src/blogs).
 
+## Adding large assets (e.g. videos)
+
+Upload them to [this repository](https://github.com/Small-Fish-Dev/website-assets), or open a pull request!
+
 ## Development
 
 - Download the [Svelte VS Code plugin](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
