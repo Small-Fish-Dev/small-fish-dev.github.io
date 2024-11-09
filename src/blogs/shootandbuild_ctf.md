@@ -32,13 +32,13 @@ When match is over, you will see a proper end screen showing game results. Best 
 
 We continue expanding the gunplay for Shoot and Build to ensure that every gun has it's unique use cases, upsides and downsides. To make them even more further interesting to use, we are introducing dynamic spread.
 
-Dynamic spread allows guns to become more inaccurate from firing. Using the sights on your gun typically reduces this penalty. This inaccuracy is reduced over time. We've got plenty of variables related to this so that each weapon is better for its intended role. For example, the SMG has less base accuracy but is barely penalizes spamming it from the hip. The AR however becomes quickly inaccurate from hipfire and rewards looking down the sights far more.
+Dynamic spread allows guns to become more inaccurate from firing. Using the sights on your gun typically reduces this penalty. This inaccuracy is reduced over time. We've got plenty of variables related to this so that each weapon is better for its intended role. For example, the SMG has less base accuracy but barely penalizes spamming it from the hip. The AR however becomes quickly inaccurate from hipfire and rewards looking down the sights far more.
 
-Guns used to have a fixed spread and static crosshair no matter what. Adding this feature allow us to balance each weapon much better and make them feel distinct from the others. You should notice a big difference in how guns feel, for the better we hope.
+Guns used to have a fixed spread and static crosshair no matter what. Adding this feature allows us to balance each weapon much better and make them feel distinct from the others. You should notice a big difference in how guns feel, for the better we hope.
 
 <Heading title="Crosshair Update" caption="by yart & matek" />
 <Img src="crosshair.png" />
-Crosshairs are also dynamic now. You can also change their styling in settings. When you shoot, when you move, when you aim - it will react to your actions and update correspondingly. This should make feel gunplay easier to understand since you can now visually see how strong is your current spread.
+Crosshairs are also dynamic now. You can also change their styling in settings. When you shoot, when you jump, when you aim - it will react to your actions and update correspondingly. This should make feel gunplay easier to understand since you can now visually see how strong is your current spread.
 
 <Heading title=".357 Revolver" caption="by wheatleymf" />
 <Video src="revolver.mp4" />
