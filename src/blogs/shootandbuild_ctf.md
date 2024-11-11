@@ -65,6 +65,11 @@ This is understandably pretty risky for CTF and we are not entirely sure how eff
 
 Utility now also has a hammer. It is a quick tool that allows you repairing any damaged blocks. This isn't really useful for TDM/FFA probably, but will be very useful in CTF where player buildings will be the main factor in protecting the flag and your base. Currently it fully repairs a world block in a few hits, but may take a bit longer if you are repairing player's block.
 
+<Heading title="Gear Inventory Rework" caption="by yart" />
+<Img src="slots.png" />
+
+Inventory system has been updated to improve a few backend things. First, block and shovel are now default slots, and they are always available for everyone. Weapons can be properly swapped and equipped now. Utilities are now in slot 5, and power weapons are in slot 6. Previously we had to shove block tool into utility, forcing players to choose between building, landmines, repairing blocks and drilling. Now picking utility should be better since you always can build. 
+
 <Heading title="Preview: Small Fish World rework" caption="by CyberAgent" />
 <Img src="sfw.png" />
 Small Fish World is being remade. Previous iteration was far too flat and this caused a number of problems, making long range weapons especially strong on this map. Now, this map has much more terrain height difference going on, which should hopefully make gunfights more engaging.
