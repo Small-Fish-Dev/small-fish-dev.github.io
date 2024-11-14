@@ -113,8 +113,8 @@ This a nice step towards providing a good environment for creating community map
 <Img src="input_glyphs.png" />
 Weapon info bar now displays all available key inputs for the currently equipped gear. We've noticed that most people didn't know about 1x3 shovel dig on RMB or option to pick a color for blocks. Now you will know.
 
-<Heading title="Block Climbinb" caption="by yart" />
-People complained a lot about movement speed dropping when climbing on blocks during previous playtests, so yart changed the movement code a little so climbing doesn't slow you down too much. There's now a slight vertical boost in speed when you're climbing, which should make movement on bumpy surfaces less annoying. 
+<Heading title="Block Climbing" caption="by yart" />
+During previous playtests people complained a lot about movement speed slowing down when climbing, so yart changed the movement code a little so climbing doesn't slow you down too much. There's now a slight vertical boost in speed when you're climbing, which should make movement on bumpy surfaces less annoying. 
 
 <Heading title="Killfeed Highlights" caption="by yart" />
 <Img src="kill_highlight.png" />
