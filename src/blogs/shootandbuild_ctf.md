@@ -21,9 +21,6 @@ Capture the Flag is a new gamemode that yart has been working on. It's still wor
 
 This gamemode is pretty self-explanatory! Your objective is to steal enemy's flag and bring it to your spawn. But you also must defend your own flag - and for that, every match starts with a warmup where you must reinforce your side of the map as much as you can. Build walls, defensive buildings, other stuff. Everything that makes stealing your flag difficult. Team that captures the flag 3 times wins. 
 
-<Heading title="FFA Gamemode (and TDM?)" caption="by yart" />
-yart also finished the game loop for our other gamemode, Free For All. Now there's a proper match ending sequence when time runs out, or when someone meets the win condition.
-
 <Heading title="Zombie Infection (WIP)" caption="by yart" />
 Zombie Infection is another new gamemode! It's currently very early in development and has lots of missing art, but gameplay loop is here. Survivos must stay alive until time runs out, and until then zombies must infect everyone. Currently they're equipped only with a drill, and run faster than normal players. They're also capable of attacking/digging while sprinting.
 
