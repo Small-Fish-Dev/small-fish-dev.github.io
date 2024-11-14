@@ -16,7 +16,7 @@ New playtest is coming <b>November 16th, 19:00 GMT!</b> This time it will be hos
 
 As always, there are more details about the event in our Discord. If you haven't joined it yet, then do it now: <i>https://smallfi.sh/discord</i> 
 
-<Heading title="Game Change" />
+<Heading title="Name Change" />
 As you probably remember, "Shoot and Build" was a temporary title that we promised to change by the time we get closer to the release. We have agreed on a new name, <b>Blocks & Bullets</b>. It's probably silly, but it wasn't easy picking a name that has a somewhat acceptable SEO and doesn't clash with any other similar (gameplay wise) games. This playtest will still run under Shoot and Build title, but very soon we will update all branding for this game.   
 
 <Heading title="Capture the Flag!" caption="by yart & matek" />
