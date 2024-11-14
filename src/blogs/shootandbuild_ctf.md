@@ -102,7 +102,9 @@ Also throwing grenades should be much more responsive and must have a better flo
 <Img src="voximporter.png" />
 Previously we were using <b>.vxl</b> format for the compatibility with Ace of Spades maps. It had plenty of downsides: slow import speed due to four nested loops, pretty annoying map size limits, as well as very weird workaround to convert our new <b>.vox</b> maps into .vxl format, which would cause bunch of headache if you don't know what are you doing.
 
-All of this shouldn't be a problem anymore, since we natively support MagicaVoxel .vox format now. It is worth mentioning that .vox has bunch of it's own weird issues, so if you're importing a map with rotated objects, be prepared that it will likely import incorrectly. This file format is pretty confusing in some parts.
+All of this shouldn't be a problem anymore, since we natively support MagicaVoxel .vox format now. It is worth mentioning that .vox has bunch of it's own weird issues, it can be confusing sometimes, but hopefully we will resolve any importing issues as we create more maps and find out all little tricks and annoyances with the new workflow.
+
+We still support .vxl format, and it still loads up just fine, so compatibility with Ace of Spades maps isn't going anywhere. However for this game specifically, we advise you to stick with VOX format as it provides much easier import workflow, and it loads up much faster than VXL maps. It also has much better size limits, which will allow creating large maps if necessary. 
 
 This a nice step towards providing a good environment for creating community maps. In the near future we also plan to convert maps from s&box game resource definitions to prefabs, which should make a few specific things easier to use.
 
