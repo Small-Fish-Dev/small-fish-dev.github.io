@@ -126,7 +126,7 @@ This wasn't necessary at all, but I was experimenting with procedural water norm
 Now, as instead shader procedurally generates waves heightmap and then computes it into tangent space normals right in shader, with no manual textures. It isn't a big achievement, implementation is probably goofy, but this allows having more control over how waves look like, and I think it looks generally less "gooey"-ish than before.
 
 <Heading title="More Accessibility Graphics" caption="by wheatleymf" />
-I have slightly expanded accessibility options. You can now adjust screen brightness and contrast in case you're not happy with how game looks like by default.
+I have slightly expanded accessibility options. You can now adjust screen saturation, brightness and contrast in case you're not happy with how game looks like by default. It can be now heavily oversaturated (just like your average Rust PVP montage clip with royalty free rap music playing at background) or look like black and white movies. Or something inbetween, that's up to you.
 
 <Heading title="Blood Decals" caption="by yart & wheatleymf" />
 Players now leave blood decals on surfaces when they get hit. Just a little fun detail.
