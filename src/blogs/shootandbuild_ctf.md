@@ -1,10 +1,10 @@
 ---
 title: 'Shoot & Build: Capture the Flag!'
 thumbnail: 'snb_playtest_ctf.png'
-date: '2024-11-10'
+date: '2024-11-14'
 description: 'New gamemode, new tools, new gun, new maps, new playtest! All coming in a new game update.'
 publisher: 'wheatleymf'
-published: false
+published: true
 ---
 
 <Img src="snb_playtest_ctf.png" />
@@ -12,16 +12,25 @@ published: false
 <b>Shoot and Build</b> is receiving another nice update this November. This time, we are playtesting <b>Capture the Flag</b> gamemode, more in-depth gunplay changes, proper gamemode loops, new maps, new tools and a new secondary gun.
 
 <Heading title="Playtest" />
+New playtest is coming <b>November 16th, 19:00 GMT!</b> This time it will be hostead for 4 hours, so even if you won't be able to join us at the start, there'll be enough time for you to hop in later anyway.  
 
-New playtest is coming <b>November 16th?</b> (or maybe this weekend idk)
+As always, there are more details about the event in our Discord. If you haven't joined it yet, then do it now: <i>https://smallfi.sh/discord</i> 
 
-As always, we will post any updates and event details in our Discord. If you have not joined yet, then this is a good reason for you to do it now!
+<Heading title="Game Change" />
+As you probably remember, "Shoot and Build" was a temporary title that we promised to change by the time we get closer to the release. We have agreed on a new name, <b>Blocks & Bullets</b>. It's probably silly, but it wasn't easy picking a name that has a somewhat acceptable SEO and doesn't clash with any other similar (gameplay wise) games. This playtest will still run under Shoot and Build title, but very soon we will update all branding for this game.   
 
 <Heading title="Capture the Flag!" caption="by yart & matek" />
-New big new feature of this update is a new gamemode, Capture the Flag. Most of you probably know what is it about! Match starts with a short warmup - this is when your team must set up defences on your side of the map. Initially, map won't provide enough cover for your flag, so you must use this time to build stuff near your flag, dig trenches, build any special buildings, just reinforce everything! After that, match will begin and your team must successfully break through enemy reinforcements, steal their flag and bring it to your spawn.
+Capture the Flag is a new gamemode that yart has been working on. It's still work in progress, however hopefully we should be able to deliver the playable version by the time playtest starts.
+
+This gamemode is pretty self-explanatory! Your objective is to steal enemy's flag and bring it to your spawn. But you also must defend your own flag - and for that, every match starts with a warmup where you must reinforce your side of the map as much as you can. Build walls, defensive buildings, other stuff. Everything that makes stealing your flag difficult. Team that captures the flag 3 times wins. 
 
 <Heading title="FFA Gamemode (and TDM?)" caption="by yart" />
 yart also finished the game loop for our other gamemode, Free For All. Now there's a proper match ending sequence when time runs out, or when someone meets the win condition.
+
+<Heading title="Zombie Infection (WIP)" caption="by yart" />
+Zombie Infection is another new gamemode! It's currently very early in development and has lots of missing art, but gameplay loop is here. Survivos must stay alive until time runs out, and until then zombies must infect everyone. Currently they're equipped only with a drill, and run faster than normal players. They're also capable of attacking/digging while sprinting.
+
+Hopefully we will try it out during the playtest, but don't forget, it's all work in progress! 
 
 <Heading title="Map Voting" caption="by yart" />
 <Img src="match_end.png" />
@@ -63,7 +72,7 @@ This is understandably pretty risky for CTF and we are not entirely sure how eff
 <Heading title="Hammer" caption="by ceitine & wheatleymf" />
 <Video src="http://files.smallfi.sh/u/sbox-dev_09-11-2024_17-00.mp4" />
 
-Utility now also has a hammer. It is a quick tool that allows you repairing any damaged blocks. This isn't really useful for TDM/FFA probably, but will be very useful in CTF where player buildings will be the main factor in protecting the flag and your base. Currently it fully repairs a world block in a few hits, but may take a bit longer if you are repairing player's block.
+Utility now also has a hammer. It is a quick tool that allows you repairing any damaged blocks at a pretty fast rate. This isn't really useful for TDM/FFA probably, but will be very useful in CTF where player buildings will be the main factor in protecting the flag and your base. Even though hammer looks pretty threatening, you can't hurt players with it. 
 
 <Heading title="Gear Inventory Rework" caption="by yart" />
 <Img src="slots.png" />
@@ -101,7 +110,7 @@ Previously we were using <b>.vxl</b> format for the compatibility with Ace of Sp
 
 All of this shouldn't be a problem anymore, since we natively support MagicaVoxel .vox format now. It is worth mentioning that .vox has bunch of it's own weird issues, so if you're importing a map with rotated objects, be prepared that it will likely import incorrectly. This file format is pretty confusing in some parts.
 
-This a nice step towards providing a good environment for creating new custom maps by the community. In the near future we also plan to convert maps from s&box game resource definitions to prefabs, which should make a few specific things easier to use.
+This a nice step towards providing a good environment for creating community maps. In the near future we also plan to convert maps from s&box game resource definitions to prefabs, which should make a few specific things easier to use.
 
 <Heading title="Input Glyphs" caption="by ceitine & wheatleymf" />
 <Img src="input_glyphs.png" />
@@ -131,12 +140,15 @@ I have made some changes to the landmines.
 - Landmine lifetime reduced from 3 to 2 minutes
 
 <Heading title="Summary" caption="from wheatleymf" />
-I think we've done really good job for the past 2.5 weeks. Yart is doing amazing work on tools and expanding the gunplay, ceitine suffered through all complicated .vox file format shenanigans and now making and importing custom maps is much easier than before, and I myself had fun with combining art & programming for implementing new gear. It is probably still too early to talk about the game release, but game is definitely shaping up really well, and all of us have done some really solid work. Once again, no promises on the date for the next playtest. But don't forget to visit Small Fish discord for latest news!
+I think we've done really good job for the past 2.5 weeks. Yart is doing amazing work on gamemodes, ceitine suffered through all complicated .vox file format shenanigans and now making and importing custom maps is much easier than before, and I myself had fun with combining art & programming for implementing new gear. 
+
+We won't talk about our plans on the release date for now, but the game is definitely shaping up really well. Visit our Discord for new announcements in the near future!
 
 <Heading title="TL;DR" />
 
-- New playtest on [date is currently undecided]
+- New playtest on November 16th 19:00 GMT
 - Implemented Capture the Flag gamemode
+- Implemented Zombie Infection gamemode
 - Implemented game loop for TDM/FFA
 - Implemented match end screen & map vote
 - Added new secondary weapon, .357 Revolver
@@ -160,6 +172,7 @@ I think we've done really good job for the past 2.5 weeks. Yart is doing amazing
 - Added blood decals spawning upon player damage
 - Added screen brightness settings
 - Added screen contrast settings
+- Added voxel impact FX when hitting blocks with a weapon
 - Reduced max landmine count from 5 to 3
 - Update UI to display current amount of deployed landmines
 - Reduced landmine lifetime from 3 to 2 minutes
