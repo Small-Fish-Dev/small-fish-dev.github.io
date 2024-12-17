@@ -34,7 +34,7 @@ export enum GameState {
 
 export const Games: Game[] = [
 	{
-		title: 'Shoot and Build',
+		title: 'Blocks & Bullets',
 		summary:
 			'A first-person shooter where you can destroy everything that surrounds you. Inspired by the classic hit game Ace of Spades.',
 		date: new Date(2024, 9, 1),
@@ -50,7 +50,7 @@ export const Games: Game[] = [
 			'CyberAgent'
 		],
 		state: GameState['In Development'],
-		sboxIdent: 'fish.shoot_and_build'
+		sboxIdent: 'fish.blocks_and_bullets'
 	},
 	{
 		title: 'Death Card',
