@@ -34,7 +34,7 @@ We then reached out to companies for quotes, who then sent us the pattern files.
 
 **[IMAGE HERE]**
 
-After sending the files over, it took just a few days to get them printed, and two weeks to arrive. We immediately started shipping to our members, unfortunately we had no way for the Russian members to receive them.
+After sending the files over, it took just a few days to get them produced, and two weeks to arrive. We immediately started shipping to our members, unfortunately we had no way for the Russian members to receive them.
 
 <Heading h="h3" title="How much did it cost?" />
 The designing process was roughly <b>$120.00</b>.
@@ -46,3 +46,12 @@ Shipping to our members depended on the location, but it hovered from $4.00 to $
 In total we spent about **$1,040.00** on socks, and with "we" I mean me, ubre, I'd never let any member pay for expenses like these.
 
 I'd say it was worth it, but it was scary at the time to do just for a meme! Plus I started including pvc stickers in the packages as an extra, I print them at home and cut them by hand!
+
+<Heading title="Transparency" />
+
+In 2024 we implemented the following measures:
+
+- Opened a commit log for every major repository;
+- Made the Discord server's audit log public;
+- <b>Fish of the day</b> role, which is able to view every developer channel and archive. This forces us to self-moderate and avoid circlejerk behaviour;
+- Released many open source projects, such as our in-house player controller and the entirety of "My Summer Cottage", amongst others.
