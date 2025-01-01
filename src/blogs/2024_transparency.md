@@ -239,10 +239,28 @@ Small Fish games already boast the most advanced NPCs in s&box, so we're plannin
 
 I'm very excited for the future of this game, it truly is the best game s&box needs right now.
 
-<Heading title="s&box drama" />
+<Heading title="S&box Drama" />
 
 We slowed down with s&box drama lately, both because there isn't much happening in the community and because we're busy with other projects.
 
 We'd like to remind everyone that S&box drama is for entertainment purposes, we have a strict etiquette and the last thing we want is to harm s&box's reputation.
 
 Every scoop was either a joke, overexaggerated, or completely fabricated by us.
+
+<Heading title="Social Medias" />
+
+Speaking of YouTube videos, in 2024 we published the 2nd iteration of Fish School, many Fish Bites, and began releasing the 3rd iteration of Fish School.
+
+We have also started publishing high quality s&box gameplay videos, for anyone to use as footage or just to get the word out.
+
+In general, we are pushing more content on all of our social medias. This includes opening accounts for TikTok, BlueSky, and Instagram.
+
+We try post something at least once a week but it's hard to keep track.
+
+A goal of ours is to get monetized on YouTube which requires 4,000 watch hours in the last 365 days. We're pushing as many videos as we can, but we're really limited by how popular s&box is at the moment.
+
+**[IMAGE]**
+
+Here's the channel stats, which kinda resembles the subreddit's one, meaning that our channel is also directly correlated to how good s&box is doing.
+
+
