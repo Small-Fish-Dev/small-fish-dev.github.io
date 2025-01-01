@@ -48,10 +48,30 @@ In total we spent about **$1,040.00** on socks, and with "we" I mean me, ubre, I
 I'd say it was worth it, but it was scary at the time to do just for a meme! Plus I started including pvc stickers in the packages as an extra, I print them at home and cut them by hand!
 
 <Heading title="Transparency" />
-
 In 2024 we implemented the following measures:
 
 - Opened a commit log for every major repository;
 - Made the Discord server's audit log public;
 - <b>Fish of the day</b> role, which is able to view every developer channel and archive. This forces us to self-moderate and avoid circlejerk behaviour;
 - Released many open source projects, such as our in-house player controller and the entirety of "My Summer Cottage", amongst others.
+
+<Heading title="Community Council" />
+Earlier this year, Facepunch set up a community council within the S&box Discord server.
+The purpose is to sift through messages, catch any unreported bugs, and bring attention to important issues inside of the <b>#council</b> channel.
+
+I was elected the "community president", as I thought the job was too big for one person, I brought a few users based on how many issues they opened and how active they were on the server, the first being DoctorGurke from Eagle One.
+
+From there on we would hold votes to add other users, mainly looking for people that could represent their organization/community or had a set of skills that others didn't.
+
+<Heading h="h3" title="The changes" />
+
+The day I became president, I set up a [public spreadsheet](https://docs.google.com/spreadsheets/d/1XIGav1NendUxty2mKRX4axeObF0_6CEK3-rDgqjocsc/) to keep track of issues based on how important and popular we felt they were.
+
+I then set up a timer to exactly 6 months until the next presidential vote, in <b>January 21st</b>.
+
+We're planning on making a small game hosted on s&box where each user can vote for their president on the week of the elections, this would be hosted by Small Fish but I'll try to make it as open and trasparent as possible.
+
+The elections for a new community president is something I made up, I'm not even sure Facepunch will recognize a winner but I'm hoping they do, just as I hope every consecutive president will maintain this tradition.
+
+Of course, I think I have good chances at winning, but if I don't I'll pass everything to the new president and enjoy my stress-free life with permanent secret service protection.
+
