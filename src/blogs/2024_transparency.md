@@ -263,4 +263,21 @@ A goal of ours is to get monetized on YouTube which requires 4,000 watch hours i
 
 Here's the channel stats, which kinda resembles the subreddit's one, meaning that our channel is also directly correlated to how good s&box is doing.
 
+<Heading title="Our 2025 Goals" />
 
+We're hoping that 2025 is going to be the year of Small Fish, and s&box by correlation.
+
+These are our goals:
+- In 2024 we "made" $25k, we hope to make $50k in 2025;
+- In 2024 we released 2 huge games, we hope to release 3 in 2025;
+- In 2024 we reached 1.5k subscribers on YouTube, we hope to reach 3k in 2025 and achieve 4,000 watch hours to get monetized;
+- In 2024 we reached 750 members on Discord, we hope to reach 2,000 in 2025;
+- In 2024 the subreddit reached 9k subs, we hope to reach 20k in 2025;
+
+And lastly, release a game on Steam.
+
+--**Thank you everyone**--
+--
+for being a part of Small Fish, or even s&box in general.
+
+And <b>special thanks</b> to Facepunch's s&box team and all the other orgs.
