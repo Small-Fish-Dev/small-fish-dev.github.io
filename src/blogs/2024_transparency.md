@@ -124,7 +124,7 @@ Now, I always advise my team members to declare their income and pay taxes, but 
 
 As for me, I got in contact with my financial advisor, and technically I ended up paying to partecipate in this jam, so I don't have to declare anything, but just in case I have all the receipts.
 
-If I did make any money, it would be considered "Other Incomes" as Game Jams are not recognized in Italy, and I pay 23% in taxes.
+If I were to make any money off of this, it would be filed under "Other Incomes" as Game Jams are not that recognized in Italy, and I would pay 23% in taxes on it.
 
 <Heading h="h3" title="Afterthoughts" />
 Despite being the "Winners" of the jam, I lost a lot of income and sleep, but I consider it an investment for the future, I truly believe s&box will be succesful.
@@ -138,3 +138,25 @@ It's good that Facepunch is making breaking changes now, we don't want to end up
 In the end, people want to create new amazing things, they don't want to fix old gamejam code every day, so there's only a couple of us willing to take on the cleanup duty.
 
 We eventually plan on releasing it on Steam as a standalone, we already have a store page but Facepunch asked us not to make it public. Although, seeing as very similar games are releasing around the same time, we have pushed the date back indefinitely.
+
+<Heading title="Fishley" />
+
+Discord's default moderation is awful, so we had to create our own do-it-all bot [**Fishley**](https://github.com/Small-Fish-Dev/Fishley), the friendly goldfish!
+
+He runs on a Raspberry Pi 4 that sits on my desk and uses multiple OpenAI models, which is a disaster whenever that's down.
+
+Fishley is able to do the following:
+- Responds to anything you ask him, knows a lot about s&box and its prominent orgs;
+- Moderates every message with OpenAI's moderation model, which is free! It's able to pick up hints and works regardless if the user ҬЧPԐS LЇҚЭ ҬҤЇS to get around filters;
+- Warns users if they break the rules and hands out time-outs after a few warnings. The more warns a user has, the more priviliges they lose;
+- Posts news about S&box from all around the web! Twitch, YouTube, TikTok, and more;
+- Other fun features like fishing, recapping, etc...
+
+Fishley is the absolute authority in our server, even above Small Fish themselves as they would just unwarn themselves before.
+ 
+There are currently multiple unofficial Fishley-s? We found it funny so we made a semi-serious, semi-joke announcement to watch out in case one of them ever reaches out to scam you.
+
+**[IMAGE]**
+ 
+And finally, here's Fishley's full prompt: **[PUT PROMPT HERE]**
+
