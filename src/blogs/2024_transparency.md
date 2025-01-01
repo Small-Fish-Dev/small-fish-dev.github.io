@@ -56,16 +56,18 @@ In 2024 we implemented the following measures:
 - Released many open source projects, such as our in-house player controller and the entirety of "My Summer Cottage", amongst others.
 
 <Heading title="Community Council" />
-Earlier this year, Facepunch set up a community council within the S&box Discord server.
-The purpose is to sift through messages, catch any unreported bugs, and bring attention to important issues inside of the <b>#council</b> channel.
+Earlier this year, Facepunch set up a Community Council within the S&box Discord server.
+The council's purpose is to sift through messages, catch any unreported bugs, and bring attention to important issues inside of the <b>#council</b> channel.
 
-I was elected the "community president", as I thought the job was too big for one person, I brought a few users based on how many issues they opened and how active they were on the server, the first being DoctorGurke from Eagle One.
+I was elected the "Community President", I brought a few users based on how many issues they opened and how active they were on the server, the first being DoctorGurke from Eagle One.
 
 From there on we would hold votes to add other users, mainly looking for people that could represent their organization/community or had a set of skills that others didn't.
 
 <Heading h="h3" title="The changes" />
 
-The day I became president, I set up a [public spreadsheet](https://docs.google.com/spreadsheets/d/1XIGav1NendUxty2mKRX4axeObF0_6CEK3-rDgqjocsc/) to keep track of issues based on how important and popular we felt they were.
+The day I became president, I set up a [public spreadsheet](https://docs.google.com/spreadsheets/d/1XIGav1NendUxty2mKRX4axeObF0_6CEK3-rDgqjocsc/) to keep track of issues based on how important and popular we felt they were. I bet it's annoying for Facepunch developers to look at it every day, so we mostly just post the issues directly in the channel and the spreadsheet is there to let people know the developers are aware of the issues.
+
+Sometimes Facepunch asks us opinions on upcoming changes or events, most recently with [the Tech Jam](https://sbox.game/c/tech1), which we asked for more artist friendly categories.
 
 I then set up a timer to exactly 6 months until the next presidential vote, in <b>January 21st</b>.
 
@@ -74,4 +76,21 @@ We're planning on making a small game hosted on s&box where each user can vote f
 The elections for a new community president is something I made up, I'm not even sure Facepunch will recognize a winner but I'm hoping they do, just as I hope every consecutive president will maintain this tradition.
 
 Of course, I think I have good chances at winning, but if I don't I'll pass everything to the new president and enjoy my stress-free life with permanent secret service protection.
+
+
+<Heading title="Subreddit" />
+I managed to become the owner of the <b>r/sandbox</b> subreddit with the help of the Reddit admins, afterwards I added everybody in the council that wanted to help as moderators, and garry accepted too which I found funny.
+
+We revamped the subreddit, started actively posting anything s&box related, set up resources, and included a list to [all known S&box discord servers](https://www.reddit.com/r/sandbox/comments/18mzljc/sbox_communities_and_development_organizations/) to help them with visibility. 
+
+Truth be told, I also nabbed other abandoned s&box subreddits, all they'd have is people asking for keys and pushed outdated info on search engines, which I though was harming s&box's reputation, so I closed them and redirected to the "official" one.
+
+If anybody wants to become the new owner of these subreddits, I'll gladly hand them over as long as they promise to build them up.
+
+The second biggest s&box subreddit is owned by the r/gmod owners: [r/playsandbox](https://www.reddit.com/r/playsandbox/).
+It doesn't see more than a couple of posts every year, so I assumed it was abandoned as well only to find out the moderators were still active, so at least I don't hold a monopoly.
+
+**[IMAGE]**
+
+Here's the subreddit stats, I'd like to say I made an impact but it's clear the spikes happen whenever s&box has a big update or goes public.
 
