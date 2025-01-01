@@ -94,3 +94,47 @@ It doesn't see more than a couple of posts every year, so I assumed it was aband
 
 Here's the subreddit stats, I'd like to say I made an impact but it's clear the spikes happen whenever s&box has a big update or goes public.
 
+<Heading title="My Summer Cottage" />
+In February, Facepunch announced their first official Game Jam with a prize pool of <b>$25,000</b>.
+
+We knew we had to go all out, many of us needed the money, but we also knew that it would go down in history. Everyone will look up who won the 1st game jam, not the 7th or 12th!
+
+We decided to submit <b>My Summer Cottage</b>, which a few of us have worked in the past but never amounted to anything more than a debug scene and a player controller.
+People accused us of cheating by submitting an older project, but literally everything we had was done or remade in the game jam with the exception of the playermodel.
+
+Mungus wasn't available so we had to commission the soundtrack, one piece from [Zakkujo](https://www.youtube.com/watch?v=-6WMAu8LTFo) and one from [Dawdle](https://www.youtube.com/watch?v=0apMc85_NXU).
+
+The amount of work we put into the game was insane, Grodbert and I personally took the last week off of work just so we could put in 14-16 hours a day each.  I wouldn't be surprised if we all clocked in over 2,000 collective development hours.
+
+<Heading h="h3" title="The money" />
+My Summer Cottage won 1st place, and with that <b>$12,500</b>!
+
+We received the funds from Facepunch after 2 weeks through wire transfer. Splitting the money with the team was a real challenge, and to make everyone happy I decided to give up my share and pay for all fees.
+
+After taking out the <b>$850</b> spent on music commissions, the artists received <b>$6,985</b> and the programmers took home <b>$4,195</b>.
+
+For most members I could send the money directly through wire transfer, which got my bank account locked a few times. Some members wanted the money through PayPal, and I had to upgrade my account to do so.
+
+As for the Russian members, the only way I could send money was through an app called KoronaPay, which was the only one that allowed transfers to Russian bank accounts and had a terrible exchange rate.
+
+I don't know the exact number, but in the end I paid more than <b>$100</b> in fees and exchange rates.
+
+<Heading h="h3" title="The taxes" />
+Now, I always advise my team members to declare their income and pay taxes, but I can't enforce it.
+
+As for me, I got in contact with my financial advisor, and technically I ended up paying to partecipate in this jam, so I don't have to declare anything, but just in case I have all the receipts.
+
+If I did make any money, it would be considered "Other Incomes" as Game Jams are not recognized in Italy, and I pay 23% in taxes.
+
+<Heading h="h3" title="Afterthoughts" />
+Despite being the "Winners" of the jam, I lost a lot of income and sleep, but I consider it an investment for the future, I truly believe s&box will be succesful.
+
+After the jam ended, we took a break, and then poured a lot of work on My Summer Cottage to redo crappy systems and fix the perpetual bugs pushed by Facepunch, I actually pushed more commits after the jam!
+
+We have many, many other projects going on, and unfortunately we had to put My Summer Cottage on hold. In that time Facepunch pushed more breaking changes so the game is in a constant state of being playable, broken, or hidden.
+
+It's good that Facepunch is making breaking changes now, we don't want to end up like Unity, but some people seriously underestimate the amount of work we put in our games, how many features they have, and how experimental they are in the current state of the engine.
+
+In the end, people want to create new amazing things, they don't want to fix old gamejam code every day, so there's only a couple of us willing to take on the cleanup duty.
+
+We eventually plan on releasing it on Steam as a standalone, we already have a store page but Facepunch asked us not to make it public. Although, seeing as very similar games are releasing around the same time, we have pushed the date back indefinitely.
