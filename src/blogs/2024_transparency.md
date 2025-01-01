@@ -161,9 +161,9 @@ There are currently multiple unofficial Fishley-s? We found it funny so we made 
 And finally, here's Fishley's full prompt: **[PUT PROMPT HERE]**
 
 <Heading title="Death Card" />
-Around August, Facepunch held the second official s&box jam, this time with double the prize pool.
+Around August, Facepunch held the second official s&box jam and doubled the prize pool.
 
-The money was a very big draw since some of us really needed them at the moment, and while a few were on vacation at the time, we gave it everything we had, even more than the previous contest.
+The money was a very big draw since some of us really needed it at the moment, and while a few were on vacation, we gave it everything we had, even more than the previous contest.
 
 We have an unconventional approach to game jams: <b>massively overscope a game</b>.
 
@@ -171,12 +171,12 @@ We have an unconventional approach to game jams: <b>massively overscope a game</
 - If we're behind schedule by week X, we reduce the scope of the game, then repeat.
 - By the end of the contest, we are certified to have the best product possible.
 
-While other teams had a game playable by the first week, our usually starts to come together in the last few days as we connect glue everything that was worked on.
+While other teams had a game playable by the first week, our usually starts to come together in the last few days as we finish glueing everything.
 
-We came up with <b>Deathcard</b>, our biggest and project to date.
+We came up with <b>Deathcard</b>, our biggest project to date.
 I'm really surprised with the result and I'm not afraid to say it's the most advanced game that's ever existed on s&box so far.
 
-Truly everything was made by us in the month we were given. From the huge animgraphs, to the extensive animations and models. From the voxel worlds, tools, and editor, to the giant dungeon generation, rooms, and custom 3D A* navigation. Music, sounds, art, I could go on...
+Truly everything was made by us in the month we were given. From the huge animgraphs, to the extensive animations and models. From the voxel worlds, tools, and editor, to the giant dungeon generation, rooms, and custom 3D A* navigation. Music, sounds, NPCs, art, UI, shaders, I could go on and on...
 
 Anyways, we got 2nd place in the contest.
 
@@ -184,12 +184,12 @@ I still remember having 20-30 users in the voice channel waiting for the results
 
 I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun, while 1st place sat with half the likes and playtime.
 
-It seems immature on our part, but for a while we were pretty sour, especially because many of us put much more work on it compared to even My Summer Cottage. A few developers, me included, even took almost the entire month off their job to work on the game 24/7.
+It seems immature on our part, but for a while we were pretty sour, especially because many of us put much more work on it compared to even My Summer Cottage. A few developers, me included, took almost the entire month off their job to work on the game 24/7.
 
-I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home a much smaller amount of money compared to the first contest. To which I'll have to pay that 23% in taxes.
+I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home much less compared to the first contest. To which I'll have to pay that 23% in taxes.
 
 <Heading h="h3" title="Massive updates" />
-Not all is lost though, we realized we truly had a special game, so we have many updates planned in the future! Some have already been pushed.
+Not all is lost though, we realized we truly have something special in our hands, so we have many updates coming in the future. Some have already been pushed!
 
 We kept the game updated and fixed every issue encountered in the jam.
 
@@ -198,3 +198,19 @@ There's a lot being worked on in the background, the game won't even play the sa
 Stay tuned for **Death Card 2025**.
 
 **[ATTACH SCREENSHOTS]**
+
+<Heading title="Kenney" />
+
+We managed to [interview Kenney](https://smallfi.sh/blog/kenney_interview) this year, a big figure in the indie gaming industry. He has given us permission to start porting his assets to sbox.game as well!
+
+It usually takes 2 to 4 hours to port one of his model kits to s&box, depending on the size and complexity.
+
+So far we released 4:
+- [Food Kit - 200 models](https://sbox.game/kenneynl/foodkit);
+- [Hexagon Kit - 72 models](https://sbox.game/kenneynl/hexagonkit);
+- [Tower Defense Kit - 160 models](https://sbox.game/kenneynl/towerdefensekit);
+- [Kenney Holiday Kit - 100 models](https://sbox.game/kenneynl/holidaykit);
+
+And many more in the future! If you'd like to help or have ported one in the past already, we can invite you to the organization where they get posted.
+
+We're also working on a devlog for the [Christmassy Game](https://www.youtube.com/watch?v=o30oS3W9ML8), made using Kenney's assets on Christmas Day by ubre (me).
