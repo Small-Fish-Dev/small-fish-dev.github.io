@@ -9,7 +9,8 @@ published: true
 
 **[IMAGE HERE]**
 
-**Happy New Year, everyone!**
+--**Happy New Year, everyone!**--
+--
 
 We wouldn't be where we are without our community.
 In keeping with our commitment to transparency, we think it's only right to set a good example and take a scrupulous look back at the year. (Not in chronological order)
@@ -183,14 +184,14 @@ Anyways, we got 2nd place in the contest.
 
 I still remember having 20-30 users in the voice channel waiting for the results, and when that was revealed everyone went silent and someone played the sad trombone sound.
 
-I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun, while 1st place sat with half the likes and playtime.
+I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun. At least we felt vindicated seeing our game have much better statistics compared to all other entries.
 
 It seems immature on our part, but for a while we were pretty sour, especially because many of us put in even more work on it compared to My Summer Cottage. A few developers, me included, took almost the entire month off their job to work on the game 24/7.
 
 <Heading h="h3" title="Money" />
 I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home much less compared to the first contest.
 
-To calculate the shares this time around, I asked members to send me what they worked on, and then I had looked at how many days in the jam they pushed commits. This worked better than expected, and works regardless if it's an artist pushing 3 massive commits a day or a programmer pushing 200 tiny ones.
+To calculate the shares, I asked members to send me what they worked on, and then I looked at how many days in the jam they pushed commits. This went better than expected, and works regardless if it's an artist pushing 3 massive commits a day or a programmer pushing 200 tiny ones.
 
 I gave myself <b>$1,550</b> to which I'll have to pay $356 in taxes.
 
