@@ -178,15 +178,23 @@ I'm really surprised with the result and I'm not afraid to say it's the most adv
 
 Truly everything was made by us in the month we were given. From the huge animgraphs, to the extensive animations and models. From the voxel worlds, tools, and editor, to the giant dungeon generation, rooms, and custom 3D A* navigation. Music, sounds, NPCs, art, UI, shaders, I could go on and on...
 
+<Heading h="h3" title="The results" />
 Anyways, we got 2nd place in the contest.
 
 I still remember having 20-30 users in the voice channel waiting for the results, and when that was revealed everyone went silent and someone played the sad trombone sound.
 
 I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun, while 1st place sat with half the likes and playtime.
 
-It seems immature on our part, but for a while we were pretty sour, especially because many of us put much more work on it compared to even My Summer Cottage. A few developers, me included, took almost the entire month off their job to work on the game 24/7.
+It seems immature on our part, but for a while we were pretty sour, especially because many of us put in even more work on it compared to My Summer Cottage. A few developers, me included, took almost the entire month off their job to work on the game 24/7.
 
-I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home much less compared to the first contest. To which I'll have to pay that 23% in taxes.
+<Heading h="h3" title="Money" />
+I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home much less compared to the first contest.
+
+To calculate the shares this time around, I asked members to send me what they worked on, and then I had looked at how many days in the jam they pushed commits. This worked better than expected, and works regardless if it's an artist pushing 3 massive commits a day or a programmer pushing 200 tiny ones.
+
+I gave myself <b>$1,550</b> to which I'll have to pay $356 in taxes.
+
+Artists received <b>$6,250</b> and the remaining programmers made <b>$4,150</b>.
 
 <Heading h="h3" title="Massive updates" />
 Not all is lost though, we realized we truly have something special in our hands, so we have many updates coming in the future. Some have already been pushed!
@@ -214,3 +222,21 @@ So far we released 4:
 And many more in the future! If you'd like to help or have ported one in the past already, we can invite you to the organization where they get posted.
 
 We're also working on a devlog for the [Christmassy Game](https://www.youtube.com/watch?v=o30oS3W9ML8), made using Kenney's assets on Christmas Day by ubre (me).
+
+<Heading title="Blocks and Bullets" />
+
+Something that came from Death Card was the game Shoot & Build, now called:
+
+<b>Blocks & Bullets</b> (We had a very hard time finding names)
+
+
+Death Card doesn't really utilize the voxel mechanic to its full potential, so we upgraded the tools and capabilities and reused it to create Blocks & Bullets.
+
+It's heavily inspired by Ace of Spades, a game many of us have played years ago. Funny enough, Death Card was original meant to be what Blocks & Bullets is today, the name is even a reference to Ace of Spades but we pivoted during the jam.
+
+Blocks & Bullets is a very fun project to playtest and work on, we have big plans for it in the future, such as dedicated servers and a battle royale mode.
+
+Small Fish games already boast the most advanced NPCs in s&box, so we're planning to make the best bots to play with andagainst in Blocks & Bullets, so you're able to experience the game even by yourself or a group of friends.
+
+I'm very excited for the future of this game, it truly is the best game s&box needs right now.
+
