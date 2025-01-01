@@ -160,3 +160,41 @@ There are currently multiple unofficial Fishley-s? We found it funny so we made 
  
 And finally, here's Fishley's full prompt: **[PUT PROMPT HERE]**
 
+<Heading title="Death Card" />
+Around August, Facepunch held the second official s&box jam, this time with double the prize pool.
+
+The money was a very big draw since some of us really needed them at the moment, and while a few were on vacation at the time, we gave it everything we had, even more than the previous contest.
+
+We have an unconventional approach to game jams: <b>massively overscope a game</b>.
+
+- Plan a timeline of what needs to be done and when, then we give it our best.
+- If we're behind schedule by week X, we reduce the scope of the game, then repeat.
+- By the end of the contest, we are certified to have the best product possible.
+
+While other teams had a game playable by the first week, our usually starts to come together in the last few days as we connect glue everything that was worked on.
+
+We came up with <b>Deathcard</b>, our biggest and project to date.
+I'm really surprised with the result and I'm not afraid to say it's the most advanced game that's ever existed on s&box so far.
+
+Truly everything was made by us in the month we were given. From the huge animgraphs, to the extensive animations and models. From the voxel worlds, tools, and editor, to the giant dungeon generation, rooms, and custom 3D A* navigation. Music, sounds, art, I could go on...
+
+Anyways, we got 2nd place in the contest.
+
+I still remember having 20-30 users in the voice channel waiting for the results, and when that was revealed everyone went silent and someone played the sad trombone sound.
+
+I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun, while 1st place sat with half the likes and playtime.
+
+It seems immature on our part, but for a while we were pretty sour, especially because many of us put much more work on it compared to even My Summer Cottage. A few developers, me included, even took almost the entire month off their job to work on the game 24/7.
+
+I really couldn't afford to give up my share and pay the fees this time around, and as we had more developers, we all brought home a much smaller amount of money compared to the first contest. To which I'll have to pay that 23% in taxes.
+
+<Heading h="h3" title="Massive updates" />
+Not all is lost though, we realized we truly had a special game, so we have many updates planned in the future! Some have already been pushed.
+
+We kept the game updated and fixed every issue encountered in the jam.
+
+There's a lot being worked on in the background, the game won't even play the same once we're done with it!
+
+Stay tuned for **Death Card 2025**.
+
+**[ATTACH SCREENSHOTS]**
