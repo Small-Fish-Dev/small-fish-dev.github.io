@@ -229,7 +229,6 @@ Something that came from Death Card was the game Shoot & Build, now called:
 
 <b>Blocks & Bullets</b> (We had a very hard time finding names)
 
-
 Death Card doesn't really utilize the voxel mechanic to its full potential, so we upgraded the tools and capabilities and reused it to create Blocks & Bullets.
 
 It's heavily inspired by Ace of Spades, a game many of us have played years ago. Funny enough, Death Card was original meant to be what Blocks & Bullets is today, the name is even a reference to Ace of Spades but we pivoted during the jam.
@@ -240,3 +239,10 @@ Small Fish games already boast the most advanced NPCs in s&box, so we're plannin
 
 I'm very excited for the future of this game, it truly is the best game s&box needs right now.
 
+<Heading title="s&box drama" />
+
+We slowed down with s&box drama lately, both because there isn't much happening in the community and because we're busy with other projects.
+
+We'd like to remind everyone that S&box drama is for entertainment purposes, we have a strict etiquette and the last thing we want is to harm s&box's reputation.
+
+Every scoop was either a joke, overexaggerated, or completely fabricated by us.
