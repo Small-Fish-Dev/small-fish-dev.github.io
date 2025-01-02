@@ -164,7 +164,8 @@ There are currently multiple unofficial Fishley-s? We found it funny so we made 
 
 <Img src="fishley.jpg"/>
  
-And finally, here's Fishley's full prompt: **[PUT PROMPT HERE]**
+
+And finally: here's [Fishley's full prompt](https://gist.github.com/yuberee/fa522b09a1bdedc65dee7aab48f17d31) for everyone wondering why he acts the way he does.
 
 <Heading title="Death Card" />
 Around August, Facepunch held the second official s&box jam and doubled the prize pool.
