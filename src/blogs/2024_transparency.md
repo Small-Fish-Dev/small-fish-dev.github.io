@@ -35,7 +35,7 @@ We first did our research on sock technology, locking in with half-terry cotton 
 
 We then reached out to companies for quotes, who then sent us the pattern files. We brainstormed a few designs and hired a couple of artists on Fiverr to turn them into reality, we really enjoyed the wave pattern Grodbert came up with, and after a few revisions we had our design.
 
-<ImageCollage images={["socks1.jpg", "socks2.jpg", "socks3.jpg", "socks4.jpg", ]} />
+<ImageCollage images={["socks1.jpg", "socks2.jpg", "socks3.jpg", "socks4.jpg" ]} />
 
 After sending the files over, it took just a few days to get them produced, and two weeks to arrive. We immediately started shipping to our members, unfortunately we had no way for the Russian members to receive them.
 
@@ -210,9 +210,9 @@ We kept the game updated and fixed every issue encountered in the jam.
 
 There's a lot being worked on in the background, the game won't even play the same once we're done with it!
 
-Stay tuned for **Death Card 2025**.
-
-**[ATTACH SCREENSHOTS]**
+Stay tuned for Death Card 2025.
+--
+<ImageCollage images={["john_deathcard.jpg", "noobs.jpg", "goblins.jpg", "ethereal_being.jpg", "sealy.jpg"]} />
 
 <Heading title="Kenney" />
 
@@ -235,6 +235,9 @@ We're also working on a devlog for the [Christmassy Game](https://www.youtube.co
 Something that came from Death Card was the game Shoot & Build, now called:
 
 <b>Blocks & Bullets</b> (We had a very hard time finding names)
+
+<Img src="blocksandbullets.jpg"/>
+ 
 
 Death Card doesn't really utilize the voxel mechanic to its full potential, so we upgraded the tools and capabilities and reused it to create Blocks & Bullets.
 
