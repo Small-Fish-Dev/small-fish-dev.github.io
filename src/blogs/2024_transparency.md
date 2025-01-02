@@ -18,6 +18,8 @@ In keeping with our commitment to transparency, we think it's only right to set 
 
 <Heading title="Socks" />
 
+<Img src="socks_preview.jpg"/>
+
 Yes, the legends are true, we have our own line of merch which will never see the light of day: Small Fish branded socks.
 
 Made with <b>100% organic cotton</b>, knitted design, and biocompostable packaging, they were shipped exclusively to Small Fish members and close associates.
@@ -33,7 +35,7 @@ We first did our research on sock technology, locking in with half-terry cotton 
 
 We then reached out to companies for quotes, who then sent us the pattern files. We brainstormed a few designs and hired a couple of artists on Fiverr to turn them into reality, we really enjoyed the wave pattern Grodbert came up with, and after a few revisions we had our design.
 
-**[IMAGE HERE]**
+<ImageCollage images={["socks1.jpg", "socks2.jpg", "socks3.jpg", "socks4.jpg", ]} />
 
 After sending the files over, it took just a few days to get them produced, and two weeks to arrive. We immediately started shipping to our members, unfortunately we had no way for the Russian members to receive them.
 
@@ -184,7 +186,7 @@ Anyways, we got 2nd place in the contest.
 
 I still remember having 20-30 users in the voice channel waiting for the results, and when that was revealed everyone went silent and someone played the sad trombone sound.
 
-I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun. At least we felt vindicated seeing our game have much better statistics compared to all other entries.
+I won't lie, we had a really bad week after that. The only feedback we received from Facepunch was that our game wasn't as fun. At least we felt vindicated seeing our game's metrics massively outperform all other entries'.
 
 It seems immature on our part, but for a while we were pretty sour, especially because many of us put in even more work on it compared to My Summer Cottage. A few developers, me included, took almost the entire month off their job to work on the game 24/7.
 
