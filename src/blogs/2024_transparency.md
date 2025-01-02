@@ -93,14 +93,17 @@ If anybody wants to become the new owner of these subreddits, I'll gladly hand t
 The second biggest s&box subreddit is owned by the r/gmod owners: [r/playsandbox](https://www.reddit.com/r/playsandbox/).
 It doesn't see more than a couple of posts every year, so I assumed it was abandoned as well only to find out the moderators were still active, so at least I don't hold a monopoly.
 
-**[IMAGE]**
+<Img src="redditstats.jpg"/>
 
 Here's the subreddit stats, I'd like to say I made an impact but it's clear the spikes happen whenever s&box has a big update or goes public.
 
 <Heading title="My Summer Cottage" />
+
 In February, Facepunch announced their first official Game Jam with a prize pool of <b>$25,000</b>.
 
 We knew we had to go all out, many of us needed the money, but we also knew that it would go down in history. Everyone will look up who won the 1st game jam, not the 7th or 12th!
+
+<Img src="sauna.jpg"/>
 
 We decided to submit <b>My Summer Cottage</b>, which a few of us have worked in the past but never amounted to anything more than a debug scene and a player controller.
 People accused us of cheating by submitting an older project, but literally everything we had was done or remade in the game jam with the exception of the playermodel.
@@ -159,7 +162,7 @@ Fishley is the absolute authority in our server, even above Small Fish themselve
  
 There are currently multiple unofficial Fishley-s? We found it funny so we made a semi-serious, semi-joke announcement to watch out in case one of them ever reaches out to scam you.
 
-**[IMAGE]**
+<Img src="fishley.jpg"/>
  
 And finally, here's Fishley's full prompt: **[PUT PROMPT HERE]**
 
