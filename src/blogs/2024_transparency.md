@@ -1,13 +1,11 @@
 ---
 title: 'Small Fish 2024 Transparency Report'
-thumbnail: 'placeholder.png'
+thumbnail: 'thumbnail.jpg'
 date: '2025-01-01'
-description: 'A look back at what Small Fish did in 2024, what was happening behind the scenes, and what to look forward to'
+description: 'A look back at what Small Fish did in 2024 and what to look forward to.'
 publisher: 'ubre'
 published: true
 ---
-
-**[IMAGE HERE]**
 
 --**Happy New Year, everyone!**--
 --
@@ -269,7 +267,7 @@ We try post something at least once a week but it's hard to keep track.
 
 A goal of ours is to get monetized on YouTube which requires 4,000 watch hours in the last 365 days. We're pushing as many videos as we can, but we're really limited by how popular s&box is at the moment.
 
-**[IMAGE]**
+<Img src="youtube.jpg"/>
 
 Here's the channel stats, which kinda resembles the subreddit's one, meaning that our channel is also directly correlated to how good s&box is doing.
 
@@ -290,4 +288,6 @@ And lastly, release a game on Steam.
 --
 for being a part of Small Fish, or even s&box in general.
 
-And <b>special thanks</b> to Facepunch's s&box team and all the other orgs.
+A <b>special thanks</b> to Facepunch's s&box team and all the other orgs.
+
+And don't forget to vote ubre 2025 for community president!
