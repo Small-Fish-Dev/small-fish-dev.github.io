@@ -46,12 +46,12 @@
 	<div class="mb-5 px-5 text-white sm:px-0">
 		<h1 class="mb-2 text-5xl font-bold">{data.blogPost.title}</h1>
 		{#if data.blogPost.description}
-			<p class="mb-4 text-gray mb-12">{data.blogPost.description}</p>
+			<p class="mb-12 mb-4 text-gray">{data.blogPost.description}</p>
 		{/if}
 
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div class="flex items-center">
+		<div class="flex items-center justify-between">
 			{#if data.blogPost.member}
 				<div
 					on:click={() => {
@@ -74,12 +74,8 @@
 					</p>
 				</div>
 			{/if}
-			<div class="flex items-center text-gray font-bold ml-10">
-				<Icon
-					icon="material-symbols:calendar-today"
-					class="mr-3"
-					style="transform: scale( 1.4 )"
-				/>
+			<div class="flex items-center font-bold text-gray">
+				<Icon icon="material-symbols:calendar-today" class="mr-3" style="transform: scale( 1.4 )" />
 				<p>
 					{new Date(data.blogPost.date).toLocaleString('en-us', {
 						month: 'short',
