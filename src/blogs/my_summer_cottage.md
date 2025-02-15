@@ -9,7 +9,7 @@ We ended up participating in the first Facepunch-hosted game jam and [won 1st pl
 
 Not everything each individual person did ended up in here; there were too many cases where X made all these, X also fixed that, X did this which didn't make it in time. So, keep in mind there was even more than what you see here that went on. There is still A LOT to digest in here..
 
-You can look at the code on [GitHub](https://github.com/Small-Fish-Dev/My-Summer-Cottage), or even use it, as long as you follow the license.
+You can look at the code on [GitHub](https://github.com/Small-Fish-Dev/My-Summer-Cottage-Jam), or even use it, as long as you follow the license.
 
 <Heading title="Events" caption="by ubre" />
 
