@@ -47,7 +47,8 @@
 <div
 	class="scroll flex h-screen flex-col items-center justify-center bg-[url('/common/pixel-overlay.png')] font-poppins text-4xl text-white"
 >
-	<p class="font-bold lowercase">redirecting to {cullIdent(game.sboxIdent ?? 'fuck-you-kid')}...</p>
+	<img src={game.logo} class="mb-10 w-64 rounded-md bg-contain" />
+	<p class="font-bold lowercase">redirecting to {game.title}...</p>
 	<a href="steam://run/590830//-rungame {game.sboxIdent}">
 		<p class="mt-5 scale-100 lowercase transition-all hover:scale-[102%]">click to retry</p>
 	</a>

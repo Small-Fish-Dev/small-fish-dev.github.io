@@ -38,7 +38,7 @@ export const Games: Game[] = [
 		summary:
 			'A first-person shooter where you can destroy everything that surrounds you. Inspired by the classic hit game Ace of Spades.',
 		date: new Date(2024, 9, 1),
-		logo: '/games/snb_logo.png',
+		logo: '/games/blocks_and_bullets_logo.png',
 		contributors: [
 			'ceitine',
 			'rndtrash',
