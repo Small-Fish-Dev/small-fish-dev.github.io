@@ -144,5 +144,5 @@ export const Games: Game[] = [
 // Give all games a slug!
 Games.forEach((game) => {
 	if (game.slug) return;
-	game.slug = game.title.toLowerCase().replaceAll(' ', '_').replaceAll('/[^a-z0-9]/gi', '');
+	game.slug = game.sboxIdent?.toLowerCase()?.substring('fish.'.length);
 });
