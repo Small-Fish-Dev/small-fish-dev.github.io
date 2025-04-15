@@ -125,7 +125,7 @@
 						"{Slogans[Math.floor(Math.random() * Slogans.length)]}"
 					</p>
 				</div>
-				<div class="flex justify-center gap-4 flex-wrap">
+				<div class="flex flex-wrap justify-center gap-4">
 					{#each socials as social}
 						<SocialButton href={social} showHoverTop={false} class="w-12" />
 					{/each}
@@ -168,7 +168,7 @@
 			</div>
 
 			<div
-				class="flex flex-row items-center md:px-20 px-5 gap-10 mb-20 w-full justify-center flex-wrap"
+				class="mb-20 flex w-full flex-row flex-wrap items-center justify-center gap-10 px-5 md:px-20"
 			>
 				{#each posts as post, i}
 					<NewsCard {post} class="w-[30rem]" />
@@ -226,7 +226,7 @@
 					We teach you how to make games. Graduate from our Fish School program!
 				</p>
 				<a
-					href="https://www.youtube.com/watch?v=ijju9rbeN1A&list=PLIcPBTNc7_9oFEEoHSCuPrdGQnU27yLuj"
+					href="https://www.youtube.com/watch?v=g-ZJFnWPawY&list=PLIcPBTNc7_9oFEEoHSCuPrdGQnU27yLuj"
 					class="flex items-center rounded-lg bg-gradient-to-r from-blue to-lightblue p-4 text-xl font-bold drop-shadow-md transition-all hover:-translate-y-2 hover:drop-shadow-hover"
 				>
 					<Icon icon="fluent:hat-graduation-12-filled" class="mr-2" />
