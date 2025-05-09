@@ -23,7 +23,7 @@ interface NewsPost {
 	Title: string;
 	Summary: string;
 	Author: BackendUser;
-	Media: string;
+	Media: string | undefined;
 	Sections: NewsSection[];
 	Package: string;
 }
@@ -52,7 +52,7 @@ export const BlogAsNews = function (blog: App.BlogPost): NewsEntry {
 export const NewsAsNews = function (news: NewsPost): NewsEntry {
 	return {
 		url: `https://sbox.game${news.Url}`,
-		thumbnail: news.Media,
+		thumbnail: news.Media ?? '/home/news-placeholder.png',
 		date: new Date(news.Created),
 		title: news.Title,
 		summary: news.Summary,
